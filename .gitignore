@@ -2,3 +2,5 @@
 *.synctex
 *.synctex.gz
 /tmp
+*.aux
+*.log
