@@ -1,4 +1,4 @@
-\section{Referenzspannungen}\hartl{276}
+\section{Referenzspannungen} \hartl{276}
 \subsection{Lernziele}
 \begin{itemize}
   \item Kennenlernen unterschiedlicher Methoden zur Eurzeugung von
@@ -14,16 +14,13 @@
 \begin{figure}[!htbp]
 \includegraphics[scale=0.5]{pictures/temperaturdrift}
 \end{figure}
-\subsection{Temperaturabhängigkeiten von Referenzspannungen}
-\begin{figure}[!htbp]
-\includegraphics[scale=0.5]{pictures/temperaturabhaengigkeit}
-\end{figure}
 \subsection{Varianten von Referenzspannungen bei Wandlern}
-\begin{figure}[!htbp]
-\includegraphics[scale=0.5]{pictures/variantenReferenzspannungen}
+\begin{figure}[!h]
+\includegraphics[scale=0.3]{pictures/variantenReferenzspannungen}
 \end{figure}
+\newpage
 
-\subsection{Verschiedene Arten der Rerferenzspannungserzeugung}\hartl{276}
+\subsection{Verschiedene Arten der Rerferenzspannungserzeugung} \hartl{276}
 \begin{longtable}{|l|l|l|}
 \hline
 \begin{minipage}{4cm}
@@ -46,7 +43,7 @@ U_{Ref}}{U_{Ref}}}{\frac{\Delta V_{DD}}{V_{DD}}}=1
 \\
 \hline
 \begin{minipage}{4cm}
-\textbf{Dioden Referenz}\hartl{277}
+\textbf{Dioden Referenz} \hartl{277}
 \end{minipage}
 &
 \begin{minipage}{6cm}
@@ -55,7 +52,8 @@ U_{Ref}}{U_{Ref}}}{\frac{\Delta V_{DD}}{V_{DD}}}=1
 &
 \begin{minipage}{8cm}
 \begin{gather}
-U_{Ref}=U_{EB}=\frac{kT}{e}\ln{\frac{I}{I_{s}}} \text{ für }V_{DD}>> U_{EB}\\
+U_{Ref}=U_{EB}=\frac{kT}{e}\ln{\frac{I}{I_{s}}} \notag\\\text{ für }V_{DD}>>
+U_{EB}\\
 S_{V_{DD}}^{U_{Ref}}=\frac{1}{\ln{\frac{I}{I_{S}}}}<1
 \end{gather}
 \end{minipage}
@@ -98,7 +96,7 @@ U_{T}=\frac{kT}{q}
 \\
 \hline
 \begin{minipage}{4cm}
-\textbf{Bandgap Referenz}\hartl{278}
+\textbf{Bandgap Referenz} \hartl{278}
 \end{minipage}
 &
 \begin{minipage}{6cm}
@@ -108,7 +106,7 @@ U_{T}=\frac{kT}{q}
 &
 \begin{minipage}{8cm}
 \begin{gather}
-I_{C}=B*I_{BS}(e^{\frac{V_{BE}}{V_{T}}}-1)\approx
+I_{C}=B*I_{BS}(e^{\frac{V_{BE}}{V_{T}}}-1)\approx\notag\\\approx
 B*I_{BS}*e^{\frac{V_{BE}}{V_{T}}}\\
 \frac{I_{C1}}{I_{C2}}=e^{\frac{V_{BE1}-V_{BE2}}{V_{T}}} \to \Delta
 V_{BE}=\notag\\=V_{BE1}-V_{BE2}=V_{T}\ln{\frac{I_{C1}}{I_{C1}}}\\

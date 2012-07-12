@@ -77,13 +77,14 @@ A_{out} = D_{in}*q = D_{in}*(\frac{A_{Ref}}{2^N})
 \end{equation}\\
 \hline
 \end{longtable}
+\newpage
 
 \subsection{Statische Fehler}
 \hartl{434}
 \begin{longtable}[c]{| p{6cm} | p{6cm} | p{6cm} | }
 \hline
 \begin{minipage}{6cm}
-\textbf{Offset-Fehler}\hartl{434}
+\textbf{Offset-Fehler} \hartl{434}
 \textit{Bei unipolaren A/D- bzw. D/A-Umsetzern sollte die digitale Null der
 analogen Null entsprechen. In der Realität wird jedoch meistens eine Abweichung
 aufgrund einer Verschiebung der Kennlinie auftreten. Diese wird als
@@ -104,7 +105,7 @@ Offset-Fehler bzw. Nullpunktfehler bezeichnet.}
  \\
 \hline
 \begin{minipage}{6cm}
-\textbf{Verstärkungsfehler}\hartl{436}
+\textbf{Verstärkungsfehler} \hartl{436}
 \textit{Eine Abweichung in der Steigung der
 Kennlinie,gleichbedeutend mit der Verstärkung, verursacht beim realen Umsetzer eine Abweichung zur idealnen
 Kennlinie. Diese Abweichung wächst mit jedem Quantisierungsschitt und führt beim
@@ -125,7 +126,7 @@ positiven Ende zum maximalen Fehler.}
  \\
 \hline
 \begin{minipage}{6cm}
-\textbf{Differentielle Nichtlinearität DNL}\hartl{437}
+\textbf{Differentielle Nichtlinearität DNL} \hartl{437}
 \textit{Bei Offset- und Verstärkungsfehler wird von einer Verschiebung bzw.
 konstanten Veränderung der Stufengrösse ausgegangen.Sobald aber die einzelnen
 Stufen nicht mehr gleich gross sind, wird die Umsetzerkennlinie nicht linear.
@@ -147,7 +148,7 @@ Stufengrössen von der idealen.}
  \\
 \hline
 \begin{minipage}{6cm}
-\textbf{Integrale Nichtlinearität INL}\hartl{439}
+\textbf{Integrale Nichtlinearität INL} \hartl{439}
 \textit{Bei der integralen Nichtlinearität wird die Abweichung der realen
 Kennlinie zur idealen betrachtet. Damit wird der tatsächliche Fehler einer
 Umsetzung beshrieben. Deshalb ist die integrale Nichtlinearität die wesentliche
@@ -173,7 +174,7 @@ integrale Nichtlinearität gemeint.}
 \end{longtable}
 
 \subsection{Eigenschaften und Fehler bei dynamischen Signalen}\hartl{442}
-\subsubsection{Aperturfehler}\hartl{442}
+\subsubsection{Aperturfehler} \hartl{442}
 Bei einer periodischen Abtastung eines Signals ist immer ein gewisse zeitliche
 Unsicherheit im Abtastzeitpunkt (Aperturunsicherheit) gegeben.
 
@@ -236,7 +237,14 @@ Signal.\\
 \\
 
 \begin{tabular}{lll}
-\textbf{Abtasttheorem}&$f_{S}>2f_{max}$&$f_{s}$: Abtastfrequenz\\
+\small\textbf{Abtasttheorem}
+&
+\begin{minipage}{4cm}
+\begin{equation}
+f_{S}>2f_{max}
+\end{equation}
+\end{minipage}
+&$f_{s}$: Abtastfrequenz\\
 &&$f_{max}$:max. Frequenz des Signals
 \end{tabular}
 

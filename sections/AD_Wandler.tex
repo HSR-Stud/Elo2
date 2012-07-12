@@ -10,31 +10,34 @@
 \subsection{Parallelverfahren und Kaskadenumsetzer}
 \begin{longtable}{|l|l|l|}
 \hline
-\textbf{Parallelumsetzer}\hartl{478}
+\begin{minipage}{4cm}
+\textbf{Parallelumsetzer} \hartl{478}
+\end{minipage}
 &
 \begin{minipage}{6cm}
 \includegraphics[width=6cm, height = 6cm]{pictures/parallelADC}
 \end{minipage}
 &
-\begin{minipage}{6cm}
+\begin{minipage}{8cm}
 \begin{itemize}
   \item sehr schnell
   \item $2^n$ Widerstände
-  \item $2^n$ Komparatoren
+  \item $2^N$ Komparatoren
 \end{itemize}
 \begin{equation}
 Anz_{Vergleiche}=2^N-1
 \end{equation}
 \end{minipage}\\
 \hline
-
-\textbf{Kaskadenumsetzer}\hartl{479}
-&
-\begin{minipage}{7cm}
-\includegraphics[width=7cm, height = 6cm]{pictures/kaskaden}
+\begin{minipage}{4cm}
+\textbf{Kaskadenumsetzer} \hartl{479}
 \end{minipage}
 &
 \begin{minipage}{6cm}
+\includegraphics[width=6cm, height = 6cm]{pictures/kaskaden}
+\end{minipage}
+&
+\begin{minipage}{8cm}
 
 Eine 10-bit-Auflösung beim Parallelverfahren würde 1024 Komperatoren
 benötigen.$\Rightarrow$Komplexitätsreduktion \\
@@ -47,13 +50,15 @@ niederwertigen Bits zu ergeben. Skaliert man die Differenzspannung mit dem Fakto
 den gleichen Spannungsbereich, kann also zwei identische ADU benutzen.\\
 \end{minipage}\\
 \hline
-\textbf{Pipelined ADC}\hartl{483}
-&
-\begin{minipage}{7cm}
-\includegraphics[width=7cm, height = 6cm]{pictures/pipelined}
+\begin{minipage}{4cm}
+\textbf{Pipelined ADC} \hartl{483}
 \end{minipage}
 &
 \begin{minipage}{6cm}
+\includegraphics[width=6cm, height = 6cm]{pictures/pipelined}
+\end{minipage}
+&
+\begin{minipage}{8cm}
 \begin{itemize}
   \item fast gleiche hohe Umsetzrate wie Parallelumsetzer
   \item gleicher schaltungstechnischer Aufwand wie beim Kaskadennumsetzer
@@ -64,7 +69,7 @@ den gleichen Spannungsbereich, kann also zwei identische ADU benutzen.\\
 \end{longtable}
 
 
-\subsection{Wägeverfahren ( sukzessive Approximation)}\hartl{485}
+\subsection{Wägeverfahren ( sukzessive Approximation)} \hartl{485}
 \begin{itemize}
   \item guter Kompromiss zwischen benötigter Umsetzzeit und erreichbarer
   Auflösung
@@ -73,7 +78,7 @@ den gleichen Spannungsbereich, kann also zwei identische ADU benutzen.\\
 \begin{longtable}{|l|l|l|}
 \hline
 \begin{minipage}{4cm}
-\textbf{Prinzip}\hartl{485}
+\textbf{Prinzip} \hartl{485}
 \end{minipage}
 &
 \begin{minipage}{6cm}
@@ -91,7 +96,7 @@ den gleichen Spannungsbereich, kann also zwei identische ADU benutzen.\\
 \\
 \hline
 \begin{minipage}{4cm}
-\textbf{Wägeverfahren mit SC-Prinzip}\hartl{488}
+\textbf{Wägeverfahren mit SC-Prinzip} \hartl{488}
 \end{minipage}
 &
 \begin{minipage}{6cm}
@@ -147,7 +152,7 @@ den gleichen Spannungsbereich, kann also zwei identische ADU benutzen.\\
 
 
 
-\subsection{Zählverfahren}\hartl{490}
+\subsection{Zählverfahren} \hartl{490}
 Ist für kontinuierliche Auswertungen des Eingangssignal
 \begin{longtable}{|l|l|l|}
 \hline
@@ -168,7 +173,7 @@ T_{int}=\frac{V_{Ref}*R*C}{V_{in}}
 \\
 \hline
 \begin{minipage}{4cm}
-\textbf{Dual Slope}\hartl{492}
+\textbf{Dual Slope} \hartl{492}
 \end{minipage}
 &
 \begin{minipage}{6cm}
@@ -180,14 +185,14 @@ T_{int}=\frac{V_{Ref}*R*C}{V_{in}}
 \begin{minipage}{8cm}
 \begin{gather}
 V_{int}=
-\int^{V_{int}}_{0}\frac{-1}{R_{int}*C_{i}}*(V_{in}-V_{GNDA})dt+V_{GNDA}\\
-V_{intmax}=\frac{-1}{R_{int}*C_{i}}(V_{in}-V_{GNDA})*T_{int}+V_{GNDA}\\
-V_{int}(t)=V_{intmax}-\frac{-1}{R_{int}*C_{i}}(V_{in}-V_{GNDA})*t\\
+\int^{V_{int}}_{0}\frac{-1}{R_{int}*C_{i}}(V_{in}-V_{GNDA})dt+\notag\\+V_{GNDA}\\
+V_{intmax}=\frac{-1}{R_{int}*C_{i}}(V_{in}-V_{GNDA})T_{int}+\notag\\+V_{GNDA}\\
+V_{int}(t)=V_{intmax}-\frac{-1}{R_{int}*C_{i}}*\notag\\ *(V_{in}-V_{GNDA})*t\\
 t_{abint}=\frac{-(V_{in}-V_{GNDA})*T_{int}}{V_{refn}-V_{GNDA}}\\
 \int^{NT}_{0}V_{in}dt=NTV_{in}\\
-NTV_{in}-\int^{nT}_{0}V_{Ref}dt=NTV_{in}-nTV_{Ref}=0\\
+NTV_{in}-\int^{nT}_{0}V_{Ref}dt=\notag\\=NTV_{in}-nTV_{Ref}=0\\
 n=\frac{V_{in}}{V_{Ref}}N\\
-n=\frac{RCV_{off,C}-TV_{off,OP}}{T(V_{Ref}+V_{off,OP})}+N\frac{V_{in}}{V_{Ref}+V_{off,OP}}
+n=\frac{RCV_{off,C}-TV_{off,OP}}{T(V_{Ref}+V_{off,OP})}+\notag\\+N\frac{V_{in}}{V_{Ref}+V_{off,OP}}
 \end{gather}
 \begin{tabular}{ll}\\
 N:&Taktzyklen\\
@@ -199,7 +204,7 @@ $V_{off}$:&Offsetspannung\\
 \\
 \hline
 \begin{minipage}{4cm}
-\textbf{Spannungs- Frequenz- Umsetzer}\hartl{495}
+\textbf{Spannungs- Frequenz- Umsetzer} \hartl{495}
 \end{minipage}
 &
 \begin{minipage}{6cm}
@@ -216,7 +221,7 @@ Nachteil: Kein echter ADC\\
 \\
 \hline
 \begin{minipage}{4cm}
-\textbf{Ladungs-Ausgleichs-Integrator}\hartl{497}
+\textbf{Ladungs-Ausgleichs-Integrator} \hartl{497}
 \end{minipage}
 &
 \begin{minipage}{6cm}
@@ -236,7 +241,7 @@ Nachteil: Kein echter ADC\\
 \\
 \hline
 \begin{minipage}{4cm}
-\textbf{Sigma-Delta Wandler}\hartl{500}
+\textbf{Sigma-Delta Wandler} \hartl{500}
 \end{minipage}
 &
 \begin{minipage}{6cm}
@@ -256,7 +261,7 @@ y=\frac{x-y}{s}+Q\Rightarrow y=x\frac{1}{1+s}+Q\frac{s}{1+s}
 \\
 \hline
 \begin{minipage}{4cm}
-\textbf{Sigma-Delta Wandler 2. Ordnung}\hartl{502}
+\textbf{Sigma-Delta Wandler 2. Ordnung} \hartl{502}
 \end{minipage}
 &
 \begin{minipage}{6cm}
@@ -278,7 +283,3 @@ y=\frac{x-y}{s}+Q\Rightarrow y=x\frac{1}{1+s}+Q\frac{s}{1+s}
 \includegraphics[scale=0.4]{pictures/kennwerteADC}
 \end{figure}
 
-\subsubsection{Aufwand Wandlertypen}
-\begin{figure}[!htbp]
-\includegraphics[scale=0.5]{pictures/aufwandWandler}
-\end{figure}

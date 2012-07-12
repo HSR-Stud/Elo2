@@ -15,15 +15,15 @@
 \begin{longtable}{|l|l|l|}
 \hline
 \begin{minipage}{4cm}
-\textbf{Strom-DAC}\hartl{456}
+\textbf{Strom-DAC} \hartl{456}
 \end{minipage}
 &
-\begin{minipage}{7cm}
-\includegraphics[width=7cm, height = 4.5cm]{pictures/Strom-DAC}
+\begin{minipage}{6cm}
+\includegraphics[width=6cm, height = 4.5cm]{pictures/Strom-DAC}
 \end{minipage}
 
 &
-\begin{minipage}{6cm}
+\begin{minipage}{8cm}
 \begin{gather}
 K=2^N-1\\
 I=\frac{V_{Ref}}{R}\\
@@ -41,13 +41,13 @@ D:&Eingangswert\\&(Anzahl Schalter die \\&aktiv sind..)
 \\
 \hline
 \begin{minipage}{4cm}
-\textbf{String DAC}\hartl{459}
+\textbf{String DAC} \hartl{459}
 \end{minipage}
 &
-\begin{minipage}{7cm}
-\includegraphics[width=6.5cm,height=5cm]{pictures/string_DAC}
-\end{minipage}&
 \begin{minipage}{6cm}
+\includegraphics[width=6cm,height=5cm]{pictures/string_DAC}
+\end{minipage}&
+\begin{minipage}{8cm}
 \textbf{Vorteil}
 \begin{itemize}
   \item garantierte Stetigkeit
@@ -61,13 +61,13 @@ D:&Eingangswert\\&(Anzahl Schalter die \\&aktiv sind..)
 \\
 \hline
 \begin{minipage}{4cm}
-\textbf{Segmented String DAC}\hartl{459}
+\textbf{Segmented String DAC} \hartl{459}
 \end{minipage}
 &
-\begin{minipage}{7cm}
-\includegraphics[width=6.5cm,height=5cm]{pictures/segmented_string_DAC}
-\end{minipage}&
 \begin{minipage}{6cm}
+\includegraphics[width=6cm,height=5cm]{pictures/segmented_string_DAC}
+\end{minipage}&
+\begin{minipage}{8cm}
 \textbf{Vorteil}
 \begin{itemize}
   \item viel weniger Elemente
@@ -80,13 +80,13 @@ D:&Eingangswert\\&(Anzahl Schalter die \\&aktiv sind..)
 \\
 \hline
 \begin{minipage}{4cm}
-\textbf{Digitales Potentiometer}\hartl{460}
+\textbf{Digitales Potentiometer} \hartl{460}
 \end{minipage}
 &
-\begin{minipage}{7cm}
-\includegraphics[width=6.5cm,height=5cm]{pictures/digitales_potentiometer}
-\end{minipage}&
 \begin{minipage}{6cm}
+\includegraphics[width=6cm,height=5cm]{pictures/digitales_potentiometer}
+\end{minipage}&
+\begin{minipage}{8cm}
 \textbf{Vorteil}
 \begin{itemize}
   \item automatisierter Elektronik-Test möglich
@@ -96,18 +96,18 @@ D:&Eingangswert\\&(Anzahl Schalter die \\&aktiv sind..)
 \hline
 \end{longtable}
 
-\subsection{Wägeverfahren}\hartl{461}
+\subsection{Wägeverfahren} \hartl{461}
 \begin{longtable}{|l|l|l|}
 \hline
 \begin{minipage}{4cm}
-\textbf{Spannungssummierung}\\\hartl{461}
+\textbf{Spannungs-summierung} \hartl{461}
 \end{minipage}
 &
 \begin{minipage}{6cm}
 \includegraphics[width=6cm, height = 4.5cm]{pictures/spannungssummierung}
 \end{minipage}
 &
-\begin{minipage}{7cm}
+\begin{minipage}{8cm}
 \begin{gather}
 V_{Out}=\notag\\=\frac{B0*2^0*G0+B1*2^1*G0}{2^4*G0}*\notag\\
 * \frac{B2*2^2*G0+B3*2^3*G0}{2^4*G0}*\notag\\
@@ -131,14 +131,14 @@ V_{Out}=\notag\\=\frac{B0*2^0*G0+B1*2^1*G0}{2^4*G0}*\notag\\
 
 \hline
 \begin{minipage}{4cm}
-\textbf{Stromsummierung}\\\hartl{462}
+\textbf{Stromsummierung} \hartl{462}
 \end{minipage}
 &
 \begin{minipage}{6cm}
 \includegraphics[width=6cm, height = 3.5cm]{pictures/stromsummierung}
 \end{minipage}
 &
-\begin{minipage}{6cm}
+\begin{minipage}{8cm}
 \begin{equation}
 V_{Out}=(4+1)*I
 \end{equation}
@@ -154,7 +154,7 @@ V_{Out}=(4+1)*I
 \includegraphics[width=6cm, height = 3.5cm]{pictures/praktisch}
 \end{minipage}
 &
-\begin{minipage}{6cm}
+\begin{minipage}{8cm}
 \begin{equation}
 Idac_{max}=\frac{V_{refp}-V_{refn}}{R}*\frac{2^n-1}{2^n}
 \end{equation}
@@ -164,14 +164,14 @@ Idac_{max}=\frac{V_{refp}-V_{refn}}{R}*\frac{2^n-1}{2^n}
 
 \hline
 \begin{minipage}{4cm}
-\textbf{R-2R-Netzwerk}\hartl{462}
+\textbf{R-2R-Netzwerk} \hartl{462}
 \end{minipage}
 &
 \begin{minipage}{6cm}
 \includegraphics[width=6cm, height = 3.5cm]{pictures/r2rnetzwerk}
 \end{minipage}
 &
-\begin{minipage}{6cm}
+\begin{minipage}{8cm}
 
 
 \end{minipage}
@@ -186,7 +186,7 @@ Idac_{max}=\frac{V_{refp}-V_{refn}}{R}*\frac{2^n-1}{2^n}
 \includegraphics[width=6cm, height = 3.5cm]{pictures/kapazitiverDAC}
 \end{minipage}
 &
-\begin{minipage}{7cm}
+\begin{minipage}{8cm}
 \begin{gather}
 C1=B3*8C+B2*4C+\notag\\+B1*2C+B0*C\\
 C2=!B3*8C+!B2*4C+\notag\\+!B1*2C+!B0*C+C\\
@@ -198,13 +198,13 @@ V_{Out}=\frac{C1}{C1+C2}\\
 \\
 \hline
 \end{longtable}
+\newpage
 
-
-\subsection{Zählverfahren(PWM)}\hartl{466}\\
+\subsection{Zählverfahren(PWM)} \hartl{466}\\
 \begin{longtable}{|l|l|l|}
 \hline
 \begin{minipage}{4cm}
-\textbf{Grundprinzip}\\\hartl{466}
+\textbf{Grundprinzip} \hartl{466}
 \end{minipage}
 &
 \begin{minipage}{6cm}
@@ -212,7 +212,7 @@ V_{Out}=\frac{C1}{C1+C2}\\
 \end{minipage}
 &
 
-\begin{minipage}{7.5cm}
+\begin{minipage}{8cm}
 \begin{gather}
 V_{Out}=\frac{D}{2^n}*(V_{refp}-V_{refn})+V_{refn}
 \end{gather}
@@ -233,7 +233,7 @@ V_{Out}=\frac{D}{2^n}*(V_{refp}-V_{refn})+V_{refn}
 \\
 \hline
 \begin{minipage}{4cm}
-\textbf{PWM-Ansteuerung}\\\hartl{466}
+\textbf{PWM-Ansteuerung} \hartl{466}
 \end{minipage}
 &
 \begin{minipage}{6cm}
@@ -241,7 +241,7 @@ V_{Out}=\frac{D}{2^n}*(V_{refp}-V_{refn})+V_{refn}
 \end{minipage}
 &
 
-\begin{minipage}{7.5cm}
+\begin{minipage}{8cm}
 \begin{equation}
 \bar{V_{Out}}=\frac{n}{N}V_{Ref}
 \end{equation}
@@ -266,7 +266,7 @@ n:&digitale Eingangsgrösse
 \end{minipage}
 &
 
-\begin{minipage}{7.5cm}
+\begin{minipage}{8cm}
 \begin{itemize}
   \item MS-DAC hat 2 Ausgangsspannungen (Über und unter dem gewünschten
   $V_{Out}$)
@@ -277,7 +277,7 @@ n:&digitale Eingangsgrösse
 \\
 \hline
 \begin{minipage}{4cm}
-\textbf{Zyklisch, algorithmischer DAC}\\\hartl{466}
+\textbf{Zyklisch, algorithmischer DAC} \hartl{466}
 \end{minipage}
 &
 \begin{minipage}{6cm}
@@ -285,7 +285,7 @@ n:&digitale Eingangsgrösse
 \end{minipage}
 &
 
-\begin{minipage}{7.5cm}
+\begin{minipage}{8cm}
 \textbf{Ablauf der Wandlung}\\
 \begin{enumerate}
   \item Die Spannung im S/H wird gelöscht (Schalter S1), S3 geöffnet)
@@ -310,7 +310,7 @@ n:&digitale Eingangsgrösse
 \end{minipage}
 &
 
-\begin{minipage}{7.5cm}
+\begin{minipage}{8cm}
 Die Latenz beträgt n Zyklen, die Update-Frequenz ist aber n-mal grösser
 \end{minipage}
 \\
@@ -324,7 +324,7 @@ Die Latenz beträgt n Zyklen, die Update-Frequenz ist aber n-mal grösser
 \end{minipage}
 &
 
-\begin{minipage}{7.5cm}
+\begin{minipage}{8cm}
 \begin{itemize}
   \item Stromspiegel
   \item MP0 ist gleich breit wie Stromquellen-MOS $\to$ I(MP0)=Iref
@@ -339,8 +339,8 @@ Die Latenz beträgt n Zyklen, die Update-Frequenz ist aber n-mal grösser
 
 
 
-\subsection{Multiplizierender DAC}\hartl{470}
-\subsection{Auswahl von DACS}\hartl{470}
+\subsection{Multiplizierender DAC} \hartl{470}
+\subsection{Auswahl von DACS} \hartl{470}
 \begin{itemize}
   \item bei schnellen hochauflösenden Wandler werden Verfahren kombiniert
   \item für optimale Resultate müssen Kompromisse eingegangen werden
