@@ -188,10 +188,10 @@ Idac_{max}=\frac{V_{refp}-V_{refn}}{R}*\frac{2^n-1}{2^n}
 &
 \begin{minipage}{8cm}
 \begin{gather}
-C1=B3*8C+B2*4C+\notag\\+B1*2C+B0*C\\
-C2=!B3*8C+!B2*4C+\notag\\+!B1*2C+!B0*C+C\\
-V_{Out}=\frac{C1}{C1+C2}\\
-\text{mit } C1+C2=2^n*C
+C1=B3\cdot 8C+B2\cdot 4C+\notag\\+B1\cdot 2C+B0\cdot C\\
+C2=!B3\cdot 8C+!B2\cdot 4C+\notag\\+!B1\cdot 2C+!B0\cdot C+C\\
+V_{Out}=\frac{C1}{C1+C2}\cdot (V_{refp}-V_{refn})\\
+\text{mit } C1+C2=2^n\cdot C
 \end{gather}
 
 \end{minipage}
