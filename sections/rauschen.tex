@@ -33,11 +33,11 @@ E_{sh}=kT\sqrt{\frac{2B}{qI_{dc}}}\\
 E_{sh}= 0.4\mu V @ 1mA,1MHz
 \end{gather}
 \begin{tabular}{ll}
-k: &Bolzmann's constant\\&($1.38*10^{-23}$Joules/$\circ$K)\\
-q:& Electron charge ($1.6 \cdot 10^{-19}$Coulombs)\\
-T:&Temperatur in $\circ$K\\
-$I_{dc}$:& Average dc current in A\\
-B:&Bandwidth in Hz
+	k: & Bolzmann's constant\\&($1.38 \cdot 10^{-23}$Joules/$^\circ$K)\\
+	q: & Electron charge ($1.6 \cdot 10^{-19}$Coulombs)\\
+	T: & Temperatur in $^\circ$K\\
+	$I_{dc}$: & Average dc current in A\\
+	B: & Bandwidth in Hz
 \end{tabular}
 \end{minipage}
 \\
@@ -172,30 +172,51 @@ Rechnen mit Rauschen: Signale und Rauschen addieren sich nicht gleich:
   \item Nicht die Rausch-Spannungen sondern die Rausch-Leistungen müssen addiert
   werden!
 \end{itemize}
-\begin{minipage}{9cm}
-\includegraphics[scale=0.6]{pictures/widerstandrauschen}\\
-\includegraphics[scale=0.6]{pictures/seriewiderstand1}\\
-\includegraphics[scale=0.6]{pictures/seriewiderstand2}
+\subsubsection{Strom- und Spannungsrauschen}
+\begin{minipage}{0.4\textwidth}
+	\includegraphics[scale=0.6]{pictures/widerstandrauschen}\\
 \end{minipage}
-\begin{minipage}{9cm}
-\begin{gather}
-Snoise(R)=4kTR\\
-Enoise(R)=\sqrt{4kTR}\\
-\overline{\nu^2_{n}}=4kTRB\\
-\overline{i^2_{n}}=4kTGB\\
-\overline{\nu^2_{n}}=4kT(R1+R2)B=\overline{\nu^2_{n1}}+\overline{\nu^2_{n2}}\\
-\overline{i^2_{n}}=4kT(G1+G2)B=\overline{i^2_{n1}}+\overline{i^2_{n2}}\\
-V_{T,s}=V_{s}\frac{R_{3}}{R_{1}+R_{3}}\\
-\overline{\nu^2_{Tn}}=4kTR_{T}B=4kT(R_{2}+R_{1}\parallel R_{3})B
-\end{gather}
-\begin{tabular}{ll}
-B:&Bandbreite\\
-T:&Temperatur in Kelvin(293K)\\
-q:&$1.6 \cdot 10^{-19}$As\\
-k:&$1.38 \cdot 10^{-23}JK^{-1}$\\
-Snoise(R):&Spektrale Dichte des Widerstandsrauschens\\
-Enoise(R):&Spannungsdichte
-\end{tabular}
+\begin{minipage}{0.6\textwidth}
+	\begin{align}
+		Snoise(R)&=4kTR\\
+		Enoise(R)&=\sqrt{4kTR}\\
+		\overline{\nu^2_{n}}&=4kTRB\\
+		\overline{i^2_{n}}&=4kTGB\\
+		\nu_{rms} &= \sqrt{\overline{\nu^2_{n}}} = \sqrt{4kTRB}
+	\end{align}
+	\begin{tabular}{ll}
+		B:&Bandbreite\\
+		T:&Temperatur in Kelvin(293K)\\
+		k:&$1.38 \cdot 10^{-23}JK^{-1}$\\
+		Snoise(R):&Spektrale Dichte des Widerstandsrauschens\\
+		Enoise(R):&Spannungsdichte
+	\end{tabular}
+\end{minipage}
+
+\subsubsection{Widerstände in Serie}
+\begin{minipage}{0.4\textwidth}
+	\begin{center}
+		\input{tikz/rauschen_serie}
+	\end{center}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+	\begin{align}
+		\overline{\nu^2_{n}}&=4kT(R1+R2)B=\overline{\nu^2_{n1}}+\overline{\nu^2_{n2}}\\
+		\overline{i^2_{n}}&=4kT(G1+G2)B=\overline{i^2_{n1}}+\overline{i^2_{n2}}
+	\end{align}
+\end{minipage}
+
+\subsubsection{Spannungsteiler}
+\begin{minipage}{0.4\textwidth}
+	\includegraphics[scale=0.6]{pictures/seriewiderstand1}\\
+	\includegraphics[scale=0.6]{pictures/seriewiderstand2}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+	Quellenumwandlung machen und dann Rauschen über Ersatzwiderstand ($R_T$) bestimmen.
+	\begin{align}
+		V_{T,s}&=V_{s}\frac{R_{3}}{R_{1}+R_{3}}\\
+		\overline{\nu^2_{Tn}}&=4kTR_{T}B=4kT(R_{2}+R_{1}\parallel R_{3})B
+	\end{align}
 \end{minipage}
 
 \subsection{Rauschen von RC-Netzwerken}
