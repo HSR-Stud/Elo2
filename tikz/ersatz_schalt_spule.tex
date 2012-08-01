@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+
+  \node (dot) at (1,1) [draw,circle,inner sep=1,fill]{};
+  \node (dot2) at (2,1) [draw,circle,inner sep=1,fill]{};
+
+  \node (c) at (3.5,2) [rectangle]{};
+  \node (l) at (3,1)[rectangle]{};
+  \coordinate (lstart) at (2.6,1);
+  \coordinate (lend) at (3.4,1);
+  \node (rcu) at (4,1)[draw,rectangle]{$~~~$};
+  \node (dot3) at (5,1) [draw,circle,inner sep=1,fill]{};
+  \node (dot4) at (6,1) [draw,circle,inner sep=1,fill]{};
+
+  \draw (dot) -- (dot2) -- (lstart) (lend) --(rcu)  -- (dot3)  -- (dot4);
+  \draw (dot2) |- (c) -| (dot3);
+
+  \draw (c.south west) -- (c.north west);
+  \draw (c.south east) -- (c.north east);
+
+ \begin{scope}[out=90,in=90]
+   \foreach \x in {0,0.2,0.4,0.6}
+      \draw (lstart)++(\x,0) to ++(0.2,0);
+ \end{scope}
+
+ \draw (rcu.south) node[below]{\footnotesize $R_{Cu}$};
+ \draw (l.south) node[below]{\footnotesize L};
+ \draw (c.north) node[above]{\footnotesize $C_p$};
+
+\end{tikzpicture}
