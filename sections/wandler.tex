@@ -13,174 +13,89 @@
 \subsection{Kennlinien}
 \hartl{432}
 
-
-
-\begin{longtable}[c]{| p{6cm} | p{6cm} | p{6cm} | }
-\hline
-&
-\begin{minipage}{6cm}
-\textbf{ADC} 
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\textbf{DAC} 
-\end{minipage}
-\\
-\hline
-\begin{minipage}{6cm}
-\textbf{Kennlinien idealer Wandler}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\begin{center}
-    \includegraphics[width=6cm, height = 6cm]{pictures/idealerADC} 
-\end{center}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\begin{center}
-  \includegraphics[width=6cm]{pictures/idealerDAC}
-\end{center}
-\end{minipage}
- \\
-\hline
-\begin{minipage}{6cm}
-\textbf{Quantisierungsintervall}
-\end{minipage}
-&
-\begin{equation}
-q = \frac{A_{max}}{2^N} = \frac{V_{refp}-V_{refn}}{2^N}
-\end{equation}
-&
-\begin{equation}
-q = \frac{A_{Ref}}{2^N} = 1LSB
-\end{equation}
-\\
-\hline
-\begin{minipage}{6cm}
-\textbf{Quantisierungsfehler}
-\end{minipage}
-&
-\begin{equation}
--\frac{q}{2}\leq E_{q}<+\frac{q}{2}
-\end{equation}
-&
-\\
-\hline
-\begin{minipage}{6cm}
-\textbf{Ausgangsgrösse}
-\end{minipage}
-&
-&
-\begin{equation}
-A_{out} = D_{in}*q = D_{in}*(\frac{A_{Ref}}{2^N})
-\end{equation}\\
-\hline
-\end{longtable}
+\begin{tabular}{|p{0.31\textwidth}|c|c|}
+	\hline
+	& \textbf{ADC} & \textbf{DAC} 
+	\\ \hline
+	\textbf{Kennlinien idealer Wandler}
+	& \parbox[c][6cm]{0.31\textwidth}{\includegraphics[height=5.9cm]{./pictures/idealerADC.jpg}}
+	& \parbox[c]{0.31\textwidth}{\includegraphics[width=0.31\textwidth]{./pictures/idealerDAC.png}}
+	\\ \hline
+	\textbf{Quantisierungsintervall}
+	& $q = \frac{A_{max}}{2^N} = \frac{V_{refp}-V_{refn}}{2^N}$
+	& $q = \frac{A_{Ref}}{2^N} = 1LSB $
+	\\ \hline
+	\textbf{Quantisierungsfehler}
+	& $ -\frac{q}{2}\leq E_{q}<+\frac{q}{2} $
+	&
+	\\ \hline 
+	\textbf{Ausgangsgrösse}
+	&
+	& $A_{out} = D_{in}*q = D_{in}*(\frac{A_{Ref}}{2^N})$
+	\\ \hline
+\end{tabular}
 \newpage
 
-\subsection{Statische Fehler}
-\hartl{434}
-\begin{longtable}[c]{| p{6cm} | p{6cm} | p{6cm} | }
-\hline
-\begin{minipage}{6cm}
-\textbf{Offset-Fehler} \hartl{434}
-\textit{Bei unipolaren A/D- bzw. D/A-Umsetzern sollte die digitale Null der
+\subsection{Statische Fehler \hartl{434}}
+\subsubsection{Offset-Fehler \hartl{434}}
+Bei unipolaren A/D- bzw. D/A-Umsetzern sollte die digitale Null der
 analogen Null entsprechen. In der Realität wird jedoch meistens eine Abweichung
 aufgrund einer Verschiebung der Kennlinie auftreten. Diese wird als
-Offset-Fehler bzw. Nullpunktfehler bezeichnet.}
-\end{minipage}
-&
-\begin{minipage}{6cm}
+Offset-Fehler bzw. Nullpunktfehler bezeichnet.
+\begin{figure}[!ht]
 \begin{center}
-    \includegraphics[width=6cm, height = 5cm]{pictures/EoffADC} 
+  \subfloat[ADC]{\includegraphics[width=6cm]{./pictures/EoffADC.png}}
+  \subfloat[DAC]{\includegraphics[width=6cm, height = 5cm]{./pictures/EoffDAC.png}}
 \end{center}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\begin{center}
-  \includegraphics[width=6cm, height = 5cm]{pictures/EoffDAC}
-\end{center}
-\end{minipage}
- \\
-\hline
-\begin{minipage}{6cm}
-\textbf{Verstärkungsfehler} \hartl{436}
-\textit{Eine Abweichung in der Steigung der
+\end{figure}
+
+\subsubsection{Verstärkungsfehler\hartl{436}}
+Eine Abweichung in der Steigung der
 Kennlinie,gleichbedeutend mit der Verstärkung, verursacht beim realen Umsetzer eine Abweichung zur idealnen
 Kennlinie. Diese Abweichung wächst mit jedem Quantisierungsschitt und führt beim
-positiven Ende zum maximalen Fehler.}
-\end{minipage}
-&
-\begin{minipage}{6cm}
+positiven Ende zum maximalen Fehler.
+\begin{figure}[!ht]
 \begin{center}
-    \includegraphics[width=6cm, height = 5cm]{pictures/verstaerkungsfehlerADC} 
+  \subfloat[ADC]{\includegraphics[width=6cm]{./pictures/verstaerkungsfehlerADC.png}}
+  \subfloat[DAC]{\includegraphics[width=6cm]{./pictures/verstaerkungsfehlerDAC.png}}
 \end{center}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\begin{center}
-  \includegraphics[width=6cm]{pictures/verstaerkungsfehlerDAC}
-\end{center}
-\end{minipage}
- \\
-\hline
-\begin{minipage}{6cm}
-\textbf{Differentielle Nichtlinearität DNL} \hartl{437}
-\textit{Bei Offset- und Verstärkungsfehler wird von einer Verschiebung bzw.
+\end{figure}
+
+\subsubsection{Differentielle Nichtlinearität DNL\hartl{437}}
+Bei Offset- und Verstärkungsfehler wird von einer Verschiebung bzw.
 konstanten Veränderung der Stufengrösse ausgegangen.Sobald aber die einzelnen
 Stufen nicht mehr gleich gross sind, wird die Umsetzerkennlinie nicht linear.
 Die differentielle Nichtlinearität beschreibt nun die Abweichung der einzelnen
-Stufengrössen von der idealen.}
-\end{minipage}
-&
-\begin{minipage}{6cm}
+Stufengrössen von der idealen.
+\begin{figure}[!ht]
 \begin{center}
-    \includegraphics[width=6cm, height = 5cm]{pictures/DNL_ADC} 
+  \subfloat[ADC]{\includegraphics[width=6cm]{./pictures/DNL_ADC.png}}
+  \subfloat[DAC]{\includegraphics[width=6cm]{./pictures/DNL_DAC.png}}
 \end{center}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\begin{center}
-  \includegraphics[width=6cm]{pictures/DNL_DAC}
-\end{center}
-\end{minipage}
- \\
-\hline
-\begin{minipage}{6cm}
-\textbf{Integrale Nichtlinearität INL} \hartl{439}
-\textit{Bei der integralen Nichtlinearität wird die Abweichung der realen
+\end{figure}
+
+\subsubsection{Integrale Nichtlinearität INL \hartl{439}}
+Bei der integralen Nichtlinearität wird die Abweichung der realen
 Kennlinie zur idealen betrachtet. Damit wird der tatsächliche Fehler einer
 Umsetzung beshrieben. Deshalb ist die integrale Nichtlinearität die wesentliche
 Kengrösse zur Beschreibung der Linearität von A/D- bzw. D/A- Umsetzern. Wenn
 von der Linearität eines Umsetzers gesprochen wird, ist (fast) immer die
-integrale Nichtlinearität gemeint.}
-\end{minipage}
-&
-\begin{minipage}{6cm}
+integrale Nichtlinearität gemeint.
+\begin{figure}[!ht]
 \begin{center}
-    \includegraphics[width=6cm, height = 5cm]{pictures/INL_ADC} 
+  \subfloat[ADC]{\includegraphics[width=6cm]{./pictures/INL_ADC.png}}
+  \subfloat[DAC]{\includegraphics[width=6cm]{./pictures/INL_DAC.png}}
 \end{center}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\begin{center}
-  \includegraphics[width=6cm]{pictures/INL_DAC}
-\end{center}
-\end{minipage}
- \\
-\hline
+\end{figure}
 
-\end{longtable}
 
 \subsection{Eigenschaften und Fehler bei dynamischen Signalen}\hartl{442}
 \subsubsection{Aperturfehler} \hartl{442}
 Bei einer periodischen Abtastung eines Signals ist immer ein gewisse zeitliche
 Unsicherheit im Abtastzeitpunkt (Aperturunsicherheit) gegeben.
 
+
 \begin{longtable}[c]{ l  l l l }
-
-
 \begin{minipage}{4cm}
 
   \includegraphics[scale=0.45]{pictures/aperturfehlercos}
