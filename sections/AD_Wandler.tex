@@ -154,36 +154,45 @@ den gleichen Spannungsbereich, kann also zwei identische ADU benutzen.\\
 
 \subsection{Zählverfahren} \hartl{490}
 Ist für kontinuierliche Auswertungen des Eingangssignal
-\begin{longtable}{|l|l|l|}
-\hline
-\begin{minipage}{4cm}
-\textbf{Single Slope}
-\end{minipage}
-&
+%\begin{longtable}{|l|l|l|}
+%\hline
+%\begin{minipage}{4cm}
+%\textbf{Single Slope}
+%\end{minipage}
+\subsubsection{Single Slope}
+%&
+\begin{longtable}{ll}
+
 \begin{minipage}{6cm}
 \includegraphics[width=6cm, height = 4cm]{pictures/singleSlope1}\\
 \includegraphics[width=6cm, height = 3cm]{pictures/singleSlope2}
 \end{minipage}
 &
-\begin{minipage}{8cm}
+\begin{minipage}{12cm}
 \begin{equation}
 T_{int}=\frac{V_{Ref}*R*C}{V_{in}}
 \end{equation}
 \end{minipage}
-\\
-\hline
-\begin{minipage}{4cm}
-\textbf{Dual Slope} \hartl{492}
-\end{minipage}
+\\ 
+\end{longtable}
+
+%\\
+%
+%\begin{minipage}{4cm}
+%\textbf{Dual Slope} \hartl{492}
+\subsubsection{Dual Slope \hartl{492}}
+%\end{minipage}
+%&
+\begin{longtable}{ll}
+
+  \begin{minipage}{6cm}
+    \includegraphics[width=6cm, height = 4cm]{pictures/dualSlope11}\\
+    \includegraphics[width=6cm, height = 3cm]{pictures/dualSlope12}\\
+    \includegraphics[width=6cm, height = 5cm]{pictures/dualSlope2}
+  \end{minipage}
 &
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 4cm]{pictures/dualSlope11}\\
-\includegraphics[width=6cm, height = 3cm]{pictures/dualSlope12}\\
-\includegraphics[width=6cm, height = 5cm]{pictures/dualSlope2}
-\end{minipage}
-&
-\begin{minipage}{8cm}
-\begin{gather}
+  \begin{minipage}{12cm}
+   \begin{gather}
 V_{int}=
 \int^{V_{int}}_{0}\frac{-1}{R_{int}*C_{i}}(V_{in}-V_{GNDA})dt+\notag\\+V_{GNDA}\\
 V_{intmax}=\frac{-1}{R_{int}*C_{i}}(V_{in}-V_{GNDA})T_{int}+\notag\\+V_{GNDA}\\
@@ -202,16 +211,21 @@ $V_{off}$:&Offsetspannung\\
 \end{tabular}
 \end{minipage}
 \\
-\hline
-\begin{minipage}{4cm}
-\textbf{Spannungs- Frequenz- Umsetzer} \hartl{495}
-\end{minipage}
-&
+
+\end{longtable}
+
+%\begin{minipage}{4cm}
+%\textbf{Spannungs- Frequenz- Umsetzer} \hartl{495}
+%\end{minipage}
+\subsubsection{Spannungs- Frequenz- Umsetzer \hartl{495}}
+%&
+\begin{longtable}{ll}
+
 \begin{minipage}{6cm}
 \includegraphics[width=6cm, height = 4cm]{pictures/sfu}
 \end{minipage}
 &
-\begin{minipage}{8cm}
+\begin{minipage}{12cm}
 \begin{equation}
 V_{int}(t)=V_{in}+\frac{1}{RC}\int(V_{in}-V_{x})dt
 \end{equation}
@@ -219,17 +233,22 @@ Vorteil: Immer am Eingangssignal\\
 Nachteil: Kein echter ADC\\
 \end{minipage}
 \\
-\hline
-\begin{minipage}{4cm}
-\textbf{Ladungs-Ausgleichs-Integrator} \hartl{497}
-\end{minipage}
-&
+
+\end{longtable}
+
+%\begin{minipage}{4cm}
+%\textbf{Ladungs-Ausgleichs-Integrator} \hartl{497}
+%\end{minipage}
+\subsubsection{Ladungs-Ausgleichs-Integrator \hartl{497}}
+%&
+\begin{longtable}{ll}
+
 \begin{minipage}{6cm}
 \includegraphics[width=6cm, height = 4cm]{pictures/lsg1}\\
 \includegraphics[width=6cm, height = 3cm]{pictures/lsg2}
 \end{minipage}
 &
-\begin{minipage}{8cm}
+\begin{minipage}{12cm}
 \begin{itemize}
   \item Gleichgewichtsbedingung\\
   \begin{equation}
@@ -239,16 +258,21 @@ Nachteil: Kein echter ADC\\
 \end{itemize}
 \end{minipage}
 \\
-\hline
-\begin{minipage}{4cm}
-\textbf{Sigma-Delta Wandler} \hartl{500}
-\end{minipage}
-&
+
+\end{longtable}
+
+%\begin{minipage}{4cm}
+%\textbf{Sigma-Delta Wandler} \hartl{500}
+%\end{minipage}
+\subsubsection{Sigma-Delta Wandler \hartl{500}}
+%&
+\begin{longtable}{ll}
+
 \begin{minipage}{6cm}
 \includegraphics[width=6cm, height = 4cm]{pictures/deltaSigma1}
 \end{minipage}
 &
-\begin{minipage}{8cm}
+\begin{minipage}{12cm}
 \begin{itemize}
   \item Ersatzschaltung für Frequenzbereich
   \item Tiefpass für Signal
@@ -259,21 +283,27 @@ y=\frac{x-y}{s}+Q\Rightarrow y=x\frac{1}{1+s}+Q\frac{s}{1+s}
 \end{equation}
 \end{minipage}
 \\
-\hline
-\begin{minipage}{4cm}
-\textbf{Sigma-Delta Wandler 2. Ordnung} \hartl{502}
-\end{minipage}
-&
+
+\end{longtable}
+
+%\begin{minipage}{4cm}
+%\textbf{Sigma-Delta Wandler 2. Ordnung} \hartl{502}
+%\end{minipage}
+\subsubsection{Sigma-Delta Wandler 2. Ordnung \hartl{502}}
+%&
+\begin{longtable}{ll}
+
 \begin{minipage}{6cm}
 \includegraphics[width=6cm, height = 4cm]{pictures/deltaSigma2}
 \end{minipage}
 &
-\begin{minipage}{8cm}
+\begin{minipage}{12cm}
 
 \end{minipage}
 \\
-\hline
+
 \end{longtable}
+%\end{longtable}
 
 
 
