@@ -28,16 +28,16 @@
   \end{figure}
   \item Übertragungsfunktion 
   \begin{equation}
-  G1(s)=\frac{1}{1+s*C*R}
+  G1(s)=\frac{1}{1+s\cdot C\cdot R}
   \end{equation}
   \item Zeitkonstante T\\
   Bei $j\omega=\frac{1}{T}$sin Real-  und Imaginärteil gleich gross
   \begin{equation}
-  T:=\frac{1}{R*C}
+  T:=\frac{1}{R\cdot C}
   \end{equation}
   \item $\to$ Amplitude $\frac{1}{1.41}\to 3dB$
   \begin{equation}
-  f_{3dB}=\frac{1}{2\pi R*C}
+  f_{3dB}=\frac{1}{2\pi R\cdot C}
   \end{equation}
   \item Amplitudengang (3dB bei 1kHz)\\
   \begin{figure}[!htbs]
@@ -52,23 +52,24 @@
   \begin{figure}[htb]
   \includegraphics[scale=0.4]{pictures/tiefpass2ordnung}
   \end{figure}
-  \item Stromgleichungen für Knoten n2 und n3 (out)
+  \item Stromgleichungen für Knoten $n_2$ und $n_3$ (out)
   \begin{gather}
-  0=(u2-Uin)*\frac{1}{R1}+(U2-U3)*\frac{1}{R2}+U2*s*C1\\
-  0=(U3-U2)*\frac{1}{R2}+U3*s*C2\\
-  U2=R2*U3*(\frac{1}{R2}+s*C2)\\
-  \text{U2 in oberer Gleichung eingesetzt und aufgelöst für U*/Uin}\notag\\
-  G_{p}(s)=\frac{1}{C1*R1*s+C2*R1*s+C2*R2*s+C1*C2*R1*R2*s^2+1}
+  0=(U_2-U_{in})\cdot \frac{1}{R_1}+(U_2-U_3)\cdot \frac{1}{R_2}+U_2\cdot s\cdot C_1\\
+  0=(U_3-U_2)\cdot \frac{1}{R_2}+U_3\cdot s\cdot C_2\\
+  U_2=R_2\cdot U_3\cdot (\frac{1}{R_2}+s\cdot C_2)\\
+  \text{$U_2$ in oberer Gleichung eingesetzt und aufgelöst für
+  $U_{out} /U_{in}$}\notag\\
+  G_{p}(s)=\frac{1}{C_1\cdot R_1\cdot s+C_2\cdot R_1\cdot s+C_2\cdot R_2\cdot s+C_1\cdot C_2\cdot R_1\cdot R_2\cdot s^2+1}
   \end{gather}
   Vergleich: Allgemeine Beschreibung von Tiefpass 2. Ordnung mit
-  Verstärkung A0, Kreisfrequenz $\omega_{0}$ und Güte Q
+  Verstärkung $A_0$, Kreisfrequenz $\omega_{0}$ und Güte Q
   \begin{gather}
   T_{lp}(s)=\frac{A0}{\frac{s^2}{\omega_{0}^2}+\frac{s}{Q\omega_{0}}+1}\\
   A0=1\notag\\
-  \omega_{0}=\frac{1}{\sqrt{C1*C2*R1*R2}}\\
+  \omega_{0}=\frac{1}{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}\\
   \text{Güte berechnet mit Termen, die s enthalten}\notag\\
-  \frac{s}{Q*\omega_{0}}=C1*R1*s+C2*R1*s+C2*R2*s\\
-  Q:=\frac{\sqrt{C1*C2*R1*R2}}{R1*(C1+C2)+C2R2}
+  \frac{s}{Q\cdot \omega_{0}}=C_1\cdot R_1\cdot s+C_2\cdot R_1\cdot s+C_2\cdot R_2\cdot s\\
+  Q:=\frac{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}{R_1\cdot (C_1+C_2)+C_2R_2}
   \end{gather}
   Passive RC-Filter können maximal Güte von 0.5 haben (2 identische reelle
   Pole) Filter höherer Güte benötigen Spulen oder Verstärker
@@ -80,12 +81,14 @@
  \includegraphics[scale=0.5]{pictures/sallenkey}
 \end{figure}
 \begin{gather}
-0=(U2-Uin)*\frac{1}{R1}+(U2-U3)*\frac{1}{R2}+(U2-Uout)*s*C1\\
-0=(U3-U2)*\frac{1}{R2}+U3*s*C2\\
-\text{Opamp: }Uout=G0*U3\\
+0=(U_2-U_{in})\cdot \frac{1}{R_1}+(U_2-U_3)\cdot \frac{1}{R_2}+(U_2-U_{out})\cdot s\cdot C_1\\
+0=(U_3-U_2)\cdot \frac{1}{R_2}+U_3\cdot s\cdot C_2\\
+\text{Opamp: }U_{out}=G_0\cdot U_3\\
 G0=\frac{R_{A}+R_{B}}{R_{B}}\\
-G_{SK}(s):=\frac{G0}{C1*C2*R1*R2*s^s+s*[C2*(R1+R2)+C1*R1*(1-G0)]}+1\\
-\text{Güte: }Q_{SK}(G0)=\frac{\sqrt{C1*C2*R1*R2}}{C2*(R1+R2)+C1*R1*(1-G0)}
+G_{SK}(s):=\frac{G0}{C_1\cdot C_2\cdot R_1\cdot R_2\cdot s^s+s\cdot [C_2\cdot (R_1+R_2)+C_1\cdot R_1\cdot (1-G_0)]+1}\\
+\text{Güte:
+}Q_{SK}(G_0)=\frac{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}{C_2\cdot (R_1+R_2)+C_1\cdot R_1\cdot (1-G_0)}\\
+\text{Grenzfrequenz: }\omega_0=\frac{1}{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}
 \end{gather}
 \subsubsection{Sallen Key-Filter bei hohen Frequenzen}
 \begin{figure}[htb]
@@ -94,11 +97,11 @@ G_{SK}(s):=\frac{G0}{C1*C2*R1*R2*s^s+s*[C2*(R1+R2)+C1*R1*(1-G0)]}+1\\
 \end{figure}
 \begin{itemize}
   \item Wenn der Opamp nicht mehr verstärkt
-  \item C1, C2 wirken wie Kurzschlüsse
+  \item $C_1$, $C_2$ wirken wie Kurzschlüsse
   \begin{equation}
-  \frac{V_{Out}}{V_{in}}=\frac{r_{OL}\parallel R2\parallel
-  (R_{A}+R_{B})}{R1+r_{OL}\parallel R2\parallel (R_{A}+R_{B})}\approx
-  \frac{r_{OL}}{R1+r_{OL}}
+  \frac{V_{Out}}{V_{in}}=\frac{r_{OL}\parallel R_2\parallel
+  (R_{A}+R_{B})}{R_1+r_{OL}\parallel R_2\parallel (R_{A}+R_{B})}\approx
+  \frac{r_{OL}}{R_1+r_{OL}}
   \end{equation}
   \item Folge: Sallen Key-Filter sind nicht geeignet für Systeme mit hohen
   Frequenzanteilen, z.B. PEM-DAC
@@ -110,14 +113,15 @@ G_{SK}(s):=\frac{G0}{C1*C2*R1*R2*s^s+s*[C2*(R1+R2)+C1*R1*(1-G0)]}+1\\
  \includegraphics[scale=0.5]{pictures/mulipleFeedback}
 \end{figure}
 \begin{gather}
-0=(U2-Uin)*\frac{1}{R1}+(U2-Uout)*\frac{1}{R2}+(U2-U3)*\frac{1}{R3}+U2*s*C1\\
-0=(U3-U2)*\frac{1}{R3}+(U3-Uout)*s*C2\\
-\text{Opamp sorg für }U3=0\notag\\
-G_{mf}(s)=\frac{G0}{1+C2(R2+R3+R3*\frac{R2}{R1})*s+C1*C2*R2*R3*s^s}\\
-Q_{mf}=\frac{\sqrt{C1*C2*R2*R3}}{C2*(R2+R3+R3*\frac{R2}{R1})}
+0=(U_2-U_{in})\cdot \frac{1}{R_1}+(U_2-U_{out})\cdot \frac{1}{R_2}+(U_2-U_3)\cdot \frac{1}{R_3}+U_2\cdot s\cdot C_1\\
+0=(U_3-U_2)\cdot \frac{1}{R_3}+(U_3-U_{out})\cdot s\cdot C_2\\
+\text{Opamp sorg für }U_3=0\notag\\
+G_{mf}(s)=\frac{G0}{1+C_2(R_2+R_3+R_3\cdot \frac{R_2}{R_1})\cdot s+C_1\cdot C_2\cdot R_2\cdot R_3\cdot s^s}\\
+Q_{mf}=\frac{\sqrt{C_1\cdot C_2\cdot R_2\cdot R_3}}{C_2\cdot (R_2+R_3+R_3\cdot \frac{R_2}{R_1})}
 \end{gather}
-Die Güte wird v.a. eingestellt mit C2 und R1, grosse Güte für kleines C2 und
-grosses R1. C2 beeinflusst auch das Frequenzverhalten, R1 die Verstärkung.
+Die Güte wird v.a. eingestellt mit $C_2$ und $R_1$, grosse Güte für kleines
+$C_2$ und grosses $R_1$. $C_2$ beeinflusst auch das Frequenzverhalten, $R_1$ die
+Verstärkung.
 \newpage
 \subsection{Zustandsvariablen-Filter}
 \begin{figure}[!h]
@@ -125,19 +129,19 @@ grosses R1. C2 beeinflusst auch das Frequenzverhalten, R1 die Verstärkung.
  \includegraphics[scale=0.5]{pictures/zustandsvariable}
 \end{figure}
 \begin{gather}
-V{out}=-\frac{1}{s*Ci2*Ri1}*V_{opo2}\\
-V_{opo2}=-\frac{R2}{R1}*V_{opo1}\\
-V_{opo1}=\frac{-1}{s*Ci1}*(\frac{V_{in}}{R_{in}}+\frac{V_{out}}{Rfb}+s*Cfb*V_{out})\\
-G_{ss}(s)=\frac{-\frac{Rfb}{rin}}{Ci1*Ci2*Ri1*Rfb*\frac{R1}{R2}*s^2+Cfb*Rfb*s+1}\\
-\omega_{0}=\frac{1}{\sqrt{Ci1*Ci2*Ri1*Rfb*\frac{R1}{R2}}}\\
-A0=-\frac{Rfb}{Rin}\\
-Q=\frac{\sqrt{Ci1*Ci2*Ri1*Rfb*\frac{R1}{R2}}}{Cfb*Rfb}
+V{out}=-\frac{1}{s\cdot C_{i2}\cdot R_{i1}}\cdot V_{opo2}\\
+V_{opo2}=-\frac{R_2}{R_1}\cdot V_{opo1}\\
+V_{opo1}=\frac{-1}{s\cdot C_{i1}}\cdot (\frac{V_{in}}{R_{in}}+\frac{V_{out}}{R_{fb}}+s\cdot C_{fb}\cdot V_{out})\\
+G_{ss}(s)=\frac{-\frac{R_{fb}}{rin}}{C_{i1}\cdot C_{i2}\cdot R_{i1}\cdot R_{fb}\cdot \frac{R_1}{R_2}\cdot s^2+C_{fb}\cdot R_{fb}\cdot s+1}\\
+\omega_{0}=\frac{1}{\sqrt{C_{i1}\cdot C_{i2}\cdot R_{i1}\cdot R_{fb}\cdot \frac{R_1}{R_2}}}\\
+A0=-\frac{R_{fb}}{Rin}\\
+Q=\frac{\sqrt{C_{i1}\cdot C_{i2}\cdot R_{i1}\cdot R_{fb}\cdot \frac{R_1}{R_2}}}{C_{fb}\cdot R_{fb}}
 \end{gather}
 D.h. mit dieser Topologie sind alle 3 Parameter frei wählbar!
 \begin{enumerate}
-  \item $\omega_{0}$ mit Ci1, Ci2, Rfb, Ri2, R1, R2
-  \item Q mit Cfb
-  \item A0 mit Rin
+  \item $\omega_{0}$ mit $C_{i1}$, $C_{i2}$, $R_{fb}$, $R_{i2}$, $R_1$, $R_2$
+  \item Q mit $C_{fb}$
+  \item $A_0$ mit $R_{in}$
 \end{enumerate}
 
 \subsection{Zusammenfassung}
