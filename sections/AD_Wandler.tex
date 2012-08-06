@@ -152,7 +152,7 @@ den gleichen Spannungsbereich, kann also zwei identische ADU benutzen.\\
 
 
 
-\subsection{Zählverfahren} \hartl{490}
+\subsection{Zählverfahren \hartl{490}} 
 Ist für kontinuierliche Auswertungen des Eingangssignal
 %\begin{longtable}{|l|l|l|}
 %\hline
@@ -160,152 +160,113 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
 %\textbf{Single Slope}
 %\end{minipage}
 \subsubsection{Single Slope}
-%&
-\begin{longtable}{ll}
 
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 4cm]{pictures/singleSlope1}\\
-\includegraphics[width=6cm, height = 3cm]{pictures/singleSlope2}
-\end{minipage}
+\begin{tabular}{p{0.31\textwidth}|l}
+
+\parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height=4cm]{pictures/singleSlope1}}
 &
-\begin{minipage}{12cm}
-\begin{equation}
-T_{int}=\frac{V_{Ref}*R*C}{V_{in}}
-\end{equation}
-\end{minipage}
+
+\multirow{2}{10cm}{$T_{int}=\frac{V_{Ref}*R*C}{V_{in}}$}\\
+\parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height=3cm]{pictures/singleSlope2}}
+&
 \\ 
-\end{longtable}
-
-%\\
-%
-%\begin{minipage}{4cm}
-%\textbf{Dual Slope} \hartl{492}
-\subsubsection{Dual Slope \hartl{492}}
-%\end{minipage}
-%&
-\begin{longtable}{ll}
-
-  \begin{minipage}{6cm}
-    \includegraphics[width=6cm, height = 4cm]{pictures/dualSlope11}\\
-    \includegraphics[width=6cm, height = 3cm]{pictures/dualSlope12}\\
-    \includegraphics[width=6cm, height = 5cm]{pictures/dualSlope2}
-  \end{minipage}
-&
-  \begin{minipage}{12cm}
-   \begin{gather}
-V_{int}=
-\int^{V_{int}}_{0}\frac{-1}{R_{int}*C_{i}}(V_{in}-V_{GNDA})dt+\notag\\+V_{GNDA}\\
-V_{intmax}=\frac{-1}{R_{int}*C_{i}}(V_{in}-V_{GNDA})T_{int}+\notag\\+V_{GNDA}\\
-V_{int}(t)=V_{intmax}-\frac{-1}{R_{int}*C_{i}}*\notag\\ *(V_{in}-V_{GNDA})*t\\
-t_{abint}=\frac{-(V_{in}-V_{GNDA})*T_{int}}{V_{refn}-V_{GNDA}}\\
-\int^{NT}_{0}V_{in}dt=NTV_{in}\\
-NTV_{in}-\int^{nT}_{0}V_{Ref}dt=\notag\\=NTV_{in}-nTV_{Ref}=0\\
-n=\frac{V_{in}}{V_{Ref}}N\\
-n=\frac{RCV_{off,C}-TV_{off,OP}}{T(V_{Ref}+V_{off,OP})}+\notag\\+N\frac{V_{in}}{V_{Ref}+V_{off,OP}}
-\end{gather}
-\begin{tabular}{ll}\\
-N:&Taktzyklen\\
-T:&Periodendauer\\
-n:&Zählerstand\\
-$V_{off}$:&Offsetspannung\\
 \end{tabular}
-\end{minipage}
-\\
 
-\end{longtable}
 
-%\begin{minipage}{4cm}
-%\textbf{Spannungs- Frequenz- Umsetzer} \hartl{495}
-%\end{minipage}
+\subsubsection{Dual Slope \hartl{492}}
+\begin{tabular}{p{0.31\textwidth}|l}
+
+ \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
+    4cm]{pictures/dualSlope11}}
+ &
+ 
+ \multirow{3}{12cm}{
+    \begin{gather}
+      V_{int}=
+      \int^{V_{int}}_{0}\frac{-1}{R_{int}*C_{i}}(V_{in}-V_{GNDA})dt+V_{GNDA}\\
+      V_{intmax}=\frac{-1}{R_{int}*C_{i}}(V_{in}-V_{GNDA})T_{int}+V_{GNDA}\\
+      V_{int}(t)=V_{intmax}-\frac{-1}{R_{int}*C_{i}}*(V_{in}-V_{GNDA})*t\\
+      t_{abint}=\frac{-(V_{in}-V_{GNDA})*T_{int}}{V_{refn}-V_{GNDA}}\\
+      \int^{NT}_{0}V_{in}dt=NTV_{in}\\
+      NTV_{in}-\int^{nT}_{0}V_{Ref}dt=NTV_{in}-nTV_{Ref}=0\\
+      n=\frac{V_{in}}{V_{Ref}}N\\
+      n=\frac{RCV_{off,C}-TV_{off,OP}}{T(V_{Ref}+V_{off,OP})}+N\frac{V_{in}}{V_{Ref}+V_{off,OP}}
+    \end{gather}\\
+    \begin{tabular}{ll}\\
+      N:&Taktzyklen\\
+      T:&Periodendauer\\
+      n:&Zählerstand\\
+      $V_{off}$:&Offsetspannung\\
+    \end{tabular}
+ } \\
+   
+ \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
+    3cm]{pictures/dualSlope12}}
+ &  \\
+ \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
+    5cm]{pictures/dualSlope2}}
+ &  \\
+\end{tabular}
+
+
 \subsubsection{Spannungs- Frequenz- Umsetzer \hartl{495}}
-%&
-\begin{longtable}{ll}
+\begin{tabular}{p{0.31\textwidth}|l}
+  \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
+    4cm]{pictures/sfu}}
+  &
+  \multirow{0}{12cm}{
+    \begin{equation}
+      V_{int}(t)=V_{in}+\frac{1}{RC}\int(V_{in}-V_{x})dt
+    \end{equation}\\
+    Vorteil: Immer am Eingangssignal\\
+    Nachteil: Kein echter ADC}\\
+\end{tabular}
 
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 4cm]{pictures/sfu}
-\end{minipage}
-&
-\begin{minipage}{12cm}
-\begin{equation}
-V_{int}(t)=V_{in}+\frac{1}{RC}\int(V_{in}-V_{x})dt
-\end{equation}
-Vorteil: Immer am Eingangssignal\\
-Nachteil: Kein echter ADC\\
-\end{minipage}
-\\
 
-\end{longtable}
-
-%\begin{minipage}{4cm}
-%\textbf{Ladungs-Ausgleichs-Integrator} \hartl{497}
-%\end{minipage}
 \subsubsection{Ladungs-Ausgleichs-Integrator \hartl{497}}
-%&
-\begin{longtable}{ll}
+\begin{tabular}{p{0.31\textwidth}|l}
+  \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
+  4cm]{pictures/lsg1}}
+  &
+  \multirow{1}{12cm}{
+    \begin{itemize}
+      \item Gleichgewichtsbedingung\\
+        \begin{equation}
+          V_{in}-\frac{n}{N}V_{Ref}=0\Rightarrow n=\frac{V_{in}}{V_{Ref}}N
+        \end{equation}
+      \item Flipflop statt Monoflop
+    \end{itemize}}\\
+  \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
+  3cm]{pictures/lsg2}}
+  & \\
+\end{tabular}
 
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 4cm]{pictures/lsg1}\\
-\includegraphics[width=6cm, height = 3cm]{pictures/lsg2}
-\end{minipage}
-&
-\begin{minipage}{12cm}
-\begin{itemize}
-  \item Gleichgewichtsbedingung\\
-  \begin{equation}
-  V_{in}-\frac{n}{N}V_{Ref}=0\Rightarrow n=\frac{V_{in}}{V_{Ref}}N
-  \end{equation}
-\item Flipflop statt Monoflop
-\end{itemize}
-\end{minipage}
-\\
 
-\end{longtable}
-
-%\begin{minipage}{4cm}
-%\textbf{Sigma-Delta Wandler} \hartl{500}
-%\end{minipage}
 \subsubsection{Sigma-Delta Wandler \hartl{500}}
-%&
-\begin{longtable}{ll}
+\begin{tabular}{p{0.31\textwidth}|l}
+  \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
+  4cm]{pictures/deltaSigma1}}
+  &
+  \multirow{0}{12cm}{
+    \begin{itemize}
+      \item Ersatzschaltung für Frequenzbereich
+      \item Tiefpass für Signal
+      \item Hochpass für Q
+    \end{itemize}
+    \begin{equation}
+      y=\frac{x-y}{s}+Q\Rightarrow y=x\frac{1}{1+s}+Q\frac{s}{1+s}
+    \end{equation}
+  }\\
+\end{tabular}
 
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 4cm]{pictures/deltaSigma1}
-\end{minipage}
-&
-\begin{minipage}{12cm}
-\begin{itemize}
-  \item Ersatzschaltung für Frequenzbereich
-  \item Tiefpass für Signal
-  \item Hochpass für Q
-\end{itemize}
-\begin{equation}
-y=\frac{x-y}{s}+Q\Rightarrow y=x\frac{1}{1+s}+Q\frac{s}{1+s}
-\end{equation}
-\end{minipage}
-\\
 
-\end{longtable}
-
-%\begin{minipage}{4cm}
-%\textbf{Sigma-Delta Wandler 2. Ordnung} \hartl{502}
-%\end{minipage}
 \subsubsection{Sigma-Delta Wandler 2. Ordnung \hartl{502}}
-%&
-\begin{longtable}{ll}
+\begin{tabular}{p{0.31\textwidth}|l}
+  \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
+  4cm]{pictures/deltaSigma2}}
+  & \\
 
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 4cm]{pictures/deltaSigma2}
-\end{minipage}
-&
-\begin{minipage}{12cm}
-
-\end{minipage}
-\\
-
-\end{longtable}
-%\end{longtable}
-
-
+\end{tabular}
 
 
 \subsection{Kennwerte von ADC's}
