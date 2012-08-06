@@ -1,10 +1,4 @@
 \section{Filter}\hartl{509}
-\subsection{Inhaltsverzeichnis}
-\begin{itemize}
-  \item Aufgaben von Filtern
-  \item Implementation von passiven Filtern
-  \item Implementation von aktiven Filtern
-\end{itemize}
 
 \subsection{Aufgaben von Filtern, Verstärkern}
 \begin{itemize}
@@ -17,7 +11,8 @@
   \end{itemize}
   \item Signalanpassung an ADC-Eingangs-Spannungsbereich
 \end{itemize}
-\newpage
+
+
 \subsection{Tiefpass-Filter}\hartl{514}
 
 \subsubsection{1. Ordnung}
@@ -45,7 +40,8 @@
   \end{figure}
   
 \end{itemize}
-\newpage
+
+
 \subsubsection{2. Ordnung}
 \begin{itemize}
   \item Kaskadierte RC-Tiefpässe\\
@@ -74,7 +70,7 @@
   Passive RC-Filter können maximal Güte von 0.5 haben (2 identische reelle
   Pole) Filter höherer Güte benötigen Spulen oder Verstärker
 \end{itemize}
-\newpage
+
 \subsection{Sallen Key (Einfachmitkopplung)}\hartl{517}
 \begin{figure}[htb]
 \centering
@@ -107,7 +103,8 @@ G_{SK}(s):=\frac{G0}{C_1\cdot C_2\cdot R_1\cdot R_2\cdot s^2+s\cdot [C_2\cdot
   \item Folge: Sallen Key-Filter sind nicht geeignet für Systeme mit hohen
   Frequenzanteilen, z.B. PEM-DAC
 \end{itemize}
-\newpage
+
+
 \subsection{Multiple Feedback}\hartl{522}
 \begin{figure}[!h]
 \centering
@@ -123,7 +120,7 @@ Q_{mf}=\frac{\sqrt{C_1\cdot C_2\cdot R_2\cdot R_3}}{C_2\cdot (R_2+R_3+R_3\cdot \
 Die Güte wird v.a. eingestellt mit $C_2$ und $R_1$, grosse Güte für kleines
 $C_2$ und grosses $R_1$. $C_2$ beeinflusst auch das Frequenzverhalten, $R_1$ die
 Verstärkung.
-\newpage
+
 \subsection{Zustandsvariablen-Filter}
 \begin{figure}[!h]
 \centering
