@@ -4,11 +4,11 @@
 
 \subsubsection{Definition}
 \begin{multicols}{2}
-\includegraphics[width=0.4\textwidth]{pictures/widerstand.png}
+\includegraphics[width=0.3\textwidth]{pictures/widerstand.png}
 
 \columnbreak
 
-$R=\rho\frac{l}{w*d}$
+$R=\rho\frac{l}{w*d}$ \\
 $\rho$: Spezifischer Widerstand
 \end{multicols}
 
@@ -93,103 +93,43 @@ R_{T}=R_{R}*e^{B*(\frac{1}{T}-\frac{1}{T_{R}})}
 
 
 \subsection{Kondensatoren}
-\begin{figure}[h]
-\includegraphics[scale=0.4]{pictures/kondensatortypen}
-\includegraphics[scale=0.4]{pictures/spannungkondensator}
-\end{figure}
-
 \subsubsection{Kapazitätswert}
-\begin{minipage}{9cm}
-\includegraphics[scale=0.8]{pictures/kapazitaetswert}
-\end{minipage}
-\begin{minipage}{9cm}
-\begin{equation}
-C=\varepsilon_{r}*\varepsilon_{0}*\frac{W*L}{d}=\varepsilon_{r}*\varepsilon_{0}*\frac{A}{d}
-\end{equation}
-mit $\varepsilon_{0}= 8.85 pF/m$
-\end{minipage}
+\begin{multicols}{2}
+	\begin{center}
+		\includegraphics[width=0.15\textwidth]{pictures/kapazitaetswert}
+	\end{center}
+	\columnbreak
 
-\subsubsection{Anwendungsgebiete}
-\begin{longtable}{|l|l|}
-\hline
-\begin{minipage}{4cm}
-\textbf{Keramik}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\begin{itemize}
-  \item Konkurrenzlos bei hohen Frequenzen
-  \item Werte bis 100uF
-  \item Wichtigste Anwendung: Abblockkondensatoren bei IC-Speisung
-\end{itemize}
-\end{minipage}
-\\
-\hline
-\begin{minipage}{4cm}
-\textbf{Tantal, EL-Elko}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\begin{itemize}
-  \item Polarisiert
-  \item Einsatz v.a. bei Netzteilen
-  \item Stützen von Speisung und Referenzspannungen
-\end{itemize}
-\end{minipage}
-\\
-\hline
-\begin{minipage}{4cm}
-\textbf{Film}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\begin{itemize}
-  \item Filteranwendungen
-\end{itemize}
-\end{minipage}
-\\
-\hline
-\end{longtable}
+	\begin{equation*}
+		C=\varepsilon_{r}*\varepsilon_{0}*\frac{W*L}{d}=\varepsilon_{r}*\varepsilon_{0}*\frac{A}{d}
+	\end{equation*}
+	mit $\varepsilon_{0}= 8.85 pF/m$
+\end{multicols}
+
+
 \subsubsection{Einschaltvorgang}
 \input{idiotenseite/elektrotechnik/subsections/einschalt_kondensator}
+
 \subsubsection{Ersatzschaltbild}
 \input{tikz/ersatz_schalt_kondensator}
 
 \subsection{Induktivitäten/Spulen}
-\begin{minipage}{9cm}
-\begin{itemize}
-  \item Eine Änderung des elektrischen Stromes erzeugt ein Magnetfeld, das der
-  Stromänderung entgegenwirkt
-  \item Masseinheit: Henry=AS/Vm
-  \begin{gather}
-  u_{i}=-N*\frac{d\Phi}{dt}\\
-  L=\frac{N*\Phi}{I}
-  \end{gather}
-\end{itemize}
-\end{minipage}
-\begin{minipage}{9cm}
-\includegraphics[scale=0.4]{pictures/induktivitaet}
-\end{minipage}
-\\
-\begin{minipage}{9cm}
-Ringspule\\
-\begin{equation}
-L=N^2*\frac{\mu_{0}\mu_{r}A}{2\pi r}
-\end{equation}
-\end{minipage}
-\begin{minipage}{9cm}
-\includegraphics[scale=0.4]{pictures/ringspule}
-\end{minipage}
-\\
-\begin{minipage}{9cm}
-Zylinderspule\\
-\begin{equation}
-L=N^2*\frac{\mu_{0}\mu_{r}A}{l}
-\end{equation}
-\end{minipage}
-\begin{minipage}{9cm}
-\includegraphics[scale=0.4]{pictures/zylinderspule}
-\end{minipage}
+\begin{multicols}{2}
+	\includegraphics[width=0.4\textwidth]{pictures/induktivitaet}
+	\columnbreak
+	\begin{itemize}
+  		\item Eine Änderung des elektrischen Stromes erzeugt ein Magnetfeld, das der
+  			Stromänderung entgegenwirkt
+  		\item Masseinheit Henry : $H=\frac{AS}{Vm}$
+	\end{itemize}
+	\begin{align*}
+  		u_{i} &=-N\cdot\frac{d\Phi}{dt}\\
+  		L &=\frac{N\cdot\Phi}{I} \\
+  		L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{2\pi r} & \text{Ringspule} \\
+  		L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{l} & \text{Zylinderspule}
+	\end{align*}
+\end{multicols}
+
 
 \subsubsection{Einsatzgebiete und Schwerpunkte}
 \begin{longtable}{|p{3.5cm}|l|l|l|l|l|}
@@ -210,21 +150,6 @@ resistance\\
 \textbf{Signal processing}&*&low&high&-&medium\\
 \hline
 \end{longtable}
-
-\subsubsection{Zusammenfassung}
-\begin{itemize}
-  \item Spulen sind relativ teuer
-  \begin{itemize}
-    \item In aktiven Filtern of durch aktive RC-Schaltungen ersetzt
-  \end{itemize}
-  \item Haupt-Einfastzgebiete
-  \begin{itemize}
-    \item DC-DC-Wandler
-    \item Transformer: Galvanische Trennung
-    \item Hochfrequenzanwendungen
-    \item Entstörung (EMV, Datenübertragung)
-  \end{itemize}
-\end{itemize}
 
 \subsubsection{Einschaltvorgang}
 \input{idiotenseite/elektrotechnik/subsections/einschalt_spule}
