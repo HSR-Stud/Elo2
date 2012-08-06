@@ -14,3 +14,7 @@ Nach unterricht.hsr.ch:
  * Praktischer Einsatz von SPICE
 
 Achtung, nach Gido Keel sieht das ganz anders aus!
+
+## Braches in diesem Repo:
+ * **master**: Lange Version der Zusammenfassung
+ * **short**: Kurze Version der Zusammenfassung, für die Prüfung
