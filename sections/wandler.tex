@@ -21,7 +21,7 @@
 	\\ \hline 
 	\textbf{Ausgangsgrösse}
 	&
-	& $A_{out} = D_{in}*q = D_{in}*(\frac{A_{Ref}}{2^N})$
+	& $A_{out} = D_{in}\cdot q = D_{in}\cdot(\frac{A_{Ref}}{2^N})$
 	\\ \hline
 \end{tabular}
 
@@ -99,18 +99,18 @@ auftretende Quantisierungsfehler ($\frac{1}{2}LSB$) so verschlechtert sich die A
 \end{minipage}
 &
 \begin{minipage}{5cm}
-\begin{gather}
+\begin{gather*}
 x(t)=S\sin(2\pi ft)\\
 \dot{x}(t)=2\pi fS\cos(2\pi t)\\
 max\mid\dot{x}(t)\mid= 2\pi fS \\
 E_{A}=2\pi fST_{A}\\
 2S=A_{Ref}\\
 E_{A}<E_{q}\\
-E_{q}=\frac{q}{2}=\frac{A_{Ref}}{2*2^N}\\
-E_{A}<\frac{A_{Ref}}{2*2^N}\\
-2\pi fST_{A} <\frac{2S}{2*2^N}\\
+E_{q}=\frac{q}{2}=\frac{A_{Ref}}{2\cdot2^N}\\
+E_{A}<\frac{A_{Ref}}{2\cdot2^N}\\
+2\pi fST_{A} <\frac{2S}{2\cdot2^N}\\
 T_{A}\frac{1}{\pi f2^{N+1}}
-\end{gather}
+\end{gather*}
 
 
 
@@ -162,9 +162,9 @@ f_{S}>2f_{max}
 \begin{gather}
 P_{Sig}=S^2_{Eff} =
 \frac{S^2}{2}=\frac{(\frac{A_{Ref}}{2})^2}{2}=\frac{A^2_{Ref}}{8}\\
-P^2_{N}=\frac{q^2}{12}=\frac{(\frac{A_{Ref}}{2^N})}{12}=\frac{A^2_{Ref}}{12*2^{2N}}\\
-SNR=\frac{P^2_{S}}{P^2_{N}}=\frac{\frac{A^2_{Ref}}{8}}{\frac{A^2_{Ref}}{12*2^{2N}}}=\frac{12*2^{2N}}{8}=3*2^{2N-1}\\
-SNR_{dB}=10\log(3*2^{2N-1})=6.02N+1.76dB\\
+P^2_{N}=\frac{q^2}{12}=\frac{(\frac{A_{Ref}}{2^N})}{12}=\frac{A^2_{Ref}}{12\cdot2^{2N}}\\
+SNR=\frac{P^2_{S}}{P^2_{N}}=\frac{\frac{A^2_{Ref}}{8}}{\frac{A^2_{Ref}}{12\cdot2^{2N}}}=\frac{12\cdot2^{2N}}{8}=3\cdot2^{2N-1}\\
+SNR_{dB}=10\log(3\cdot2^{2N-1})=6.02N+1.76dB\\
 ENOB=\frac{SNR_{dB}-1.76}{6.02}
 \end{gather}
 \end{minipage}
