@@ -161,14 +161,12 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
 %\end{minipage}
 \subsubsection{Single Slope}
 
-\begin{tabular}{p{0.31\textwidth}|l}
-
+\begin{tabular}{l|p{0.31\textwidth}p{0.31\textwidth}}
+$T_{int}=\frac{V_{Ref}*R*C}{V_{in}}$
+&
 \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height=4cm]{pictures/singleSlope1}}
 &
-
-\multirow{2}{10cm}{$T_{int}=\frac{V_{Ref}*R*C}{V_{in}}$}\\
 \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height=3cm]{pictures/singleSlope2}}
-&
 \\ 
 \end{tabular}
 
@@ -182,15 +180,19 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
  
  \multirow{3}{12cm}{
     \begin{gather}
-      V_{int}=
-      \int^{V_{int}}_{0}\frac{-1}{R_{int}*C_{i}}(V_{in}-V_{GNDA})dt+V_{GNDA}\\
-      V_{intmax}=\frac{-1}{R_{int}*C_{i}}(V_{in}-V_{GNDA})T_{int}+V_{GNDA}\\
-      V_{int}(t)=V_{intmax}-\frac{-1}{R_{int}*C_{i}}*(V_{in}-V_{GNDA})*t\\
-      t_{abint}=\frac{-(V_{in}-V_{GNDA})*T_{int}}{V_{refn}-V_{GNDA}}\\
+      V_{int}(t)=
+      \int\limits_0^{t}\frac{-1}{R_{int}
+      \cdot C_{i}}(V_{in}-V_{GNDA})dt+V_{GNDA} \quad \text{für }0<t<T_{int}\\
+      V_{intmax}(V_{in})=\frac{-1}{R_{int}
+      \cdot C_{i}}(V_{in}-V_{GNDA})T_{int}+V_{GNDA}\\
+      V_{abint}(t)=V_{intmax}-\frac{1}{R_{int}
+      \cdot C_{i}}\cdot (V_{refn}-V_{GNDA}) \cdot t \quad \text
+      {für }T_{int}<t<T\\
+      t_{abint}=\frac{(V_{GNDA}-V_{in}) \cdot T_{int}}{V_{refn}-V_{GNDA}}\\
+      \text{Für }V_{GNDA}=0\text{ :}\\
       \int^{NT}_{0}V_{in}dt=NTV_{in}\\
       NTV_{in}-\int^{nT}_{0}V_{Ref}dt=NTV_{in}-nTV_{Ref}=0\\
       n=\frac{V_{in}}{V_{Ref}}N\\
-      n=\frac{RCV_{off,C}-TV_{off,OP}}{T(V_{Ref}+V_{off,OP})}+N\frac{V_{in}}{V_{Ref}+V_{off,OP}}
     \end{gather}\\
     \begin{tabular}{ll}\\
       N:&Taktzyklen\\
@@ -198,13 +200,13 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
       n:&Zählerstand\\
       $V_{off}$:&Offsetspannung\\
     \end{tabular}
- } \\
+ }\\
    
  \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
     3cm]{pictures/dualSlope12}}
  &  \\
  \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
-    5cm]{pictures/dualSlope2}}
+    3cm]{pictures/dualSlope2}}
  &  \\
 \end{tabular}
 
@@ -228,7 +230,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
   \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
   4cm]{pictures/lsg1}}
   &
-  \multirow{1}{12cm}{
+  \multirow{2}{12cm}{
     \begin{itemize}
       \item Gleichgewichtsbedingung\\
         \begin{equation}
