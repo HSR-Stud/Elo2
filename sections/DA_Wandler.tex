@@ -12,89 +12,47 @@
 \end{itemize}
 
 \subsection{Parallelverfahren (Voltage Scaling)}
-\begin{longtable}{|l|l|l|}
-\hline
-\begin{minipage}{4cm}
-\textbf{Strom-DAC} \hartl{456}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 4.5cm]{pictures/Strom-DAC}
-\end{minipage}
-
-&
-\begin{minipage}{8cm}
-\begin{gather}
-K=2^N-1\\
-I=\frac{V_{Ref}}{R}\\
-I_{Out}=D*I=D*\frac{V_{Ref}}{R}\\
-I_{Out}=D*I\\
-I_{\bar{Out}}=(K-D)*I\\
-V_{Out}=RI_{Out}-RI_{\bar{Out}}\notag\\=(D-K)*RI
-\end{gather}
-\begin{tabular}{ll}
-K:&Anzahl Stromquellen\\
-D:&Eingangswert\\&(Anzahl Schalter die \\&aktiv sind..)
-\end{tabular}
-\end{minipage}
-
-\\
-\hline
-\begin{minipage}{4cm}
-\textbf{String DAC} \hartl{459}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm,height=5cm]{pictures/string_DAC}
-\end{minipage}&
-\begin{minipage}{8cm}
-\textbf{Vorteil}
-\begin{itemize}
-  \item garantierte Stetigkeit
-\end{itemize}
-\textbf{Nachteil}
-\begin{itemize}
-  \item benötigt $2^n$ Widerstände und $2^n$ Schalter, n-to-$2^n$ Decoder(linke
-  Variante)
-  \item $V_{out}(D) = \frac{D}{2^n}(V_{Ref+} -V_{Ref-}) + V_{Ref-}$
-\end{itemize}
-\end{minipage}
-\\
-\hline
-\begin{minipage}{4cm}
-\textbf{Segmented String DAC} \hartl{459}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm,height=5cm]{pictures/segmented_string_DAC}
-\end{minipage}&
-\begin{minipage}{8cm}
-\textbf{Vorteil}
-\begin{itemize}
-  \item viel weniger Elemente
-\end{itemize}
-\textbf{Nachteil}
-\begin{itemize}
-  \item benötigt Buffer (offset-frei)
-\end{itemize}
-\end{minipage}
-\\
-\hline
-\begin{minipage}{4cm}
-\textbf{Digitales Potentiometer} \hartl{460}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm,height=5cm]{pictures/digitales_potentiometer}
-\end{minipage}&
-\begin{minipage}{8cm}
-\textbf{Vorteil}
-\begin{itemize}
-  \item automatisierter Elektronik-Test möglich
-\end{itemize}
-\end{minipage}
-\\
-\hline
+\begin{longtable}{|p{3cm}|c|p{6.6cm}|}
+	\hline
+	\textbf{Strom-DAC} \hartl{456} 
+	& \includegraphics[width=7cm, valign=t]{pictures/Strom-DAC}
+	& {\begin{align*}
+		K &=2^N-1\\
+		I &=\frac{V_{Ref}}{R}\\
+		I_{Out} &=D*I=D*\frac{V_{Ref}}{R}\\
+		I_{Out} &=D*I\\
+		I_{\bar{Out}} &=(K-D)*I\\
+		V_{Out} &=RI_{Out}-RI_{\bar{Out}} \\
+			    &=(D-K)*RI		
+	  \end{align*}}
+	  \begin{tabular}{lp{5cm}}
+	  	K: & Anzahl Stromquellen \\
+      	D: & Eingangswert (Anzahl Schalter die aktiv sind..)
+      \end{tabular}
+	\\ \hline
+	\textbf{String DAC} \hartl{459}
+	& \includegraphics[width=6cm, valign=t]{pictures/string_DAC}
+	& \begin{description}
+  		\item[Vorteile: ] garantierte Stetigkeit
+  		\item[Nachteile:] benötigt $2^n$ Widerstände und $2^n$ Schalter, n-to-$2^n$ Decoder(linke Variante)
+	  \end{description}
+	  \[
+	  	V_{Out}(D) = \frac{D}{2^n}(V_{Ref+} -V_{Ref-}) + V_{Ref-}
+	  \]
+	\\ \hline
+	\textbf{Segmented String DAC} \hartl{459}
+	& \includegraphics[width=6cm, valign=t]{pictures/segmented_string_DAC}
+	& \begin{description}
+  		\item[Vorteile: ] viel weniger Elemente
+  		\item[Nachteile:] benötigt Buffer (offset-frei)
+	  \end{description}
+	\\ \hline
+	\textbf{Digitales Potentiometer} \hartl{460}
+	& \includegraphics[width=6cm, valign=t]{pictures/digitales_potentiometer}
+	& \begin{description}
+  		\item[Vorteile: ] automatisierter Elektronik-Test möglich
+	  \end{description}
+	\\ \hline
 \end{longtable}
 
 \subsection{Wägeverfahren} \hartl{461}
