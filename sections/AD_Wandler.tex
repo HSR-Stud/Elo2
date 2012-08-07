@@ -1,152 +1,111 @@
-\section{AD Wandler}\hartl{475}
-\subsection{Lernziele}
-\begin{itemize}
-  \item Parallelverfahren und Kaskaden umsetzer
-  \item Wägeverfahren und dessen schaltungstechnische Implementierung
-  \item Integrierende und zählende Umsetzer
-  \item eigenschaften und Anwendungsgebiete der unterschidlichen Verfahren
-\end{itemize}
+\section{AD Wandler \hartl{475}}
 
 \subsection{Parallelverfahren und Kaskadenumsetzer}
-\begin{longtable}{|l|l|l|}
+\begin{longtable}{|p{12cm}|c|}
 \hline
-\begin{minipage}{4cm}
-\textbf{Parallelumsetzer} \hartl{478}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 6cm]{pictures/parallelADC}
-\end{minipage}
-&
-\begin{minipage}{8cm}
-\begin{itemize}
-  \item sehr schnell
-  \item $2^n$ Widerstände
-  \item $2^N$ Komparatoren
-\end{itemize}
-\begin{equation}
-Anz_{Vergleiche}=2^N-1
-\end{equation}
-\end{minipage}\\
+  {\textbf{Parallelumsetzer} \hartl{478}\newline
+  \begin{itemize}
+    \item sehr schnell
+    \item $2^n$ Widerstände
+    \item $2^N$ Komparatoren
+  \end{itemize}
+  \begin{align*}
+    Anz_{Vergleiche}=2^N-1
+  \end{align*}}
+  &
+  \includegraphics[width=6cm, valign=t]{pictures/parallelADC}\\ 
 \hline
-\begin{minipage}{4cm}
-\textbf{Kaskadenumsetzer} \hartl{479}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 6cm]{pictures/kaskaden}
-\end{minipage}
-&
-\begin{minipage}{8cm}
 
-Eine 10-bit-Auflösung beim Parallelverfahren würde 1024 Komperatoren
-benötigen.$\Rightarrow$Komplexitätsreduktion \\
-
-Mit erstem $N_{1}$-bit ADU wird der Grobbereich festgelegt (höherwertige Bits).
-Diese Zahl wird in eine analoge Spannung durch einen $N_{1}$-bit DAU zurück
-umgesetzt und diese Spannung von der Eingangsspannung subtrahiert. Diese
-Differenz wird von einem weiteren $N_{1}$-bit-ADU umgesetzt, um die
-niederwertigen Bits zu ergeben. Skaliert man die Differenzspannung mit dem Faktor 32, hat man
-den gleichen Spannungsbereich, kann also zwei identische ADU benutzen.\\
-\end{minipage}\\
+  {\textbf{Kaskadenumsetzer}\hartl{479}\newline 
+  Eine 10-bit-Auflösung beim Parallelverfahren würde 1024 Komperatoren
+  benötigen.$\Rightarrow$Komplexitätsreduktion \newline
+  Mit erstem $N_{1}$-bit ADU wird der Grobbereich festgelegt (höherwertige
+  Bits).
+  Diese Zahl wird in eine analoge Spannung durch einen $N_{1}$-bit DAU zurück
+  umgesetzt und diese Spannung von der Eingangsspannung subtrahiert. Diese
+  Differenz wird von einem weiteren $N_{1}$-bit-ADU umgesetzt, um die
+  niederwertigen Bits zu ergeben. Skaliert man die Differenzspannung mit dem
+  Faktor 32, hat man den gleichen Spannungsbereich, kann also zwei identische
+  ADC benutzen.
+  }
+  &
+  \includegraphics[width=6cm, valign=t]{pictures/kaskaden}\\ 
 \hline
-\begin{minipage}{4cm}
-\textbf{Pipelined ADC} \hartl{483}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 6cm]{pictures/pipelined}
-\end{minipage}
-&
-\begin{minipage}{8cm}
-\begin{itemize}
-  \item fast gleiche hohe Umsetzrate wie Parallelumsetzer
-  \item gleicher schaltungstechnischer Aufwand wie beim Kaskadennumsetzer
-  \item wird heute für schnelle ADC's verwendet
-\end{itemize}
-\end{minipage}\\
+
+  {\textbf{Pipelined ADC} \hartl{483} \newline
+  \begin{itemize}
+    \item fast gleiche hohe Umsetzrate wie Parallelumsetzer
+    \item gleicher schaltungstechnischer Aufwand wie beim Kaskadennumsetzer
+    \item wird heute für schnelle ADC's verwendet
+  \end{itemize}
+  }
+  &
+  \includegraphics[width=6cm, valign=t]{pictures/pipelined}\\ 
 \hline
 \end{longtable}
 
-
-\subsection{Wägeverfahren ( sukzessive Approximation)} \hartl{485}
+\newpage
+\subsection{Wägeverfahren ( sukzessive Approximation) \hartl{485}}
 \begin{itemize}
   \item guter Kompromiss zwischen benötigter Umsetzzeit und erreichbarer
   Auflösung
 \end{itemize}
 
-\begin{longtable}{|l|l|l|}
+\begin{longtable}{|p{12cm}|c|}
 \hline
-\begin{minipage}{4cm}
-\textbf{Prinzip} \hartl{485}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 4cm]{pictures/waegeverfahren}\\
-\includegraphics[width=6cm, height = 3cm]{pictures/waegeverfahrentabelle}
-\end{minipage}
-&
-\begin{minipage}{8cm}
-\begin{itemize}
-  \item Abtastung der Eingangsspannung $V_{in}$mit einer
-  S\&H-Schaltung( Vergleichsspannung liegt so während der gesamten Umsetzung an)
-  \item Vergleich starte in der Mitte der Eingangsspannung $\frac{V_{Ref}}{2}$
-\end{itemize}
-\end{minipage}
-\\
+  \multirow{2}{12cm}{\textbf{Prinzip} \hartl{485}
+  \begin{itemize}
+    \item Abtastung der Eingangsspannung $V_{in}$mit einer
+        S\&H-Schaltung( Vergleichsspannung liegt so während der gesamten
+      Umsetzung an)
+    \item Vergleich starte in der Mitte der Eingangsspannung $\frac{V_{Ref}}{2}$
+  \end{itemize}
+  }
+  &
+  \includegraphics[width=6cm, valign=t]{pictures/waegeverfahren}\\
+     &
+  \includegraphics[width=6cm, valign=t]{pictures/waegeverfahrentabelle}\\
 \hline
-\begin{minipage}{4cm}
-\textbf{Wägeverfahren mit SC-Prinzip} \hartl{488}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 4cm]{pictures/waegeverfahrenSC}\\
-\end{minipage}
-&
-\begin{minipage}{8cm}
-\begin{itemize}
-  \item häufig eingesetze Implementierung
-  \item mit geschalteten Kapazitäten ist es möglich Halte-Glied und DAc in einer
-  Schaltung zu realisieren
-\end{itemize}
-\begin{enumerate}
-  \item Schalter $S_{2},S_{1},S_{0},S_{A}$ verbunden mit $V_{in}$ und $S_{C}$mit
-  GND$\to$ alle Kapazitäten werden auf $V_{in}$aufgeladen
-  \item öffnen der Schalter $S_{C}und S_{A}$ und bleiben in dieser Stellung
-  \item $S_{2}$ auf $V_{Ref}$ und $S_{1},S_{0}$auf GND $\to$
-  $V_{x}=-V_{in}+0,5V_{Ref}$
-  \item Ergebnis von SAR ausgewertet $\to$ $S_{2}$bleibt oder wechselt auf GND
-  \item Fortzetung mit den folgenden Schaltern
-\end{enumerate}
-\end{minipage}
-\\
+
+  {\textbf{Wägeverfahren mit SC-Prinzip} \hartl{488}\newline
+  \begin{itemize}
+    \item häufig eingesetze Implementierung
+    \item mit geschalteten Kapazitäten ist es möglich Halte-Glied und DAc in
+    einer Schaltung zu realisieren
+  \end{itemize}
+  \begin{enumerate}
+    \item Schalter $S_{2},S_{1},S_{0},S_{A}$ verbunden mit $V_{in}$ und
+      $S_{C}$mit GND$\to$ alle Kapazitäten werden auf $V_{in}$aufgeladen
+    \item öffnen der Schalter $S_{C}und S_{A}$ und bleiben in dieser Stellung
+    \item $S_{2}$ auf $V_{Ref}$ und $S_{1},S_{0}$auf GND $\to$
+      $V_{x}=-V_{in}+0,5V_{Ref}$
+    \item Ergebnis von SAR ausgewertet $\to$ $S_{2}$bleibt oder wechselt auf GND
+    \item Fortzetung mit den folgenden Schaltern
+  \end{enumerate}
+  }
+  &
+  \includegraphics[width=6cm, valign=t]{pictures/waegeverfahrenSC}\\
 \hline
-\begin{minipage}{4cm}
-\textbf{Iterative ADC}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 3cm]{pictures/iterativeADC}
-\end{minipage}
-&
-\begin{minipage}{8cm}
-\begin{enumerate}
-  \item Im S/H wird die Eingangsspannung geschpeichert (Schalter Sin)
-  \item Schalter Sin wird danach auf den Multiplizierer-Ausgang geschaltet
-  \item X(Laufvariable) wird auf n-1 gesetzt
-  \item Der Jomparator wird ausgewertet\\
-  Dout=1: Bx=1, Switch S=1 (d.h. im Subtrahierer wird Vrefh von Vc
-  subtrahiert)\\
-  Dout=0: Bx=0, Switch S=0 (d.h. im Subtrahierer wird 0 von Vc
-  subtrahiert)
-  \item Der Subtrahierer generiert sein Ausgangssignal
-  \item Der Multiplizierer generiert sein Ausgangssignal
-  \item Im S/H wird die Feedback-Spannung gespeichert (Schalter Sin)
-  \item X wird um 1 reduziert
-  \item Gehe zu Schritt 4, wenn $X\geq0$
-\end{enumerate}
-\end{minipage}
-\\
+
+  {\textbf{Iterative ADC} \newline
+  \begin{enumerate}
+    \item Im S/H wird die Eingangsspannung geschpeichert (Schalter Sin)
+    \item Schalter Sin wird danach auf den Multiplizierer-Ausgang geschaltet
+    \item X(Laufvariable) wird auf n-1 gesetzt
+    \item Der Jomparator wird ausgewertet\newline
+      Dout=1: Bx=1, Switch S=1 (d.h. im Subtrahierer wird Vrefh von Vc
+      subtrahiert)\newline
+      Dout=0: Bx=0, Switch S=0 (d.h. im Subtrahierer wird 0 von Vc
+      subtrahiert)
+    \item Der Subtrahierer generiert sein Ausgangssignal
+    \item Der Multiplizierer generiert sein Ausgangssignal
+    \item Im S/H wird die Feedback-Spannung gespeichert (Schalter Sin)
+    \item X wird um 1 reduziert
+    \item Gehe zu Schritt 4, wenn $X\geq0$
+  \end{enumerate}
+  }
+  &
+  \includegraphics[width=6cm, valign=t]{pictures/iterativeADC}\\
 \hline
 \end{longtable}
 
@@ -154,81 +113,86 @@ den gleichen Spannungsbereich, kann also zwei identische ADU benutzen.\\
 
 \subsection{Zählverfahren \hartl{490}} 
 Ist für kontinuierliche Auswertungen des Eingangssignal
-%\begin{longtable}{|l|l|l|}
-%\hline
-%\begin{minipage}{4cm}
-%\textbf{Single Slope}
-%\end{minipage}
 \subsubsection{Single Slope}
 
-\begin{tabular}{l|p{0.31\textwidth}p{0.31\textwidth}}
-$T_{int}=\frac{V_{Ref}*R*C}{V_{in}}$
+\begin{tabular}{ccp{4cm}}
+\includegraphics[width=6cm, valign=t]{pictures/singleSlope1}
 &
-\parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height=4cm]{pictures/singleSlope1}}
+\includegraphics[width=6cm, valign=t]{pictures/singleSlope2}
 &
-\parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height=3cm]{pictures/singleSlope2}}
+  {\begin{align*}
+    T_{int}=\frac{V_{Ref}*R*C}{V_{in}}
+  \end{align*}}
 \\ 
 \end{tabular}
 
-
 \subsubsection{Dual Slope \hartl{492}}
-\begin{tabular}{p{0.31\textwidth}|l}
-
- \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
-    4cm]{pictures/dualSlope11}}
- &
- 
- \multirow{3}{12cm}{
-    \begin{gather}
-      V_{int}(t)=
+\begin{tabular}{cp{12cm}}
+ \includegraphics[width=6cm, valign=t]{pictures/dualSlope11}
+ & 
+ {Für $0<t<T_{int}$
+ \begin{align*}
+      V(t)&=
       \int\limits_0^{t}\frac{-1}{R_{int}
-      \cdot C_{i}}(V_{in}-V_{GNDA})dt+V_{GNDA} \quad \text{für }0<t<T_{int}\\
-      V_{intmax}(V_{in})=\frac{-1}{R_{int}
+      \cdot C_{i}}(V_{in}-V_{GNDA})dt+V_{GNDA}\\
+      V_{int}(V_{in})&=\frac{-1}{R_{int}
       \cdot C_{i}}(V_{in}-V_{GNDA})T_{int}+V_{GNDA}\\
-      V_{abint}(t)=V_{intmax}-\frac{1}{R_{int}
-      \cdot C_{i}}\cdot (V_{refn}-V_{GNDA}) \cdot t \quad \text
-      {für }T_{int}<t<T\\
-      t_{abint}=\frac{(V_{GNDA}-V_{in}) \cdot T_{int}}{V_{refn}-V_{GNDA}}\\
-      \text{Für }V_{GNDA}=0\text{ :}\\
-      \int^{NT}_{0}V_{in}dt=NTV_{in}\\
-      NTV_{in}-\int^{nT}_{0}V_{Ref}dt=NTV_{in}-nTV_{Ref}=0\\
-      n=\frac{V_{in}}{V_{Ref}}N\\
-    \end{gather}\\
-    \begin{tabular}{ll}\\
+      V_{intmax}&=V_{int}(V_{in}=0)\\
+                &=\frac{-1}{R_{int}
+      \cdot C_{i}}(-V_{GNDA})T_{int}+V_{GNDA}
+ \end{align*}} \\
+ 
+ \includegraphics[width=6cm, valign=t]{pictures/dualSlope12}
+ &  
+ {Für $T_{int}<t<T$
+ \begin{align*}
+  V(t)&=V_{int}-\frac{1}{R_{int}\cdot C_{i}}\cdot
+  (V_{refn}-V_{GNDA}) \cdot t\\
+   T_{abint}&=\frac{(V_{GNDA}-V_{in}) \cdot T_{int}}{V_{refn}-V_{GNDA}}
+ \end{align*}}\\
+ 
+ \includegraphics[width=6cm, valign=t]{pictures/dualSlope2}
+ &  
+ {Für $V_{GNDA}=0$:
+  \begin{align*}
+    \int^{NT}_{0}V_{in}dt&=NTV_{in}\\
+      NTV_{in}-\int^{nT}_{0}V_{Ref}dt&=NTV_{in}-nTV_{Ref}=0\\
+      n&=\frac{V_{in}}{V_{Ref}}N\\
+  \end{align*}}\\
+  
+  
+  \begin{tabular}{ll}
       N:&Taktzyklen\\
       T:&Periodendauer\\
       n:&Zählerstand\\
       $V_{off}$:&Offsetspannung\\
-    \end{tabular}
- }\\
-   
- \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
-    3cm]{pictures/dualSlope12}}
- &  \\
- \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
-    3cm]{pictures/dualSlope2}}
- &  \\
+  \end{tabular}
+  &
+  
+  \begin{tabular}{ll}
+      $T_{int}$:&Integrationszeit\\
+      $T_{abint}$:& "`Messzeit"\\
+      $V_{int}$:&Spannung am $V_{opOut}$ nach der Zeit $T_{int}$\\
+      $V_{intmax}:$&maximal mögliche Spannung am $V_{opOut}$\\
+  \end{tabular}
 \end{tabular}
-
+\newpage
 
 \subsubsection{Spannungs- Frequenz- Umsetzer \hartl{495}}
-\begin{tabular}{p{0.31\textwidth}|l}
-  \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
-    4cm]{pictures/sfu}}
+\begin{tabular}{cp{12cm}}
+  \includegraphics[width=6cm, valign=t]{pictures/sfu}
   &
-  \multirow{0}{12cm}{
-    \begin{equation}
+    {\begin{align*}
       V_{int}(t)=V_{in}+\frac{1}{RC}\int(V_{in}-V_{x})dt
-    \end{equation}\\
-    Vorteil: Immer am Eingangssignal\\
+    \end{align*}
+    Vorteil: Immer am Eingangssignal\newline
     Nachteil: Kein echter ADC}\\
 \end{tabular}
 
 
 \subsubsection{Ladungs-Ausgleichs-Integrator \hartl{497}}
-\begin{tabular}{p{0.31\textwidth}|l}
-  \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
-  4cm]{pictures/lsg1}}
+\begin{tabular}{cp{12cm}}
+  \includegraphics[width=6cm, valign=t]{pictures/lsg1}
   &
   \multirow{2}{12cm}{
     \begin{itemize}
@@ -237,38 +201,31 @@ $T_{int}=\frac{V_{Ref}*R*C}{V_{in}}$
           V_{in}-\frac{n}{N}V_{Ref}=0\Rightarrow n=\frac{V_{in}}{V_{Ref}}N
         \end{equation}
       \item Flipflop statt Monoflop
-    \end{itemize}}\\
-  \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
-  3cm]{pictures/lsg2}}
+    \end{itemize}}\\ 
+  \includegraphics[width=6cm, valign=t]{pictures/lsg2}
   & \\
 \end{tabular}
 
 
 \subsubsection{Sigma-Delta Wandler \hartl{500}}
-\begin{tabular}{p{0.31\textwidth}|l}
-  \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
-  4cm]{pictures/deltaSigma1}}
+\begin{tabular}{cp{12cm}}
+  \includegraphics[width=6cm, valign=t]{pictures/deltaSigma1}
   &
-  \multirow{0}{12cm}{
-    \begin{itemize}
+  {\begin{itemize}
       \item Ersatzschaltung für Frequenzbereich
       \item Tiefpass für Signal
       \item Hochpass für Q
     \end{itemize}
-    \begin{equation}
+    \begin{align*}
       y=\frac{x-y}{s}+Q\Rightarrow y=x\frac{1}{1+s}+Q\frac{s}{1+s}
-    \end{equation}
+    \end{align*}
   }\\
 \end{tabular}
 
 
 \subsubsection{Sigma-Delta Wandler 2. Ordnung \hartl{502}}
-\begin{tabular}{p{0.31\textwidth}|l}
-  \parbox[c][6cm]{0.31\textwidth}{\includegraphics[width=6cm, height =
-  4cm]{pictures/deltaSigma2}}
-  & \\
+\includegraphics[width=6cm, height =4cm]{pictures/deltaSigma2}
 
-\end{tabular}
 
 
 \subsection{Kennwerte von ADC's}
