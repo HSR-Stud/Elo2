@@ -99,42 +99,31 @@ x(t):&Signal
 \subsubsection{Aliasing\hartl{444}}
 Aliasing entsteht bei Unterabtastung, d.h wenn das Abtasttheorem verletzt wird.
 Es entstehen falsche, nur scheinbar vorhandene Komponenten im zeitdiskreten
-Signal.\\
-\\
+Signal.
 
-\begin{tabular}{lll}
-\small\textbf{Abtasttheorem}
-&
-\begin{minipage}{4cm}
-\begin{equation}
-f_{S}>2f_{max}
-\end{equation}
-\end{minipage}
-&$f_{s}$: Abtastfrequenz\\
-&&$f_{max}$:max. Frequenz des Signals
+\begin{tabular}{llll}
+	\textbf{Abtasttheorem}
+	& $f_{S}>2f_{max}$
+	& $f_{s}$: Abtastfrequenz
+	&$f_{max}$:max. Frequenz des Signals
 \end{tabular}
 
 \subsection{Lineares Modell der Quantisierung\hartl{448}}
 \subsubsection{Signal-Rausch-Verhältnis\hartl{450}}
-\begin{tabular}{ll}
-
-\begin{minipage}{10cm}
-\begin{gather}
+\begin{multicols}{2}
+\begin{gather*}
 P_{Sig}=S^2_{Eff} =
 \frac{S^2}{2}=\frac{(\frac{A_{Ref}}{2})^2}{2}=\frac{A^2_{Ref}}{8}\\
 P^2_{N}=\frac{q^2}{12}=\frac{(\frac{A_{Ref}}{2^N})}{12}=\frac{A^2_{Ref}}{12\cdot2^{2N}}\\
 SNR=\frac{P^2_{S}}{P^2_{N}}=\frac{\frac{A^2_{Ref}}{8}}{\frac{A^2_{Ref}}{12\cdot2^{2N}}}=\frac{12\cdot2^{2N}}{8}=3\cdot2^{2N-1}\\
 SNR_{dB}=10\log(3\cdot2^{2N-1})=6.02N+1.76dB\\
 ENOB=\frac{SNR_{dB}-1.76}{6.02}
-\end{gather}
-\end{minipage}
-&
-\begin{minipage}{8cm}
+\end{gather*}
+
 \begin{tabular}{ll}
 $P_{Sig}$:&Signalleistung\\
 SNR:&Signal-Rausch-Verhältnis\\
 $SNR_{dB}$:&Signal-Rausch-Verhältnis in dB\\
-ENOB:&Effective Number of Bits\\
+ENOB:&Effektive Anzahl Bits\\
 \end{tabular}
-\end{minipage}
-\end{tabular}
+\end{multicols}
