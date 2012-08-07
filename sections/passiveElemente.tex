@@ -10,87 +10,7 @@
 
 $R=\rho\frac{l}{w*d}$ \\
 $\rho$: Spezifischer Widerstand
-\end{multicols}
-
-
-\subsubsection{Temperaturabhängige Widerstände}
-\textbf{Thermistoren} sind Widerstände mit einer gezielt ausgeprägten
-Temperaturabhängigkeit.\\Man unterscheidet:
-\begin{itemize}
-  \item PTC-Widerstände (Kaltleiter, positiver Temperaturkoeffizient): der
-  Widerstandswert steigt mit steigender Temperatur
-  \begin{itemize}
-    \item verwendet als Temperatursensor
-    \item als selbstrückstellende Sicherung
-    \item als selbstregelndes Heizelement
-    \item und zur Steuerung der Entmagnetisierung von Bildröhren
-  \end{itemize}
-  \item NTC-Widerstände (Heissleiter, negativer Temperaturkoeffizient): der
-  Widerstandswert sinkt mit steigender Temperatur
-  \begin{itemize}
-    \item verwendet unter anderem als Temperatursensor
-    \item und zur Einschaltstrombegrenzung
-  \end{itemize}
-\end{itemize}
-
-\textbf{PTC}\\
-\begin{figure}[htbs]
-\includegraphics[scale=0.5]{pictures/ptc}
-\end{figure}
-
-\textbf{NTC}\\
-\begin{minipage}{9cm}
-\begin{equation}
-R_{T}=R_{R}*e^{B*(\frac{1}{T}-\frac{1}{T_{R}})}
-\end{equation}
-\begin{tabular}{ll}
-  $R_{T}$: &NTC resistance at temperature T in K\\
-  $R_{R}$: &NTC resistance at rated temperature TR in K\\
-  T: &Temperature in K\\
-  $T_{R}$: &Rated temperature in K\\
-  B: &B value, material-specific constant of NTC thermistor\\
-  e: &Euler number (e = 2.71828)
-\end{tabular}
-\end{minipage}
-\begin{minipage}{9cm}
-\includegraphics[scale=0.5]{pictures/ntc}
-\end{minipage}
-
-\subsubsection{Fotowiderstände}
-\begin{itemize}
-  \item CdS-Fotowiderstand; die fotoempfindliche Widerstandsschicht befindet
-  sich zwischen den kammartigen Kontaktflächen
-  \item Ein Fotowiderstand ändert seinen Widerstand unter Lichteinwirkung.
-  Trifft Licht auf die fotoempfindliche Fläche des Fotowiderstands, verringert
-  sich der Widerstand durch den inneren fotoelektrischen Effekt.
-\end{itemize}
-
-\subsubsection{Spannungsabhängige Widerstände}
-\begin{itemize}
-  \item Sie werden Varistoren (ein aus „variabel“ und „Resistor“ gebildetes
-  Kunstwort) genannt und bestehen aus Metalloxiden (meist dotiertes Zinkoxid).
-  \item Sie verringern ihren Widerstandswert bei steigender Spannung, meist
-  drastisch ab einer charakteristischen Schwellspannung ähnlich einer
-  Zener-Diode (jedoch für beide Polariäten).
-  \item Sie werden zur Begrenzung von Überspannungsimpulsen (Schwellspannungen
-  von 5 Volt bis mehrere Kilovolt) eingesetzt, nicht jedoch zur Spannungsstabilisierung.
-\end{itemize}
-
-\subsubsection{Druck- und dehnungsabhängige Widerstände}
-\begin{itemize}
-  \item Dehnmessstreifen sind Folienwiderstände, die aufgeklebt werden. Sie
-  ändern ihren Widerstandswert in Abhängigkeit ihrer Dehnung beziehungsweise
-  Zugspannung.
-\end{itemize}
-
-\subsubsection{Verstellbare Widerstände, Potentiometer}
-\begin{itemize}
-  \item Potentiometer sind für häufiges Verstellen geeignet.
-  \item ein beliebiger Widerstandswert zwischen zwei Grenzwerten einstellen
-  \item Trimmpotentiometer (geringe Leistung) und Stellwiderstände (grosse
-  Leistung) sind nur für gelegentliches Verstellen geeignet.
-\end{itemize}
-
+\end{multicols} 
 
 \subsection{Kondensatoren}
 \subsubsection{Kapazitätswert}
@@ -129,27 +49,6 @@ R_{T}=R_{R}*e^{B*(\frac{1}{T}-\frac{1}{T_{R}})}
   		L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{l} & \text{Zylinderspule}
 	\end{align*}
 \end{multicols}
-
-
-\subsubsection{Einsatzgebiete und Schwerpunkte}
-\begin{longtable}{|p{3.5cm}|l|l|l|l|l|}
-\hline
-\textbf{Application}&Inductance&Current rating&Resonance frequency&Q factor&DC
-resistance\\
-\hline
-\textbf{RF circuits, resonant circuits}&low&low&very high&very high&low\\
-\hline
-\textbf{EMC}&high&high&high&low&very low\\
-\hline
-\textbf{RFID}&*&low&high&high&low\\
-\hline
-\textbf{DC/DC converters}&*&high&medium&high&low\\
-\hline
-\textbf{Transformers in DC/DC}&*&*&medium&*&low\\
-\hline
-\textbf{Signal processing}&*&low&high&-&medium\\
-\hline
-\end{longtable}
 
 \subsubsection{Einschaltvorgang}
 \input{idiotenseite/elektrotechnik/subsections/einschalt_spule}
