@@ -1,89 +1,46 @@
 \section{Rauschen}
-Rauschen wird verursacht durch Zufallsprozesse, welche in elektronischen
-Komponenten ablaufen und dadurch an allen Knoten in Schaltungen zu zufälligen
-Schwankungen der Signale.\\
-\\
-Folge: Reine DC gibt es nicht!
 
 \subsection{Typen von Noise}
-\begin{longtable}{|l|l|l|}
-\hline
-\begin{minipage}{4cm}
-\textbf{Shot Noise}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\begin{itemize}
-  \item \textit{shot noise} steht für Schottky noise, auch \textit{quantum
-  noise}genannt.
-  \item Verursacht durch zufällige Fluktuationen der Bewegung von
-  Ladungsträgern, die Potentialbarrieren überwinden müssen
-  \item Charakteristik
-  \begin{itemize}
-    \item geküpft an Stromfluss
-    \item Unabhängig von Temperatur
-    \item Spektral "`flach"'
-    \end{itemize}
-\end{itemize}
-\end{minipage}
-&
-\begin{minipage}{8cm}
-\begin{gather}
-E_{sh}=kT\sqrt{\frac{2B}{qI_{dc}}}\\
-E_{sh}= 0.4\mu V @ 1mA,1MHz
-\end{gather}
-\begin{tabular}{ll}
-	k: & Bolzmann's constant\\&($1.38 \cdot 10^{-23}$Joules/$^\circ$K)\\
-	q: & Electron charge ($1.6 \cdot 10^{-19}$Coulombs)\\
-	T: & Temperatur in $^\circ$K\\
-	$I_{dc}$: & Average dc current in A\\
-	B: & Bandwidth in Hz
-\end{tabular}
-\end{minipage}
-\\
-\hline
-\begin{minipage}{4cm}
-\textbf{Thermisches Rauschen}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\begin{itemize}
-  \item Thermisches Rauschen entsteht durch die zufällige Bewegung der
-  Ladungsträger auf Grund der Wärmeenergie und der Quantisierung der Ladung
-  \item Thermisches Rauschen ist von Natur aus über die Frequenz gleich
-  verteilt, das heisst, die Leistung pro Frequenzbereich ist für alle Frequenzen konstant.
-  \item Da Licht mit konstanter Leistungsdichte im ganzen Spektrum von unseren
-  Augen als weiss empfunden wird, bezeichnet man dieses Rauschen auch als weisses Rauschen. Anderer Ausdruck: Johnson Noise (Entdecker)
-\end{itemize}
-\end{minipage}
-&
-\\
-\hline
-\begin{minipage}{4cm}
-\textbf{Flicker Noise (1/f noise)}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\begin{itemize}
-  \item Flicker Noise (dt. Funkelrauschen) entsteht in MOS-Transistoren, wenn
-  sich Elektronen in Fehlerstellen zwischen dem Silizium und dem Gate-Oxid oder
-  zwischen dem Gate-Oxid und dem Gate verfangen und nach einer zufälligen Zeit
-  wieder freikommen.
-  \item Flicker Noise ist nicht gleichverteilt über die Frequenz, seine
-  Rauschleistung nimmt umgekehrt proportional zur Frequenz ab, so dass es auch 1/f-Rauschen genannt wird.
-  \item Weil Licht mit einem solchen Spektrum für uns rosarot aussieht, nennt
-  man dieses Rauschen auch rosa Rauschen.
-\end{itemize}
-\end{minipage}
-&
-\begin{minipage}{8cm}
-\begin{gather}
-E_{n}=K_{v}\sqrt{\ln{\frac{f_{max}}{f_{min}}}}\\
-I_{n}=K_{i}\sqrt{\ln{\frac{f_{max}}{f_{min}}}}
-\end{gather}
-\end{minipage}
-\\
-\hline
+\begin{longtable}{|>{\bfseries}p{3.5cm}|p{6cm}|p{8cm}|}
+	\hline
+	Shot Noise , Schottky noise oder quantum noise
+	& \begin{itemize}
+  		\item Verursacht durch zufällige Fluktuationen der Bewegung von
+  		Ladungsträgern, die Potentialbarrieren überwinden müssen
+  		\item Charakteristik
+  		\begin{itemize}
+    		\item geküpft an Stromfluss
+    		\item Unabhängig von Temperatur
+    		\item Spektral "`flach"'
+    	\end{itemize}
+	  \end{itemize}
+	& {\begin{gather*}
+		E_{sh}=kT\sqrt{\frac{2B}{qI_{dc}}}\\
+		E_{sh}= 0.4\mu V @ 1mA,1MHz
+	  \end{gather*}}
+	  \begin{tabular}{ll}
+		k: & Bolzmannkonstante\\&($1.38 \cdot 10^{-23}$Joule/$^\circ$K)\\
+		q: & Elektronenladung ($1.6 \cdot 10^{-19}$Coulomb)\\
+		T: & Temperatur in $^\circ$K\\
+		$I_{dc}$: & Durchschnittlicher DC Strom in A\\
+		B: & Bandbreite in Hz
+	  \end{tabular}
+	\\ \hline
+	Thermisches Rauschen
+	& Konstant für alle Frequenzen
+	&
+	\\ \hline
+	Flicker Noise, 1/f noise, rosa Rauschen
+	& \begin{itemize}
+	  	\item nicht gleichverteilt über die Frequenz, seine
+  	  	\item Rauschleistung nimmt umgekehrt proportional zur Frequenz ab.
+  	  \end{itemize}
+  	& {\begin{gather*}
+		E_{n}=K_{v}\sqrt{\ln{\frac{f_{max}}{f_{min}}}}\\
+		I_{n}=K_{i}\sqrt{\ln{\frac{f_{max}}{f_{min}}}}
+  	  \end{gather*}}
+  	\\ \hline
+  	
 \begin{minipage}{4cm}
 \textbf{Burst (popcorn) noise}
 \end{minipage}
