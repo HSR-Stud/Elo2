@@ -3,81 +3,43 @@
 \subsection{Kennlinien\hartl{432}}
 
 
-\begin{tabular}{|p{0.31\textwidth}|c|c|}
+\begin{tabular}{|>{\bfseries}p{0.31\textwidth}|c|c|}
 	\hline
 	& \textbf{ADC} & \textbf{DAC} 
 	\\ \hline
-	\textbf{Kennlinien idealer Wandler}
+	Kennlinien idealer Wandler
 	& \parbox[c][6cm]{0.31\textwidth}{\includegraphics[height=5.9cm]{./pictures/idealerADC.jpg}}
 	& \parbox[c]{0.31\textwidth}{\includegraphics[width=0.31\textwidth]{./pictures/idealerDAC.png}}
 	\\ \hline
-	\textbf{Quantisierungsintervall}
+	Quantisierungsintervall
 	& $q = \frac{A_{max}}{2^N} = \frac{V_{refp}-V_{refn}}{2^N}$
 	& $q = \frac{A_{Ref}}{2^N} = 1LSB $
 	\\ \hline
-	\textbf{Quantisierungsfehler}
+	Quantisierungsfehler
 	& $ -\frac{q}{2}\leq E_{q}<+\frac{q}{2} $
 	&
 	\\ \hline 
-	\textbf{Ausgangsgrösse}
+	Ausgangsgrösse
 	&
 	& $A_{out} = D_{in}\cdot q = D_{in}\cdot(\frac{A_{Ref}}{2^N})$
 	\\ \hline
+	Offset-Fehler \hartl{434}
+	& \includegraphics[height=3cm, trim=0cm 0cm 6.2cm 6.5cm, clip=true, valign=t]{./pictures/EoffADC.png}
+	& \includegraphics[height=3cm, trim=0cm 0cm 6cm 6.5cm, clip=true, valign=t]{./pictures/EoffDAC.png}
+	\\ \hline
+	Verstärkungsfehler\hartl{436}
+	& \includegraphics[height=3.5cm, valign=t]{./pictures/verstaerkungsfehlerADC.png} 
+    & \includegraphics[height=3.5cm, valign=t]{./pictures/verstaerkungsfehlerDAC.png}
+	\\ \hline
+	Differentielle Nichtlinearität DNL \hartl{437}
+	& \includegraphics[height=4cm, valign=t]{./pictures/DNL_ADC.png}
+	& \includegraphics[height=4cm, valign=t]{./pictures/DNL_DAC.png}
+	\\ \hline
+	Integrale Nichtlinearität INL \hartl{439}
+	& \includegraphics[height=4cm, valign=t]{./pictures/INL_ADC.png}
+	& \includegraphics[height=4cm, valign=t]{./pictures/INL_DAC.png}
+	\\ \hline
 \end{tabular}
-
-
-\subsection{Statische Fehler \hartl{434}}
-\subsubsection{Offset-Fehler \hartl{434}}
-Bei unipolaren A/D- bzw. D/A-Umsetzern sollte die digitale Null der
-analogen Null entsprechen. In der Realität wird jedoch meistens eine Abweichung
-aufgrund einer Verschiebung der Kennlinie auftreten. Diese wird als
-Offset-Fehler bzw. Nullpunktfehler bezeichnet.
-\begin{figure}[!ht]
-\begin{center}
-  \subfloat[ADC]{\includegraphics[width=6cm]{./pictures/EoffADC.png}}
-  \subfloat[DAC]{\includegraphics[width=6cm, height = 5cm]{./pictures/EoffDAC.png}}
-\end{center}
-\end{figure}
-
-\subsubsection{Verstärkungsfehler\hartl{436}}
-Eine Abweichung in der Steigung der
-Kennlinie,gleichbedeutend mit der Verstärkung, verursacht beim realen Umsetzer eine Abweichung zur idealnen
-Kennlinie. Diese Abweichung wächst mit jedem Quantisierungsschitt und führt beim
-positiven Ende zum maximalen Fehler.
-\begin{figure}[!ht]
-\begin{center}
-  \subfloat[ADC]{\includegraphics[width=6cm]{./pictures/verstaerkungsfehlerADC.png}}
-  \subfloat[DAC]{\includegraphics[width=6cm]{./pictures/verstaerkungsfehlerDAC.png}}
-\end{center}
-\end{figure}
-
-\subsubsection{Differentielle Nichtlinearität DNL\hartl{437}}
-Bei Offset- und Verstärkungsfehler wird von einer Verschiebung bzw.
-konstanten Veränderung der Stufengrösse ausgegangen.Sobald aber die einzelnen
-Stufen nicht mehr gleich gross sind, wird die Umsetzerkennlinie nicht linear.
-Die differentielle Nichtlinearität beschreibt nun die Abweichung der einzelnen
-Stufengrössen von der idealen.
-\begin{figure}[!ht]
-\begin{center}
-  \subfloat[ADC]{\includegraphics[width=6cm]{./pictures/DNL_ADC.png}}
-  \subfloat[DAC]{\includegraphics[width=6cm]{./pictures/DNL_DAC.png}}
-\end{center}
-\end{figure}
-
-\subsubsection{Integrale Nichtlinearität INL \hartl{439}}
-Bei der integralen Nichtlinearität wird die Abweichung der realen
-Kennlinie zur idealen betrachtet. Damit wird der tatsächliche Fehler einer
-Umsetzung beshrieben. Deshalb ist die integrale Nichtlinearität die wesentliche
-Kengrösse zur Beschreibung der Linearität von A/D- bzw. D/A- Umsetzern. Wenn
-von der Linearität eines Umsetzers gesprochen wird, ist (fast) immer die
-integrale Nichtlinearität gemeint.
-\begin{figure}[!ht]
-\begin{center}
-  \subfloat[ADC]{\includegraphics[width=6cm]{./pictures/INL_ADC.png}}
-  \subfloat[DAC]{\includegraphics[width=6cm]{./pictures/INL_DAC.png}}
-\end{center}
-\end{figure}
-
 
 \subsection{Eigenschaften und Fehler bei dynamischen Signalen\hartl{442}}
 \subsubsection{Aperturfehler\hartl{442}} 
