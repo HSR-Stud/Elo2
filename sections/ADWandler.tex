@@ -3,7 +3,7 @@
 \subsection{Parallelverfahren und Kaskadenumsetzer}
 \begin{longtable}{|p{12cm}|c|}
 \hline
-  {\textbf{Parallelumsetzer} \hartl{478}\newline
+  {\textbf{Parallelumsetzer} \hartl{478}
   \begin{itemize}
     \item sehr schnell
     \item $2^n$ Widerstände
@@ -32,7 +32,7 @@
   \includegraphics[width=6cm, valign=t]{pictures/kaskaden}\\ 
 \hline
 
-  {\textbf{Pipelined ADC} \hartl{483} \newline
+  {\textbf{Pipelined ADC} \hartl{483}
   \begin{itemize}
     \item fast gleiche hohe Umsetzrate wie Parallelumsetzer
     \item gleicher schaltungstechnischer Aufwand wie beim Kaskadennumsetzer
@@ -44,7 +44,6 @@
 \hline
 \end{longtable}
 
-\newpage
 \subsection{Wägeverfahren ( sukzessive Approximation) \hartl{485}}
 \begin{longtable}{|p{12cm}|c|}
 \hline
@@ -61,7 +60,7 @@
   \includegraphics[width=6cm, valign=t]{pictures/waegeverfahren}
   \\ \hline
 
-  {\textbf{Wägeverfahren mit SC-Prinzip} \hartl{488}\newline
+  {\textbf{Wägeverfahren mit SC-Prinzip} \hartl{488}
   \begin{enumerate}
     \item Schalter $S_{2},S_{1},S_{0},S_{A}$ verbunden mit $V_{in}$ und
       $S_{C}$mit GND$\to$ alle Kapazitäten werden auf $V_{in}$aufgeladen
@@ -76,7 +75,7 @@
   \includegraphics[width=6cm, valign=t]{pictures/waegeverfahrenSC}\\
 \hline
 
-  {\textbf{Iterative ADC} \newline
+  {\textbf{Iterative ADC}
   \begin{enumerate}
     \item Im S/H wird die Eingangsspannung geschpeichert (Schalter Sin)
     \item Schalter Sin wird danach auf den Multiplizierer-Ausgang geschaltet
@@ -116,7 +115,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
 \end{tabular}
 
 \subsubsection{Dual Slope \hartl{492}}
-\begin{tabular}{cp{12cm}}
+\begin{longtable}{cp{12cm}}
  \includegraphics[width=6cm, valign=t]{pictures/dualSlope11}
  & 
  {Für $0<t<T_{int}$
@@ -164,8 +163,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
       $V_{int}$:&Spannung am $V_{opOut}$ nach der Zeit $T_{int}$\\
       $V_{intmax}:$&maximal mögliche Spannung am $V_{opOut}$\\
   \end{tabular}
-\end{tabular}
-\newpage
+\end{longtable}
 
 \subsubsection{Spannungs- Frequenz- Umsetzer \hartl{495}}
 \begin{tabular}{cp{12cm}}
