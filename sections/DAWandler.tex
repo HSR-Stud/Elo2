@@ -93,19 +93,15 @@
 	\hline 
 	Grundprinzip \hartl{466}
 	& \includegraphics[width=6cm, valign=t]{./pictures/pwm_DAC.png}
-	& {\begin{gather*}
-		V_{Out}=\frac{D}{2^n} \cdot (V_{refp}-V_{refn})+V_{refn}
-	  \end{gather*}}
+	& $V_{Out}=\frac{D}{2^n} \cdot (V_{refp}-V_{refn})+V_{refn}$	  
 	  \begin{description}
   		\item[Vorteile:] einfache Schaltung, hohe Auflösung, Funktioniert ohne analoge Schaltung onchip (z.B. mit FPGA, Microcontroller) 
   		\item[Nachteile:] sehr langsam, benötigt grosse Zeitkonstante (Kapazität offchip)
 	  \end{description}
 	\\ \hline
 	PWM-Ansteuerung \hartl{466}
-	& \parbox[]{6cm}{\input{tikz/DAWandler/PWMAnsteuerung.tex}}&
-	{\begin{equation*}
-		\bar{V_{Out}}=\frac{n}{N}V_{Ref}
-	  \end{equation*}}
+	& \parbox[c][2cm]{6cm}{\input{tikz/DAWandler/PWMAnsteuerung.tex}}
+	& $\bar{V_{Out}}=\frac{n}{N}V_{Ref}$
 	  \begin{tabular}{ll}
 		N:&Takte\\
 		n:&digitale Eingangsgrösse
