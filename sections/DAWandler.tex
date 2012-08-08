@@ -46,13 +46,12 @@
 
 
 \subsection{Wägeverfahren\hartl{461}} 
-\begin{tabular}{|>{\bfseries}p{4cm}|c|p{7.5cm}|}
+\begin{longtable}{|>{\bfseries}p{3cm}|c|p{8.6cm}|}
 	\hline
-	Spannungs-summierung \hartl{461}
+	Spannungs"-summierung \hartl{461}
 	& \includegraphics[width=5cm, valign=t]{./pictures/spannungssummierung.png}
 	& {\begin{align*}
-		V_{Out} &= \\
-				&= \frac{B0 \cdot 2^0 \cdot G0+B1 \cdot 2^1 \cdot G0}{2^4 \cdot G0} \\
+		V_{Out} &= \frac{B0 \cdot 2^0 \cdot G0+B1 \cdot 2^1 \cdot G0}{2^4 \cdot G0} \\
 				& \quad \cdot \frac{B2 \cdot 2^2 \cdot G0+B3 \cdot 2^3 \cdot G0}{2^4 \cdot G0}\\
 		        & \quad \cdot (V_{rep}-V_{refn})+V_{refn}
 	  \end{align*}}
@@ -61,17 +60,17 @@
   		\item[Nachteile:] nicht garantiert stetig, grosse Wertebereiche für Widerstände, rechnen mit Leitwerten ($G_0 = \frac{1}{8R}$)
 	  \end{description}
 	\\ \hline
-	Stromsummierung \hartl{462}
-	& \includegraphics[width=5cm, valign=t]{./pictures/stromsummierung.png}
+	Strom"-summierung \hartl{462}
+	& \includegraphics[width=4.5cm, valign=t]{./pictures/stromsummierung.png}
 	& \begin{equation*}
 		V_{Out}=(4+1) \cdot I
 	  \end{equation*}
 	\\ \hline
 	Praktisch
 	& \includegraphics[width=6cm, valign=t]{./pictures/praktisch.png}
-	& \begin{equation*}
+	& \[
 		Idac_{max}=\frac{V_{refp}-V_{refn}}{R} \cdot \frac{2^n-1}{2^n}
-	  \end{equation*}
+	  \]
 	\\ \hline
 	R-2R-Netzwerk \hartl{462}
 	& \includegraphics[width=6cm, valign=t]{./pictures/r2rnetzwerk.png}
@@ -80,19 +79,17 @@
 	Kapazitiver DAC
 	& \includegraphics[width=6cm, valign=t]{./pictures/kapazitiverDAC.png}
 	& {\begin{align*}
-		C1	&=B3 \cdot 8C+B2 \cdot 4C+ \\
-			& \quad +B1\cdot 2C+B0\cdot C \\
-		C2	&= !B3 \cdot 8C+!B2 \cdot 4C+ \\
-			& \quad +!B1\cdot 2C+!B0\cdot C+C \\
+		C1	&= B3 \cdot 8C+B2 \cdot 4C+ B1 \cdot 2C+B0 \cdot C \\
+		C2	&= !B3 \cdot 8C+!B2 \cdot 4C+ !B1 \cdot 2C+!B0 \cdot C+C \\
 		V_{Out}& =\frac{C1}{C1+C2}\cdot (V_{refp}-V_{refn})\\
 		\text{mit } & C1+C2=2^n\cdot C
 	  \end{align*}}
 	\\ \hline
-\end{tabular}
+\end{longtable}
 
 
 \subsection{Zählverfahren(PWM)\hartl{466}}
-\begin{tabular}{|>{\bfseries}p{4cm}|l|p{8cm}|}
+\begin{longtable}{|>{\bfseries}p{4cm}|l|p{8cm}|}
 	\hline 
 	Grundprinzip \hartl{466}
 	& \includegraphics[width=6cm, valign=t]{./pictures/pwm_DAC.png}
@@ -114,89 +111,49 @@
 		n:&digitale Eingangsgrösse
 	  \end{tabular}
 	\\ \hline
-\end{tabular}
+\end{longtable}
+
 
 \subsubsection{Kaskadierte DAC}
-\begin{longtable}{|l|l|l|}
-\hline
-\begin{minipage}{4cm}
-\textbf{Grundprinzip}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 4cm]{pictures/kaskadiertDAC}
-\end{minipage}
-&
-
-\begin{minipage}{8cm}
-\begin{itemize}
-  \item MS-DAC hat 2 Ausgangsspannungen (Über und unter dem gewünschten
-  $V_{Out}$)
-  \item LS-DAC hat kleine Eingangspannungsdifferenz $\to$ höhere Auflösung der
-  Spannung
-\end{itemize}
-\end{minipage}
-\\
-\hline
-\begin{minipage}{4cm}
-\textbf{Zyklisch, algorithmischer DAC} \hartl{466}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 3cm]{pictures/zyklischDAC}
-\end{minipage}
-&
-
-\begin{minipage}{8cm}
-\textbf{Ablauf der Wandlung}\\
-\begin{enumerate}
-  \item Die Spannung im S/H wird gelöscht (Schalter S1), S3 geöffnet)
-  \item Schalter S1 wird danach auf den Verstärker-Ausgang geschaltet
-  \item Laufvariale k wird auf 0 gesetzt
-  \item Schalter S2 wird gesetzt: VREF oder GND ( abh. $D_{K}$).
-  \item Der Addierer generiert sein Ausgangssignal
-  \item Der Verstärker generiert sein Ausgangssignal
-  \item Im S/H wird die Feedback-Spannung gespeichert (S1)
-  \item X wird um 1 erhöht
-  \item Gehe zu Schritt 4, wenn $X\leq n$
-\end{enumerate}
-\end{minipage}
-\\
-\hline
-\begin{minipage}{4cm}
-\textbf{Pipelined DAC}\\
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 2cm]{pictures/piplinedDAC}
-\end{minipage}
-&
-
-\begin{minipage}{8cm}
-Die Latenz beträgt n Zyklen, die Update-Frequenz ist aber n-mal grösser
-\end{minipage}
-\\
-\hline
-\begin{minipage}{4cm}
-\textbf{Strom-DAC}
-\end{minipage}
-&
-\begin{minipage}{6cm}
-\includegraphics[width=6cm, height = 4cm]{pictures/stromDAC}
-\end{minipage}
-&
-
-\begin{minipage}{8cm}
-\begin{itemize}
-  \item Stromspiegel
-  \item MP0 ist gleich breit wie Stromquellen-MOS $\to$ I(MP0)=Iref
-  \item MP1 ist doppelt so breit wie MP0 $\to I(MP1)=2*Iref$
-  \item MP2 ist doppelt so breit wie MP1 $\to I(MP2)=4*Iref$
-  \item \ldots
-\end{itemize}
-\end{minipage}
-\\
-\hline
+\begin{longtable}{|>{\bfseries}p{4cm}|c|p{8cm}|}
+	\hline
+	Grundprinzip
+	& \includegraphics[width=6cm, valign=t]{./pictures/kaskadiertDAC.png}
+	& \begin{itemize}
+  		\item MS-DAC hat 2 Ausgangsspannungen (Über und unter dem gewünschten
+  			$V_{Out}$)
+  		\item LS-DAC hat kleine Eingangspannungsdifferenz $\to$ höhere Auflösung der
+  			Spannung
+	  \end{itemize}
+	\\ \hline
+	Zyklisch, algorithmischer DAC \hartl{466}
+	& \includegraphics[width=6cm, valign=t]{./pictures/zyklischDAC.png}
+	& \textbf{Ablauf der Wandlung}
+	  \begin{enumerate}
+  		\item Die Spannung im S/H löschen (Schalter S1), S3 offen)
+  		\item S1 auf den Verstärker-Ausgang schalten
+  		\item Laufvariale k wird auf 0 gesetzt
+  		\item S2 setzen: VREF oder GND ( abh. $D_{K}$).
+  		\item Der Addierer und Verstärker generieren Ausgangssignal
+  		\item Im S/H wird die Feedback-Spannung gespeichert (S1)
+  		\item X wird um 1 erhöht
+  		\item Gehe zu Schritt 4, wenn $X\leq n$
+	  \end{enumerate}
+	\\ \hline
+	Pipelined DAC 
+	& \includegraphics[width=6cm, valign=t]{pictures/piplinedDAC}
+	& Die Latenz beträgt n Zyklen, die Update-Frequenz ist aber n-mal grösser
+	\\ \hline
+	Strom-DAC
+	& \includegraphics[width=6cm, valign=t]{pictures/stromDAC}
+	& \begin{itemize}
+  		\item Stromspiegel
+  		\item MP0 ist gleich breit wie Stromquellen-MOS $\to$ I(MP0)=Iref
+  		\item MP1 ist doppelt so breit wie MP0 $\to I(MP1)=2*Iref$
+  		\item MP2 ist doppelt so breit wie MP1 $\to I(MP2)=4*Iref$
+  		\item \ldots
+	  \end{itemize}
+	\\ \hline
 \end{longtable}
 
 
