@@ -2,30 +2,19 @@
 \subsection{Tiefpass-Filter\hartl{514}}
 
 \subsubsection{1. Ordnung}
-\begin{itemize}
-  \item Aufbau\\
-  \begin{figure}[htb]
-  \includegraphics[scale=0.4]{pictures/tiefpass1ordnung}
-  \end{figure}
-  \item Übertragungsfunktion 
-  \begin{equation}
-  G1(s)=\frac{1}{1+s\cdot C\cdot R}
-  \end{equation}
-  \item Zeitkonstante T\\
-  Bei $j\omega=\frac{1}{T}$sin Real-  und Imaginärteil gleich gross
-  \begin{equation}
-  T:=\frac{1}{R\cdot C}
-  \end{equation}
-  \item $\to$ Amplitude $\frac{1}{1.41}\to 3dB$
-  \begin{equation}
-  f_{3dB}=\frac{1}{2\pi R\cdot C}
-  \end{equation}
-  \item Amplitudengang (3dB bei 1kHz)\\
-  \begin{figure}[!htbs]
-  \includegraphics[scale=0.5]{pictures/tiefpass1ordnungamplitude}
-  \end{figure}
-  
-\end{itemize}
+\begin{multicols}{2}
+	\textbf{Aufbau:} \\
+	\includegraphics[scale=0.4]{pictures/tiefpass1ordnung} \\
+	\textbf{UTF: } $G(s): \frac{1}{1+s\cdot C\cdot R}$ \\
+	\textbf{Zeitkonstante T:} \\
+	Bei $j\omega=\frac{1}{T}$sind Real-  und Imaginärteil gleich gross:  \\
+	$T=\frac{1}{R \cdot C}$ \\
+	\textbf{Amplitude} $\frac{1}{1.41}\to 3dB$ : $f_{3dB}=\frac{1}{2\pi R\cdot C}$ \\	
+\end{multicols}
+
+\textbf{Amplitudengang (3dB bei 1kHz)}\\
+\includegraphics[scale=0.5]{pictures/tiefpass1ordnungamplitude}
+
 
 
 \subsubsection{2. Ordnung}
@@ -60,7 +49,7 @@
 \subsection{Sallen Key (Einfachmitkopplung)\hartl{517}}
 \begin{figure}[htb]
 \centering
- \includegraphics[scale=0.5]{pictures/sallenkey}
+ \includegraphics[scale=0.4]{pictures/sallenkey}
 \end{figure}
 \begin{gather}
 0=(U_2-U_{in})\cdot \frac{1}{R_1}+(U_2-U_3)\cdot \frac{1}{R_2}+(U_2-U_{out})\cdot s\cdot C_1\\
@@ -76,7 +65,7 @@ G_{SK}(s):=\frac{G0}{C_1\cdot C_2\cdot R_1\cdot R_2\cdot s^2+s\cdot [C_2\cdot
 \subsubsection{Sallen Key-Filter bei hohen Frequenzen}
 \begin{figure}[htb]
 \centering
- \includegraphics[scale=0.5]{pictures/sallenkey2}
+ \includegraphics[scale=0.4]{pictures/sallenkey2}
 \end{figure}
 \begin{itemize}
   \item Wenn der Opamp nicht mehr verstärkt
@@ -94,7 +83,7 @@ G_{SK}(s):=\frac{G0}{C_1\cdot C_2\cdot R_1\cdot R_2\cdot s^2+s\cdot [C_2\cdot
 \subsection{Multiple Feedback\hartl{522}}
 \begin{figure}[!h]
 \centering
- \includegraphics[scale=0.5]{pictures/mulipleFeedback}
+ \includegraphics[scale=0.4]{pictures/mulipleFeedback}
 \end{figure}
 \begin{gather}
 0=(U_2-U_{in})\cdot \frac{1}{R_1}+(U_2-U_{out})\cdot \frac{1}{R_2}+(U_2-U_3)\cdot \frac{1}{R_3}+U_2\cdot s\cdot C_1\\
@@ -110,7 +99,7 @@ Verstärkung.
 \subsection{Zustandsvariablen-Filter}
 \begin{figure}[!h]
 \centering
- \includegraphics[scale=0.5]{pictures/zustandsvariable}
+ \includegraphics[scale=0.4]{pictures/zustandsvariable}
 \end{figure}
 \begin{gather}
 V{out}=-\frac{1}{s\cdot C_{i2}\cdot R_{i1}}\cdot V_{opo2}\\
