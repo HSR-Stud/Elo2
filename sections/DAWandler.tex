@@ -1,6 +1,8 @@
 \section{DA Wandler\hartl{455}}
 
 \subsection{Parallelverfahren (Voltage Scaling)}
+
+\renewcommand{\arraystretch}{1}
 \begin{tabular}{|>{\bfseries}p{3cm}|c|p{6.6cm}|}
 	\hline
 	Strom-DAC \hartl{456} 
@@ -21,15 +23,16 @@
 	\\ \hline
 	String DAC \hartl{459}
 	& \includegraphics[width=5.5cm, valign=t]{pictures/string_DAC}
-	& \begin{description}
+	& 
+		\begin{description}
   		\item[Vorteile: ] garantierte Stetigkeit
   		\item[Nachteile:] benötigt $2^n$ Widerstände und $2^n$ Schalter, n-to-$2^n$ Decoder(linke Variante)
 	  \end{description}
 	  {\begin{align*}
-	  	V_{Out_{ideal}}(D) = \frac{D}{2^n}(V_{Ref+} -V_{Ref-}) + V_{Ref-}\\
-	  	V_{Out_{real}}(D)=\\
-	  	\frac{D*R_{Load}}{2^n*R*D-R*D^2+2^n*R_{Load}+2^n*R_{Switch}}*\\*(V_{Ref+}
-	  	-V_{Ref-}) + V_{Ref-}
+	  	V_{Out_{ideal}}(D)=\frac{D}{2^n}(V_{Ref+}-V_{Ref-})+V_{Ref-}\\
+	  	V_{Out_{real}}(D)=V_{Ref-}+\left(V_{Ref+}-V_{Ref-}\right)\cdot\\
+	  	\cdot\frac{D*R_{Load}}{2^n*R*D-R*D^2+2^n*R_{Load}+2^n*R_{Switch}}\\
+	  	DAC_{error}(D)=\frac{V_{out_{real}}(D)-V_{out_{ideal}}(D)}{V_{out_{ideal}}(D)}\\
 	  \end{align*}}
 	  
 	\\ \hline
@@ -47,7 +50,7 @@
 	  \end{description}
 	\\ \hline
 \end{tabular}
-
+\renewcommand{\arraystretch}{\arraystretchOriginal}
 
 \subsection{Wägeverfahren\hartl{461}} 
 \begin{longtable}{|>{\bfseries}p{3cm}|c|p{8.6cm}|}
