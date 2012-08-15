@@ -25,9 +25,13 @@
   		\item[Vorteile: ] garantierte Stetigkeit
   		\item[Nachteile:] benötigt $2^n$ Widerstände und $2^n$ Schalter, n-to-$2^n$ Decoder(linke Variante)
 	  \end{description}
-	  \[
-	  	V_{Out}(D) = \frac{D}{2^n}(V_{Ref+} -V_{Ref-}) + V_{Ref-}
-	  \]
+	  {\begin{align*}
+	  	V_{Out_{ideal}}(D) = \frac{D}{2^n}(V_{Ref+} -V_{Ref-}) + V_{Ref-}\\
+	  	V_{Out_{real}}(D)=\\
+	  	\frac{D*R_{Load}}{2^n*R*D-R*D^2+2^n*R_{Load}+2^n*R_{Switch}}*\\*(V_{Ref+}
+	  	-V_{Ref-}) + V_{Ref-}
+	  \end{align*}}
+	  
 	\\ \hline
 	Segmented String DAC \hartl{459}
 	& \includegraphics[width=5cm, valign=t]{pictures/segmented_string_DAC}
