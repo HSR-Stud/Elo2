@@ -26,10 +26,10 @@
 \end{minipage}
 &
 \begin{minipage}{8cm}
-\begin{equation}
+\begin{equation*}
 S_{V_{DD}}^{U_{Ref}}=\frac{\frac{\Delta
 U_{Ref}}{U_{Ref}}}{\frac{\Delta V_{DD}}{V_{DD}}}=1
-\end{equation}
+\end{equation*}
 \begin{itemize}
   \item S: Sensitivität
 \end{itemize}
@@ -45,11 +45,11 @@ U_{Ref}}{U_{Ref}}}{\frac{\Delta V_{DD}}{V_{DD}}}=1
 \end{minipage}
 &
 \begin{minipage}{8cm}
-\begin{gather}
+\begin{gather*}
 U_{Ref}=U_{EB}=\frac{kT}{e}\ln{\frac{I}{I_{s}}} \notag\\\text{ für }V_{DD}>>
 U_{EB}\\
 S_{V_{DD}}^{U_{Ref}}=\frac{1}{\ln{\frac{I}{I_{S}}}}<1
-\end{gather}
+\end{gather*}
 \end{minipage}
 \\
 \hline
@@ -62,9 +62,9 @@ S_{V_{DD}}^{U_{Ref}}=\frac{1}{\ln{\frac{I}{I_{S}}}}<1
 \end{minipage}
 &
 \begin{minipage}{8cm}
-\begin{equation}
+\begin{equation*}
 V_{REF}\approx \frac{R_{1}+R_{2}}{R_{2}}V_{GS}
-\end{equation}
+\end{equation*}
 \end{minipage}
 \\
 \hline
@@ -77,11 +77,11 @@ V_{REF}\approx \frac{R_{1}+R_{2}}{R_{2}}V_{GS}
 \end{minipage}
 &
 \begin{minipage}{8cm}
-\begin{gather}
+\begin{gather*}
 I_{R}=I_{D}\\
 I_{R}R=U_{T}\ln{\frac{I_{D}}{I_{S}}}\\
 U_{T}=\frac{kT}{q}
-\end{gather}
+\end{gather*}
 \begin{itemize}
   \item Stromspiegel
   \item $U_{T}$: Temperaturabhängigkeit
@@ -98,15 +98,15 @@ U_{T}=\frac{kT}{q}
 \includegraphics[width=6cm, height = 4cm]{pictures/bandgapReferenz2}
 \end{minipage}
 &
-\begin{minipage}{8cm}
-\begin{gather}
-I_{C}=B*I_{BS}(e^{\frac{V_{BE}}{V_{T}}}-1)\approx\notag\\\approx
-B*I_{BS}*e^{\frac{V_{BE}}{V_{T}}}\\
-\frac{I_{C1}}{I_{C2}}=e^{\frac{V_{BE1}-V_{BE2}}{V_{T}}} \to \Delta
-V_{BE}=\notag\\=V_{BE1}-V_{BE2}=V_{T}\ln{\frac{I_{C1}}{I_{C1}}}\\
-V_{T}=\frac{kT}{q}\\
-V_{BE3}+V_{PTAT}\approx{!}1,2V
-\end{gather}
+\begin{minipage}{8cm}{
+\begin{align*}
+	I_{C} &= B*I_{BS}(e^{\frac{V_{BE}}{V_{T}}}-1) \\
+		  &\approx B*I_{BS}*e^{\frac{V_{BE}}{V_{T}}}\\
+	\frac{I_{C1}}{I_{C2}} &= e^{\frac{V_{BE1}-V_{BE2}}{V_{T}}} \\
+	\Delta V_{BE}	&= V_{BE1}-V_{BE2} = V_{T}\ln{\frac{I_{C1}}{I_{C1}}}\\
+	V_{T} &= \frac{kT}{q}\\
+	& V_{BE3}+V_{PTAT}\approx{!}1,2V
+\end{align*}}
 \end{minipage}
 \\
 \hline

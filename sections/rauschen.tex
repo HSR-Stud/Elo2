@@ -65,24 +65,24 @@ Red/Brown&$\frac{1}{f^2}$\\\hline
 \begin{tabular}{ll}
 \textbf{Mittelwert des Rauschens}&
 \begin{minipage}{9cm}
-\begin{equation}
+\begin{equation*}
 \overline{\nu_{n}}(t)\leq \nu_{n}(t)\geq \frac{1}{T}\int_{T}\nu_{n}(t)dt=0
-\end{equation}
+\end{equation*}
 \end{minipage}
 \\
 \textbf{Leistung ist ungleich Null}&\\
 \textbf{Varianz des Rauschens}&
 \begin{minipage}{9cm}
-\begin{equation}
+\begin{equation*}
 \overline{\nu_{n}}(t)^2=\frac{1}{T}\int_{T}\nu^2_{n}(t)dt\neq0
-\end{equation}
+\end{equation*}
 \end{minipage}
 \\
 \textbf{Effektivwert}&
 \begin{minipage}{9cm}
-\begin{equation}
+\begin{equation*}
 \nu_{n,rms}=\sqrt{\overline{\nu_{n}(t)^2}}
-\end{equation}
+\end{equation*}
 \end{minipage}
 \\
 \begin{minipage}{9cm}
@@ -156,10 +156,10 @@ Rechnen mit Rauschen: Signale und Rauschen addieren sich nicht gleich:
 \includegraphics[scale=0.4]{pictures/rcnetzwerk}
 \end{minipage}
 \begin{minipage}{9cm}
-\begin{gather}
+\begin{gather*}
 Z=\frac{1}{Y}=\frac{1}{G+j\omega C}=\frac{G-j\omega C}{G^2+\omega^2C^2}\\
 \overline{\nu^2_{n}}=\frac{4kT}{2\pi}\int^{\infty}_{0}\frac{G}{G^2+\omega^2C^2}d\omega=\frac{kT}{C}
-\end{gather}
+\end{gather*}
 \end{minipage}
 
 \subsection{Rausch-Bandbreite}
@@ -183,14 +183,14 @@ Z=\frac{1}{Y}=\frac{1}{G+j\omega C}=\frac{G-j\omega C}{G^2+\omega^2C^2}\\
 
 \end{minipage}
 \begin{minipage}{9cm}
-\begin{gather}
+\begin{gather*}
 e_{on}=\sqrt{\int^{\infty}_{0}|A_{n(f)}|^2e^2_{in}df}\\
 \text{für System 1. Ordnung}\notag\\
 e_{on}=e_{in}*\sqrt{\int^{\infty}_{0}\frac{1}{1+(2\pi
 fRC)^2}df}=\notag\\=e_{in}*\sqrt{\frac{1}{2\pi
 RC}|^{\infty}_0\tan^{-1}2\pi fRC}=\notag\\=e_{in}\sqrt{\frac{1}{2\pi
 RC}\frac{\pi}{2}}
-\end{gather}
+\end{gather*}
 \end{minipage}
 
 \subsection{Noise von Opamps}
@@ -224,6 +224,6 @@ vernachlässigt werden
   \item $e_{w}$: Noise/root(Hz)(Aus Datenblatt)
   \item ENB: Effective Noise Bandwidth ($1.51*GBW/A$)
 \end{itemize}
-\begin{gather}
+\begin{gather*}
 V_{noise}=\sqrt{4kT*R_{2}*A*ENB+e_{w}^2*A^2*ENB}
-\end{gather}
+\end{gather*}

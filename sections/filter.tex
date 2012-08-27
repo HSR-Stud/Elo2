@@ -55,7 +55,7 @@
 		\subfloat[für hohe Frequenzen]{\includegraphics[scale=0.4]{./pictures/sallenkey2.png}}
 	\end{center}
 \end{figure}
-\begin{gather}
+\begin{gather*}
 0=(U_2-U_{in})\cdot \frac{1}{R_1}+(U_2-U_3)\cdot \frac{1}{R_2}+(U_2-U_{out})\cdot s\cdot C_1\\
 0=(U_3-U_2)\cdot \frac{1}{R_2}+U_3\cdot s\cdot C_2\\
 \text{Opamp: }U_{out}=G_0\cdot U_3\\
@@ -65,16 +65,16 @@ G_{SK}(s):=\frac{G0}{C_1\cdot C_2\cdot R_1\cdot R_2\cdot s^2+s\cdot [C_2\cdot
 \text{Güte:
 }Q_{SK}(G_0)=\frac{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}{C_2\cdot (R_1+R_2)+C_1\cdot R_1\cdot (1-G_0)}\\
 \text{Grenzfrequenz: }\omega_0=\frac{1}{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}
-\end{gather}
+\end{gather*}
 \subsubsection{Sallen Key-Filter bei hohen Frequenzen}
 \begin{itemize}
   \item Wenn der Opamp nicht mehr verstärkt
   \item $C_1$, $C_2$ wirken wie Kurzschlüsse
-  \begin{equation}
+  \begin{equation*}
   \frac{V_{Out}}{V_{in}}=\frac{r_{OL}\parallel R_2\parallel
   (R_{A}+R_{B})}{R_1+r_{OL}\parallel R_2\parallel (R_{A}+R_{B})}\approx
   \frac{r_{OL}}{R_1+r_{OL}}
-  \end{equation}
+  \end{equation*}
   \item Folge: Sallen Key-Filter sind nicht geeignet für Systeme mit hohen
   Frequenzanteilen, z.B. PEM-DAC
 \end{itemize}
@@ -87,19 +87,19 @@ G_{SK}(s):=\frac{G0}{C_1\cdot C_2\cdot R_1\cdot R_2\cdot s^2+s\cdot [C_2\cdot
 		\subfloat[Zustandsvariablen Filter]{\includegraphics[scale=0.4]{./pictures/zustandsvariable.png}}
 	\end{center} 
 \end{figure}
-\begin{gather}
+\begin{gather*}
 0=(U_2-U_{in})\cdot \frac{1}{R_1}+(U_2-U_{out})\cdot \frac{1}{R_2}+(U_2-U_3)\cdot \frac{1}{R_3}+U_2\cdot s\cdot C_1\\
 0=(U_3-U_2)\cdot \frac{1}{R_3}+(U_3-U_{out})\cdot s\cdot C_2\\
 \text{Opamp sorg für }U_3=0\notag\\
 G_{mf}(s)=\frac{G0}{1+C_2(R_2+R_3+R_3\cdot \frac{R_2}{R_1})\cdot s+C_1\cdot C_2\cdot R_2\cdot R_3\cdot s^s}\\
 Q_{mf}=\frac{\sqrt{C_1\cdot C_2\cdot R_2\cdot R_3}}{C_2\cdot (R_2+R_3+R_3\cdot \frac{R_2}{R_1})}
-\end{gather}
+\end{gather*}
 Die Güte wird v.a. eingestellt mit $C_2$ und $R_1$, grosse Güte für kleines
 $C_2$ und grosses $R_1$. $C_2$ beeinflusst auch das Frequenzverhalten, $R_1$ die
 Verstärkung.
 
 \subsection{Zustandsvariablen-Filter}
-\begin{gather}
+\begin{gather*}
 V{out}=-\frac{1}{s\cdot C_{i2}\cdot R_{i1}}\cdot V_{opo2}\\
 V_{opo2}=-\frac{R_2}{R_1}\cdot V_{opo1}\\
 V_{opo1}=\frac{-1}{s\cdot C_{i1}}\cdot (\frac{V_{in}}{R_{in}}+\frac{V_{out}}{R_{fb}}+s\cdot C_{fb}\cdot V_{out})\\
@@ -107,7 +107,7 @@ G_{ss}(s)=\frac{-\frac{R_{fb}}{rin}}{C_{i1}\cdot C_{i2}\cdot R_{i1}\cdot R_{fb}\
 \omega_{0}=\frac{1}{\sqrt{C_{i1}\cdot C_{i2}\cdot R_{i1}\cdot R_{fb}\cdot \frac{R_1}{R_2}}}\\
 A0=-\frac{R_{fb}}{Rin}\\
 Q=\frac{\sqrt{C_{i1}\cdot C_{i2}\cdot R_{i1}\cdot R_{fb}\cdot \frac{R_1}{R_2}}}{C_{fb}\cdot R_{fb}}
-\end{gather}
+\end{gather*}
 D.h. mit dieser Topologie sind alle 3 Parameter frei wählbar!
 \begin{enumerate}
   \item $\omega_{0}$ mit $C_{i1}$, $C_{i2}$, $R_{fb}$, $R_{i2}$, $R_1$, $R_2$
