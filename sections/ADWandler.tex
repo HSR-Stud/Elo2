@@ -118,8 +118,8 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
 \begin{longtable}{cp{12cm}}
  \includegraphics[width=6cm, valign=t]{pictures/dualSlope11}
  & 
- {Für $0<t<T_{int}$
- \begin{align*}
+ \textbf{Für $0<t<T_{int}$}
+ {\begin{align*}
       V(t)&=
       \int\limits_0^{t}\frac{-1}{R_{int}
       \cdot C_{i}}(V_{in}-V_{GNDA})dt+V_{GNDA}\\
@@ -132,8 +132,8 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
  
  \includegraphics[width=6cm, valign=t]{pictures/dualSlope12}
  &  
- {Für $T_{int}<t<T$
- \begin{align*}
+ \textbf{Für $T_{int}<t<T$}
+ {\begin{align*}
   V(t)&=V_{int}-\frac{1}{R_{int}\cdot C_{i}}\cdot
   (V_{refn}-V_{GNDA}) \cdot t\\
    T_{abint}&=\frac{(V_{GNDA}-V_{in}) \cdot T_{int}}{V_{refn}-V_{GNDA}}
@@ -141,8 +141,8 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
  
  \includegraphics[width=6cm, valign=t]{pictures/dualSlope2}
  &  
- {Für $V_{GNDA}=0$:
-  \begin{align*}
+ \textbf{Für $V_{GNDA}=0$}
+ {\begin{align*}
     \int^{NT}_{0}V_{in}dt&=NTV_{in}\\
       NTV_{in}-\int^{nT}_{0}V_{Ref}dt&=NTV_{in}-nTV_{Ref}=0\\
       n&=\frac{V_{in}}{V_{Ref}}N\\
@@ -166,15 +166,21 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
 \end{longtable}
 
 \subsubsection{Spannungs- Frequenz- Umsetzer \hartl{495}}
-\begin{tabular}{cp{12cm}}
-  \includegraphics[width=6cm, valign=t]{pictures/sfu}
-  &
-    {\begin{align*}
+\begin{multicols}{2}
+	\begin{center}
+  		\includegraphics[width=7cm]{pictures/sfu_kurven}
+  	\end{center}
+  
+  \columnbreak
+  
+  \includegraphics[width=6cm]{pictures/sfu_schaltung}
+  
+   \begin{align*}
       V_{int}(t)=V_{in}+\frac{1}{RC}\int(V_{in}-V_{x})dt
-    \end{align*}
+   \end{align*}
     Vorteil: Immer am Eingangssignal\newline
-    Nachteil: Kein echter ADC}\\
-\end{tabular}
+    Nachteil: Kein echter ADC  
+\end{multicols}
 
 
 \subsubsection{Ladungs-Ausgleichs-Integrator \hartl{497}}

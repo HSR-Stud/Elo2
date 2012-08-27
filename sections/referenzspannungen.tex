@@ -1,13 +1,31 @@
 \section{Referenzspannungen\hartl{276}} 
 
 \subsection{Temperaturdrift von Referenzspannungen}
-\begin{itemize}
-  \item Wenn die Referenzspannung über den ganzen Temperaturbereich nicht mehr
-  als 1 LSB driften darf:
-\end{itemize}
-\begin{figure}[!htbp]
-\includegraphics[scale=0.5]{pictures/temperaturdrift}
-\end{figure}
+Wenn die Referenzspannung über den ganzen Temperaturbereich nicht mehr als 1 LSB driften darf:
+
+\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	Auflösung (bit)	& 
+	Anzahl Schritte	& 
+	1 LSB bei $V_{Ref} = 2.5 V$	& 
+	\multicolumn{1}{p{4cm}|}{Max. Temperatur Drift (ppm/\textdegree C) 0\ldots70 \textdegree C} &
+	\multicolumn{1}{p{4cm}|}{Max. Temperatur Drift (ppm/\textdegree C) -40 \ldots 85 \textdegree C}
+	\\ \hline
+	8 	& 256	& 9.766 mV 		& 111.61	& 62.50
+	\\ \hline
+	10	& 1024	& 2.441 mV		& 27.90		& 15.63
+	\\ \hline 
+	12	& 4096	& 610 $\mu$V	& 6.98		& 3.91
+	\\ \hline
+	14	& 16384	& 153 $\mu$V	& 1.74		& 0.98
+	\\ \hline
+	16	& 65536	& 38 $\mu$V		& 0.44		& 0.24
+	\\ \hline
+	20	& 1048576	& 2.38 $\mu$V	& 0.03	& 0.015
+	\\ \hline 
+\end{tabular}
+
+
 \subsection{Varianten von Referenzspannungen bei Wandlern}
 \begin{figure}[!h]
 \includegraphics[scale=0.3]{pictures/variantenReferenzspannungen}
