@@ -71,9 +71,6 @@ E_{A}<\frac{A_{Ref}}{2\cdot2^N}\\
 2\pi fST_{A} <\frac{2S}{2\cdot2^N}\\
 T_{A}\frac{1}{\pi f2^{N+1}}
 \end{gather*}
-
-
-
 \end{minipage}
 
 &
@@ -111,14 +108,13 @@ Signal.
 \subsection{Lineares Modell der Quantisierung\hartl{448}}
 \subsubsection{Signal-Rausch-Verhältnis\hartl{450}}
 \begin{multicols}{2}
-\begin{gather*}
-P_{Sig}=S^2_{Eff} =
-\frac{S^2}{2}=\frac{(\frac{A_{Ref}}{2})^2}{2}=\frac{A^2_{Ref}}{8}\\
-P^2_{N}=\frac{q^2}{12}=\frac{(\frac{A_{Ref}}{2^N})}{12}=\frac{A^2_{Ref}}{12\cdot2^{2N}}\\
-SNR=\frac{P^2_{S}}{P^2_{N}}=\frac{\frac{A^2_{Ref}}{8}}{\frac{A^2_{Ref}}{12\cdot2^{2N}}}=\frac{12\cdot2^{2N}}{8}=3\cdot2^{2N-1}\\
-SNR_{dB}=10\log(3\cdot2^{2N-1})=6.02N+1.76dB\\
-ENOB=\frac{SNR_{dB}-1.76}{6.02}
-\end{gather*}
+\begin{align*}
+P_{Sig} &= S^2_{Eff} = \frac{S^2}{2} = \frac{(\frac{A_{Ref}}{2})^2}{2} = \frac{A^2_{Ref}}{8}\\
+P^2_{N} &= \frac{q^2}{12} = \frac{(\frac{A_{Ref}}{2^N})}{12} = \frac{A^2_{Ref}}{12\cdot2^{2N}}\\
+SNR		&= \frac{P^2_{S}}{P^2_{N}} = \frac{\frac{A^2_{Ref}}{8}}{\frac{A^2_{Ref}}{12\cdot2^{2N}}} = \frac{12\cdot2^{2N}}{8} = 3\cdot2^{2N-1}\\
+SNR_{dB}&= 10\log(3\cdot2^{2N-1}) = 6.02N+1.76dB\\
+ENOB	&= \frac{SNR_{dB}-1.76}{6.02}
+\end{align*}
 
 \begin{tabular}{ll}
 $P_{Sig}$:&Signalleistung\\
