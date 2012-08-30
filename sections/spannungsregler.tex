@@ -92,11 +92,13 @@ V_{a}=V_{R1}+V_{R2}=V_{ref}+R_{2} \cdot (I_{R1}+I_{adj})=\notag\\=V_{ref}+R_{2} 
 &
 \begin{minipage}{8cm}
 Es gilt: $0\leq V_{a}\leq V_{e}$\\
+$S_{on}$\\
 \begin{gather*}
-S_{on}\notag\\
 V_{V}=L \cdot \frac{\Delta I_{L}}{\Delta t}\\
 V_{e}=V_{V}+V_{a} \to V_{e}=L \cdot \frac{\Delta I_{L}}{\Delta t}+V_{a}\\
-S_{off}\notag\\
+\end{gather*}
+$S_{off}$\\
+\begin{gather*}
 V_{n}=V_{a}=L \cdot \frac{\Delta I_{L}}{\Delta t}\\
 \Delta I_{L}=(V_{e}-V_{a}) \cdot \frac{1}{L} \cdot t_{ein}\\
 V_{a}=\frac{t_{ein}}{t_{aus}+t_{ein}} \cdot V_{e}=d \cdot V_{e}
@@ -117,10 +119,12 @@ d:&Tastverhältnis/Duty Factor\\
 &
 \begin{minipage}{8cm}
 Es gilt : $V_{a}\geq V_{e}$\\
+$S_{on}$\\
 \begin{gather*}
-S_{on}\notag\\
 V_{v}=V_{e}=L \cdot \frac{\Delta I_{L}}{\Delta t}\\
-S_{off}\notag\\
+\end{gather*}
+$S_{off}$\\
+\begin{gather*}
 V_{a}=V_{e}+V_{n}= L \cdot \frac{\Delta I_{L}}{\Delta t}+V_{e}\\
 \Delta I=\frac{1}{L} \cdot V_{e} \cdot t_{ein}\\
 \Delta I=\frac{1}{L} \cdot (V_{a}-V_{e}) \cdot t_{aus}\\
@@ -141,10 +145,12 @@ E_{L}=0.5L \cdot ipk^2
 \end{minipage}
 &
 \begin{minipage}{8cm}
+$S_{on}$\\
 \begin{gather*}
-S_{on}\notag\\
 V_{v}=V_{e}=L \cdot \frac{\Delta I_{L}}{\Delta t}\\
-S_{off}\notag\\
+\end{gather*}
+$S_{off}$\\
+\begin{gather*}
 V_{a}=-V_{n}=-L \cdot \frac{\Delta I_{L}}{\Delta t}\\
 V_{a}=-V_{e} \cdot \frac{t_{ein}}{t_{aus}}=-V_{e} \cdot \frac{d}{1-d} \notag\\\text{mit
 }d=\frac{t_{ein}}{t_{aus}+t_{ein}}
