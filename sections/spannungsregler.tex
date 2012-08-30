@@ -1,7 +1,7 @@
 \section{Spannungsregler/Stromversorgung\hartl{280}} 
 \subsection{Lineare Spannungsregler\hartl{280}} 
 Für alle linearen Spannungsregler gilt: \begin{equation*}
-P_{V}=(V_{E}-V_{a})*I_{a}
+P_{V}=(V_{E}-V_{a}) \cdot I_{a}
 \end{equation*}\\
 Einsatz für geringer Spannungsunterschied zwischen eingangsspannung und der
 geregelten Ausgangsspannung
@@ -55,7 +55,7 @@ $\beta$:&Stromverstärkungsfaktor des \\&Transistors
 \begin{minipage}{8cm}
 \begin{gather*}
 V_{ref}=V_{D}+V_{R1}\\
-V_{a}=I*(R_{2}+R_{1})=\frac{V_{ref}}{r}*4R=4*V_{ref}
+V_{a}=I \cdot (R_{2}+R_{1})=\frac{V_{ref}}{r} \cdot 4R=4 \cdot V_{ref}
 \end{gather*}
 \end{minipage}
 \\
@@ -71,8 +71,8 @@ V_{a}=I*(R_{2}+R_{1})=\frac{V_{ref}}{r}*4R=4*V_{ref}
 &
 \begin{minipage}{8cm}
 \begin{gather*}
-V_{a}=V_{R1}+V_{R2}=V_{ref}+R_{2}*(I_{R1}+I_{adj})=\notag\\=V_{ref}+R_{2}*(\frac{V_{ref}}{R_{1}}+I_{adj})\\
-\text{für }I_{adj}<< I_{R1} \to V_{a}=V_{ref}*(1+\frac{R_{2}}{R_{1}})
+V_{a}=V_{R1}+V_{R2}=V_{ref}+R_{2} \cdot (I_{R1}+I_{adj})=\notag\\=V_{ref}+R_{2} \cdot (\frac{V_{ref}}{R_{1}}+I_{adj})\\
+\text{für }I_{adj}<< I_{R1} \to V_{a}=V_{ref} \cdot (1+\frac{R_{2}}{R_{1}})
 \end{gather*}
 \end{minipage}
 \\
@@ -94,12 +94,12 @@ V_{a}=V_{R1}+V_{R2}=V_{ref}+R_{2}*(I_{R1}+I_{adj})=\notag\\=V_{ref}+R_{2}*(\frac
 Es gilt: $0\leq V_{a}\leq V_{e}$\\
 \begin{gather*}
 S_{on}\notag\\
-V_{V}=L*\frac{\Delta I_{L}}{\Delta t}\\
-V_{e}=V_{V}+V_{a} \to V_{e}=L*\frac{\Delta I_{L}}{\Delta t}+V_{a}\\
+V_{V}=L \cdot \frac{\Delta I_{L}}{\Delta t}\\
+V_{e}=V_{V}+V_{a} \to V_{e}=L \cdot \frac{\Delta I_{L}}{\Delta t}+V_{a}\\
 S_{off}\notag\\
-V_{n}=V_{a}=L*\frac{\Delta I_{L}}{\Delta t}\\
-\Delta I_{L}=(V_{e}-V_{a})*\frac{1}{L}*t_{ein}\\
-V_{a}=\frac{t_{ein}}{t_{aus}+t_{ein}}*V_{e}=d*V_{e}
+V_{n}=V_{a}=L \cdot \frac{\Delta I_{L}}{\Delta t}\\
+\Delta I_{L}=(V_{e}-V_{a}) \cdot \frac{1}{L} \cdot t_{ein}\\
+V_{a}=\frac{t_{ein}}{t_{aus}+t_{ein}} \cdot V_{e}=d \cdot V_{e}
 \end{gather*}
 \begin{tabular}{ll}
 d:&Tastverhältnis/Duty Factor\\
@@ -119,15 +119,15 @@ d:&Tastverhältnis/Duty Factor\\
 Es gilt : $V_{a}\geq V_{e}$\\
 \begin{gather*}
 S_{on}\notag\\
-V_{v}=V_{e}=L*\frac{\Delta I_{L}}{\Delta t}\\
+V_{v}=V_{e}=L \cdot \frac{\Delta I_{L}}{\Delta t}\\
 S_{off}\notag\\
-V_{a}=V_{e}+V_{n}= L*\frac{\Delta I_{L}}{\Delta t}+V_{e}\\
-\Delta I=\frac{1}{L}*V_{e}*t_{ein}\\
-\Delta I=\frac{1}{L}*(V_{a}-V_{e})*t_{aus}\\
+V_{a}=V_{e}+V_{n}= L \cdot \frac{\Delta I_{L}}{\Delta t}+V_{e}\\
+\Delta I=\frac{1}{L} \cdot V_{e} \cdot t_{ein}\\
+\Delta I=\frac{1}{L} \cdot (V_{a}-V_{e}) \cdot t_{aus}\\
 V_{a}=V_{e}\frac{t_{ein}+t_{aus}}{t_{aus}}=V_{e}\frac{1}{1-d}\notag\\\text{mit
 }d=\frac{t_{ein}}{t_{aus}+t_{ein}}\\
 \text{Energie im Magnetfeld:}\\
-E_{L}=0.5L*ipk^2
+E_{L}=0.5L \cdot ipk^2
 \end{gather*}
 \end{minipage}
 \\
@@ -143,10 +143,10 @@ E_{L}=0.5L*ipk^2
 \begin{minipage}{8cm}
 \begin{gather*}
 S_{on}\notag\\
-V_{v}=V_{e}=L*\frac{\Delta I_{L}}{\Delta t}\\
+V_{v}=V_{e}=L \cdot \frac{\Delta I_{L}}{\Delta t}\\
 S_{off}\notag\\
-V_{a}=-V_{n}=-L*\frac{\Delta I_{L}}{\Delta t}\\
-V_{a}=-V_{e}*\frac{t_{ein}}{t_{aus}}=-V_{e}*\frac{d}{1-d} \notag\\\text{mit
+V_{a}=-V_{n}=-L \cdot \frac{\Delta I_{L}}{\Delta t}\\
+V_{a}=-V_{e} \cdot \frac{t_{ein}}{t_{aus}}=-V_{e} \cdot \frac{d}{1-d} \notag\\\text{mit
 }d=\frac{t_{ein}}{t_{aus}+t_{ein}}
 \end{gather*}
 \end{minipage}
