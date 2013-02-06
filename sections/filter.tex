@@ -63,17 +63,18 @@
 		\caption{für hohe Frequenzen}
 	\end{subfigure}
 \end{figure}
-\begin{gather*}
-0=(U_2-U_{in})\cdot \frac{1}{R_1}+(U_2-U_3)\cdot \frac{1}{R_2}+(U_2-U_{out})\cdot s\cdot C_1\\
-0=(U_3-U_2)\cdot \frac{1}{R_2}+U_3\cdot s\cdot C_2\\
-\text{Opamp: }U_{out}=G_0\cdot U_3\\
-G0=\frac{R_{A}+R_{B}}{R_{B}}\\
-G_{SK}(s):=\frac{G0}{C_1\cdot C_2\cdot R_1\cdot R_2\cdot s^2+s\cdot [C_2\cdot
-(R_1+R_2)+C_1\cdot R_1\cdot (1-G_0)]+1}\\
-\text{Güte:
-}Q_{SK}(G_0)=\frac{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}{C_2\cdot (R_1+R_2)+C_1\cdot R_1\cdot (1-G_0)}\\
-\text{Grenzfrequenz: }\omega_0=\frac{1}{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}
-\end{gather*}
+\begin{align*}
+	0		&= (U_2-U_{in})\cdot \frac{1}{R_1}+(U_2-U_3)\cdot \frac{1}{R_2}+(U_2-U_{out})\cdot s\cdot C_1 \\
+	0		&= (U_3-U_2)\cdot \frac{1}{R_2}+U_3\cdot s\cdot C_2\\
+	U_{out}	&= U_{out}=G_0\cdot U_3 \\
+	G_0		&= \frac{R_{A}+R_{B}}{R_{B}}\\
+	G_{SK}	&= \frac{G0}{C_1\cdot C_2\cdot R_1\cdot R_2\cdot s^2+s\cdot [C_2\cdot (R_1+R_2)+C_1\cdot R_1\cdot (1-G_0)]+1}\\
+	Q_{SK}	&= \frac{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}{C_2\cdot (R_1+R_2)+C_1\cdot R_1\cdot (1-G_0)}\\
+	\omega_0 &= \frac{1}{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}
+\end{align*}
+Es wurden die folgenden Formelzeichen verwendet: $U_{out}$: Opamp Ausgangsspannung, $G_0$: ?, $Q_{SK}$: Güte des gesamten Schwingkreises, $G_{SK}$: ?,
+$\omega_0$: Grenzfrequenz
+
 \subsubsection{Sallen Key-Filter bei hohen Frequenzen}
 \begin{itemize}
   \item Wenn der Opamp nicht mehr verstärkt
