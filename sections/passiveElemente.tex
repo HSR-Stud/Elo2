@@ -16,7 +16,7 @@ $\rho$: Spezifischer Widerstand
 \subsubsection{Kapazitätswert}
 \begin{multicols}{2}
 	\begin{center}
-		\includegraphics[width=0.15\textwidth]{pictures/kapazitaetswert}
+		\includegraphics[width=0.13\textwidth]{pictures/kapazitaetswert}
 	\end{center}
 	\columnbreak
 
@@ -28,31 +28,63 @@ $\rho$: Spezifischer Widerstand
 
 
 \subsubsection{Einschaltvorgang}
-\input{idiotenseite/elektrotechnik/subsections/einschalt_kondensator}
-
-\subsubsection{Ersatzschaltbild}
-\input{tikz/ersatz_schalt_kondensator}
+\begin{multicols}{2}		
+	Ladevorgang:\\
+	$u_{\mathrm{C}} (t) = U_0 \cdot \biggl(1 - e^{- \frac{t}{\tau}}\biggr) = U_0
+	\cdot \biggl(1 - e^{- \frac{t}{R_{\mathrm{C}} \cdot C}}\biggr)$\\
+	$i_{\mathrm{C}} (t) = \frac{U_0}{R_{\mathrm{C}}} \cdot e^{- \frac{t}{\tau}} =
+	I_0 \cdot e^{- \frac{t}{R_{\mathrm{C}} \cdot C}}$\\
+	\newline
+	Entladevorgang\\
+	$u_{\mathrm{C}} (t) = U_0 \cdot e^{- \frac{t}{\tau}} = U_0 \cdot e^{-
+	\frac{t}{R_{\mathrm{C}} \cdot C}}$\\
+	$i_{\mathrm{C}} (t) = -	\frac{U_0}{R_{\mathrm{C}}} \cdot e^{- \frac{t}{\tau}}
+	= - I_0 \cdot e^{-\frac{t}{R_{\mathrm{C}} \cdot C}}$\\
+\end{multicols}
 
 \subsection{Induktivitäten/Spulen}
 \begin{multicols}{2}
 	\includegraphics[width=0.4\textwidth]{pictures/induktivitaet}
 	\columnbreak
-	\begin{itemize}
-  		\item Eine Änderung des elektrischen Stromes erzeugt ein Magnetfeld, das der
-  			Stromänderung entgegenwirkt
-  		\item Masseinheit Henry : $H=\frac{AS}{Vm}$
-	\end{itemize}
 	\begin{align*}
   		u_{i} &=-N\cdot\frac{d\Phi}{dt}\\
-  		L &=\frac{N\cdot\Phi}{I} \\
+  		L &=\frac{N\cdot\Phi}{I} \quad [L] = \frac{A \cdot s}{V \cdot m} \\
   		L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{2\pi r} & \text{Ringspule} \\
   		L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{l} & \text{Zylinderspule}
 	\end{align*}
 \end{multicols}
 
 \subsubsection{Einschaltvorgang}
-\input{idiotenseite/elektrotechnik/subsections/einschalt_spule}
+\begin{multicols}{2}
+	Ladevorgang\\
+	$i_{\mathrm{L}} (t) = I_0 \cdot \biggl(1 - \mathrm{e}^{-
+	\frac{t}{\tau}}\biggr) = \frac{U_0}{R_{\mathrm{L}}} \cdot \biggl(1 -
+	\mathrm{e}^{- \frac{t \cdot R_{\mathrm{L}}}{L}}\biggr)$\\
+	$u_{\mathrm{L}} (t) = \hat u \cdot e^{- \frac{t}{\tau}} = \hat u \cdot e^{-
+	\frac{t \cdot R_{\mathrm{L}}}{L}}$\\
+	\newline
+	Entladevorgang\\
+	$i_{\mathrm{L}} (t) = I_0 \cdot e^{- \frac{t}{\tau}} =
+	\frac{U_0}{R_{\mathrm{L}}} \cdot e^{- \frac{t \cdot
+	R_{\mathrm{L}}}{L}}$\\
+	$u_{\mathrm{L}} (t) = - \hat u \cdot e^{- \frac{t}{\tau}} = - \hat u \cdot
+	e^{- \frac{t \cdot R_{\mathrm{L}}}{L}}$\\
+\end{multicols}
 
-\subsubsection{Ersatzschaltbild}
-\input{tikz/ersatz_schalt_spule}
+\subsection{Ersatzschaltbilder Spule und Kondensator}
+\begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.4\textwidth}
+                \centering
+                \input{tikz/ersatz_schalt_kondensator}
+                \caption{Ersatzschaltung Kondensator}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.4\textwidth}
+                \centering
+                \input{tikz/ersatz_schalt_spule}
+                \caption{Ersatzschaltung Spule}
+        \end{subfigure}
+\end{figure}
 
