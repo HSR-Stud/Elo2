@@ -81,7 +81,13 @@
 	\\ \hline
 	R-2R-Netzwerk \hartl{462}
 	& \includegraphics[width=6cm, valign=t]{./pictures/r2rnetzwerk.png}
-	&
+	& {
+	\begin{align*}
+		V_{out,max} &= V_{Ref-} \\
+		V_{out,min} &= V_{Ref-} - R \cdot I_{max}\\
+		I_{max}		&= (V_{Ref+} - V_{Ref-}) (\frac{1}{2R} + \frac{1}{2}\frac{1}{2R} + \frac{1}{4} \frac{1}{2R} + \ldots) \\
+					&= (V_{Ref+} - V_{Ref-})\frac{1}{2R}(2-2^{1-b})
+	\end{align*}}
 	\\ \hline
 	Kapazitiver DAC
 	& \includegraphics[width=6cm, valign=t]{./pictures/kapazitiverDAC.png}
