@@ -31,7 +31,7 @@
 	  {\begin{align*}
 	  	V_{Out_{ideal}}(D) = \frac{D}{2^n}(V_{Ref+}-V_{Ref-})+V_{Ref-}\\
 	  	V_{Out_{real}}(D) = V_{Ref-}+\left(V_{Ref+}-V_{Ref-}\right)\cdot\\
-	  		\cdot\frac{D \cdot R_{Load}}{2^n \cdot R \cdot D-R \cdot D^2+2^n \cdot R_{Load}+2^n \cdot R_{Switch}}\\
+	  		\cdot\frac{D \cdot R_{Load}}{2^n \cdot R \cdot D-R \cdot D^2 + 2^n (R_{Load} + R_{Switch}) }\\
 	  	DAC_{error}(D)=\frac{V_{out_{real}}(D)-V_{out_{ideal}}(D)}{V_{out_{ideal}}(D)}\\
 	  \end{align*}}
 	  
