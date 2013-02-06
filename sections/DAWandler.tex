@@ -86,7 +86,7 @@
 		V_{out,max} &= V_{Ref-} \\
 		V_{out,min} &= V_{Ref-} - R \cdot I_{max}\\
 		I_{max}		&= (V_{Ref+} - V_{Ref-}) (\frac{1}{2R} + \frac{1}{2}\frac{1}{2R} + \frac{1}{4} \frac{1}{2R} + \ldots) \\
-					&= (V_{Ref+} - V_{Ref-})\frac{1}{2R}(2-2^{1-b})
+					&= (V_{Ref+} - V_{Ref-})\frac{1}{2R}(2-2^{1-n})
 	\end{align*}}
 	\\ \hline
 	Kapazitiver DAC
@@ -106,11 +106,9 @@
 	\hline 
 	Grundprinzip \hartl{466}
 	& \includegraphics[width=6cm, valign=t]{./pictures/pwm_DAC.png}
-	& $V_{Out}=\frac{D}{2^n} \cdot (V_{refp}-V_{refn})+V_{refn}$	  
-	  \begin{description}
-  		\item[Vorteile:] einfache Schaltung, hohe Auflösung, Funktioniert ohne analoge Schaltung onchip (z.B. mit FPGA, Microcontroller) 
-  		\item[Nachteile:] sehr langsam, benötigt grosse Zeitkonstante (Kapazität offchip)
-	  \end{description}
+	& $ V_{Out}=\frac{D}{2^n} \cdot (V_{refp}-V_{refn})+V_{refn} $ \newline
+	Fehler unter 1\%: \newline $t = - \ln(0.01) \cdot T$ \newline
+	Fehler unter $\pm \frac{1}{2} LSB$: \newline $ t = -\ln(\frac{1}{2^{n+1}}) \cdot T $
 	\\ \hline
 	PWM-Ansteuerung \hartl{466}
 	& \parbox[c][2cm]{6cm}{\input{tikz/DAWandler/PWMAnsteuerung.tex}}
