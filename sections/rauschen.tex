@@ -56,39 +56,27 @@
 \end{tabular}
 
 \subsection{Leistung des Rauschens}
-\begin{tabular}{ll}
-\textbf{Mittelwert des Rauschens}&
-\begin{minipage}{9cm}
-\begin{equation*}
-\overline{\nu_{n}}(t)\leq \nu_{n}(t)\geq \frac{1}{T}\int_{T}\nu_{n}(t)dt=0
-\end{equation*}
-\end{minipage}
-\\
-\textbf{Leistung ist ungleich Null}&\\
-\textbf{Varianz des Rauschens}&
-\begin{minipage}{9cm}
-\begin{equation*}
-\overline{\nu_{n}}(t)^2=\frac{1}{T}\int_{T}\nu^2_{n}(t)dt\neq0
-\end{equation*}
-\end{minipage}
-\\
-\textbf{Effektivwert}&
-\begin{minipage}{9cm}
-\begin{equation*}
-\nu_{n,rms}=\sqrt{\overline{\nu_{n}(t)^2}}
-\end{equation*}
-\end{minipage}
-\\
-\begin{minipage}{9cm}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|l|l|}
+	\hline
+	Mittelwert	
+	& $\overline{\nu_{n}}(t)\leq \nu_{n}(t)\geq \frac{1}{T}\int_{T}\nu_{n}(t)dt=0$ 
+	\\ \hline
+	Varianz (Leistung)
+	& $\overline{\nu_{n}}(t)^2=\frac{1}{T}\int_{T}\nu^2_{n}(t)dt\neq0$
+	\\ \hline
+	Effektivwert
+	& $\nu_{n,rms}=\sqrt{\overline{\nu_{n}(t)^2}}$
+	\\ \hline
+\end{tabular}
+\renewcommand{\arraystretch}{\arraystretchOriginal}
+\vspace{0.2cm}
+
 Rechnen mit Rauschen: Signale und Rauschen addieren sich nicht gleich:
 \begin{itemize}
-  \item deterministische Signale: Amplituden addieren sich
-  \item statistisch unabhängige Rauschquellen: Rauschleistung addiert sich
+	\item deterministische Signale: Amplituden addieren sich
+	\item statistisch unabhängige Rauschquellen: Rauschleistung addiert sich
 \end{itemize}
-\end{minipage}
-&
-\\
-\end{tabular}
 
 \subsection{Rauschen von Widerständen}
 \begin{itemize}
