@@ -6,3 +6,5 @@
 *.log
 *.out
 *.toc
+# Ignore preview files of TikzEdt
+*.preview.*

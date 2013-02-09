@@ -1,0 +1,11 @@
+\begin{circuitikz}[european]
+	\ctikzset{bipoles/length=1cm}
+	\draw (0,0) node[ocirc] {} 
+		to[short] ++(1,0) node[circ] {}
+		to[short] ++(1.3,0)
+		to[C=C] ++(0,-1.5)
+		to[short] ++(-1.3,0) node[circ] {}
+		to[short] ++(-1,0) node[ocirc] {};
+	\draw (1,0) to[R=G] (1,-1.5);
+	\draw[->] (-0.2,-1.9) node[below] {$\underline{Z}$} -- ++(0,1.2) -- ++(0.4,0);
+\end{circuitikz}
