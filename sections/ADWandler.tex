@@ -114,6 +114,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
  \includegraphics[width=6cm, valign=t]{pictures/dualSlope11}
  & 
  \textbf{Für $0<t<T_{int}$}
+ \vspace{0.2cm}
  {\begin{align*}
       V(t)&=
       \int\limits_0^{t}\frac{-1}{R_{int}
@@ -128,6 +129,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
  \includegraphics[width=6cm, valign=t]{pictures/dualSlope12}
  &  
  \textbf{Für $T_{int}<t<T$}
+ \vspace{0.2cm}
  {\begin{align*}
   V(t)&=V_{int}-\frac{1}{R_{int}\cdot C_{i}}\cdot
   (V_{refn}-V_{GNDA}) \cdot t\\
@@ -137,9 +139,10 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
  \includegraphics[width=6cm, valign=t]{pictures/dualSlope2}
  &  
  \textbf{Für $V_{GNDA}=0$}
+ \vspace{0.2cm}
  {\begin{align*}
-    \int^{NT}_{0}V_{in}dt&=NTV_{in}\\
-      NTV_{in}-\int^{nT}_{0}V_{Ref}dt&=NTV_{in}-nTV_{Ref}=0\\
+    \int^{N\cdot T}_{0}V_{in}dt&=N \cdot T \cdot V_{in}\\
+      N \cdot T \cdot V_{in}-\int^{n \cdot T}_{0}V_{Ref}dt&=N \cdot T \cdot V_{in}-n \cdot T \cdot V_{Ref}=0\\
       n&=\frac{V_{in}}{V_{Ref}}N\\
   \end{align*}}\\
   
