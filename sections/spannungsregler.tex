@@ -166,17 +166,27 @@ V_{a}=-V_{e} \cdot \frac{t_{ein}}{t_{aus}}=-V_{e} \cdot \frac{d}{1-d} \notag\\\t
   \item Ist Vout zu klein, wird Ladezeit (damit Strom) erhöht $\to V_{out}$wird
   grösser
 \end{itemize}
-\begin{figure}[htbs]
-\includegraphics[scale=0.5]{pictures/ausgangsspannungsregelung}
-\end{figure}
 
 \subsection{Regelung mit Current mode}
 \begin{itemize}
   \item Strom und Spannung werden gemessen
   \item Innerer Loop muss schneller sein als äusserer Loop
 \end{itemize}
-\begin{figure}[htbs]
-\includegraphics[scale=0.5]{pictures/currentmode}
+
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{pictures/ausgangsspannungsregelung}
+		\caption{Voltage Mode}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{pictures/currentmode}
+		\caption{Current Mode}
+	\end{subfigure}
+	\caption{Vergleich Current Mode / Voltage Mode}
 \end{figure}
 
 \subsection{Effizienzsteigerung}

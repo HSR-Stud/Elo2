@@ -162,11 +162,11 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
 
 \subsubsection{Spannungs- Frequenz- Umsetzer \hartl{495}}
 \begin{multicols}{2}
+\setlength{\columnseprule}{1pt}
 	\begin{center}
   		\includegraphics[width=7cm]{pictures/sfu_kurven}
   	\end{center}
   
-  \columnbreak
   
   \includegraphics[width=6cm]{pictures/sfu_schaltung}
   
@@ -175,46 +175,37 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
    \end{align*}
     Vorteil: Immer am Eingangssignal\newline
     Nachteil: Kein echter ADC  
-\end{multicols}
 
 
 \subsubsection{Ladungs-Ausgleichs-Integrator \hartl{497}}
-\begin{tabular}{cp{12cm}}
-  \includegraphics[width=6cm, valign=t]{pictures/lsg1}
-  &
-  \multirow{2}{12cm}{
-    \begin{itemize}
-      \item Gleichgewichtsbedingung\\
-        \begin{equation*}
-          V_{in}-\frac{n}{N}V_{Ref}=0\Rightarrow n=\frac{V_{in}}{V_{Ref}}N
-        \end{equation*}
-      \item Flipflop statt Monoflop
-    \end{itemize}}\\ 
-  \includegraphics[width=6cm, valign=t]{pictures/lsg2}
-  & \\
-\end{tabular}
-
-
+	\includegraphics[width=6cm, valign=t]{pictures/lsg1} \\
+	\includegraphics[width=6cm, valign=t]{pictures/lsg2}
+	\begin{itemize}
+	   \item Gleichgewichtsbedingung\\
+	    \begin{equation*}
+	      V_{in}-\frac{n}{N}V_{Ref}=0\Rightarrow n=\frac{V_{in}}{V_{Ref}}N
+	    \end{equation*}
+	  \item Flipflop statt Monoflop
+	\end{itemize}
+	
+	
 \subsubsection{Sigma-Delta Wandler \hartl{500}}
-\begin{tabular}{cp{12cm}}
-  \includegraphics[width=6cm, valign=t]{pictures/deltaSigma1}
-  &
-  {\begin{itemize}
-      \item Ersatzschaltung für Frequenzbereich
-      \item Tiefpass für Signal
-      \item Hochpass für Q
-    \end{itemize}
-    \begin{align*}
-      y=\frac{x-y}{s}+Q\Rightarrow y=x\frac{1}{1+s}+Q\frac{s}{1+s}
-    \end{align*}
-  }\\
-\end{tabular}
+	\includegraphics[width=6cm, valign=t]{pictures/deltaSigma1}
+	\begin{itemize}
+	      \item Ersatzschaltung für Frequenzbereich
+	      \item Tiefpass für Signal
+	      \item Hochpass für Q
+	\end{itemize}
+	\begin{align*}
+	  y=\frac{x-y}{s}+Q\Rightarrow y=x\frac{1}{1+s}+Q\frac{s}{1+s}
+	\end{align*}
 
 
 \subsubsection{Sigma-Delta Wandler 2. Ordnung \hartl{502}}
 \includegraphics[width=6cm, height =4cm]{pictures/deltaSigma2}
 
 
-
 \subsection{Kennwerte von ADC's}
 Siehe Buch \hartl{505}!
+
+\end{multicols}
