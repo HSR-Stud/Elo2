@@ -59,18 +59,13 @@
   &
   \includegraphics[width=6cm, valign=t]{pictures/waegeverfahren}
   \\ \hline
-
-  {\textbf{Wägeverfahren mit SC-Prinzip} \hartl{488}
-  \begin{enumerate}
-    \item Schalter $S_{2},S_{1},S_{0},S_{A}$ verbunden mit $V_{in}$ und
-      $S_{C}$mit GND$\to$ alle Kapazitäten werden auf $V_{in}$aufgeladen
-    \item öffnen der Schalter $S_{C}und S_{A}$ und bleiben in dieser Stellung
-    \item $S_{2}$ auf $V_{Ref}$ und $S_{1},S_{0}$auf GND $\to$
-      $V_{x}=-V_{in}+0,5V_{Ref}$
-    \item Ergebnis von SAR ausgewertet $\to$ $S_{2}$bleibt oder wechselt auf GND
-    \item Fortzetung mit den folgenden Schaltern
-  \end{enumerate}
-  }
+  \textbf{Wägeverfahren mit SC-Prinzip} \hartl{488} \newline
+  { \begin{align*}
+  	b &= 3 & \text{Quantisierung} \\
+  	q &= \frac{V_{ref}}{2^b} & \text{Quantisierungsschritt} \\
+  	D &= floor\left(\frac{V_{in}}{q}\right) & \text{Digitaler Wert} \\
+  	V_{rest} &= mod\left(V_{in},q\right) & \text{nicht aufgelöste Spannung}
+  \end{align*}}
   &
   \includegraphics[width=6cm, valign=t]{pictures/waegeverfahrenSC}\\
 \hline
