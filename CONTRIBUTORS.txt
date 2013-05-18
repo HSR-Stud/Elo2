@@ -4,3 +4,4 @@ Raphael Nestler (rnestler)
 Mathias Diethelm (mdiethelm)
 Gian Claudio Köppel (gkoeppel)
 Damian Köppel (dkoeppel)
+David Wright
