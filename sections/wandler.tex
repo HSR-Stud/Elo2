@@ -1,7 +1,7 @@
 \section{Wandler}
 
 \subsection{Kennlinien\hartl{432}}
-\begin{tabular}{|>{\bfseries}p{0.31\textwidth}|c|c|}
+\begin{tabular}{|>{\bfseries}p{0.25\textwidth}|c|c|}
 	\hline
 	& \textbf{ADC} & \textbf{DAC} 
 	\\ \hline
@@ -10,22 +10,22 @@
 	& \parbox[c]{0.31\textwidth}{\includegraphics[width=0.31\textwidth]{./pictures/idealerDAC.png}}
 	\\ \hline
 	Quantisierungsintervall
-	& $q = \frac{A_{max}}{2^N} = \frac{V_{refp}-V_{refn}}{2^N}$
-	& $q = \frac{A_{Ref}}{2^N} = 1LSB $
+	& $q = \frac{A_{max}}{2^N} = \frac{V_{Refp}-V_{Refn}}{2^N}$
+	& $q = \frac{A_{Ref}}{2^N} = \frac{V_{Refp}-V_{Refn}}{2^N} = 1LSB $
 	\\ \hline
 	Quantisierungsfehler
 	& $ -\frac{q}{2}\leq E_{q}<+\frac{q}{2} $
 	&
 	\\ \hline 
 	Ausgangsgrösse
-	&
-	& $A_{out} = D_{in}\cdot q = D_{in}\cdot(\frac{A_{Ref}}{2^N})$
+	& $D_{out} = \frac{V_{in} - V_{Refn}}{q} = \frac{V_{in} - V_{Refn}}{V_{Refp}-V_{Refn}} \cdot 2^{N}$
+	& $V_{out} = D_{in}\cdot q + V_{Refn}= D_{in}\cdot(\frac{A_{Ref}}{2^N}) + V_{Refn}$
 	\\ \hline
 	Offset-Fehler \hartl{434}
 	& \includegraphics[height=3cm, trim=0cm 0cm 6.2cm 6.5cm, clip=true, valign=t]{./pictures/EoffADC.png}
 	& \includegraphics[height=3cm, trim=0cm 0cm 6cm 6.5cm, clip=true, valign=t]{./pictures/EoffDAC.png}
 	\\ \hline
-	Verstärkungsfehler\hartl{436}
+	Verstärkungsfehler \hartl{436}
 	& \includegraphics[height=3.8cm, valign=t]{./pictures/verstaerkungsfehlerADC.png} 
     & \includegraphics[height=3.8cm, valign=t]{./pictures/verstaerkungsfehlerDAC.png}
 	\\ \hline

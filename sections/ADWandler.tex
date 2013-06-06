@@ -75,7 +75,7 @@
     \item Im S/H wird die Eingangsspannung geschpeichert (Schalter Sin)
     \item Schalter Sin wird danach auf den Multiplizierer-Ausgang geschaltet
     \item X(Laufvariable) wird auf n-1 gesetzt
-    \item Der Jomparator wird ausgewertet\newline
+    \item Der Komparator wird ausgewertet\newline
       Dout=1: Bx=1, Switch S=1 (d.h. im Subtrahierer wird Vrefh von Vc
       subtrahiert)\newline
       Dout=0: Bx=0, Switch S=0 (d.h. im Subtrahierer wird 0 von Vc
@@ -118,7 +118,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
  {\begin{align*}
       V(t)&=
       \int\limits_0^{t}\frac{-1}{R_{int}
-      \cdot C_{i}}(V_{in}-V_{GNDA})dt+V_{GNDA}\\
+      \cdot C_{i}}(V_{in}-V_{GNDA})d\tau+V_{GNDA}\\
       V_{int}(V_{in})&=\frac{-1}{R_{int}
       \cdot C_{i}}(V_{in}-V_{GNDA})T_{int}+V_{GNDA}\\
       V_{intmax}&=V_{int}(V_{in}=0)\\
