@@ -1,88 +1,75 @@
+\newpage
 \section{Passive Elemente}
 
-\subsection{Widerstände}
-\begin{multicols}{2}
-\includegraphics[width=0.3\textwidth]{pictures/widerstand.png}
+\begin{longtable}{|>{\bfseries}p{3cm}|c|p{10cm}|}
+    \hline
+    Widerstand
+    & \includegraphics[width=4cm, valign=t]{pictures/widerstand.png}
+    & {$R=\rho \cdot \frac{l}{w\cdot d}$ \qquad $\rho$: Spezifischer Widerstand
+      }
+    \\ \hdashline
+    {PTC (Kaltleiter)\newline
+     am Beispiel\newline
+     PT1000
+    }
+    &
+    & {Berechnung des Widerstandes für Temp $>$ 0°C:\newline
+       $R = R_0 \cdot (1 + \alpha t + \beta t^2)$\newline
+       Berechnung des Widerstandes für Temp $<$ 0°C:\newline
+       \begin{align*}
+           R &= R_0 \cdot [1 + \alpha t + \beta t^2 + \gamma \cdot (t - 100 ^\circ C)\cdot t^3]\\
+           \alpha &= 3.9083 \cdot 10^{-3} 1/ ^\circ C\\
+           \beta &= -5.775 \cdot 10^{-7} 1/ ^\circ C^2\\
+           \gamma &= -4.183 \cdot 10^{-12} 1/ ^\circ C^4
+       \end{align*}
+      }
+    \\ \hdashline
+    {NTC\newline
+     (Heissleiter)
+    }
+    &
+    & {$R_T = R_R \cdot e^{B\cdot\left( \frac{1}{T} - \frac{1}{T_R}\right) }$\newline
+       $\mathrm{R_T}$: NTC-Widerstand bei Temperatur T in Kelvin\newline
+       $\mathrm{R_R}$: NTC-Widerstand bei definierter Temperatur $\mathrm{T_R}$ in Kelvin\newline
+      }
+    
+    \\ \hline
+    % ----------------------------------------------------------------------------------------------------
+    Kondensator
+    & \includegraphics[width=4cm, valign=t]{pictures/kapazitaetswert.png}
+    & {$C=\varepsilon_{r}\cdot \varepsilon_{0}\cdot \frac{W\cdot L}{d}=\varepsilon_{r}\cdot \varepsilon_{0}\cdot \frac{A}{d}$ \qquad $\varepsilon_{0}= 8.85 pF/m$\newline
+       \newline
+       \begin{align*}
+           \intertext{\textbf{Ladevorgang:}}
+           u_{\mathrm{C}} (t) &= U_0 \cdot \left( 1 - e^{- \frac{t}{\tau}}\right)  = U_0 \cdot \left( 1 - e^{- \frac{t}{R \cdot C}}\right)\\
+           i_{\mathrm{C}} (t) &= \frac{U_0}{R} \cdot e^{- \frac{t}{\tau}} = I_0 \cdot e^{- \frac{t}{R \cdot C}}\\
+           \intertext{\textbf{Entladevorgang:}}
+           u_{\mathrm{C}} (t) &= U_0 \cdot e^{- \frac{t}{\tau}} = U_0 \cdot e^{-\frac{t}{R \cdot C}}\\
+           i_{\mathrm{C}} (t) &= -\frac{U_0}{R} \cdot e^{- \frac{t}{\tau}} = - I_0 \cdot e^{-\frac{t}{R \cdot C}}
+       \end{align*}
+      }
+    \\ \hline
+    % ----------------------------------------------------------------------------------------------------
+    Induktivität
+    & \includegraphics[width=4cm, valign=t]{pictures/induktivitaet.png}
+    & {\begin{align*}
+           L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{2\pi r} \qquad \text{Ringspule} \\
+           L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{l} \qquad \text{Zylinderspule} \\
+           L &=\frac{N\cdot\Phi}{I} \qquad \qquad u_{i} =-N\cdot\frac{d\Phi}{dt}\\
+           \intertext{\textbf{Ladevorgang:}}
+           i_{\mathrm{L}} (t) &= I_0 \cdot \left( 1 - e^{-\frac{t}{\tau}}\right) = \frac{U_0}{R} \cdot \left( 1 -e^{-t\cdot \frac{R}{L}}\right) \\
+            u_{\mathrm{L}} (t) &= \hat u \cdot e^{-\frac{t}{\tau}} = \hat u \cdot e^{-t \cdot\frac{R}{L}}\\
+            \intertext{\textbf{Entladevorgang:}}
+            i_{\mathrm{L}} (t) &= I_0 \cdot e^{- \frac{t}{\tau}} = \frac{U_0}{R} \cdot e^{- t \cdot\frac{R}{L}}\\
+            u_{\mathrm{L}} (t) &= - \hat u \cdot e^{- \frac{t}{\tau}} = - \hat u \cdot e^{- t \cdot\frac{R}{L}}
+       \end{align*}
+      }
+    \\ \hline
+    \multicolumn{2}{|c}{\input{tikz/ersatz_schalt_kondensator}}
+    & \multicolumn{1}{|c|}{\input{tikz/ersatz_schalt_spule}}\\
+    \multicolumn{2}{|c}{Ersatzschaltung Kondensator}
+    & \multicolumn{1}{|c|}{Ersatzschaltung Spule}
+    \\ \hline
+\end{longtable}
 
-\columnbreak
-
-$R=\rho\frac{l}{w*d}$ \\
-$\rho$: Spezifischer Widerstand
-\end{multicols} 
-
-\subsection{Kondensatoren}
-\subsubsection{Kapazitätswert}
-\begin{multicols}{2}
-	\begin{center}
-		\includegraphics[width=0.13\textwidth]{pictures/kapazitaetswert}
-	\end{center}
-	\columnbreak
-
-	\begin{equation*}
-		C=\varepsilon_{r}*\varepsilon_{0}*\frac{W*L}{d}=\varepsilon_{r}*\varepsilon_{0}*\frac{A}{d}
-	\end{equation*}
-	mit $\varepsilon_{0}= 8.85 pF/m$
-\end{multicols}
-
-
-\subsubsection{Einschaltvorgang}
-\begin{multicols}{2}		
-	Ladevorgang:\\
-	$u_{\mathrm{C}} (t) = U_0 \cdot \biggl(1 - e^{- \frac{t}{\tau}}\biggr) = U_0
-	\cdot \biggl(1 - e^{- \frac{t}{R_{\mathrm{C}} \cdot C}}\biggr)$\\
-	$i_{\mathrm{C}} (t) = \frac{U_0}{R_{\mathrm{C}}} \cdot e^{- \frac{t}{\tau}} =
-	I_0 \cdot e^{- \frac{t}{R_{\mathrm{C}} \cdot C}}$\\
-	\newline
-	Entladevorgang\\
-	$u_{\mathrm{C}} (t) = U_0 \cdot e^{- \frac{t}{\tau}} = U_0 \cdot e^{-
-	\frac{t}{R_{\mathrm{C}} \cdot C}}$\\
-	$i_{\mathrm{C}} (t) = -	\frac{U_0}{R_{\mathrm{C}}} \cdot e^{- \frac{t}{\tau}}
-	= - I_0 \cdot e^{-\frac{t}{R_{\mathrm{C}} \cdot C}}$\\
-\end{multicols}
-
-\subsection{Induktivitäten/Spulen}
-\begin{multicols}{2}
-	\includegraphics[width=0.4\textwidth]{pictures/induktivitaet}
-	\columnbreak
-	\begin{align*}
-  		u_{i} &=-N\cdot\frac{d\Phi}{dt}\\
-  		L &=\frac{N\cdot\Phi}{I} \quad [L] = \frac{A \cdot s}{V \cdot m} \\
-  		L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{2\pi r} & \text{Ringspule} \\
-  		L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{l} & \text{Zylinderspule}
-	\end{align*}
-\end{multicols}
-
-\subsubsection{Einschaltvorgang}
-\begin{multicols}{2}
-	Ladevorgang\\
-	$i_{\mathrm{L}} (t) = I_0 \cdot \biggl(1 - \mathrm{e}^{-
-	\frac{t}{\tau}}\biggr) = \frac{U_0}{R_{\mathrm{L}}} \cdot \biggl(1 -
-	\mathrm{e}^{- \frac{t \cdot R_{\mathrm{L}}}{L}}\biggr)$\\
-	$u_{\mathrm{L}} (t) = \hat u \cdot e^{- \frac{t}{\tau}} = \hat u \cdot e^{-
-	\frac{t \cdot R_{\mathrm{L}}}{L}}$\\
-	\newline
-	Entladevorgang\\
-	$i_{\mathrm{L}} (t) = I_0 \cdot e^{- \frac{t}{\tau}} =
-	\frac{U_0}{R_{\mathrm{L}}} \cdot e^{- \frac{t \cdot
-	R_{\mathrm{L}}}{L}}$\\
-	$u_{\mathrm{L}} (t) = - \hat u \cdot e^{- \frac{t}{\tau}} = - \hat u \cdot
-	e^{- \frac{t \cdot R_{\mathrm{L}}}{L}}$\\
-\end{multicols}
-
-\subsection{Ersatzschaltbilder Spule und Kondensator}
-\begin{figure}[h!]
-        \centering
-        \begin{subfigure}[b]{0.4\textwidth}
-                \centering
-                \input{tikz/ersatz_schalt_kondensator}
-                \caption{Ersatzschaltung Kondensator}
-        \end{subfigure}%
-        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
-          %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.4\textwidth}
-                \centering
-                \input{tikz/ersatz_schalt_spule}
-                \caption{Ersatzschaltung Spule}
-        \end{subfigure}
-\end{figure}
 
