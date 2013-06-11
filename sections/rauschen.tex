@@ -1,37 +1,38 @@
 \section{Rauschen}
-
-\subsection{Typen von Noise}
-\begin{longtable}{|>{\bfseries}p{3.5cm}|p{6cm}|p{8cm}|}
+\vspace{-3mm}
+\begin{longtable}{|p{3.5cm}|p{6cm}|p{8cm}|}
 	\hline
-	Shot Noise , Schottky noise oder quantum noise
-	& \begin{itemize}
-  		\item Verursacht durch zufällige Fluktuationen der Bewegung von
-  		Ladungsträgern, die Potentialbarrieren überwinden müssen
+    \multicolumn{3}{|l|}{\bf Typen von Rauschen}
+    \\ \hline
+	Shot / Schottky / quantum noise
+	& \vspace{-1.5\topsep}
+      \begin{itemize}[leftmargin=*]
+  		\item Verursacht durch zufällige Fluktuationen der Bewegung von Ladungsträgern, die Potentialbarrieren überwinden müssen
   		\item Charakteristik
   		\begin{itemize}
-    		\item geküpft an Stromfluss
+    		\item geknüpft an Stromfluss
     		\item Unabhängig von Temperatur
     		\item Spektral "`flach"'
     	\end{itemize}
 	  \end{itemize}
-	& {\begin{gather*}
-		E_{sh}=kT\sqrt{\frac{2B}{qI_{dc}}}\\
-		E_{sh}= 0.4\mu V @ 1mA,1MHz
-	  \end{gather*}}
-	  \begin{tabular}{ll}
-		k: & Bolzmannkonstante\\&($1.38 \cdot 10^{-23}$Joule/$^\circ$K)\\
-		q: & Elektronenladung ($1.6 \cdot 10^{-19}$Coulomb)\\
-		T: & Temperatur in $^\circ$K\\
-		$I_{dc}$: & Durchschnittlicher DC Strom in A\\
-		B: & Bandbreite in Hz
-	  \end{tabular}
-	\\ \hline
+	& {
+		$E_{sh}=kT\sqrt{\frac{2B}{qI_{dc}}}$\newline
+		$E_{sh}= 0.4\mu V @ 1mA,1MHz$\newline
+        
+		k: Bolzmannkonstante ($1.38 \cdot 10^{-23}$Joule/$^\circ$K)\newline
+		q: Elektronenladung ($1.6 \cdot 10^{-19}$Coulomb)\newline
+		T: Temperatur in $^\circ$K\newline
+		$I_{dc}$: Durchschnittlicher DC Strom in A\newline
+		B: Bandbreite in Hz
+      }
+	\\ \hdashline
 	Thermisches Rauschen
 	& Konstant für alle Frequenzen
 	&
-	\\ \hline
+	\\ \hdashline
 	Flicker Noise, 1/f noise, rosa Rauschen
-	& \begin{itemize}
+	& \vspace{-1.5\topsep}
+      \begin{itemize}[leftmargin=*]
 	  	\item nicht gleichverteilt über die Frequenz, seine
   	  	\item Rauschleistung nimmt umgekehrt proportional zur Frequenz ab.
   	  \end{itemize}
@@ -39,112 +40,138 @@
 		E_{n}=K_{v}\sqrt{\ln{\frac{f_{max}}{f_{min}}}}\\
 		I_{n}=K_{i}\sqrt{\ln{\frac{f_{max}}{f_{min}}}}
   	  \end{gather*}}\\
-	\hline
+	\hline    
 \end{longtable}
-
-\subsection{Rausch-Farben}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Color}&\textbf{Frequency content} &&\\
-\hline
-	Purple&$f^2$ & Blue&f\\
-\hline
-	White&1 & Pink&$\frac{1}{f}$\\
-\hline
-	Red/Brown&$\frac{1}{f^2}$ && \\
-\hline
-\end{tabular}
-
-\subsection{Leistung des Rauschens}
+% ----------------------------------------------------------------------------------------------------
+\vspace{-2.5\topsep}
+\begin{longtable}{|p{4.27cm}p{4.27cm}|p{4.27cm}p{4.27cm}|}
+    \hline
+    \multicolumn{4}{|l|}{\bf Rausch-Farben}
+    \\ \hline
+    \textbf{Color} & \textbf{Frequency Spectrum} & \textbf{Color} & \textbf{Frequency Spectrum}
+    \\ \hline
+    Purple         & $\mathrm{f^2}$              & Blue           & f\\
+    White          & 1                           & Pink           & $\mathrm{\frac{1}{f}}$\\
+    Red/Brown      & $\mathrm{\frac{1}{f^2}}$    &                & \\
+    \hline
+\end{longtable}
+% ----------------------------------------------------------------------------------------------------
+\vspace{-2.5\topsep}
 \renewcommand{\arraystretch}{1.8}
-\begin{tabular}{|l|l|}
-	\hline
-	Mittelwert	
-	& $\overline{\nu_{n}}(t)\leq \nu_{n}(t)\geq \frac{1}{T}\int_{T}\nu_{n}(t)dt=0$ 
-	\\ \hline
-	Varianz (Leistung)
-	& $\overline{\nu_{n}}(t)^2=\frac{1}{T}\int_{T}\nu^2_{n}(t)dt\neq0$
-	\\ \hline
-	Effektivwert
-	& $\nu_{n,rms}=\sqrt{\overline{\nu_{n}(t)^2}}$
-	\\ \hline
-\end{tabular}
-\renewcommand{\arraystretch}{\arraystretchOriginal}
-\vspace{0.2cm}
-
-Rechnen mit Rauschen: Signale und Rauschen addieren sich nicht gleich:
-\begin{itemize}
-	\item deterministische Signale: Amplituden addieren sich
-	\item statistisch unabhängige Rauschquellen: Rauschleistung addiert sich
-\end{itemize}
-
-\subsection{Rauschen von Widerständen}
-\begin{itemize}
-  \item Nicht die Rausch-Spannungen sondern die Rausch-Leistungen müssen addiert werden!
-\end{itemize}
-\subsubsection{Strom- und Spannungsrauschen}
-\begin{multicols}{3}
-	\includegraphics[scale=0.5]{pictures/widerstandrauschen}
-	\columnbreak
-	\begin{align*}
-		S_{noise}(R) &=4kTR\\
-		E_{noise}(R) &=\sqrt{4kTR}\\
-		\overline{\nu^2_{n}} &=4kTRB\\
-		\overline{i^2_{n}} &=4kTGB\\
-		\nu_{rms} &= \sqrt{\overline{\nu^2_{n}}} = \sqrt{4kTRB}
-	\end{align*}
-	\begin{tabular}{ll}
-		B:&Bandbreite\\
-		T:&Temperatur in Kelvin(293K)\\
-		k:&$1.38 \cdot 10^{-23}JK^{-1}$\\
-		$S_{noise}(R)$:&Spektrale Dichte (Leistung)\\
-		$E_{noise}(R)$:&Spannungsdichte\\
-		$\nu_{RMS}$: & Rauschspannung\\
-	\end{tabular}
-\end{multicols}
-
-\subsubsection{Widerstände in Serie}
-\begin{minipage}{0.4\textwidth}
-	\begin{center}
-		\input{tikz/rauschen_serie}
-	\end{center}
-\end{minipage}
-\begin{minipage}{0.6\textwidth}
-	\begin{align*}
-		\overline{\nu^2_{n}}&=4kT(R1+R2)B=\overline{\nu^2_{n1}}+\overline{\nu^2_{n2}}\\
-		\overline{i^2_{n}}&=4kT(G1+G2)B=\overline{i^2_{n1}}+\overline{i^2_{n2}}
-	\end{align*}
-\end{minipage}
-
-\subsubsection{Spannungsteiler}
-\begin{minipage}{0.4\textwidth}
-	\includegraphics[scale=0.4]{pictures/seriewiderstand1}\\
-	\includegraphics[scale=0.4]{pictures/seriewiderstand2}
-\end{minipage}
-\begin{minipage}{0.6\textwidth}
-	Quellenumwandlung machen und dann Rauschen über Ersatzwiderstand ($R_T$) bestimmen.
-	\begin{align*}
-		V_{T,s}&=V_{s}\frac{R_{3}}{R_{1}+R_{3}}\\
-		\overline{\nu^2_{Tn}}&=4kTR_{T}B=4kT(R_{2}+R_{1}\parallel R_{3})B
-	\end{align*}
-\end{minipage}
-
-\subsection{Rauschen von RC-Netzwerken}
-\begin{itemize}
-  \item Kapazitäten (und Induktivitäten) rauschen nicht!
-  \item Kapazitäten (und Induktivitäten) ändern die Bandbreite des Systems, d.h.
-  beeinflussen dadurch die Rauschspannung
-\end{itemize}
-\begin{minipage}{9cm}
-\input{tikz/rauschen_rc}
-\end{minipage}
-\begin{minipage}{9cm}
-\begin{gather*}
-Z=\frac{1}{Y}=\frac{1}{G+j\omega C}=\frac{G-j\omega C}{G^2+\omega^2C^2}\\
-\overline{\nu^2_{n}}=\frac{4kT}{2\pi}\int^{\infty}_{0}\frac{G}{G^2+\omega^2C^2}d\omega=\frac{kT}{C}\\
-\overline{\nu_{n}}=\sqrt{\frac{kT}{C}}
-\end{gather*}
-\end{minipage}
+\begin{longtable}{|p{5cm}|p{12.9cm}|}
+    \hline
+    \multicolumn{2}{|l|}{\bf Leistung des Rauschens}
+    \\ \hline
+    Mittelwert	
+    & $\overline{\nu_{n}}(t)\leq \nu_{n}(t)\geq \frac{1}{T}\int_{T}\nu_{n}(t)dt=0$ 
+    \\ \hline
+    Varianz (Leistung)
+    & $\overline{\nu_{n}}(t)^2=\frac{1}{T}\int_{T}\nu^2_{n}(t)dt\neq0$
+    \\ \hline
+    Effektivwert
+    & $\nu_{n,rms}=\sqrt{\overline{\nu_{n}(t)^2}}$
+    \\ \hline
+    \multicolumn{2}{|l|}{\parbox{17.9cm}{\vspace{2mm}
+        Rechnen mit Rauschen: \textcolor{red}{Signale und Rauschen addieren sich nicht gleich}:
+        \begin{itemize}
+            \item deterministische Signale: Amplituden addieren sich
+            \item statistisch unabhängige Rauschquellen: Rauschleistung addiert sich
+        \end{itemize}\vspace{2mm}}}
+    \\ \hline
+\end{longtable}
+% ----------------------------------------------------------------------------------------------------
+\vspace{-2.5\topsep}
+\begin{longtable}[t]{|p{4cm}|p{6.5cm}|p{7cm}|}
+    \hline
+    \multicolumn{3}{|l|}{\bf Rauschen von Widerständen}
+    \\ \hline
+    \multicolumn{3}{|l|}{\textit{Strom- und Spannungsrauschen}}
+    \\ \hdashline
+    \includegraphics[width=4cm, valign=t]{pictures/widerstandrauschen.png}
+    & {	\vspace{-1.8\topsep}
+        \begin{align*}
+            S_{noise}(R) &=4kTR\\
+            E_{noise}(R) &=\sqrt{4kTR}\\
+            \overline{\nu^2_{n}} &=4kTRB = \int 4kTR \; df\\
+            \overline{i^2_{n}} &=4kTGB = \int 4kTG \; df\\
+            \nu_{rms} &= \sqrt{\overline{\nu^2_{n}}} = \sqrt{4kTRB}
+        \end{align*}
+      }
+    & {B: Bandbreite\newline
+       T:  Temperatur in Kelvin(293K)\newline
+       k:  $1.38 \cdot 10^{-23}JK^{-1}$\newline
+       $S_{noise}(R)$:  Spektrale Dichte (Leistung)\newline
+       $E_{noise}(R)$: Rauschspannungsdichte\newline
+       $\nu_{RMS}$:  Rauschspannung
+      }
+    \\ \hline
+% ----------------------------------------------------------------------------------------------------   
+    \multicolumn{3}{|l|}{\textit{Widerstände in Serie}}
+    \\ \hdashline
+    \input{tikz/rauschen_serie}
+    & {	\vspace{-1.6\topsep}
+        \begin{align*}
+            \overline{\nu^2_{n}}&=4kT(R1+R2)B=\overline{\nu^2_{n1}}+\overline{\nu^2_{n2}}\\
+            \overline{i^2_{n}}&=4kT(G1+G2)B=\overline{i^2_{n1}}+\overline{i^2_{n2}}
+        \end{align*}
+    }
+    & {\textcolor{red}{\bf Nicht die Rausch-Spannungen, sondern die Rausch-Leistungen müssen addiert werden!}
+    }
+    \\ \hline
+\end{longtable}
+% ----------------------------------------------------------------------------------------------------  
+\vspace{-2.5\topsep}
+\begin{longtable}[t]{|p{4cm}|p{6.5cm}|p{7cm}|}    
+    \hline 
+    \multicolumn{3}{|l|}{\textit{Spannungsteiler}}
+    \\ \hdashline
+    \includegraphics[width=4cm, valign=t]{pictures/RauschenSpannungsteiler.png}
+    & {\begin{align*}
+            \intertext{Superposition der einzelnen Spannungsquellen}
+            V_{out}(V_{in}) &= V_{in} \cdot \frac{R_2}{R_1 + R_2}\\
+            V_{out}(V_{nR1}) &= V_{nR1} \cdot \frac{R_2}{R_1 + R_2}\\
+            V_{out}(V_{nR2}) &= V_{nR2} \cdot \frac{R_1}{R_1 + R_2}
+        \end{align*}
+      }
+    & {\begin{align*}
+            \intertext{\textcolor{red}{Nicht Rauschspannungen, sondern Leistungen addieren}}
+            V_{n_{out}}^2 &= \left[ S_{R_1}\left( \frac{R_2}{R_1 + R_2}\right) ^2 + S_{R_2}\left( \frac{R_1}{R_1 + R_2}\right) ^2\right] B \\
+            &= 4kT\left( R_1 \frac{R_2^2}{(R_1+R_2)^2} + R_2 \frac{R_1^2}{(R_1+R_2)^2}\right) B\\
+            V_{n_{out}} &= \sqrt{\mathrel{\mathop{V_{nR1}^2}\limits_{\substack{\uparrow\\\hbox to 0pt{\hss{\textcolor{red}{\tiny $4kT R_1 B$}}\hss}}}} \left( \frac{R_2}{R_1+R_2}\right) ^2 + \mathrel{\mathop{V_{nR2}^2}\limits_{\substack{\uparrow\\\hbox to 0pt{\hss{\textcolor{red}{\tiny $4kT R_2 B$}}\hss}}}} \left( \frac{R_1}{R_1+R_2}\right) ^2}
+        \end{align*}
+      }
+    \\ \hdashline
+    \includegraphics[width=4cm, valign=t]{pictures/seriewiderstand1.png}\newline
+    \includegraphics[width=4cm]{pictures/seriewiderstand2.png}
+    & {Quellenumwandlung machen und dann Rauschen über Ersatzwiderstand ($R_T$) bestimmen.\newline
+       \begin{align*}
+           V_{T,s}&=V_{s}\frac{R_{3}}{R_{1}+R_{3}}\\
+           \overline{\nu^2_{Tn}}&=4kTR_{T}B=4kT(R_{2}+R_{1}\parallel R_{3})B
+       \end{align*}
+      }
+    & {
+      }
+    \\ \hline
+% ----------------------------------------------------------------------------------------------------       
+    \multicolumn{3}{|l|}{\textit{Rauschen von RC-Netzwerken}}
+    \\ \hdashline
+    \begin{center} \input{tikz/rauschen_rc} \end{center}
+    & {Quellenumwandlung machen und dann Rauschen über Ersatzwiderstand ($R_T$) bestimmen.\newline
+        \begin{align*}
+            Z &=\frac{1}{Y}=\frac{1}{G+j\omega C}=\frac{G-j\omega C}{G^2+\omega^2C^2}\\
+            \overline{\nu^2_{n}} &=\frac{4kT}{2\pi}\int^{\infty}_{0}\frac{G}{G^2+\omega^2C^2}d\omega=\frac{kT}{C}\\
+            \overline{\nu_{n}} &=\sqrt{\frac{kT}{C}}
+        \end{align*}
+      }
+    & {\vspace{-1.5\topsep}
+        \begin{itemize}[leftmargin=*]
+            \item Kapazitäten (und Induktivitäten) rauschen nicht!
+            \item Kapazitäten (und Induktivitäten) ändern die Bandbreite des Systems, d.h. beeinflussen dadurch die Rauschspannung
+            \item Der Widerstand trägt nicht direkt zur Rauschspannung bei, er limitiert die Bandbreite
+        \end{itemize}
+      }
+    \\ \hline
+\end{longtable}
 
 \subsection{Rausch-Bandbreite}
 \begin{multicols}{2}
