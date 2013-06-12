@@ -120,8 +120,7 @@
     \\ \hline
 \end{longtable}
 % ----------------------------------------------------------------------------------------------------  
-\vspace{-2.5\topsep}
-\begin{longtable}[t]{|p{4cm}|p{6.5cm}|p{7cm}|}    
+\begin{longtable}[t]{|p{4cm}|p{5.2cm}|p{7cm}|}    
     \hline 
     \multicolumn{3}{|l|}{\textit{Spannungsteiler}}
     \\ \hdashline
@@ -146,7 +145,8 @@
     & {Quellenumwandlung machen und dann Rauschen über Ersatzwiderstand ($R_T$) bestimmen.\newline
        \begin{align*}
            V_{T,s}&=V_{s}\frac{R_{3}}{R_{1}+R_{3}}\\
-           \overline{\nu^2_{Tn}}&=4kTR_{T}B=4kT(R_{2}+R_{1}\parallel R_{3})B
+           \overline{\nu^2_{Tn}}&=4kTR_{T}B\\
+           &=4kT(R_{2}+R_{1}\parallel R_{3})B
        \end{align*}
       }
     & {
@@ -156,7 +156,7 @@
     \multicolumn{3}{|l|}{\textit{Rauschen von RC-Netzwerken}}
     \\ \hdashline
     \begin{center} \input{tikz/rauschen_rc} \end{center}
-    & {Quellenumwandlung machen und dann Rauschen über Ersatzwiderstand ($R_T$) bestimmen.\newline
+    & { \vspace{-1.5\topsep}
         \begin{align*}
             Z &=\frac{1}{Y}=\frac{1}{G+j\omega C}=\frac{G-j\omega C}{G^2+\omega^2C^2}\\
             \overline{\nu^2_{n}} &=\frac{4kT}{2\pi}\int^{\infty}_{0}\frac{G}{G^2+\omega^2C^2}d\omega=\frac{kT}{C}\\
@@ -168,70 +168,116 @@
             \item Kapazitäten (und Induktivitäten) rauschen nicht!
             \item Kapazitäten (und Induktivitäten) ändern die Bandbreite des Systems, d.h. beeinflussen dadurch die Rauschspannung
             \item Der Widerstand trägt nicht direkt zur Rauschspannung bei, er limitiert die Bandbreite
+            \newline
         \end{itemize}
       }
     \\ \hline
 \end{longtable}
-
-\subsection{Rausch-Bandbreite}
-\begin{multicols}{2}
-	\begin{itemize}
-  		\item Nicht 3dB-Bandbreite sondern das gesamte integrierte Rauschen wird
-  			berechnet
-  		\item $e_{on}$ Rauschspannung am Ausgang der Schaltung
-  		\item $e_{in}$ Rauschspannung am Eingang der Schaltung
-  		\item für höhere Filterodnung\\
-  			\begin{tabular}{|l|l|}
-  				\hline
-  				Filter order&ENB\\\hline
-  				1&$1.57 \cdot f_{c}$\\\hline
-  				2&$1.11 \cdot f_{c}$\\\hline
-  				3&$1.05 \cdot f_{c}$\\\hline
-  				4&$1.025 \cdot f_{c}$\\\hline
-  			\end{tabular}\\
-  			ENB: Effective Noise Bandwidth
-	\end{itemize}
-	
-	\columnbreak
-	
-	\begin{align*}
-		e_{on} &= \sqrt{\int^{\infty}_{0}|A_{n(f)}|^2e^2_{in}df}
-		\intertext{\textbf{für System 1. Ordnung:}}
-		e_{on} &= e_{in}\sqrt{ \frac{1}{2 \pi RC} \frac{ \pi}{2}}
-\end{align*}	
-\end{multicols}
-
-\subsection{Noise von Opamps}
-\begin{multicols}{2}
-	\includegraphics[scale=0.4]{pictures/oampnoise}
-	\columnbreak
-	
-	\textbf{für CMOS-Opamps:} \\
-	$R_3=0$ \\
-	Gain A = $\frac{R1+R2}{R1}$ \\
-	$e_{w}$:$\dfrac{Noise}{\sqrt{Hz}}$ (Aus Datenblatt) \\
-	$f_{enc}$: noise corner frequenzcy (aus Datenblatt) \\
-	ENB: Effective Noise Bandwidth \\
-	$E_{Trms}=\sqrt{ENB \cdot 4kTR_{2}A+e_{w}^2A^2(f_{enc}\ln{\frac{f_{H}}{f_{L}}}+ENB)}$
-\end{multicols}
-
-\textbf{Gesamtfomel (Opamp und Widerstände)}\\
-\begin{gather*}
-E_{Trms}=\notag\\\sqrt{\int
-\{4kTR_{2}(\frac{R_{1}+R_{2}}{R_{1}})+4kTR_{3}(\frac{R_{1}+R_{2}}{R_{1}})^2+((I_{nn})R_{2})^2+((I_{nn})R_{3}(\frac{R_{1}+R_{2}}{R_{1}}))^2+(e_{n}(\frac{R_{1}+R_{2}}{R_{1}}))^2\}df}
-\end{gather*}
-
-
-Vereinfacht 
-
-
-Ist die Bandbreite $>>f_{enc}$ ( mind. 10x grösser) kann $\frac{1}{f-Noise}$
-vernachlässigt werden
-\begin{itemize}
-  \item Gain $A=\frac{R1+R2}{R1}$
-  \item $e_{w}$: $\frac{Noise}{\sqrt{Hz}}(Aus Datenblatt)$
-  \item ENB: Effective Noise Bandwidth ($1.51 \cdot \frac{GBW}{A}$)
-\end{itemize}
-\begin{gather*}
-V_{noise}=\sqrt{4kT \cdot R_{2} \cdot A \cdot ENB+e_{w}^2 \cdot A^2 \cdot ENB}
-\end{gather*}
+% ----------------------------------------------------------------------------------------------------    
+\vspace{-2.5\topsep}
+\begin{longtable}[t]{|p{4cm}|p{5.5cm}|p{7.8cm}|}
+    \hline  
+    \multicolumn{3}{|l|}{\bf Berechnung der Rausch-Spannung}
+    \\ \hdashline
+    Die Rausch-Spannung ist das Integral der Rauschspannungsdichte über den ganzen Frequenzbereich
+    & {\vspace{-1.5\topsep}
+       \begin{align*}
+            \intertext{für weisses Rauschen}
+            \overline{e^2} &= \int_{f_L}^{f_H} C \, df = \underbrace{C}_{4kT\cdot R} (f_H-f_L) \\
+            \intertext{für 1/f-Rauschen}
+            \overline{e^2} &= \int_{f_L}^{f_H} \frac{K^2}{f} \, df = K^2 \ln\frac{f_H}{f_L}
+       \end{align*}
+      }
+    & {C: Rauschleistungsdichte pro Hertz (konstant)\newline
+       \newline\newline\newline
+       K: Bauteil-Konstante (in Volt)
+      }
+    \\ \hline
+\end{longtable}
+% ----------------------------------------------------------------------------------------------------    
+\vspace{-2.5\topsep}
+\begin{longtable}[t]{|p{4cm}|p{5.5cm}|p{7.8cm}|}
+    \hline  
+    \multicolumn{3}{|l|}{\bf Berechnung der Rausch-Spannung}
+    \\ \hdashline
+    Die Rausch-Spannung ist das Integral der Rauschspannungsdichte über den ganzen Frequenzbereich
+    & {\vspace{-1.5\topsep}
+        \begin{align*}
+            \intertext{für weisses Rauschen}
+            \overline{e^2} &= \int_{f_L}^{f_H} C \, df = \underbrace{C}_{4kT\cdot R} (f_H-f_L) \\
+            \intertext{für 1/f-Rauschen}
+            \overline{e^2} &= \int_{f_L}^{f_H} \frac{K^2}{f} \, df = K^2 \ln\frac{f_H}{f_L}
+        \end{align*}
+      }
+    & {C: Rauschleistungsdichte pro Hertz (konstant)\newline
+        \newline\newline\newline
+        K: Bauteil-Konstante (in Volt)
+      }
+    \\ \hline
+\end{longtable}
+% ----------------------------------------------------------------------------------------------------    
+\vspace{-2.5\topsep}
+\begin{longtable}[t]{|p{4cm}|p{8cm}|p{5.3cm}|}
+    \hline  
+    \multicolumn{3}{|l|}{\bf Berechnung der Rausch-Bandbreite (am Beispiel von Tiefpass 1. Ordnung)}
+    \\ \hdashline
+    \includegraphics[width=4cm, valign=t]{pictures/RauschenTiefpass.png}
+    & {\vspace{-1.5\topsep}
+        \begin{align*}
+            e_{on} &= \sqrt{\int_{0}^{\infty} \left| A_{n(f)}\right| ^2 e_{in}^2 \, df}\\
+            A_{n(f)} &= \frac{1}{1+ j2\pi fRC} \Rightarrow \left| A_{n(f)}\right| ^2 = \frac{1}{1+(2\pi fRC)^2}\\
+            e_{on} &= e_{in} \sqrt{\int_{0}^{\infty} \frac{1}{(2\pi fRC)^2}df} = e_{in} \sqrt{\underbrace{\frac{1}{2\pi RC}\frac{\pi}{2}}_{\textcolor{red}{ENB}}}
+        \end{align*}
+        \begin{tabbing}
+            {\bf Filter-Ordnung}\qquad \= {\bf ENB}\\
+            1 \> $1.57 \cdot f_c$\\
+            2 \> $1.11 \cdot f_c$\\
+            3 \> $1.05 \cdot f_c$\\
+            4 \> $1.025 \cdot f_c$
+        \end{tabbing}
+      }
+    & {$\mathrm{\bf e_{on}}$: Rauschspannung am Ausgang der Schaltung\newline\newline
+       $\mathrm{\bf e_{in}}$: Rauschspannung am Eingang der Schaltung\newline\newline
+       {\bf \textcolor{red}{ENB}}: Effective Noise Bandwidth\newline
+       Es wird nicht die 3dB-Bandbreite, sondern das gesamte integrierte Rauschen berechnet
+      }
+    \\ \hline
+\end{longtable}
+% ----------------------------------------------------------------------------------------------------    
+\vspace{-2.5\topsep}
+\begin{longtable}[t]{|p{4cm}|p{13.7cm}|}
+    \hline  
+    \multicolumn{2}{|l|}{\bf Rauschen in Opamps}
+    \\ \hdashline
+    \includegraphics[width=4cm, valign=t]{pictures/NoiseCornerFreq.png}\newline\newline
+    \includegraphics[width=4cm]{pictures/oampnoise.png}
+    & {Bei $\mathrm{f_{nc}}$ kreuzt das 1/f-Rauschen mit dem weissen Rauschen\newline
+       Gesamtrauschen: $\overline{E^2} = C\left( f_{nc} \ln \frac{f_H}{f_L} + f_H - f_L\right) $\newline
+       \begin{align*}
+           E_{Trms}=&\sqrt{\int 4kTR_2\left( \frac{R_1+R_2}{R_1}\right) + 4kTR_3\left( \frac{R_1 + R_2}{R_1}\right) ^2 + ((i_{nn})R_2)^2 + ...}\\
+           &\overline{...\left( (i_{np})R_3\left( \frac{R_1+R_2}{R_1}\right) \right) ^2 + \left( e_n\left( \frac{R_1+R_2}{R_1}\right) \right) ^2 df}
+       \end{align*}
+       \newline
+       \textbf{Vereinfacht für CMOS-Opamps:} \newline
+       \vspace{-1.5\topsep}
+       \begin{itemize}[leftmargin=*]
+           \item $R_3=0$
+           \item Gain A = $\frac{R1+R2}{R1}$
+           \item $e_w$: Noise/$\sqrt{Hz}$ (aus Datenblatt)
+           \item $f_{enc}$: noise corner frequency (aus Datenblatt)
+           \item \textcolor{red}{ENB}: Effective Noise Bandwidth
+           \newline
+        \end{itemize}
+       $E_{Trms}=\sqrt{\textcolor{red}{ENB} \cdot 4kTR_2 A+e_w^2 A^2(f_{enc}\ln{\frac{f_{H}}{f_{L}}}+\textcolor{red}{ENB})}$\newline
+       Ist die Bandbreite $>>f_{enc}$ ( mind. 10x grösser) kann 1/f-Noise vernachlässigt werden\newline
+       \vspace{-1.5\topsep}
+       \begin{itemize}[leftmargin=*]
+           \item Gain $A=\frac{R1+R2}{R1}$
+           \item $e_w$: Noise/$\sqrt{Hz}$ (aus Datenblatt)
+           \item \textcolor{red}{ENB}: Effective Noise Bandwidth ($1.51 \cdot \frac{GBW}{A}$)
+           \newline
+        \end{itemize}
+        $V_{noise}=\sqrt{4kT \cdot R_{2} \cdot A \cdot \textcolor{red}{ENB}+e_{w}^2 \cdot A^2 \cdot \textcolor{red}{ENB}}$
+    }
+    \\ \hline
+\end{longtable}
