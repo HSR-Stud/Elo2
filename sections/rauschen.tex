@@ -194,27 +194,7 @@
       }
     \\ \hline
 \end{longtable}
-% ----------------------------------------------------------------------------------------------------    
-\vspace{-2.5\topsep}
-\begin{longtable}[t]{|p{4cm}|p{5.5cm}|p{7.8cm}|}
-    \hline  
-    \multicolumn{3}{|l|}{\bf Berechnung der Rausch-Spannung}
-    \\ \hdashline
-    Die Rausch-Spannung ist das Integral der Rauschspannungsdichte über den ganzen Frequenzbereich
-    & {\vspace{-1.5\topsep}
-        \begin{align*}
-            \intertext{für weisses Rauschen}
-            \overline{e^2} &= \int_{f_L}^{f_H} C \, df = \underbrace{C}_{4kT\cdot R} (f_H-f_L) \\
-            \intertext{für 1/f-Rauschen}
-            \overline{e^2} &= \int_{f_L}^{f_H} \frac{K^2}{f} \, df = K^2 \ln\frac{f_H}{f_L}
-        \end{align*}
-      }
-    & {C: Rauschleistungsdichte pro Hertz (konstant)\newline
-        \newline\newline\newline
-        K: Bauteil-Konstante (in Volt)
-      }
-    \\ \hline
-\end{longtable}
+\newpage
 % ----------------------------------------------------------------------------------------------------    
 \vspace{-2.5\topsep}
 \begin{longtable}[t]{|p{4cm}|p{8cm}|p{5.3cm}|}
@@ -254,8 +234,8 @@
     & {Bei $\mathrm{f_{nc}}$ kreuzt das 1/f-Rauschen mit dem weissen Rauschen\newline
        Gesamtrauschen: $\overline{E^2} = C\left( f_{nc} \ln \frac{f_H}{f_L} + f_H - f_L\right) $\newline
        \begin{align*}
-           E_{Trms}=&\sqrt{\int 4kTR_2\left( \frac{R_1+R_2}{R_1}\right) + 4kTR_3\left( \frac{R_1 + R_2}{R_1}\right) ^2 + ((i_{nn})R_2)^2 + ...}\\
-           &\overline{...\left( (i_{np})R_3\left( \frac{R_1+R_2}{R_1}\right) \right) ^2 + \left( e_n\left( \frac{R_1+R_2}{R_1}\right) \right) ^2 df}
+           E_{Trms}=&\sqrt{\int 4kTR_2\left( \frac{R_1+R_2}{R_1}\right) + 4kTR_3\left( \frac{R_1 + R_2}{R_1}\right) ^2 + ((i_{nn})R_2)^2 + \dots}\\
+           &\overline{\dots \left( (i_{np})R_3\left( \frac{R_1+R_2}{R_1}\right) \right) ^2 + \left( e_n\left( \frac{R_1+R_2}{R_1}\right) \right) ^2 df}
        \end{align*}
        \newline
        \textbf{Vereinfacht für CMOS-Opamps:} \newline
@@ -264,11 +244,11 @@
            \item $R_3=0$
            \item Gain A = $\frac{R1+R2}{R1}$
            \item $e_w$: Noise/$\sqrt{Hz}$ (aus Datenblatt)
-           \item $f_{enc}$: noise corner frequency (aus Datenblatt)
+           \item $f_{nc}$: noise corner frequency (aus Datenblatt)
            \item \textcolor{red}{ENB}: Effective Noise Bandwidth
            \newline
         \end{itemize}
-       $E_{Trms}=\sqrt{\textcolor{red}{ENB} \cdot 4kTR_2 A+e_w^2 A^2(f_{enc}\ln{\frac{f_{H}}{f_{L}}}+\textcolor{red}{ENB})}$\newline
+       $E_{Trms}=\sqrt{\textcolor{red}{ENB} \cdot 4kTR_2 A+e_w^2 A^2\cdot (f_{nc}\cdot \ln{\frac{f_{H}}{f_{L}}}+\textcolor{red}{ENB})}$\newline
        Ist die Bandbreite $>>f_{enc}$ ( mind. 10x grösser) kann 1/f-Noise vernachlässigt werden\newline
        \vspace{-1.5\topsep}
        \begin{itemize}[leftmargin=*]
