@@ -90,8 +90,8 @@
     \includegraphics[width=4cm, valign=t]{pictures/widerstandrauschen.png}
     & {	\vspace{-1.8\topsep}
         \begin{align*}
-            S_{noise}(R) &=4kTR\\
-            E_{noise}(R) &=\sqrt{4kTR}\\
+            S_{noise}(R) &=4kTR \qquad [\mathrm{V^2/Hz}]\\
+            E_{noise}(R) &=\sqrt{4kTR} \qquad [\mathrm{V/\sqrt{Hz}}]\\
             \overline{\nu^2_{n}} &=4kTRB = \int 4kTR \; df\\
             \overline{i^2_{n}} &=4kTGB = \int 4kTG \; df\\
             \nu_{rms} &= \sqrt{\overline{\nu^2_{n}}} = \sqrt{4kTRB}
@@ -100,7 +100,7 @@
     & {B: Bandbreite\newline
        T:  Temperatur in Kelvin(293K)\newline
        k:  $1.38 \cdot 10^{-23}JK^{-1}$\newline
-       $S_{noise}(R)$:  Spektrale Dichte (Leistung)\newline
+       $S_{noise}(R)$:  Spektrale Dichte (Leistungsdichte)\newline
        $E_{noise}(R)$: Rauschspannungsdichte\newline
        $\nu_{RMS}$:  Rauschspannung
       }
@@ -136,7 +136,9 @@
             \intertext{\textcolor{red}{Nicht Rauschspannungen, sondern Leistungen addieren}}
             V_{n_{out}}^2 &= \left[ S_{R_1}\left( \frac{R_2}{R_1 + R_2}\right) ^2 + S_{R_2}\left( \frac{R_1}{R_1 + R_2}\right) ^2\right] B \\
             &= 4kT\left( R_1 \frac{R_2^2}{(R_1+R_2)^2} + R_2 \frac{R_1^2}{(R_1+R_2)^2}\right) B\\
-            V_{n_{out}} &= \sqrt{\mathrel{\mathop{V_{nR1}^2}\limits_{\substack{\uparrow\\\hbox to 0pt{\hss{\textcolor{red}{\tiny $4kT R_1 B$}}\hss}}}} \left( \frac{R_2}{R_1+R_2}\right) ^2 + \mathrel{\mathop{V_{nR2}^2}\limits_{\substack{\uparrow\\\hbox to 0pt{\hss{\textcolor{red}{\tiny $4kT R_2 B$}}\hss}}}} \left( \frac{R_1}{R_1+R_2}\right) ^2}
+            &= 4kT \cdot \frac{R_1 \cdot R_2}{R_1 + R_2}\cdot B\\
+            V_{n_{out}} &= \sqrt{\mathrel{\mathop{V_{nR1}^2}\limits_{\substack{\uparrow\\\hbox to 0pt{\hss{\textcolor{red}{\tiny $4kT R_1 B$}}\hss}}}} \left( \frac{R_2}{R_1+R_2}\right) ^2 + \mathrel{\mathop{V_{nR2}^2}\limits_{\substack{\uparrow\\\hbox to 0pt{\hss{\textcolor{red}{\tiny $4kT R_2 B$}}\hss}}}} \left( \frac{R_1}{R_1+R_2}\right) ^2}\\
+            &= \sqrt{4kT \cdot \frac{R_1 \cdot R_2}{R_1 + R_2}\cdot B}
         \end{align*}
       }
     \\ \hdashline
@@ -199,17 +201,18 @@
 \vspace{-2.5\topsep}
 \begin{longtable}[t]{|p{4cm}|p{8cm}|p{5.3cm}|}
     \hline  
-    \multicolumn{3}{|l|}{\bf Berechnung der Rausch-Bandbreite (am Beispiel von Tiefpass 1. Ordnung)}
+    \multicolumn{3}{|l|}{\bf Berechnung der Rausch-Spannung (am Beispiel von Tiefpass 1. Ordnung)}
     \\ \hdashline
     \includegraphics[width=4cm, valign=t]{pictures/RauschenTiefpass.png}
     & {\vspace{-1.5\topsep}
         \begin{align*}
             e_{on} &= \sqrt{\int_{0}^{\infty} \left| A_{n(f)}\right| ^2 e_{in}^2 \, df}\\
             A_{n(f)} &= \frac{1}{1+ j2\pi fRC} \Rightarrow \left| A_{n(f)}\right| ^2 = \frac{1}{1+(2\pi fRC)^2}\\
-            e_{on} &= e_{in} \sqrt{\int_{0}^{\infty} \frac{1}{(2\pi fRC)^2}df} = e_{in} \sqrt{\underbrace{\frac{1}{2\pi RC}\frac{\pi}{2}}_{\textcolor{red}{ENB}}}
+            e_{on} &= e_{in} \sqrt{\int_{0}^{\infty} \frac{1}{1 + (2\pi fRC)^2}df} = e_{in} \sqrt{\underbrace{\frac{1}{2\pi RC}\frac{\pi}{2}}_{\textcolor{red}{ENB}}}\\
+            &= e_{in} \sqrt{\frac{1}{4RC}}
         \end{align*}
         \begin{tabbing}
-            {\bf Filter-Ordnung}\qquad \= {\bf ENB}\\
+            {\bf Filter-Ordnung}\qquad \= {\bf \textcolor{red}{ENB}}\\
             1 \> $1.57 \cdot f_c$\\
             2 \> $1.11 \cdot f_c$\\
             3 \> $1.05 \cdot f_c$\\
@@ -225,39 +228,37 @@
 \end{longtable}
 % ----------------------------------------------------------------------------------------------------    
 \vspace{-2.5\topsep}
-\begin{longtable}[t]{|p{4cm}|p{13.7cm}|}
+\begin{longtable}[t]{|p{4cm}|p{13.8cm}|}
     \hline  
     \multicolumn{2}{|l|}{\bf Rauschen in Opamps}
     \\ \hdashline
-    \includegraphics[width=4cm, valign=t]{pictures/NoiseCornerFreq.png}\newline\newline
+    \includegraphics[width=4cm, valign=t]{pictures/NoiseCornerFreq.png}\newline\vspace{3cm}\newline
     \includegraphics[width=4cm]{pictures/oampnoise.png}
     & {Bei $\mathrm{f_{nc}}$ kreuzt das 1/f-Rauschen mit dem weissen Rauschen\newline
        Gesamtrauschen: $\overline{E^2} = C\left( f_{nc} \ln \frac{f_H}{f_L} + f_H - f_L\right) $\newline
        \begin{align*}
-           E_{Trms}=&\sqrt{\int 4kTR_2\left( \frac{R_1+R_2}{R_1}\right) + 4kTR_3\left( \frac{R_1 + R_2}{R_1}\right) ^2 + ((i_{nn})R_2)^2 + \dots}\\
-           &\overline{\dots \left( (i_{np})R_3\left( \frac{R_1+R_2}{R_1}\right) \right) ^2 + \left( e_n\left( \frac{R_1+R_2}{R_1}\right) \right) ^2 df}
+           V_{noise_{TRMS}}=&\sqrt{\int 4kTR_2\cdot \left( \frac{R_1+R_2}{R_1}\right) + 4kTR_3\cdot \left( \frac{R_1 + R_2}{R_1}\right) ^2 + (i_{nn}\cdot R_2)^2 + \dots}\\
+           &\overline{\dots + \left[ i_{np}\cdot R_3\cdot \left( \frac{R_1+R_2}{R_1}\right) \right] ^2 + \left[ e_n\cdot \left( \frac{R_1+R_2}{R_1}\right) \right] ^2 df}
        \end{align*}
        \newline
        \textbf{Vereinfacht für CMOS-Opamps:} \newline
        \vspace{-1.5\topsep}
        \begin{itemize}[leftmargin=*]
            \item $R_3=0$
-           \item Gain A = $\frac{R1+R2}{R1}$
-           \item $e_w$: Noise/$\sqrt{Hz}$ (aus Datenblatt)
+           \item \textcolor{blue}{Gain A = $\frac{R1+R2}{R1}$}
+           \item $e_n$: Rauschspannungsdichte des OP in $V/\sqrt{Hz}$ (aus Datenblatt)
            \item $f_{nc}$: noise corner frequency (aus Datenblatt)
-           \item \textcolor{red}{ENB}: Effective Noise Bandwidth
            \newline
         \end{itemize}
-       $E_{Trms}=\sqrt{\textcolor{red}{ENB} \cdot 4kTR_2 A+e_w^2 A^2\cdot (f_{nc}\cdot \ln{\frac{f_{H}}{f_{L}}}+\textcolor{red}{ENB})}$\newline
-       Ist die Bandbreite $>>f_{enc}$ ( mind. 10x grösser) kann 1/f-Noise vernachlässigt werden\newline
-       \vspace{-1.5\topsep}
-       \begin{itemize}[leftmargin=*]
-           \item Gain $A=\frac{R1+R2}{R1}$
-           \item $e_w$: Noise/$\sqrt{Hz}$ (aus Datenblatt)
-           \item \textcolor{red}{ENB}: Effective Noise Bandwidth ($1.51 \cdot \frac{GBW}{A}$)
-           \newline
-        \end{itemize}
-        $V_{noise}=\sqrt{4kT \cdot R_{2} \cdot A \cdot \textcolor{red}{ENB}+e_{w}^2 \cdot A^2 \cdot \textcolor{red}{ENB}}$
+        
+       \begin{align*}
+           \textcolor{red}{ENB} &=\frac{GBW}{\textcolor{blue}{A}} \cdot \frac{\pi}{2} \\
+           V_{noise_{TRMS}} &= \sqrt{\textcolor{red}{ENB} \cdot 4kTR_2 \textcolor{blue}{A}+e_n^2 \textcolor{blue}{A}^2\cdot (f_{nc}\cdot \ln{\frac{f_{H}}{f_{L}}}+\textcolor{red}{ENB})}\\
+           \intertext{Ist die Bandbreite $>>f_{nc}$ ( mind. 10x grösser) kann 1/f-Noise vernachlässigt werden}
+           V_{noise} &= \sqrt{\textcolor{red}{ENB} \cdot 4kTR_{2}\textcolor{blue}{A} +e_n^2 \textcolor{blue}{A}^2 \cdot \textcolor{red}{ENB}}\\
+           \intertext{\bf Allgemein:}
+           V_{n_{pp}} &\backsimeq 6 \cdot V_{noise_{TRMS}}
+       \end{align*} 
     }
     \\ \hline
 \end{longtable}
