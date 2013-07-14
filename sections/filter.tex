@@ -6,7 +6,7 @@
     \hline
     1. Ordnung
     & \includegraphics[width=4cm, valign=t]{pictures/tiefpass1ordnung}
-    & {\textbf{UTF: } $G(s): \frac{1}{1+s C\cdot R}$\newline
+    & {\textbf{UTF: } $G(s): \frac{1}{1+s C\cdot R} = \frac{1}{1+ j\cdot \frac{\omega}{\omega_{3dB}}}$\newline
         $f_{3dB}=\frac{1}{2\pi R\cdot C}$\newline
         Bei $j\omega=\frac{1}{T}$ sind Real- und Imaginärteil gleich gross: $T=\frac{1}{R \cdot C}$
       }
@@ -22,7 +22,7 @@
        $G_{p}(s)= \frac{U_{out}}{U_{in}} = \frac{1}{C_1\cdot C_2\cdot R_1\cdot R_2\cdot s^2+ (C_1\cdot R_1 + C_2\cdot R_1 + C_2\cdot R_2)\cdot s+1}$\newline\newline
        Vgl. allgemeiner Tiefpass 2. Ordnung:\newline
        \begin{align*}
-           T_{lp}(s)	&= \frac{A0}{\frac{s^2}{\omega_{0}^2}+\frac{s}{Q\cdot\omega_{0}}+1}\\
+           G_{LP}(s)	&= \frac{A0}{\frac{s^2}{\omega_{0}^2}+\frac{s}{Q\cdot\omega_{0}}+1} \\
            A0	 		&= 1 \\
            \omega_{0}	&= \frac{1}{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}\\
            Q 	        &=\frac{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}{R_1\cdot (C_1+C_2)+C_2 \cdot R_2}
