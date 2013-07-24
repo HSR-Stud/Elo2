@@ -50,7 +50,15 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
 \vspace{-7mm}
 \subsection{Stabilität des Systems}
 \begin{tabular}{m{0.45\linewidth}m{0.45\linewidth}}
-    Um die Stabilität des OpAmps zu betrachten, wird der Loop geöffnet. Damit das System stabil ist, darf das Fehlersignal sich selbst nicht verstärken. Damit dies der Fall ist muss der Loop gain bei einer Phase von $-180^\circ$ nicht $>1$ sein, da das Vergleichsglied die Phase noch um $180^\circ$ dreht. Ein Mass für die Stabilität ist die Phasenmarge(Phase Margin) und die Verstärkungsmarge(Gain Margin). 
+    Um die Stabilität des OpAmps zu betrachten, wird der Loop geöffnet. Damit das System stabil ist, darf das       
+    Fehlersignal sich selbst nicht verstärken. Damit dies der Fall ist muss der Loop gain bei einer Phase von $-180^\circ$
+    nicht $>1$ sein, da das Vergleichsglied die Phase noch um $180^\circ$ dreht. Ein Mass für die Stabilität ist die 
+    Phasenmarge(Phase Margin) und die Verstärkungsmarge(Gain Margin). Optimal ist ein Phase Margin von $60^{\circ}$.
+    \newline
+    \textbf{Loop aufschneiden} \newline
+    $T(s) = \dfrac{T_i(s) \cdot A(s)}{1+A(s) \cdot T_f(s)} = \dfrac{T_i(s) \cdot A(s)}{1+T_s(s)}$ \newline
+    $T_s(s)$ = Schleifenverstärkung (loop gain) \newline
+    Die UTF ist dann stabil, wenn sie nie $\infty$ wird d.h der Nenner darf nie 0 werden.
     & \begin{center}
         \includegraphics[width=6.7cm, valign=t]{./pictures/margins.png}
     \end{center}
@@ -63,28 +71,32 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
     \hline  
     \multicolumn{2}{|l|}{\bf Nicht-invertierender OP}
     \\ \hdashline
-    \includegraphics[width=5cm, valign=t]{pictures/opAmpBlock.png}\newline\newline
+    \includegraphics[width=5cm, valign=t]{pictures/opAmpNI.png}\newline\newline
     \includegraphics[width=5cm]{pictures/OPnichtInv.png}
     & {\vspace{-1.5\topsep}
         \begin{align*}
+            A &= A_{ol}\\
             T_{in} &= 1\\
             \beta &= \frac{R_1}{R_1 + R_f}\\
-            A &= A_{ol}\\
-            \frac{V_{out}}{V_{in}} &= \textcolor{red}{T = \frac{T_{in}}{\beta}\cdot \frac{1}{1+ \frac{1}{\beta \cdot A_{ol}}} = \frac{T_{in}\cdot A_{ol}}{1 + A_{ol}\cdot \beta}} = \frac{1\cdot A_{ol}}{1 + A_{ol} \cdot \frac{R_1}{R_1 + R_f}} \approx \frac{R_1 + R_f}{R_1} =1 + \frac{R_f}{R_1}
+            \frac{V_{out}}{V_{in}} &= \textcolor{red}{T = \frac{T_{in}}{\beta}\cdot \frac{1}{1+ \frac{1}{\beta 
+            \cdot A_{ol}}} = \frac{T_{in}\cdot A_{ol}}{1 + A_{ol}\cdot \beta}} = 
+            \frac{A_{ol}}{1 + A_{ol} \cdot \frac{R_1}{R_1 + R_f}} \approx \frac{R_1 + R_f}{R_1} =\frac{1}{\beta}
         \end{align*}
     }
     \\ \hline
 % ---------------------------------------------------------------------------------------------------- 
     \multicolumn{2}{|l|}{\bf Invertierender OP}
     \\ \hdashline
-    \includegraphics[width=5cm, valign=t]{pictures/opAmpBlock.png}\newline\newline
+    \includegraphics[width=5cm, valign=t]{pictures/opAmpInv.png}\newline\newline
     \includegraphics[width=5cm]{pictures/OPInv.png}
     & {\vspace{-1.5\topsep}
         \begin{align*}
+            A &= A_{ol}\\
             T_{in} &= \frac{R_f}{R_1 + R_f} = 1 - \beta\\
             \beta &= \frac{R_1}{R_1 + R_f}\\
-            A &= A_{ol}\\
-            \frac{V_{out}}{V_{in}} &= \textcolor{red}{T = -\frac{T_{in}}{\beta}\cdot \frac{1}{1+ \frac{1}{\beta \cdot A_{ol}}}} \approx -\frac{R_f}{R_1}
+            \frac{V_{out}}{V_{in}} &= \textcolor{red}{T = -\frac{T_{in}}{\beta}\cdot 
+            \frac{1}{1+ \frac{1}{\beta \cdot A_{ol}}}} =
+            \frac{-T_{in} \cdot A_{ol}}{1+A_{ol} \cdot \beta}\approx -\frac{R_f}{R_1} = -\frac{1-\beta}{\beta}
         \end{align*}
     }
     \\ \hline
@@ -103,7 +115,11 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
             \intertext{eingesetzt in folgende Formel:}
             V_{out} &= \frac{A_{ol}}{1 + \beta \cdot A_{ol}} \cdot V_{in}\\
             \intertext{ergibt:}
-            A_{cl}(s) &= \frac{\frac{A_0}{1 + s/\omega_p}}{1 + \beta \frac{A_0}{1 + s/\omega_p}} = \frac{A_0}{(1 + A_0 \beta) + s/\omega_p} = \frac{\textcolor{red}{\frac{A_0}{1 + A_0 \beta}}}{1 + s \frac{1}{\textcolor{blue}{\omega_p(1 + A_0 \beta)}}} = \frac{\textcolor{red}{A_{0_{cl}}}}{1 + s\frac{1}{\textcolor{blue}{\omega_{p_{cl}}}}}
+            A_{cl}(s) &= \frac{\frac{A_0}{1 + s/\omega_p}}{1 + \beta \frac{A_0}{1 + s/\omega_p}} = 
+            \frac{A_0}{(1 + A_0 \beta) + s/\omega_p} = 
+            \frac{\textcolor{red}{\frac{A_0}{1 + A_0 \beta}}}{1 + s \frac{1}
+            {\textcolor{blue}{\omega_p(1 + A_0 \beta)}}} = 
+            \frac{\textcolor{red}{A_{0_{cl}}}}{1 + s\frac{1}{\textcolor{blue}{\omega_{p_{cl}}}}}
         \end{align*}
         \newline
         Für $\mathrm{A_0 \cdot \beta \gg 1}$ gilt:\newline
@@ -113,9 +129,16 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
             \item Bandbreite wird vergrössert um den Faktor $\mathrm{A_0 \cdot\beta}$
             \newline
         \end{itemize}
-        $\mathrm{GBW = A_0 \cdot \omega_p}$\newline
+        \begin{tabular}{lp{8cm}}
+          $\left.\begin{matrix}
+            \mathrm{GBW = A_0 \cdot \omega_p}\\
+            \mathrm{GBP = \dfrac{A_0 \cdot \omega_p}{2\pi}}
+          \end{matrix}\right\rbrace$ &
+          Frequenz bei welcher der Amplitudengang der Verlängerung des 1.Pols die 0dB-Linie schneidet.
+        \end{tabular} \newline
         Closed-Loop-Bandbreite: Schnittpunkt $\mathrm{A_{cl}}$ mit $\mathrm{A(\omega)}$\newline
-        Loop Gain: $\mathrm{A_0 \cdot \beta}$
+        Loop Gain: $\mathrm{A_0 \cdot \beta}$ \newline
+        Unity-Gain: Frequenz wo der Amplitudengang (aller Pole) die 0dB-Linie schneidet.
     }
     \\ \hline
 \end{longtable}

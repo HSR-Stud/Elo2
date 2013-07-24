@@ -8,3 +8,5 @@
 *.toc
 # Ignore preview files of TikzEdt
 *.preview.*
+/Elo2.tcp
+/Elo2.tps
