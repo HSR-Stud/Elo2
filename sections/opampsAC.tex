@@ -33,10 +33,10 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
 	\hline
 	\large{$A_{ol}(s)=\frac{A_{ol_0}}{(1+\frac{s}{\omega_{p_{ol_1}}})(1+\frac{s}{\omega_{p_{ol_2}}})\dots}$}
 	& $\begin{aligned}
-        A_{ol}(s) &= \frac{A_{cl_0}}{(1+\frac{s}{\omega_{p_{cl_1}}})(1+\frac{s}{\omega_{p_{cl_2}}})\dots} = \frac{T_{in}\cdot A_{ol_0}}{1+\beta(s)\cdot A_{ol_0}}\\
+        A_{cl}(s) &= \frac{A_{cl_0}}{(1+\frac{s}{\omega_{p_{cl_1}}})(1+\frac{s}{\omega_{p_{cl_2}}})\dots} = \frac{T_{in}\cdot A_{ol_0}}{1+\beta(s)\cdot A_{ol_0}}\\
 		\beta(s) &= \frac{U_{opn}}{U_{out}}\;\text{oder}\;\frac{U_{opp}}{U_{out}}\\
 		T_{in}(s) &= \frac{U_{opn}}{U_{in}}\;\text{oder}\;\frac{U_{opp}}{U_{in}}\\
-        V_{out} &= T(\omega)\cdot V_{in} = \frac{T_{in}(\omega)\cdot A(\omega)}{1 + \underbrace{A(\omega)\cdot \beta(\omega)}_{T_s(\omega):Loop-Gain}} \cdot V_{in}
+        U_{out} &= A_{cl}(s)\cdot U_{in} = \frac{T_{in}(s)\cdot A(s)}{1 + \underbrace{A(s)\cdot \beta(s)}_{T_s(s):Loop-Gain}} \cdot U_{in}
 	   \end{aligned}$\\
 	\hline
 \end{tabular}
@@ -53,11 +53,8 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
     Um die Stabilität des OpAmps zu betrachten, wird der Loop geöffnet. Damit das System stabil ist, darf das       
     Fehlersignal sich selbst nicht verstärken. Damit dies der Fall ist muss der Loop gain bei einer Phase von $-180^\circ$
     nicht $>1$ sein, da das Vergleichsglied die Phase noch um $180^\circ$ dreht. Ein Mass für die Stabilität ist die 
-    Phasenmarge(Phase Margin) und die Verstärkungsmarge(Gain Margin). Optimal ist ein Phase Margin von $60^{\circ}$.
-    \newline
-    \textbf{Loop aufschneiden} \newline
-    $T(s) = \dfrac{T_i(s) \cdot A(s)}{1+A(s) \cdot T_f(s)} = \dfrac{T_i(s) \cdot A(s)}{1+T_s(s)}$ \newline
-    $T_s(s)$ = Schleifenverstärkung (loop gain) \newline
+    Phasenmarge (Phase Margin) und die Verstärkungsmarge (Gain Margin). Optimal ist ein Phase Margin von $60^{\circ}$.
+    
     Die UTF ist dann stabil, wenn sie nie $\infty$ wird d.h der Nenner darf nie 0 werden.
     & \begin{center}
         \includegraphics[width=6.7cm, valign=t]{./pictures/margins.png}
