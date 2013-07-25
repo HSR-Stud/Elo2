@@ -1,4 +1,3 @@
-\newpage
 \section{Filter\hartl{509}}
 \subsection{Tiefpass-Filter\hartl{514}}
 
@@ -16,18 +15,42 @@
      (kaskadierte RC-Tiefpässe)
     }
     & \includegraphics[width=4cm, valign=t]{pictures/tiefpass2ordnung}
-    & {Stromgleichungen für Knoten $n_2$ und $n_3$ (out)\newline
-       $0=(U_{n2}-U_{in})\cdot \frac{1}{R_1}+(U_{n2}-U_{n3})\cdot \frac{1}{R_2}+U_2\cdot s C_1$\newline
-       $0=(U_{n3}-U_{n2})\cdot \frac{1}{R_2}+U_{n3}\cdot s C_2$\newline
-       $G_{p}(s)= \frac{U_{out}}{U_{in}} = \frac{1}{C_1\cdot C_2\cdot R_1\cdot R_2\cdot s^2+ (C_1\cdot R_1 + C_2\cdot R_1 + C_2\cdot R_2)\cdot s+1}$\newline\newline
-       Vgl. allgemeiner Tiefpass 2. Ordnung:\newline
+    & {$G(s) = \left(\frac{1}{1+sRC}\right)^2 = \left(\frac{1}{1+sT}\right)^2$ \newline
+       $T = \frac{\sqrt{\sqrt{2}-1}}{2\pi \cdot f_g}$ \newline
+       $G_{p}(s)= \frac{U_{out}}{U_{in}} = 
+       \frac{1}{C_1\cdot C_2\cdot R_1\cdot R_2\cdot s^2+ (C_1\cdot R_1 + C_2\cdot R_1 + C_2\cdot R_2)\cdot s+1}$    
+       \newline\newline
+       \textbf{2.komplexe Pole:} \newline
+       $G(s) = \frac{p_1 \cdot p_2}{(p_1+s)(p_2+s)}=\frac{\omega_0^2}{s^2+s\cdot\frac{\omega_0}{Q}+\omega_0^2}$ \newline
+       \begin{tabular}{p{5cm}p{5cm}}
+         $p_1 = \frac{\omega_0}{2Q}(1+\sqrt{1-4Q^2})$ &
+         $p_1 = \frac{\omega_0}{2Q}(1-\sqrt{1-4Q^2})$
+       \end{tabular}
+       
+       \textbf{Vgl. allgemeiner Tiefpass 2. Ordnung:}\newline
        \begin{align*}
            G_{LP}(s)	&= \frac{A0}{\frac{s^2}{\omega_{0}^2}+\frac{s}{Q\cdot\omega_{0}}+1} \\
            A0	 		&= 1 \\
            \omega_{0}	&= \frac{1}{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}\\
            Q 	        &=\frac{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}{R_1\cdot (C_1+C_2)+C_2 \cdot R_2}
         \end{align*}\newline
-        Passive RC-Filter können maximal Güte von 0.5 haben (2 identische reelle Pole) Filter höherer Güte benötigen Spulen oder Verstärker
+        \textbf{Schrittantwort:} \newline
+        identische Pole: \newline
+        \[y_{\sigma}(t) = 1-\e^{-\frac{t}{T}}\cdot(1+\frac{t}{T})\] \newline
+          
+        ungleiche Pole: \newline
+        \[y_{\sigma}(t) = 1-\left(\frac{T_1 \cdot \e^{-\frac{t}{T_1}}- T_2 \cdot
+        \e^{-\frac{t}{T_2}}}{T1-T_2}\right) \] \newline
+          
+        komplexe Pole: \newline
+        \begin{align*}
+          y_{\sigma}(t) = &1-\e^{-\frac{\omega_0}{2Q}\cdot t}\cdot \\
+          &\left[\cos \left(\frac{\omega_0}{2Q} \sqrt{4Q^2-1} \cdot t \right) +
+          \frac{1}{\sqrt{4Q^2-1}}\cdot \sin\left(\frac{\omega_0}{2Q} \sqrt{4Q^2-1} \cdot t \right)\right]
+        \end{align*} \newline
+        
+        Passive RC-Filter können maximal Güte von 0.5 haben (2 identische reelle Pole) Filter höherer 
+        Güte werden Spulen oder Verstärker benötigt. Für Systeme 2.Ordnung ist eine Polgüte von 0.7 optimal.
       }
       \\ \hline
 % ----------------------------------------------------------------------------------------------------      
@@ -43,10 +66,12 @@
        Verstärkung:\newline
        $U_{out}=G_0\cdot U_3$ mit $G_0 = \frac{R_{A}+R_{B}}{R_{B}}$\newline
        \begin{align*}
-           G_{SK}	&= \frac{G0}{C_1\cdot C_2\cdot R_1\cdot R_2\cdot s^2+[C_2\cdot (R_1+R_2)+C_1\cdot R_1\cdot (1-G_0)]\cdot s +1}\\
+           G_{SK}	&= \frac{G_0}{C_1\cdot C_2\cdot R_1\cdot R_2\cdot 
+           s^2+[C_2\cdot (R_1+R_2)+C_1\cdot R_1\cdot (1-G_0)]\cdot s +1}\\
            \omega_0 &= \frac{1}{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}\\
            Q_{SK}	&= \frac{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}{C_2\cdot (R_1+R_2)+C_1\cdot R_1\cdot (1-G_0)}
        \end{align*}
+      Die Güte kann mit $G_0$ beeinflusst werden. SK-Filter sind für grosse Güten nicht geeignet.
       }
     \\
     & \includegraphics[width=4cm, valign=t]{./pictures/sallenkey2.png}
@@ -61,7 +86,8 @@
                 \frac{r_{OL}}{R_1+r_{OL}}
             \end{equation*}
             \item Folge: Sallen Key-Filter sind nicht geeignet für Systeme mit hohen
-            Frequenzanteilen, z.B. PEM-DAC
+            Frequenzanteilen, z.B. PWM-DAC
+            \item $r_{OL}$: OpAmp OpenLoop Ausgangswiderstand
         \end{itemize}   
       }
       \\ \hline
@@ -84,12 +110,14 @@
       & \includegraphics[width=4cm, valign=t]{./pictures/zustandsvariable.png}
       & {Spannungsgleichungen:\newline
          \begin{align*}
-             V{out}		&=-\frac{1}{s C_{i2}\cdot R_{i1}}\cdot V_{opo2}\\
+             V{out}		&=-\frac{1}{s C_{i2}\cdot R_{i2}}\cdot V_{opo2}\\
              V_{opo2}	&=-\frac{R_2}{R_1}\cdot V_{opo1}\\
-             V_{opo1}	&=\frac{-1}{s C_{i1}}\cdot (\frac{V_{in}}{R_{in}}+\frac{V_{out}}{R_{fb}}+s C_{fb}\cdot V_{out})\\
-             G_{ss}(s)	&=\frac{-\frac{R_{fb}}{R_{in}}}{C_{i1}\cdot C_{i2}\cdot R_{i1}\cdot R_{fb}\cdot \frac{R_1}{R_2}\cdot s^2+C_{fb}\cdot R_{fb}\cdot s+1}\\
+             V_{opo1}	&=\frac{-1}{s C_{i1}}\cdot \left(\frac{V_{in}}{R_{in}}+
+             \frac{V_{out}}{R_{fb}}+s C_{fb}\cdot V_{out}\right)\\
+             G_{ss}(s)	&=\frac{-\frac{R_{fb}}{R_{in}}}{C_{i1}\cdot C_{i2}\cdot R_{i2}\cdot
+             R_{fb}\cdot \frac{R_1}{R_2}\cdot s^2+C_{fb}\cdot R_{fb}\cdot s+1}\\
              A_{0}		&=-\frac{R_{fb}}{R_{in}}\\
-             \omega_{0}	&=\frac{1}{\sqrt{C_{i1}\cdot C_{i2}\cdot R_{i1}\cdot R_{fb}\cdot \frac{R_1}{R_2}}}\\
+             \omega_{0}	&=\frac{1}{\sqrt{C_{i1}\cdot C_{i2}\cdot R_{i2}\cdot R_{fb}\cdot \frac{R_1}{R_2}}}\\
              Q			&=\frac{\sqrt{C_{i1}\cdot C_{i2}\cdot R_{i2}\cdot \frac{R_1}{R_{fb}\cdot R_2}}}{C_{fb}}
          \end{align*}
          D.h. mit dieser Topologie sind alle 3 Parameter frei wählbar!
