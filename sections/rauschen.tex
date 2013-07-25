@@ -7,7 +7,8 @@
 	Shot / Schottky / quantum noise
 	& \vspace{-1.5\topsep}
       \begin{itemize}[leftmargin=*]
-  		\item Verursacht durch zufällige Fluktuationen der Bewegung von Ladungsträgern, die Potentialbarrieren überwinden müssen
+  		\item Verursacht durch zufällige Fluktuationen der Bewegung von Ladungsträgern, 
+        die Potentialbarrieren überwinden müssen
   		\item Charakteristik
   		\begin{itemize}
     		\item geknüpft an Stromfluss
@@ -26,21 +27,42 @@
 		B: Bandbreite in Hz
       }
 	\\ \hdashline
-	Thermisches Rauschen
-	& Konstant für alle Frequenzen
+	Thermisches Rauschen /Johnson Noise / weisses Rauschen
+  & \vspace{-1.5\topsep} 
+    \begin{itemize}[leftmargin=*]
+      \item Zufällige Bewegung der Ladungsträger aufgrund der Wärmeenergie und der Qunantisierung der Ladung
+      \item Konstant für alle Frequenzen
+      \item alle Widerstände haben ein weisses Rauschen
+    \end{itemize}
 	&
 	\\ \hdashline
-	Flicker Noise, 1/f noise, rosa Rauschen
+  	Flicker Noise / 1/f noise / rosa Rauschen / Funkelrauschen
 	& \vspace{-1.5\topsep}
       \begin{itemize}[leftmargin=*]
-	  	\item nicht gleichverteilt über die Frequenz, seine
+	  	\item Entsteht in MOS-Transistoren
   	  	\item Rauschleistung nimmt umgekehrt proportional zur Frequenz ab.
   	  \end{itemize}
   	& {\begin{gather*}
-		E_{n}=K_{v}\sqrt{\ln{\frac{f_{max}}{f_{min}}}}\\
-		I_{n}=K_{i}\sqrt{\ln{\frac{f_{max}}{f_{min}}}}
-  	  \end{gather*}}\\
-	\hline    
+          E_{n}=K_{v}\sqrt{\ln{\frac{f_{max}}{f_{min}}}}\\
+          I_{n}=K_{i}\sqrt{\ln{\frac{f_{max}}{f_{min}}}}
+        \end{gather*}}
+        E: Spannungsdichte $\qquad$ 
+        I: Stromdichte
+  \\ \hdashline
+    Burst (popcorn) noise &
+    \vspace{-1.5\topsep}
+    \begin{itemize}
+      \item ensteht bei Kristallgitter-Fehlern
+      \item diskrete HF-Pulse
+    \end{itemize} &
+  \\ \hdashline
+    Avanlanche noise &
+    \vspace{-1.5\topsep}
+    \begin{itemize}
+      \item entsteht in Dioden, im "`Reverse breakdown"' mode (z.B Zenerdioden)
+      \item Lawineneffekt
+    \end{itemize} &
+	\\ \hline    
 \end{longtable}
 % ----------------------------------------------------------------------------------------------------
 \vspace{-2.5\topsep}
@@ -66,7 +88,7 @@
     & $\overline{\nu_{n}}(t)\leq \nu_{n}(t)\geq \frac{1}{T}\int_{T}\nu_{n}(t)dt=0$ 
     \\ \hline
     Varianz (Leistung)
-    & $\overline{\nu_{n}}(t)^2=\frac{1}{T}\int_{T}\nu^2_{n}(t)dt\neq0$
+    & $\overline{\nu_{n}(t)^2}=\frac{1}{T}\int_{T}\nu^2_{n}(t)dt\neq0$
     \\ \hline
     Effektivwert
     & $\nu_{n,rms}=\sqrt{\overline{\nu_{n}(t)^2}}$
@@ -98,7 +120,7 @@
         \end{align*}
       }
     & {B: Bandbreite\newline
-       T:  Temperatur in Kelvin(293K)\newline
+       T:  Temperatur in Kelvin (typ: 293K $\hat{=}20^{\circ}$C)\newline
        k:  $1.38 \cdot 10^{-23}JK^{-1}$\newline
        $S_{noise}(R)$:  Spektrale Dichte (Leistungsdichte)\newline
        $E_{noise}(R)$: Rauschspannungsdichte\newline
@@ -185,9 +207,9 @@
     & {\vspace{-1.5\topsep}
        \begin{align*}
             \intertext{für weisses Rauschen}
-            \overline{e^2} &= \int_{f_L}^{f_H} C \, df = \underbrace{C}_{4kT\cdot R} (f_H-f_L) \\
+            \overline{V_n^2} &= \int_{f_L}^{f_H} C \, df = \underbrace{C}_{4kT\cdot R} (f_H-f_L) \\
             \intertext{für 1/f-Rauschen}
-            \overline{e^2} &= \int_{f_L}^{f_H} \frac{K^2}{f} \, df = K^2 \ln\frac{f_H}{f_L}
+            \overline{V_n^2} &= \int_{f_L}^{f_H} \frac{K^2}{f} \, df = K^2 \ln\frac{f_H}{f_L}
        \end{align*}
       }
     & {C: Rauschleistungsdichte pro Hertz (konstant)\newline
@@ -196,7 +218,7 @@
       }
     \\ \hline
 \end{longtable}
-\newpage
+
 % ----------------------------------------------------------------------------------------------------    
 \vspace{-2.5\topsep}
 \begin{longtable}[t]{|p{4cm}|p{8cm}|p{5.3cm}|}
@@ -221,6 +243,7 @@
       }
     & {$\mathrm{\bf e_{on}}$: Rauschspannung am Ausgang der Schaltung\newline\newline
        $\mathrm{\bf e_{in}}$: Rauschspannung am Eingang der Schaltung\newline\newline
+       $\mathrm{\bf f_c}$: 3dB-Frequenz \newline\newline
        {\bf \textcolor{red}{ENB}}: Effective Noise Bandwidth\newline
        Es wird nicht die 3dB-Bandbreite, sondern das gesamte integrierte Rauschen berechnet
       }
@@ -262,4 +285,30 @@
     }
     \\ \hline
 \end{longtable}
-\newpage
+
+
+% ----------------------------------------------------------------------------------------------------    
+\vspace{-2.5\topsep}
+\begin{longtable}[t]{|p{9cm}|p{9cm}|}
+  \hline  
+    \multicolumn{2}{|l|}{\bf Signal-Rauschabstand (SNR)} \\
+  \hdashline
+    \vspace{-1.5\topsep}
+    \[ P_{sig} = \left(\frac{A_{max}}{c}\right)^2=\left(\frac{2^{n-1}\cdot q}{\sqrt 2}\right)^2 = 2^{2n-3}\cdot q^2\]    
+    \newline
+    \[ P_Q \approx \frac{q^2}{12} \] \newline
+    \[ q = \frac{V_{Refp}-V_{Refn}}{2^n} \]  \newline
+    \[ SNR_{db} = 10 \cdot \log\left(\frac{P_{sig}}{P_Q}\right) = 1.76+n*6.02 \] &
+    \vspace{-1.5\topsep}
+    \begin{itemize}
+      \item[c:] Crestfaktor (Sinussignal $c=\sqrt 2$
+      \item[q:] Quantisierungsintervall
+      \item[$P_{sig}$:] Signalleistung
+      \item[$P_Q$:] Quantisierungsrauschleistung
+      \item[SNR:] Signal to Noise Abstand
+    \end{itemize} \\
+  \hline
+\end{longtable}
+    
+    
+    
