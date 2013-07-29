@@ -85,19 +85,19 @@
     \multicolumn{2}{|l|}{\bf Leistung des Rauschens}
     \\ \hline
     Mittelwert	
-    & $\overline{\nu_{n}}(t)\leq \nu_{n}(t)\geq \frac{1}{T}\int_{T}\nu_{n}(t)dt=0$ 
+    & $\overline{v_{n}}(t)\leq v_{n}(t)\geq \frac{1}{T}\int_{T}v_{n}(t)dt=0$ 
     \\ \hline
     Varianz (Leistung)
-    & $\overline{\nu_{n}(t)^2}=\frac{1}{T}\int_{T}\nu^2_{n}(t)dt\neq0$
+    & $\overline{v_{n}(t)^2}=\frac{1}{T}\int_{T}v^2_{n}(t)dt\neq0$
     \\ \hline
     Effektivwert
-    & $\nu_{n,rms}=\sqrt{\overline{\nu_{n}(t)^2}}$
+    & $v_{n,rms}=\sqrt{\overline{v_{n}(t)^2}}$
     \\ \hline
     \multicolumn{2}{|l|}{\parbox{17.9cm}{\vspace{2mm}
         Rechnen mit Rauschen: \textcolor{red}{Signale und Rauschen addieren sich nicht gleich}:
         \begin{itemize}
-            \item deterministische Signale: Amplituden addieren sich
-            \item statistisch unabhängige Rauschquellen: Rauschleistung addiert sich
+            \item deterministische Signale: \textcolor{red}{Amplituden addieren sich}
+            \item statistisch unabhängige Rauschquellen: \textcolor{red}{Rauschleistung addiert sich}
         \end{itemize}\vspace{2mm}}}
     \\ \hline
 \end{longtable}
@@ -114,9 +114,9 @@
         \begin{align*}
             S_{noise}(R) &=4kTR \qquad [\mathrm{V^2/Hz}]\\
             E_{noise}(R) &=\sqrt{4kTR} \qquad [\mathrm{V/\sqrt{Hz}}]\\
-            \overline{\nu^2_{n}} &=4kTRB = \int 4kTR \; df\\
+            \overline{v^2_{n}} &=4kTRB = \int 4kTR \; df\\
             \overline{i^2_{n}} &=4kTGB = \int 4kTG \; df\\
-            \nu_{rms} &= \sqrt{\overline{\nu^2_{n}}} = \sqrt{4kTRB}
+            v_{rms} &= \sqrt{\overline{v^2_{n}}} = \sqrt{4kTRB}
         \end{align*}
       }
     & {B: Bandbreite\newline
@@ -124,7 +124,7 @@
        k:  $1.38 \cdot 10^{-23}JK^{-1}$\newline
        $S_{noise}(R)$:  Spektrale Dichte (Leistungsdichte)\newline
        $E_{noise}(R)$: Rauschspannungsdichte\newline
-       $\nu_{RMS}$:  Rauschspannung
+       $v_{RMS}$:  Rauschspannung
       }
     \\ \hline
 % ----------------------------------------------------------------------------------------------------   
@@ -133,12 +133,11 @@
     \input{tikz/rauschen_serie}
     & {	\vspace{-1.6\topsep}
         \begin{align*}
-            \overline{\nu^2_{n}}&=4kT(R1+R2)B=\overline{\nu^2_{n1}}+\overline{\nu^2_{n2}}\\
+            \overline{v^2_{n}}&=4kT(R1+R2)B=\overline{v^2_{n1}}+\overline{v^2_{n2}}\\
             \overline{i^2_{n}}&=4kT(G1+G2)B=\overline{i^2_{n1}}+\overline{i^2_{n2}}
         \end{align*}
     }
-    & {\textcolor{red}{\bf Nicht die Rausch-Spannungen, sondern die Rausch-Leistungen müssen addiert werden!}
-    }
+    &
     \\ \hline
 \end{longtable}
 % ----------------------------------------------------------------------------------------------------  
@@ -155,7 +154,6 @@
         \end{align*}
       }
     & {\begin{align*}
-            \intertext{\textcolor{red}{Nicht Rauschspannungen, sondern Leistungen addieren}}
             V_{n_{out}}^2 &= \left[ S_{R_1}\left( \frac{R_2}{R_1 + R_2}\right) ^2 + S_{R_2}\left( \frac{R_1}{R_1 + R_2}\right) ^2\right] B \\
             &= 4kT\left( R_1 \frac{R_2^2}{(R_1+R_2)^2} + R_2 \frac{R_1^2}{(R_1+R_2)^2}\right) B\\
             &= 4kT \cdot \frac{R_1 \cdot R_2}{R_1 + R_2}\cdot B\\
@@ -164,12 +162,12 @@
         \end{align*}
       }
     \\ \hdashline
-    \includegraphics[width=4cm, valign=t]{pictures/seriewiderstand1.png}\newline
-    \includegraphics[width=4cm]{pictures/seriewiderstand2.png}
+    \includegraphics[width=3cm, valign=t]{pictures/seriewiderstand1.png}\newline
+    \includegraphics[width=3cm]{pictures/seriewiderstand2.png}
     & {Quellenumwandlung machen und dann Rauschen über Ersatzwiderstand ($R_T$) bestimmen.\newline
        \begin{align*}
            V_{T,s}&=V_{s}\frac{R_{3}}{R_{1}+R_{3}}\\
-           \overline{\nu^2_{Tn}}&=4kTR_{T}B\\
+           \overline{v^2_{Tn}}&=4kTR_{T}B\\
            &=4kT(R_{2}+R_{1}\parallel R_{3})B
        \end{align*}
       }
@@ -182,9 +180,9 @@
     \begin{center} \input{tikz/rauschen_rc} \end{center}
     & { \vspace{-1.5\topsep}
         \begin{align*}
-            Z &=\frac{1}{Y}=\frac{1}{G+j\omega C}=\frac{G-j\omega C}{G^2+\omega^2C^2}\\
-            \overline{\nu^2_{n}} &=\frac{4kT}{2\pi}\int^{\infty}_{0}\frac{G}{G^2+\omega^2C^2}d\omega=\frac{kT}{C}\\
-            \overline{\nu_{n}} &=\sqrt{\frac{kT}{C}}
+            H(j\omega) &= \underline{Z}=\frac{1}{G+j\omega C}=\frac{G-j\omega C}{G^2+\omega^2C^2}\\
+            \overline{v_{n}} &=\sqrt{\overline{v^2_{n}}} = \sqrt{\overline{i_n^2} \cdot \int_{0}^{\infty}|\underline{Z}|^2d\omega}\\ &=\sqrt{\frac{4kTG}{2\pi}\int^{\infty}_{0}\frac{1}{G^2+\omega^2C^2}d\omega}\\
+            &=\sqrt{\frac{kT}{C}}            
         \end{align*}
       }
     & {\vspace{-1.5\topsep}
