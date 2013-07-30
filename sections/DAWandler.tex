@@ -31,14 +31,14 @@
     
 	  {\begin{align*}
 	  	V_{Out_{ideal}}(D) = \frac{D}{2^n}(V_{Refp}-V_{Refn})+V_{Refn}\\
-	  	%V_{Out_{real}}(D) = V_{Refn}+\left(V_{Refp}-V_{Refn}\right)\cdot\\
-	  		%\cdot\frac{D \cdot R_{Load}}{2^n \cdot R \cdot D-R \cdot D^2 + 2^n (R_{Load} + R_{Switch}) }\\
-	  	%DAC_{error}(D)=\frac{V_{Out_{real}}(D)-V_{Out_{ideal}}(D)}{V_{Out_{ideal}}(D)}\\
+	  	V_{Out_{real}}(D) = V_{Refn}+\left(V_{Refp}-V_{Refn}\right)\cdot\\
+	  		\cdot\frac{D \cdot R_{Load}}{2^n \cdot R \cdot D-R \cdot D^2 + 2^n (R_{Load} + R_{Switch}) }\\
+	  	DAC_{error}(D)=\frac{V_{Out_{real}}(D)-V_{Out_{ideal}}(D)}{V_{Out_{ideal}}(D)}\\
 	  \end{align*}}
 	  
 	\\ \hline
 	Segmented String DAC \hartl{459}
-	& \includegraphics[width=5cm, valign=t]{pictures/segmented_string_DAC}
+	& \includegraphics[width=5cm, height = 5cm, valign=t]{pictures/segmented_string_DAC}
 	& \begin{description}
   		\item[Vorteile: ] viel weniger Elemente
   		\item[Nachteile:] benötigt Buffer (offset-frei)
