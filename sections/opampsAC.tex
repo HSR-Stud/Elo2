@@ -1,4 +1,3 @@
-\newpage
 \section{OpAmps AC}
 
 Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter Ordnung mit linearer Verstärkung.
@@ -57,7 +56,7 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
     
     Die UTF ist dann stabil, wenn sie nie $\infty$ wird d.h der Nenner darf nie 0 werden.
     & \begin{center}
-        \includegraphics[width=6.7cm, valign=t]{./pictures/margins.png}
+        \includegraphics[width=5cm, valign=t]{./pictures/margins.png}
     \end{center}
 \end{tabular}
 
@@ -108,7 +107,7 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
     & {\vspace{-1.5\topsep}
         \begin{align*}
             \intertext{Frequenzabhängige Verstärkung Opamp:}
-            A_{ol}(s) &= \frac{A_0}{1 + s/\omega_p}\\
+            A_{ol}(s) &= \frac{A_0}{1 + s/\omega_p} = \frac{A_0}{1+\frac{A_0}{2\pi \cdot GBP} \cdot s}\\
             \intertext{eingesetzt in folgende Formel:}
             V_{out} &= \frac{A_{ol}}{1 + \beta \cdot A_{ol}} \cdot V_{in}\\
             \intertext{ergibt:}
@@ -122,7 +121,7 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
         Für $\mathrm{A_0 \cdot \beta \gg 1}$ gilt:\newline
         \vspace{-1.5\topsep}
         \begin{itemize}[leftmargin=*]
-            \item Verstärkung $\mathrm{A_{cl} = 1/\beta}$
+            \item Verstärkung $\mathrm{A_{0cl} = 1/\beta}$
             \item Bandbreite wird vergrössert um den Faktor $\mathrm{A_0 \cdot\beta}$
             \newline
         \end{itemize}
@@ -134,7 +133,7 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
           Frequenz bei welcher der Amplitudengang der Verlängerung des 1.Pols die 0dB-Linie schneidet.
         \end{tabular} \newline
         Closed-Loop-Bandbreite: Schnittpunkt $\mathrm{A_{cl}}$ mit $\mathrm{A(\omega)}$\newline
-        Loop Gain: $\mathrm{A_0 \cdot \beta}$ \newline
+        Loop Gain: $A_{ol}(s) \cdot \beta = A(s) \cdot \beta$ oder $A_0 - A_{0cl}$ (nach Grafik) \newline
         Unity-Gain: Frequenz wo der Amplitudengang (aller Pole) die 0dB-Linie schneidet.
     }
     \\ \hline

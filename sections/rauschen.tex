@@ -93,6 +93,8 @@
     Effektivwert
     & $v_{n,rms}=\sqrt{\overline{v_{n}(t)^2}}$
     \\ \hline
+    \multicolumn{2}{|l|}{$V_{n_{pp}} \backsimeq 6 \cdot V_{noise_{TRMS}}$}
+    \\ \hline
     \multicolumn{2}{|l|}{\parbox{17.9cm}{\vspace{2mm}
         Rechnen mit Rauschen: \textcolor{red}{Signale und Rauschen addieren sich nicht gleich}:
         \begin{itemize}
@@ -137,7 +139,7 @@
             \overline{i^2_{n}}&=4kT(G1+G2)B=\overline{i^2_{n1}}+\overline{i^2_{n2}}
         \end{align*}
     }
-    &
+    & \textbf{Nicht die Rausch-Spannungen, sondern die Rausch-Leistungen müssen addiert werden!}
     \\ \hline
 \end{longtable}
 % ----------------------------------------------------------------------------------------------------  
@@ -277,8 +279,6 @@
            V_{noise_{TRMS}} &= \sqrt{\textcolor{red}{ENB} \cdot 4kTR_2 \textcolor{blue}{A}+e_n^2 \textcolor{blue}{A}^2\cdot (f_{nc}\cdot \ln{\frac{f_{H}}{f_{L}}}+\textcolor{red}{ENB})}\\
            \intertext{Ist die Bandbreite $>>f_{nc}$ ( mind. 10x grösser) kann 1/f-Noise vernachlässigt werden}
            V_{noise} &= \sqrt{\textcolor{red}{ENB} \cdot 4kTR_{2}\textcolor{blue}{A} +e_n^2 \textcolor{blue}{A}^2 \cdot \textcolor{red}{ENB}}\\
-           \intertext{\bf Allgemein:}
-           V_{n_{pp}} &\backsimeq 6 \cdot V_{noise_{TRMS}}
        \end{align*} 
     }
     \\ \hline
@@ -296,7 +296,7 @@
     \newline
     \[ P_Q \approx \frac{q^2}{12} \] \newline
     \[ q = \frac{V_{Refp}-V_{Refn}}{2^n} \]  \newline
-    \[ SNR_{db} = 10 \cdot \log\left(\frac{P_{sig}}{P_Q}\right) = 1.76+n*6.02 \] &
+    \[ SNR_{db} = 10 \cdot \log\left(\frac{P_{sig}}{P_Q}\right) = 1.76+n \cdot 6.02 \] &
     \vspace{-1.5\topsep}
     \begin{itemize}
       \item[c:] Crestfaktor (Sinussignal $c=\sqrt 2$

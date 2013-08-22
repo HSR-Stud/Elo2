@@ -130,7 +130,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
 \begin{longtable}{cp{12cm}}
   \includegraphics[width=6cm, valign=t]{pictures/dualSlope11} &
   $T_{int} = const$ \newline
-  \[ V_{int} = \int\limits_0^{T_{int}} - \dfrac{1}{R_i\cdot C_i} \cdot V_{in1} dt\] \\
+  \[ V_{int} = V_{AGND} - \frac{1}{R_i \cdot C_i} \cdot T_{int} \cdot (V_{in} - V_{AGND})\] \\
  
   \includegraphics[width=6cm, valign=t]{pictures/dualSlope12} &
   \begin{tabular}{p{6cm}p{6cm}}
@@ -149,8 +149,10 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
       \[ t_{ab_{int}} = -\dfrac{V_{in1} \cdot T_{int}}{V_{Ref}} \] &
       \[ n = \dfrac{\log (\text{max Taktzyklen von Abintegration})}{\log(2)} \] 
   \end{tabular}
+  \[ V_{in} = \frac{n}{N} \cdot V_{ref} \]
+  
+ Sinusschwingungen mit einer Periodendauer gleich der Integrationszeit, werden herausgefiltert!\\
  
- Sinusschwingungen mit einer Periodendauer gleich der Integrationszeit, werden herausgefiltert!\\ 
   \begin{tabular}{ll}
     N:&Taktzyklen\\
     T:&Periodendauer\\
@@ -159,7 +161,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
   \end{tabular} &
   
   \begin{tabular}{ll}
-    $T_{int}$:&Integrationszeit\\
+    $T_{int}$:&Integrationszeit (ist vorgegeben)\\
     $T_{abint}$:& "`Messzeit"\\
     $V_{int}$:&Spannung am $V_{opOut}$ nach der Zeit $T_{int}$\\
     $V_{intmax}:$&maximal mögliche Spannung am $V_{opOut}$\\
