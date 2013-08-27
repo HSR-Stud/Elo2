@@ -255,34 +255,37 @@
     \hline  
     \multicolumn{2}{|l|}{\bf Rauschen in Opamps}
     \\ \hdashline
-    \includegraphics[width=4cm, valign=t]{pictures/NoiseCornerFreq.png}\newline\vspace{3cm}\newline
-    \includegraphics[width=4cm]{pictures/oampnoise.png}
-    & {Bei $\mathrm{f_{nc}}$ kreuzt das 1/f-Rauschen mit dem weissen Rauschen\newline
-       Gesamtrauschen: $\overline{E^2} = C\left( f_{nc} \ln \frac{f_H}{f_L} + f_H - f_L\right) $\newline
-       \begin{align*}
-           V_{noise_{TRMS}}=&\sqrt{\int_0^{ENB} 4kTR_2\cdot \left( \frac{R_1+R_2}{R_1}\right)^2 + 4kTR_3\cdot \left( \frac{R_1 + R_2}{R_1}\right) ^2 + (i_{nn}\cdot R_2)^2 + \dots}\\
-           &\overline{\dots + \left[ i_{np}\cdot R_3\cdot \left( \frac{R_1+R_2}{R_1}\right) \right] ^2 + \left[ e_n\cdot \left( \frac{R_1+R_2}{R_1}\right) \right] ^2 df}
-       \end{align*}
-       \newline
-       \textbf{Vereinfacht für CMOS-Opamps:} \newline
-       \vspace{-1.5\topsep}
-       \begin{itemize}[leftmargin=*]
-           \item $R_3=0$
-           \item \textcolor{blue}{Gain A = $\frac{R1+R2}{R1}$}
-           \item $e_n$: Rauschspannungsdichte des OP in $V/\sqrt{Hz}$ (aus Datenblatt)
-           \item $f_{nc}$: noise corner frequency (aus Datenblatt)
-           \newline
-        \end{itemize}
-        
-       \begin{align*}
-           \textcolor{red}{ENB} &=\frac{GBW}{\textcolor{blue}{A}} \cdot \frac{\pi}{2} \\
-           V_{noise_{TRMS}} &= \sqrt{\textcolor{red}{ENB} \cdot 4kTR_2 \textcolor{blue}{A}+e_n^2 \textcolor{blue}{A}^2\cdot (f_{nc}\cdot \ln{\frac{f_{H}}{f_{L}}}+\textcolor{red}{ENB})}\\
-           \intertext{Ist die Bandbreite $>>f_{nc}$ ( mind. 10x grösser) kann 1/f-Noise vernachlässigt werden}
-           V_{noise} &= \sqrt{\textcolor{red}{ENB} \cdot 4kTR_{2}\textcolor{blue}{A} +e_n^2 \textcolor{blue}{A}^2 \cdot \textcolor{red}{ENB}}\\
-       \end{align*} 
+    \includegraphics[width=4cm, valign=t]{pictures/NoiseCornerFreq.png}\newline \vspace{0.5cm}\newline
+    \includegraphics[width=4cm]{pictures/oampnoise.png} \newline \vspace{0.5cm} \newline
+    \includegraphics[width=4cm]{pictures/RauschenSummierer}
+    &{\textbf{Vorgehen zur Bestimmung der Rauschspannung:}
+    \begin{enumerate}
+      \setlength{\itemsep}{4pt}
+      \item  Verstärkungen bestimmen: \newline
+             $\boxed{V_{out} = A_{OP} \cdot V_{in} + A_{ref} \cdot V_{ref} + A_{gnd} \cdot V_{gnd}}$
+      \item  \textbf{GBW} bestimmen
+      \item  Effektive Rausch-Bandbreite bestimmen: \newline $\boxed{ENB = \dfrac{GBW}{A_{OP}} \cdot \dfrac{\pi}{2}} $
+      \item  Eingangsrauschspannungsdichte bestimmen
+      \item  auf den Ausgang projizieren: $\boxed{E_{out} = E_{in} \cdot A}$ 
+      \item  $\boxed{E_{out_{tot}} = \sqrt{E_1^2 + E_2^2 + \ldots}}$
+      \item  Ausgangsrauschspannung: $\boxed{V_{n_{out}} = E_{out_{tot}} \cdot \sqrt{ENB}}$
+    \end{enumerate}
+
+    Grundsätzlich gilt, jede Rauschspannungsquelle einzeln betrachten und auf den Ausgang projizieren. 
+    \newline
+    \newline
+    $E$: Rauschspannungsdichte $[V/\sqrt{Hz}]$ \newline
+    $V_n$: Rauschspannung $[V]$ \newline
+    
+    \textbf{Beispiel zum untersten Bild:} \newline
+    $V_{out} = \underbrace{\frac{R_f + R_1}{R_1}}_{A_{OP}} \cdot V_{in} - \underbrace{\frac{R_f}{R_{11}}}_{A_{ref}}
+    \cdot V_{ref} - \underbrace{\frac{R_f}{R_{12}}}_{A_{gnd}} \cdot V_{gnd}$ \qquad mit $R_1 = R_{11} || R_{12}$ \newline
+    $E_{R_{11}out} = A_{ref} \cdot \sqrt{4k \cdot T \cdot R_{11}} \qquad  \qquad E_{R_fout} = \sqrt{4k \cdot T \cdot R_f}$
     }
     \\ \hline
-\end{longtable}
+\end{longtable}    
+    
+\newpage
 
 
 % ----------------------------------------------------------------------------------------------------    
