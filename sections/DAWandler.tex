@@ -9,7 +9,7 @@
 	Strom-DAC \hartl{456} 
 	& \includegraphics[width=7cm, valign=t]{pictures/Strom-DAC}
 	& {\begin{align*}
-      K &=2^N-1\\
+      K &=2^N-1 \qquad I_{out} = D \cdot I = D \cdot \frac{V_{Ref}}{R}\\
       I &=\frac{V_{Ref}}{R} \qquad \text{(von einer Quelle)}
 	  \end{align*}}
 	  \begin{tabular}{lp{5cm}}
@@ -38,7 +38,7 @@
 	  
 	\\ \hline
 	Segmented String DAC \hartl{459}
-	& \includegraphics[width=5cm, height = 5cm, valign=t]{pictures/segmented_string_DAC}
+	& \includegraphics[width=5cm, height = 4cm, valign=t]{pictures/segmented_string_DAC}
 	& \begin{description}
   		\item[Vorteile: ] viel weniger Elemente
   		\item[Nachteile:] benötigt Buffer (offset-frei)
@@ -89,7 +89,8 @@
 	\\ \hline
 	\textbf{Kapazitiver DAC (Charge Scaling)}
 	& \includegraphics[width=6cm, valign=t]{./pictures/kapazitiverDAC.png}
-	& {\begin{align*}
+	& { {\bf Vorteil:} Man kann bis zur angelegten Referenzspannung durchschalten \newline
+        \begin{align*}
 		C1	&= B3 \cdot 8C+B2 \cdot 4C+ B1 \cdot 2C+B0 \cdot C \\
 		C2	&= !B3 \cdot 8C+!B2 \cdot 4C+ !B1 \cdot 2C+!B0 \cdot C+C \\
 		V_{Out}& =\frac{C1}{C1+C2}\cdot (V_{Refp}-V_{Refn}) + V_{Refn}\\
