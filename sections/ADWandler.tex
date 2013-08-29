@@ -131,7 +131,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
   \includegraphics[width=6cm, valign=t]{pictures/dualSlope11} &
   $\begin{aligned}
  	T_{int} &= const \\
-  	V_{int}(t) &= -\frac{1}{R_{int}}\int_{0}^{t} (V_{in}(\tau) - V_{AGND})d\tau + V_{AGND}\\
+  	V_{int}(t) &= -\frac{1}{R_{int}\cdot C_i}\int_{0}^{t} (V_{in}(\tau) - V_{AGND})d\tau + V_{AGND}\\
    	V_{int}(T_{int}) &= V_{AGND} - \frac{1}{R_{int} \cdot C_i} \cdot T_{int} \cdot (V_{in} - V_{AGND}) \quad \textrm{(Für $V_{in}=$ const.)}\\
   \end{aligned}$\\
  
