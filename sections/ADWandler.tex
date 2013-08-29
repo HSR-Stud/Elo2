@@ -129,8 +129,11 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
 \subsubsection{Dual Slope \hartl{492}}
 \begin{longtable}{cp{12cm}}
   \includegraphics[width=6cm, valign=t]{pictures/dualSlope11} &
-  $T_{int} = const$ \newline
-  \[ V_{int} = V_{AGND} - \frac{1}{R_i \cdot C_i} \cdot T_{int} \cdot (V_{in} - V_{AGND})\] \\
+  $\begin{aligned}
+ 	T_{int} &= const \\
+  	V_{int}(t) &= -\frac{1}{R_{int}}\int_{0}^{t} (V_{in}(\tau) - V_{AGND})d\tau + V_{AGND}\\
+   	V_{int}(T_{int}) &= V_{AGND} - \frac{1}{R_{int} \cdot C_i} \cdot T_{int} \cdot (V_{in} - V_{AGND}) \quad \textrm{(Für $V_{in}=$ const.)}\\
+  \end{aligned}$\\
  
   \includegraphics[width=6cm, valign=t]{pictures/dualSlope12} &
   \begin{tabular}{p{6cm}p{6cm}}
