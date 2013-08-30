@@ -207,5 +207,15 @@
 \end{longtable}
 
 \subsection{Ausgangsverstärker}
-  \includegraphics[width=6cm, valign=t]{pictures/Ausgangsverstaerker.png}
-  $C_{Filter}$ dämpft Glitches beim umschalten des Digitalwertes.
+\begin{minipage}{7cm}
+	\includegraphics[width=6.5cm]{pictures/Ausgangsverstaerker.png}
+\end{minipage}
+\begin{minipage}{12cm}
+  $C_{Filter}$ dämpft Glitches beim Umschalten des Digitalwertes.
+  \begin{align*}
+  	V_{opp} &= 0V \hdots I_{OUT} \cdot (25\Omega || 1.5k\Omega) \\
+  	V_{opn} &= 0V \hdots \overline{I_{OUT}} \cdot (25\Omega || 1.5k\Omega) \cdot \frac{1k\Omega}{1.5k\Omega} = V_{opp} \cdot \frac{1k\Omega}{1.5k\Omega} \\
+  	A_{pos} &= 1 + \frac{1k\Omega}{500\Omega + 25\Omega}
+  \end{align*}
+\end{minipage}
+
