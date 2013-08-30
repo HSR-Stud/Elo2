@@ -116,8 +116,8 @@
         \begin{align*}
             S_{noise}(R) &=4kTR \qquad [\mathrm{V^2/Hz}]\\
             E_{noise}(R) &=\sqrt{4kTR} \qquad [\mathrm{V/\sqrt{Hz}}]\\
-            \overline{v^2_{n}} &=4kTRB = \int 4kTR \; df\\
-            \overline{i^2_{n}} &=4kTGB = \int 4kTG \; df\\
+            \overline{v^2_{n}} &=4kTRB = \int_0^{ENB} 4kTR \; df\\
+            \overline{i^2_{n}} &=4kTGB = \int_0^{ENB} 4kTG \; df\\
             v_{rms} &= \sqrt{\overline{v^2_{n}}} = \sqrt{4kTRB}
         \end{align*}
       }
@@ -126,7 +126,8 @@
        k:  $1.38 \cdot 10^{-23}JK^{-1}$\newline
        $S_{noise}(R)$:  Spektrale Dichte (Leistungsdichte)\newline
        $E_{noise}(R)$: Rauschspannungsdichte\newline
-       $v_{RMS}$:  Rauschspannung
+       $v_{RMS}$:  Rauschspannung\newline
+       $ENB$: Effective Noise Bandwidth
       }
     \\ \hline
 % ----------------------------------------------------------------------------------------------------   
@@ -139,7 +140,7 @@
             \overline{i^2_{n}}&=4kT(G1+G2)B=\overline{i^2_{n1}}+\overline{i^2_{n2}}
         \end{align*}
     }
-    & \textbf{Nicht die Rausch-Spannungen, sondern die Rausch-Leistungen müssen addiert werden!}
+    & 
     \\ \hline
 \end{longtable}
 % ----------------------------------------------------------------------------------------------------  
