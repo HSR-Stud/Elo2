@@ -101,9 +101,10 @@
     & \includegraphics[width=6cm, valign=t]{./pictures/kapazitiverDACmitAmp.png}
     & {Wenn z.B. B3 auf $V_{Ref1}$ geschaltet wird:\newline
       \begin{align*}
-          Q_{C3} = C_3 \cdot \Delta U &= C_3 \cdot (V_{Ref1}-V_{Ref2})\\
-          \Delta Q_3 = \Delta Q_{fb} &= C_3 \cdot \Delta V_{Ref}\\
-          \Rightarrow \Delta V_{Out} &= \frac{\Delta Q_{fb}}{C_{fb}} = \Delta V_{Ref} \cdot \frac{C_3}{C_{fb}}
+          Q_{C3} &= C_3 \cdot \Delta U = C_3 \cdot (V_{Ref1}-V_{Ref2})\\
+          \Delta Q_3 &= \Delta Q_{fb} = C_3 \cdot \Delta V_{Ref}\\
+          &\Rightarrow \Delta V_{Out} = \frac{\Delta Q_{fb}}{C_{fb}} = (V_{Ref1}-V_{Ref2}) \cdot \frac{C_3}{C_{fb}} \\
+          V_{out} &= V_{Ref2}-\Delta V_{Out}
       \end{align*}}
     \\ \hline
 \end{longtable}
