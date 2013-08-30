@@ -142,8 +142,8 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
       \textbf{Integration:} &
       \textbf{Abintegration:} \\
   
-      \[ V_{int_{max}} = - \dfrac{1}{R_i \cdot C_i} \cdot V_{in1} \cdot T_{int} \] &
-      \[ V_{int}(t) = V_{int_{max}} - \dfrac{V_{Ref}}{R_i \cdot C_i}\cdot t \] 
+      \[ V_{int_{max}} = V_{AGND}- \dfrac{V_{in}-V_{AGND}}{R_i \cdot C_i} \cdot T_{int} \] &
+      \[ V_{int}(t) = V_{int_{max}} - \dfrac{V_{Ref}-V_{AGND}}{R_i \cdot C_i}\cdot t \] 
   \end{tabular} \\
   
   \includegraphics[width=6cm, valign=t]{pictures/dualSlope2} &
@@ -151,8 +151,8 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
       \textbf{Abintegrationszeit:} &
       \textbf{Auflösung in Bits:} \\
   
-      \[ t_{ab_{int}} = -\dfrac{V_{in1} \cdot T_{int}}{V_{Ref}} \] &
-      \[ n = \dfrac{\log (\text{max Taktzyklen von Abintegration})}{\log(2)} \] 
+      \[ t_{abint} = \frac{T_{int}\cdot (V_{AGND}-V_{in})}{V_{Ref}-V_{AGND}} \] &
+      \[ n = \frac{\log (\text{max Taktzyklen von Abintegration})}{\log(2)} \] 
   \end{tabular}
   \[ V_{in} = \frac{n}{N} \cdot V_{ref} \]
   
