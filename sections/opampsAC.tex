@@ -50,8 +50,9 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
 \subsection{Stabilität des Systems}
 \begin{tabular}{m{0.45\linewidth}m{0.45\linewidth}}
     Um die Stabilität des OpAmps zu betrachten, wird der Loop geöffnet. Damit das System stabil ist, darf das       
-    Fehlersignal sich selbst nicht verstärken. Damit dies der Fall ist muss der Loop gain bei einer Phase von $-180^\circ$
-    nicht $>1$ sein, da das Vergleichsglied die Phase noch um $180^\circ$ dreht. Ein Mass für die Stabilität ist die 
+    Fehlersignal sich selbst nicht verstärken. Damit dies der Fall ist muss die Phase $>-180^\circ$ sein bei einem Loop Gain von $1$, da das Vergleichsglied die Phase noch um $180^\circ$ dreht. 
+    
+    Ein Mass für die Stabilität ist die 
     Phasenmarge (Phase Margin) und die Verstärkungsmarge (Gain Margin). Optimal ist ein Phase Margin von $60^{\circ}$.
     
     Die UTF ist dann stabil, wenn sie nie $\infty$ wird d.h der Nenner darf nie 0 werden.
@@ -73,7 +74,7 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
         \begin{align*}
             A &= A_{ol}\\
             T_{in} &= 1\\
-            \beta &= \frac{R_1}{R_1 + R_f}\\
+            \beta &= T_f = \frac{R_1}{R_1 + R_f} = \frac{1}{T}\\
             \frac{V_{out}}{V_{in}} &= \textcolor{red}{T = \frac{T_{in}}{\beta}\cdot \frac{1}{1+ \frac{1}{\beta 
             \cdot A_{ol}}} = \frac{T_{in}\cdot A_{ol}}{1 + A_{ol}\cdot \beta}} = 
             \frac{A_{ol}}{1 + A_{ol} \cdot \frac{R_1}{R_1 + R_f}} \approx \frac{R_1 + R_f}{R_1} =\frac{1}{\beta}
@@ -89,7 +90,7 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
         \begin{align*}
             A &= A_{ol}\\
             T_{in} &= \frac{R_f}{R_1 + R_f} = 1 - \beta\\
-            \beta &= \frac{R_1}{R_1 + R_f}\\
+            \beta &= T_f = \frac{R_1}{R_1 + R_f} = \frac{1}{1-T}\\
             \frac{V_{out}}{V_{in}} &= \textcolor{red}{T = -\frac{T_{in}}{\beta}\cdot 
             \frac{1}{1+ \frac{1}{\beta \cdot A_{ol}}}} =
             \frac{-T_{in} \cdot A_{ol}}{1+A_{ol} \cdot \beta}\approx -\frac{R_f}{R_1} = -\frac{1-\beta}{\beta}
@@ -133,7 +134,7 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
           Frequenz bei welcher der Amplitudengang der Verlängerung des 1.Pols die 0dB-Linie schneidet.
         \end{tabular} \newline
         Closed-Loop-Bandbreite: Schnittpunkt $\mathrm{A_{cl}}$ mit $\mathrm{A(\omega)}$\newline
-        Loop Gain: $A_{ol}(s) \cdot \beta = A(s) \cdot \beta$ oder $A_0 - A_{0cl}$ (nach Grafik) \newline
+        Loop Gain: $A_{ol}(s) \cdot \beta = A(s) \cdot \beta$ oder $A_{0_{dB}} - A_{0cl_{dB}}$ (nach Grafik) \newline
         Unity-Gain: Frequenz wo der Amplitudengang (aller Pole) die 0dB-Linie schneidet.
     }
     \\ \hline

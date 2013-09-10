@@ -30,7 +30,7 @@
 	Thermisches Rauschen /Johnson Noise / weisses Rauschen
   & \vspace{-1.5\topsep} 
     \begin{itemize}[leftmargin=*]
-      \item Zufällige Bewegung der Ladungsträger aufgrund der Wärmeenergie und der Qunantisierung der Ladung
+      \item Zufällige Bewegung der Ladungsträger aufgrund der Wärmeenergie und der Quantisierung der Ladung
       \item Konstant für alle Frequenzen
       \item alle Widerstände haben ein weisses Rauschen
     \end{itemize}
@@ -104,7 +104,7 @@
     \\ \hline
 \end{longtable}
 % ----------------------------------------------------------------------------------------------------
-\vspace{-2.5\topsep}
+\newpage
 \begin{longtable}[t]{|p{4cm}|p{6.5cm}|p{7cm}|}
     \hline
     \multicolumn{3}{|l|}{\bf Rauschen von Widerständen}
@@ -165,16 +165,16 @@
         \end{align*}
       }
     \\ \hdashline
-    \includegraphics[width=3cm, valign=t]{pictures/seriewiderstand1.png}\newline
-    \includegraphics[width=3cm]{pictures/seriewiderstand2.png}
+    \includegraphics[width=2.8cm, valign=t]{pictures/seriewiderstand1.png}\newline
+    \includegraphics[width=2.5cm]{pictures/seriewiderstand2.png}
     & {Quellenumwandlung machen und dann Rauschen über Ersatzwiderstand ($R_T$) bestimmen.\newline
-       \begin{align*}
+      }
+    & {
+	    \begin{align*}
            V_{T,s}&=V_{s}\frac{R_{3}}{R_{1}+R_{3}}\\
            \overline{v^2_{Tn}}&=4kTR_{T}B\\
            &=4kT(R_{2}+R_{1}\parallel R_{3})B
-       \end{align*}
-      }
-    & {
+        \end{align*}
       }
     \\ \hline
 % ----------------------------------------------------------------------------------------------------       
@@ -303,7 +303,7 @@
     \[ SNR_{db} = 10 \cdot \log\left(\frac{P_{sig}}{P_Q}\right) = 1.76+n \cdot 6.02 \] &
     \vspace{-1.5\topsep}
     \begin{itemize}
-      \item[c:] Crestfaktor (Sinussignal $c=\sqrt 2$
+      \item[c:] Crestfaktor (Sinussignal $c=\sqrt 2$)
       \item[q:] Quantisierungsintervall
       \item[$P_{sig}$:] Signalleistung
       \item[$P_Q$:] Quantisierungsrauschleistung
