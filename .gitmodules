@@ -1,6 +1,0 @@
-[submodule "header"]
-	path = header
-	url = https://github.com/HSR-Stud/header.git
-[submodule "idiotenseite"]
-	path = idiotenseite
-url = https://github.com/HSR-Stud/idiotenseite.git
