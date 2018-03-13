@@ -4,14 +4,15 @@
 \subsection{Parallelverfahren}
 
 \renewcommand{\arraystretch}{1}
-\begin{tabular}{|>{\bfseries}p{3cm}|c|p{6.6cm}|}
+\begin{tabular}{|>{\bfseries}p{3cm}|c|p{7.6cm}|}
 	\hline
-	Strom-DAC \hartl{456} 
+	Strom-DAC\hartl{456}  
 	& \includegraphics[width=7cm, valign=t]{pictures/Strom-DAC}
 	& {\begin{align*}
       K &=2^N-1 \qquad I_{out} = D \cdot I = D \cdot \frac{V_{Ref}}{R}\\
       I &=\frac{V_{Ref}}{R} \qquad \text{(von einer Quelle)}
 	  \end{align*}}
+	  
 	  \begin{tabular}{lp{5cm}}
 	  	K: & Anzahl Stromquellen \\
       D: & Eingangswert (Anzahl Schalter die aktiv sind.) \\
@@ -19,6 +20,10 @@
       On: & kein Spannungsabfall  \\
       Off: & kein Strom
     \end{tabular} 
+    \begin{description}
+  		\item[Vorteile: ] Schnell (Stromgesteuert)
+  		\item[Nachteile:] 
+	  \end{description} 
 	\\ \hline
 	String DAC (Voltage Scaling) \hartl{459}
 	& \includegraphics[width=5.5cm, valign=t]{pictures/string_DAC}
@@ -66,7 +71,7 @@
 	\\ \hline
 	\textbf{Wägeverfahren mit Ausgangstreiber} \newline
   (Summation gewichteter Ströme)
-	& \includegraphics[width=6cm, valign=t]{./pictures/praktisch.png}
+	& \includegraphics[width=5.5cm, valign=t]{./pictures/praktisch.png}
 	& \[ Idac_{max}=\frac{V_{Refp}-V_{Refn}}{R} \cdot \frac{2^n-1}{2^n} \] \newline
     Vout und Idac\_inv sind differentiel zu einander, dadurch fliesst immer der gleiche Strom
     und der Offsetfehler bleibt konstant.
@@ -87,14 +92,22 @@
   \end{description}
   
 	\\ \hline
+	\textbf{R-2R-Netzwerk}
+	& \includegraphics[width=5cm, valign=t]{pictures/r2r.png}
+	& {
+	\begin{align*}
+		V_{out}&= \frac{V_{ref}}{2^n} + \frac{R_L}{R_L + R} \cdot D
+	\end{align*}}
+  
+	\\ \hline
 	\textbf{Kapazitiver DAC (Charge Scaling)}
 	& \includegraphics[width=6cm, valign=t]{./pictures/kapazitiverDAC.png}
-	& { {\bf Vorteil:} Man kann bis zur angelegten Referenzspannung durchschalten \newline
+	& { \textbf{ Vorteil:} Man kann bis zur angelegten Referenzspannung durchschalten \newline
         \begin{align*}
 		C1	&= B3 \cdot 8C+B2 \cdot 4C+ B1 \cdot 2C+B0 \cdot C \\
 		C2	&= !B3 \cdot 8C+!B2 \cdot 4C+ !B1 \cdot 2C+!B0 \cdot C+C \\
-		V_{Out}& =\frac{C1}{C1+C2}\cdot (V_{Refp}-V_{Refn}) + V_{Refn}\\
-		\text{mit } & C1+C2=2^n\cdot C
+		V_{Out}& =\frac{C1}{C1+C2}\cdot (V_{Rp}-V_{Rn}) + V_{Rn} \textrm{mit } C1+C2=2^n\cdot C\\
+		V_{out} &= \frac{D}{2^n} \cdot \left(V_{rp}-{V_{Rn}}\right) + V_{Rn}
 	  \end{align*}}
 	\\ \hline
     \textbf{Kapazitiver DAC mit Ausgangstreiber}
@@ -104,7 +117,7 @@
           Q_{C3} &= C_3 \cdot \Delta U = C_3 \cdot (V_{Ref1}-V_{Ref2})\\
           \Delta Q_3 &= \Delta Q_{fb} = C_3 \cdot \Delta V_{Ref}\\
           &\Rightarrow \Delta V_{Out} = \frac{\Delta Q_{fb}}{C_{fb}} = (V_{Ref1}-V_{Ref2}) \cdot \frac{C_3}{C_{fb}} \\
-          V_{out} &= V_{Ref2}-\Delta V_{Out}
+          V_{out} &= V_{Ref2}-\Delta V_{Out} 
       \end{align*}}
     \\ \hline
 \end{longtable}
