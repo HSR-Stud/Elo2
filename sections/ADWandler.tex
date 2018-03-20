@@ -155,7 +155,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
       $ t_{abint} = \frac{T_{int}\cdot (V_{AGND}-V_{in})}{V_{Ref}-V_{AGND}} $ &
       $ n = \log _2 (\text{max Taktzyklen von Abintegration}) $ \\
   \end{tabular}
-  \[ V_{in} = \frac{n}{N} \cdot V_{ref} \]
+  \[ \frac{-V_{In}}{V_{Ref}}	= \frac{n}{N} \]
   
  Sinusschwingungen mit einer Periodendauer gleich der Integrationszeit, werden herausgefiltert!\\
  
@@ -192,11 +192,11 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
     \includegraphics[width=6cm, valign=t]{pictures/deltaSigma1} \newline 
     \includegraphics[width=6cm]{pictures/deltaSigma3} &
     \[Y(s)=\frac{X(s)-Y(s)}{s}+Q(s)\Rightarrow Y(s)=X(s)\frac{1}{1+s}+Q(s)\frac{s}{1+s}\] \newline
-    \begin{tabular}{p{3cm}p{9cm}}
+    \begin{tabular}{p{5cm}p{7cm}}
       \textbf{Signal UTF:} &
       \textbf{Noise UTF:} \\
       
-      \[ H_s(s) = \frac{1}{1+sT} \] &    
+      \[ H_s(s) = \frac{1}{1+sT} = \frac{1}{1+sRC} \] &    
       \[ H_n(s) = \frac{sT}{1+sT} \] \\ \\
       
       SNR-Erhöhung: &

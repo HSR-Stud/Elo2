@@ -7,16 +7,27 @@
 \usepackage[ngerman]{babel,varioref}
 \usepackage{amssymb,amsmath,graphicx,xcolor,lastpage,wrapfig,verbatim}
 \usepackage{tabularx,longtable}
-\usepackage{multicol}
-\usepackage{rotating}
-\usepackage{floatflt}
 \usepackage{array}
 \usepackage{scrlayer-scrpage}
 \usepackage{multirow,multicol}
 \usepackage{trfsigns, trsym}
 \usepackage{tikz}
+\usetikzlibrary{fit}
 \usepackage{circuitikz}
 \usepackage{afterpage}
+
+
+\usepackage{enumitem}
+\setlist{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\usepackage{textcomp} % Für Grad zeichen
+
+\usepackage{graphicx}
+
+\usepackage{arydshln} % Für horizontale und vertikale punktierte Linien
+
+\setlength{\mathindent}{0pt}
+\raggedbottom
+
 
 % Zum Bilder einfach in Tabellen einfügen (valign=t)
 \usepackage[export]{adjustbox}
@@ -82,7 +93,8 @@
 %
 %Kopf- und Fusszeile
 %
-\lohead*{\titleinfo}
+\lohead*{\titleinfo\quad \versioninfo}
+\cohead*{\includegraphics[width=1.6cm]{header/small.png}}
 \rohead*{\today}
 \lofoot*{\authorinfo}
 \cofoot*{}
