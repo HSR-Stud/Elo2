@@ -1,30 +1,29 @@
 \section{AD Wandler \hartl{475}}
 
 \subsection{Vergleich ADC}
-\includegraphics[width=9cm, valign=t]{pictures/vergleich_ADC.png}
+\includegraphics[width=9cm, valign=t,angle=90]{pictures/vergleich_ADC.png}
 
 \newpage
-
 \subsection{Parallelverfahren und Kaskadenumsetzer}
 
 \begin{longtable}{|>{\bfseries}p{4cm}|p{6cm}|p{8cm}|}
   \hline
     Parallelumsetzer (Flash-ADC) &
-    \includegraphics[width=6cm, valign=t]{pictures/parallelADC} &
-    \begin{tabular}{ll}
-      \textbf{Vorteile:} & sehr schnell \\
-      & keine DAC Rückkopplung \\
-      \textbf{Nachteile:} & geringe Auflösung \\
-      & benötigt $2^n$ Widerstände \\
-      & benötigt $2^n-1$ Komperatoren
-    \end{tabular} \\
+    \includegraphics[width=5cm, valign=t]{pictures/parallelADC} &
+    \textbf{Vorteile}:\newline
+    sehr schnell, keine DAC Rückkoppelung\newline
+    \textbf{Nachteile}\newline
+    geringe Auflösung\newline
+    benötigt $2^n$ Widerstände \newline
+    benötigt $2^n-1$ Komperatoren
+   	\\
   \hline
     Kaskadenumsetzer (Pipeline ADC) &
-    \includegraphics[width=6cm, valign=t]{pictures/kaskaden} \newline
-    \includegraphics[width=6cm, valign=t]{pictures/kaskaden_fehlerkorrektur.png} \newline 
-    \includegraphics[width=6cm, valign=t]{pictures/latenz}&
-    Eine 10-bit-Auflösung beim Parallelverfahren würde 1024 Komperatoren
-    benötigen.$\Rightarrow$Komplexitätsreduktion \newline
+    \includegraphics[width=5cm, valign=t]{pictures/kaskaden} \newline
+    \includegraphics[width=5cm, valign=t]{pictures/kaskaden_fehlerkorrektur.png} \newline 
+    \includegraphics[width=5cm, valign=t]{pictures/latenz}&
+    
+    Eine 10-bit-Auflösung beim Parallelverfahren benötigt 1024 Komperatoren. $\Rightarrow$Komplexitätsreduktion \newline
     Mit erstem $N_{1}$-bit ADC wird der Grobbereich festgelegt (höherwertige
     Bits). Diese Zahl wird in eine analoge Spannung durch einen $N_{1}$-bit DAC zurück
     umgesetzt und diese Spannung von der Eingangsspannung subtrahiert. Diese
@@ -45,7 +44,6 @@
   \hline
 \end{longtable}
 
-\newpage
 
 \subsection{Wägeverfahren (sukzessive Approximation/SAR) \hartl{485}}
 \begin{longtable}{|>{\bfseries}p{4cm}|p{6cm}|p{8cm}|}
@@ -90,7 +88,6 @@
   \hline
 \end{longtable}
 
-
 \subsection{Iterative ADC}
 \begin{longtable}{|p{12cm}|p{6cm}|}
   \hline
@@ -132,19 +129,18 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
 \subsubsection{Dual Slope \hartl{492}}
 \begin{longtable}{cp{12cm}}
   \includegraphics[width=6cm, valign=t]{pictures/dualSlope11} &
-  $\begin{aligned}
- 	T_{int} &= const \\
-  	V_{int}(t) &= -\frac{1}{R_{int}\cdot C_i}\int_{0}^{t} (V_{in}(\tau) - V_{AGND})d\tau + V_{AGND}\\
-   	V_{int}(T_{int}) &= V_{AGND} - \frac{1}{R_{int} \cdot C_i} \cdot T_{int} \cdot (V_{in} - V_{AGND}) \quad \textrm{(Für $V_{in}=$ const.)}\\
-  \end{aligned}$\\
+ 	$T_{int} = const$ \newline
+  	$V_{int}(t) = -\frac{1}{R_{int}\cdot C_i}\int_{0}^{t} (V_{in}(\tau) - V_{AGND})d\tau + V_{AGND}$\newline
+   	$V_{int}(T_{int}) = V_{AGND} - \frac{1}{R_{int} \cdot C_i} \cdot T_{int} \cdot (V_{in} - V_{AGND}) \quad \textrm{(Für $V_{in}=$ const.)}$
+  \\
  
-  \includegraphics[width=6cm, valign=t]{pictures/dualSlope12} &
+  \includegraphics[width=5cm, valign=t]{pictures/dualSlope12} &
   \begin{tabular}{p{6cm}p{6cm}}
       \textbf{Integration:} &
       \textbf{Abintegration:} \\
   
-      \[ V_{int_{max}} = V_{AGND}- \dfrac{V_{in}-V_{AGND}}{R_i \cdot C_i} \cdot T_{int} \] &
-      \[ V_{int}(t) = V_{int_{max}} - \dfrac{V_{Ref}-V_{AGND}}{R_i \cdot C_i}\cdot t \] 
+      $ V_{int_{max}} = V_{AGND}- \dfrac{V_{in}-V_{AGND}}{R_i \cdot C_i} \cdot T_{int} $ &
+      $ V_{int}(t) = V_{int_{max}} - \dfrac{V_{Ref}-V_{AGND}}{R_i \cdot C_i}\cdot t $
   \end{tabular} \\
   
   \includegraphics[width=6cm, valign=t]{pictures/dualSlope2} &
@@ -155,9 +151,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
       $ t_{abint} = \frac{T_{int}\cdot (V_{AGND}-V_{in})}{V_{Ref}-V_{AGND}} $ &
       $ n = \log _2 (\text{max Taktzyklen von Abintegration}) $ \\
   \end{tabular}
-  \[ \frac{-V_{In}}{V_{Ref}}	= \frac{n}{N} \]
-  
- Sinusschwingungen mit einer Periodendauer gleich der Integrationszeit, werden herausgefiltert!\\
+  $\frac{-V_{In}}{V_{Ref}}	= \frac{n}{N} $  Sinusschwingungen mit einer Periodendauer gleich der Integrationszeit, werden herausgefiltert!\\
  
   \begin{tabular}{ll}
     N:&Taktzyklen\\
@@ -185,12 +179,10 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
   \end{itemize}
 \end{longtable}
 
-\newpage
-
 \subsubsection{Sigma-Delta Wandler \hartl{500}}
   \begin{longtable}{p{6cm}p{12cm}}
-    \includegraphics[width=6cm, valign=t]{pictures/deltaSigma1} \newline 
-    \includegraphics[width=6cm]{pictures/deltaSigma3} &
+    \includegraphics[width=5cm, valign=t]{pictures/deltaSigma1} \newline 
+    \includegraphics[width=5cm]{pictures/deltaSigma3} &
     \[Y(s)=\frac{X(s)-Y(s)}{s}+Q(s)\Rightarrow Y(s)=X(s)\frac{1}{1+s}+Q(s)\frac{s}{1+s}\] \newline
     \begin{tabular}{p{5cm}p{7cm}}
       \textbf{Signal UTF:} &
@@ -258,9 +250,10 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
 	%\end{itemize}
 %\end{multicols}	
 
+
 \begin{multicols}{2}
   \subsubsection{Sigma-Delta Wandler 2. Ordnung}
-    \includegraphics[width=6cm, height =4cm]{pictures/deltaSigma2}
+    \includegraphics[width=5.5cm, height =3.8cm]{pictures/deltaSigma2}
   
   \columnbreak
   

@@ -7,7 +7,7 @@
     & \includegraphics[width=4cm, valign=t]{pictures/tiefpass1ordnung}
     & {\textbf{UTF: } $G(s): \frac{1}{1+s C\cdot R} = \frac{1}{1+ j\cdot \frac{\omega}{\omega_{3dB}}}$\newline
         $f_{3dB}=\frac{1}{2\pi R\cdot C}$\newline
-        Bei $\omega=\omega_{3dB}=\frac{1}{T}$ sind Real- und Imaginärteil gleich gross:
+        Bei $\omega=\omega_{3dB}=\frac{1}{\tau}$ sind Real- und Imaginärteil gleich gross:
         
         $T=R \cdot C$
       }
@@ -16,7 +16,7 @@
     {2. Ordnung\newline
      (kaskadierte RC-Tiefpässe)
     }
-    & \includegraphics[width=4cm, valign=t]{pictures/tiefpass2ordnung}
+    & \includegraphics[width=6cm,angle=90, valign=t]{pictures/tiefpass2ordnung}
     & {$G(s) = \left(\frac{1}{1+sRC}\right)^2 = \left(\frac{1}{1+sT}\right)^2$ \newline
        $T = \frac{\sqrt{\sqrt{2}-1}}{2\pi \cdot f_g}$ \newline
        $G_{p}(s)= \frac{U_{out}}{U_{in}} = 
@@ -31,20 +31,20 @@
        
        \textbf{Vgl. allgemeiner Tiefpass 2. Ordnung:}\newline
        \begin{align*}
-           G_{LP}(s)	&= \frac{A0}{\frac{s^2}{\omega_{0}^2}+\frac{s}{Q\cdot\omega_{0}}+1} \\
-           A0	 		&= 1 \\
-           \omega_{0}	&= \frac{1}{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}\\
-           Q 	        &=\frac{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}{R_1\cdot (C_1+C_2)+C_2 \cdot R_2}
-        \end{align*}\newline
-        \textbf{Schrittantwort:} \newline
-        identische Pole: \newline
-        \[y_{\sigma}(t) = 1-\e^{-\frac{t}{T}}\cdot(1+\frac{t}{T})\] \newline
-          
-        ungleiche Pole: \newline
+           G_{LP}(s)	= \frac{A0}{\frac{s^2}{\omega_{0}^2}+\frac{s}{Q\cdot\omega_{0}}+1} &
+           \quad A0 = 1 \\
+           \omega_{0}	= \frac{1}{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}&\quad Q=\frac{\sqrt{C_1\cdot C_2\cdot R_1\cdot R_2}}{R_1\cdot (C_1+C_2)+C_2 \cdot R_2}
+        \end{align*}
+        } \\
+        \textbf{Schrittantwort:}&{
+        
+        identische Pole: }&{
+        \[y_{\sigma}(t) = 1-\e^{-\frac{t}{T}}\cdot(1+\frac{t}{T})\] }\\
+          &{
+        ungleiche Pole: }&{
         \[y_{\sigma}(t) = 1-\left(\frac{T_1 \cdot \e^{-\frac{t}{T_1}}- T_2 \cdot
-        \e^{-\frac{t}{T_2}}}{T1-T_2}\right) \] \newline
-          
-        komplexe Pole: \newline
+        \e^{-\frac{t}{T_2}}}{T1-T_2}\right) \]}\\
+        &{komplexe Pole:}&{
         \begin{align*}
           y_{\sigma}(t) = &1-\e^{-\frac{\omega_0}{2Q}\cdot t}\cdot \\
           &\left[\cos \left(\frac{\omega_0}{2Q} \sqrt{4Q^2-1} \cdot t \right) +
@@ -55,6 +55,12 @@
         Güte werden Spulen oder Verstärker benötigt. Für Systeme 2.Ordnung ist eine Polgüte von 0.7 optimal.
       }
       \\ \hline
+      \textbf{Kaskadierter Spannungsteiler}
+      & %TODO Bild einfügen
+      &
+      \[
+				H(s) = \frac{Y(s)}{X(s)} = \frac{Z_2 Z_4}{Z_1Z_2+Z_1Z_3+Z_1Z_4+Z_2Z_3+Z_2Z_4}      
+      \]\\ \hline
 % ----------------------------------------------------------------------------------------------------      
     {Sallen Key\newline
      (Einfachmit-kopplung)\newline
@@ -109,7 +115,7 @@
 % ---------------------------------------------------------------------------------------------------- 
       {Zustandsvariab-len-Filter
       }
-      & \includegraphics[width=4cm, valign=t]{./pictures/zustandsvariable.png}
+      & \includegraphics[width=8cm, valign=b,angle=270]{./pictures/zustandsvariable.png}
       & {Spannungsgleichungen:\newline
          \begin{align*}
              V{out}		&=-\frac{1}{s C_{i2}\cdot R_{i2}}\cdot V_{opo2}\\
@@ -118,8 +124,8 @@
              \frac{V_{out}}{R_{fb}}+s C_{fb}\cdot V_{out}\right)\\
              G_{ss}(s)	&=\frac{-\frac{R_{fb}}{R_{in}}}{C_{i1}\cdot C_{i2}\cdot R_{i2}\cdot
              R_{fb}\cdot \frac{R_1}{R_2}\cdot s^2+C_{fb}\cdot R_{fb}\cdot s+1}\\
-             A_{0}		&=-\frac{R_{fb}}{R_{in}}\\
-             \omega_{0}	&=\frac{1}{\sqrt{C_{i1}\cdot C_{i2}\cdot R_{i2}\cdot R_{fb}\cdot \frac{R_1}{R_2}}}\\
+             A_{0}		&=-\frac{R_{fb}}{R_{in}}\quad
+             \omega_{0}	=\frac{1}{\sqrt{C_{i1}\cdot C_{i2}\cdot R_{i2}\cdot R_{fb}\cdot \frac{R_1}{R_2}}}\\
              Q			&=\frac{\sqrt{C_{i1}\cdot C_{i2}\cdot R_{i2}\cdot \frac{R_1}{R_{fb}\cdot R_2}}}{C_{fb}}
          \end{align*}
          D.h. mit dieser Topologie sind alle 3 Parameter frei wählbar!

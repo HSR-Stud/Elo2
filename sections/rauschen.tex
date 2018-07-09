@@ -104,7 +104,8 @@
     \\ \hline
 \end{longtable}
 % ----------------------------------------------------------------------------------------------------
-\newpage
+
+
 \begin{longtable}[t]{|p{4cm}|p{6.5cm}|p{7cm}|}
     \hline
     \multicolumn{3}{|l|}\textbf{ Rauschen von Widerständen}
@@ -192,7 +193,7 @@
         \begin{itemize}[leftmargin=*]
             \item Kapazitäten (und Induktivitäten) rauschen nicht!
             \item Kapazitäten (und Induktivitäten) ändern die Bandbreite des Systems, d.h. beeinflussen dadurch die Rauschspannung
-            \item Der Widerstand trägt nicht direkt zur Rauschspannung bei, er limitiert die Bandbreite
+            \item Der Widerstand trägt nicht zur Rauschspannung bei, er limitiert die Bandbreite im selben Ausmass wie er mehr rauscht.
             \newline
         \end{itemize}
       }
@@ -301,7 +302,9 @@
     \newline
     \[ P_Q \approx \frac{q^2}{12} \] \newline
     \[ q = \frac{V_{Refp}-V_{Refn}}{2^n} \]  \newline
-    \[ SNR_{db} = 10 \cdot \log\left(\frac{P_{sig}}{P_Q}\right) = 1.76+n \cdot 6.02 \] &
+    \[ SNR_{db} = 10 \cdot \log\left(\frac{P_{sig}}{P_Q}\right) = 1.76+n \cdot 6.02 \]\newline
+    \[v_{noise} = \sqrt{4kT\cdot R_f\cdot A\cdot ENB+e_w^2\cdot ^2\cdot ENB}	\]\newline
+     &
     \vspace{-1.5\topsep}
     \begin{itemize}
       \item[c:] Crestfaktor (Sinussignal $c=\sqrt 2$)

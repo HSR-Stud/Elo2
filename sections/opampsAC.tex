@@ -1,3 +1,4 @@
+
 \section{OpAmps AC}
 
 Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter Ordnung mit linearer Verstärkung.
@@ -40,12 +41,13 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
 	\hline
 \end{tabular}
 \\ \\
-\begin{tabular}{m{0.45\linewidth}m{0.45\linewidth}}
-	Durch das Schliessen des Loops wird die Bandbreite vergrössert, das gain-bandwidth-product(GBP) bleibt jedoch konstant. Die Verstärkung wird jedoch um $T_{s0}(s)$ (Linearer Loop Gain) reduziert. Der Phasengang wird durch das Verschieben des ersten Poles auch verändert, wie folgende Grafik zeigt.
-	& \begin{center}
-        \includegraphics[width=6.7cm, valign=t]{./pictures/AolAcl.png}
-    \end{center}
-\end{tabular}
+\begin{minipage}{0.6\textwidth}
+Durch das Schliessen des Loops wird die Bandbreite vergrössert, das gain-bandwidth-product(GBP) bleibt jedoch konstant. Die Verstärkung wird jedoch um $T_{s0}(s)$ (Linearer Loop Gain) reduziert. Der Phasengang wird durch das Verschieben des ersten Poles auch verändert, wie folgende Grafik zeigt.
+\end{minipage}
+\begin{minipage}{0.39\textwidth}
+\includegraphics[width=0.7\textwidth, valign=t]{./pictures/AolAcl.png}
+\end{minipage}
+
 \vspace{-7mm}
 \subsection{Stabilität des Systems}
 \begin{tabular}{m{0.45\linewidth}m{0.45\linewidth}}
@@ -57,7 +59,7 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
     
     Die UTF ist dann stabil, wenn sie nie $\infty$ wird d.h der Nenner darf nie 0 werden.
     & \begin{center}
-        \includegraphics[width=5cm, valign=t]{./pictures/margins.png}
+        \includegraphics[width=5cm, valign=t]{pictures/margins.png}
     \end{center}
 \end{tabular}
 

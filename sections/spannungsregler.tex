@@ -1,10 +1,14 @@
-\section{Spannungsregler/Stromversorgung\hartl{280}} 
+\newpage
+\begin{minipage}{0.49\textwidth}
+\section{Spannungsregler/Stromversorgung} 
 \subsection{Lineare Spannungsregler\hartl{280}} 
-Für alle linearen Spannungsregler gilt: \begin{equation*}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+Für alle linearen Spannungsregler gilt: 
+\[
 P_{V}=(V_{E}-V_{a}) \cdot I_{a}
-\end{equation*}\\
-Einsatz für geringer Spannungsunterschied zwischen eingangsspannung und der
-geregelten Ausgangsspannung
+\]
+\end{minipage}
 
 \begin{longtable}{|l|l|l|}
 \hline
@@ -15,6 +19,12 @@ geregelten Ausgangsspannung
 \begin{minipage}{6cm}
 \includegraphics[width=6cm, height =
 4cm]{pictures/transistorStabilisierung}
+\begin{tabular}{ll}
+$B$:&Gleichstromverstärkung\\[-0.8em]
+$R_{i}$:&Innenwiderstand der Schaltung\\[-0.8em]
+$r_{Z}$:&dyn. Innenwiderstand der Z-Diode\\[-0.8em]
+$\beta$:&Stromverstärkungsfaktor des \\[-0.8em]&Transistors
+\end{tabular}
 \end{minipage}
 &
 \begin{minipage}{8cm}
@@ -27,18 +37,14 @@ I_{B}=\frac{I_{C}}{B}\\
 R_{i}\approx\frac{r_{Z}}{\beta} 
 \end{gather*}
 \begin{tabular}{ll}
-$U_{E}$:&unstab. Eingangsspannung\\
-$U_{A}$:&stab. Ausgangsspannung\\
-$U_{Z}$:&ZDioden-Spannung\\
-$U_{CE}$:&Kollektor-Emitterspannung\\
-$U_{BE}$:&Basis-Emitterspannung\\
-$I_{Z}$:&Strom durch die Z-Diode\\
-$I_{C}$:&Kollektorstrom\\
+$U_{E}$:&unstab. Eingangsspannung\\[-0.8em]
+$U_{A}$:&stab. Ausgangsspannung\\[-0.8em]
+$U_{Z}$:&ZDioden-Spannung\\[-0.8em]
+$U_{CE}$:&Kollektor-Emitterspannung\\[-0.8em]
+$U_{BE}$:&Basis-Emitterspannung\\[-0.8em]
+$I_{Z}$:&Strom durch die Z-Diode\\[-0.8em]
+$I_{C}$:&Kollektorstrom\\[-0.8em]
 $I_{B}$:&Basisstrom\\
-$B$:&Gleichstromverstärkung\\
-$R_{i}$:&Innenwiderstand der Schaltung\\
-$r_{Z}$:&dyn. Innenwiderstand der Z-Diode\\
-$\beta$:&Stromverstärkungsfaktor des \\&Transistors
 \end{tabular}
 \end{minipage}
 \\
@@ -48,7 +54,7 @@ $\beta$:&Stromverstärkungsfaktor des \\&Transistors
 \end{minipage}
 &
 \begin{minipage}{6cm}
-\includegraphics[width=6cm, height =
+\includegraphics[height =
 4cm]{pictures/festStabilisierung}
 \end{minipage}
 &
@@ -65,7 +71,7 @@ V_{a}=I \cdot (R_{2}+R_{1})=\frac{V_{ref}}{r} \cdot 4R=4 \cdot V_{ref}
 \end{minipage}
 &
 \begin{minipage}{6cm}
-\includegraphics[width=6cm, height =
+\includegraphics[height =
 4cm]{pictures/einstellbarStabilisierung}
 \end{minipage}
 &
@@ -79,8 +85,26 @@ V_{a}=V_{R1}+V_{R2}=V_{ref}+R_{2} \cdot (I_{R1}+I_{adj})=\notag\\=V_{ref}+R_{2} 
 \hline
 \end{longtable}
 
+
 \subsection{Schaltregler\hartl{285}} 
 \begin{longtable}{|l|l|l|}
+\hline
+\begin{minipage}{4cm}
+\textbf{Ladungspumpen}
+\end{minipage}
+&
+\begin{minipage}{6cm}
+\includegraphics[width=6cm]{pictures/switchcap.png}
+\end{minipage}
+&
+\begin{minipage}{8cm}
+Rechnen über Ladungen\newline
+SCPC verhalten sich gleich wie ein RC-Glied \\ $R_{eq} = \frac{1}{f_{switch}\cdot C_1} = \frac{T_{switch}}{C_1}$
+
+Je nach dem wohin $C_1$ geschaltet wird kann die Spannung verdoppelt oder invertiert werden.
+
+\end{minipage}
+\\
 \hline
 \begin{minipage}{4cm}
 \textbf{Abwärtswandler (Buck Converter)} \hartl{285}
@@ -91,13 +115,23 @@ V_{a}=V_{R1}+V_{R2}=V_{ref}+R_{2} \cdot (I_{R1}+I_{adj})=\notag\\=V_{ref}+R_{2} 
 \end{minipage}
 &
 \begin{minipage}{8cm}
-Es gilt: $0\leq V_{a}\leq V_{e}$\\
+\begin{scriptsize}
+
+Es gilt: $0\leq V_{a}\leq V_{e}$\\ \hrule
+\begin{minipage}{0.15\textwidth}
 $S_{on}$\\
+\end{minipage}
+\begin{minipage}{0.84\textwidth}
 \begin{gather*}
 V_{V}=L \cdot \frac{\Delta I_{L}}{\Delta t}\\
 V_{e}=V_{V}+V_{a} \to V_{e}=L \cdot \frac{\Delta I_{L}}{\Delta t}+V_{a}\\
 \end{gather*}
+\end{minipage}
+\hrule
+\begin{minipage}{0.15\textwidth}
 $S_{off}$\\
+\end{minipage}
+\begin{minipage}{0.84\textwidth}
 \begin{gather*}
 V_{n}=V_{a}=L \cdot \frac{\Delta I_{L}}{\Delta t}\\
 \Delta I_{L}=(V_{e}-V_{a}) \cdot \frac{1}{L} \cdot t_{ein}\\
@@ -106,6 +140,11 @@ V_{a}=\frac{t_{ein}}{t_{aus}+t_{ein}} \cdot V_{e}=d \cdot V_{e}
 \begin{tabular}{ll}
 d:&Tastverhältnis/Duty Factor\\
 \end{tabular}
+\end{minipage}
+
+
+
+\end{scriptsize}
 \end{minipage}
 \\
 \hline
@@ -118,21 +157,34 @@ d:&Tastverhältnis/Duty Factor\\
 \end{minipage}
 &
 \begin{minipage}{8cm}
-Es gilt : $V_{a}\geq V_{e}$\\
+\begin{scriptsize}
+Es gilt : $V_{a}\geq V_{e}$\\ \hrule
+
+\begin{minipage}{0.15\textwidth}
 $S_{on}$\\
+\end{minipage}
+\begin{minipage}{0.84\textwidth}
 \begin{gather*}
 V_{v}=V_{e}=L \cdot \frac{\Delta I_{L}}{\Delta t}\\
 \end{gather*}
+\end{minipage}
+
+\hrule
+\begin{minipage}{0.15\textwidth}
 $S_{off}$\\
+\end{minipage}
+\begin{minipage}{0.84\textwidth}
 \begin{gather*}
 V_{a}=V_{e}+V_{n}= L \cdot \frac{\Delta I_{L}}{\Delta t}+V_{e}\\
 \Delta I=\frac{1}{L} \cdot V_{e} \cdot t_{ein}\\
 \Delta I=\frac{1}{L} \cdot (V_{a}-V_{e}) \cdot t_{aus}\\
-V_{a}=V_{e}\frac{t_{ein}+t_{aus}}{t_{aus}}=V_{e}\frac{1}{1-d}\notag\\\text{mit
+V_{a}=V_{e}\frac{t_{ein}+t_{aus}}{t_{aus}}=V_{e}\frac{1}{1-d}\textrm{Wenn R richtig}\notag\\\text{mit
 }d=\frac{t_{ein}}{t_{aus}+t_{ein}}\\
-\text{Energie im Magnetfeld:}\\
-E_{L}=0.5L \cdot ipk^2
+\text{Energie im Magnetfeld:}\quad E_{L}=0.5L \cdot ipk^2
 \end{gather*}
+\end{minipage}
+\end{scriptsize}
+
 \end{minipage}
 \\
 \hline
@@ -145,21 +197,41 @@ E_{L}=0.5L \cdot ipk^2
 \end{minipage}
 &
 \begin{minipage}{8cm}
+\begin{scriptsize}
+
+\begin{minipage}{0.15\textwidth}
 $S_{on}$\\
+\end{minipage}
+\begin{minipage}{0.84\textwidth}
 \begin{gather*}
 V_{v}=V_{e}=L \cdot \frac{\Delta I_{L}}{\Delta t}\\
 \end{gather*}
+\end{minipage}
+
+\hrule
+\begin{minipage}{0.15\textwidth}
 $S_{off}$\\
+\end{minipage}
+\begin{minipage}{0.84\textwidth}
 \begin{gather*}
 V_{a}=-V_{n}=-L \cdot \frac{\Delta I_{L}}{\Delta t}\\
 V_{a}=-V_{e} \cdot \frac{t_{ein}}{t_{aus}}=-V_{e} \cdot \frac{d}{1-d} \notag\\\text{mit
 }d=\frac{t_{ein}}{t_{aus}+t_{ein}}
 \end{gather*}
 \end{minipage}
+
+\end{scriptsize}
+
+\end{minipage}
 \\
 \hline
 \end{longtable}
 
+
+
+
+
+\begin{minipage}{0.49\textwidth}
 \subsection{Regelung der Ausgangsspannung: Voltage Mode}
 \begin{itemize}
   \item Mit PWM-Signal
@@ -167,33 +239,25 @@ V_{a}=-V_{e} \cdot \frac{t_{ein}}{t_{aus}}=-V_{e} \cdot \frac{d}{1-d} \notag\\\t
   grösser
 \end{itemize}
 
+\includegraphics[width=\textwidth]{pictures/ausgangsspannungsregelung}
+
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
 \subsection{Regelung mit Current mode}
 \begin{itemize}
   \item Strom und Spannung werden gemessen
   \item Innerer Loop muss schneller sein als äusserer Loop
 \end{itemize}
 
-\begin{figure}[h!]
-	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{pictures/ausgangsspannungsregelung}
-		\caption{Voltage Mode}
-	\end{subfigure}
-	\qquad
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{pictures/currentmode}
-		\caption{Current Mode}
-	\end{subfigure}
-	\caption{Vergleich Current Mode / Voltage Mode}
-\end{figure}
+\includegraphics[width=\textwidth]{pictures/currentmode}
+
+\end{minipage}
+
 
 \subsection{Effizienzsteigerung}
+\begin{minipage}{0.69\textwidth}
 \subsubsection{MOSFET statt Diode}
-\begin{figure}[htbs]
 \includegraphics[scale=0.5]{pictures/effizient1}
-\end{figure}
 \begin{itemize}
   \item Diode hat Spannungsabfall
   \begin{itemize}
@@ -206,8 +270,53 @@ V_{a}=-V_{e} \cdot \frac{t_{ein}}{t_{aus}}=-V_{e} \cdot \frac{d}{1-d} \notag\\\t
      \item Synchronous rectifier
     \end{itemize}
 \end{itemize}
-
+\end{minipage}
+\begin{minipage}{0.29\textwidth}
 \subsubsection{Skip-Mode}
 \begin{itemize}
   \item Lade- und Entladezyklen werden ausgelassen bei niedrigem Laststrom
 \end{itemize}
+\end{minipage}
+
+
+%\begin{figure}[h!]
+%
+%	\centering
+%	\begin{subfigure}[b]{0.45\textwidth}
+%		\centering
+%		\includegraphics[width=\textwidth]{pictures/ausgangsspannungsregelung}
+%		\caption{Voltage Mode}
+%	\end{subfigure}
+%	\qquad
+%	\begin{subfigure}[b]{0.45\textwidth}
+%		\centering
+%		\includegraphics[width=\textwidth]{pictures/currentmode}
+%		\caption{Current Mode}
+%	\end{subfigure}
+%	\caption{Vergleich Current Mode / Voltage Mode}
+%\end{figure}
+%
+%
+%\newpage
+%\subsection{Effizienzsteigerung}
+%\subsubsection{MOSFET statt Diode}
+%\begin{figure}[htb]
+%\includegraphics[scale=0.5]{pictures/effizient1}
+%\end{figure}
+%\begin{itemize}
+%  \item Diode hat Spannungsabfall
+%  \begin{itemize}
+%    \item Silizium-Diode: 0.7V
+%    \item Schottky-Diode: 0.3V
+%    \item MOSFET hat "`nur"' On-Widerstand $Rds_{on}$
+%    \end{itemize}
+%   \item Umschalten vom Substratpotential beim Längstransistor nötig
+%   \begin{itemize}
+%     \item Synchronous rectifier
+%    \end{itemize}
+%\end{itemize}
+%
+%\subsubsection{Skip-Mode}
+%\begin{itemize}
+%  \item Lade- und Entladezyklen werden ausgelassen bei niedrigem Laststrom
+%\end{itemize}

@@ -6,8 +6,8 @@
 	& \textbf{ADC} & \textbf{DAC} 
 	\\ \hline
 	\textbf{Kennlinien idealer Wandler}
-	& \parbox[c][6cm]{0.31\textwidth}{\includegraphics[height=5.9cm]{./pictures/idealerADC.jpg}}
-	& \parbox[c]{0.31\textwidth}{\includegraphics[width=0.31\textwidth]{./pictures/idealerDAC.png}}
+	& \parbox[c][6cm]{0.31\textwidth}{\includegraphics[height=5cm]{./pictures/idealerADC.jpg}}
+	& \parbox[c]{0.31\textwidth}{\includegraphics[width=0.3\textwidth]{./pictures/idealerDAC.png}}
 	\\ \hline
 	\textbf{Quantisierungsintervall}
 	& $q = \frac{A_{max}}{2^N} = \frac{V_{Refp}-V_{Refn}}{2^N}$
@@ -26,18 +26,18 @@
 	& \includegraphics[height=3cm, trim=0cm 0cm 6cm 6.5cm, clip=true, valign=t]{./pictures/EoffDAC.png}
 	\\ \hline
 	\textbf{Verstärkungsfehler \hartl{436}}
-	& \includegraphics[height=3.8cm, valign=t]{./pictures/verstaerkungsfehlerADC.png} 
-    & \includegraphics[height=3.8cm, valign=t]{./pictures/verstaerkungsfehlerDAC.png}
+	& \includegraphics[height=3cm, valign=t]{./pictures/verstaerkungsfehlerADC.png} 
+    & \includegraphics[height=3cm, valign=t]{./pictures/verstaerkungsfehlerDAC.png}
 	\\ \hline
 	\textbf{Differentielle Nichtlinearität DNL \hartl{437}} \newline \newline
   $DNL_n$ = (Spannungsinkrement bei einem Eingangsschritt von $n-1$ nach $n$) -
   (ideales Spannungsinkrement q) in LSB
-	& \includegraphics[height=3.8cm, valign=t]{./pictures/DNL_ges.png}
-	& \includegraphics[height=3.8cm, valign=t]{./pictures/DNL_DAC.png}
+	& \includegraphics[height=3cm, valign=t]{./pictures/DNL_ges.png}
+	& \includegraphics[height=3cm, valign=t]{./pictures/DNL_DAC.png}
 	\\ \hline
 	\textbf{Integrale Nichtlinearität INL \hartl{439}} \newline \newline
   Die INL bezeichnet die max. Abweichung der Ausgangskurve von der Idealen Gerade.
-	& \includegraphics[height=4cm, valign=t]{./pictures/INL_ADC.png}
+	& \includegraphics[height=3.5cm, valign=t]{./pictures/INL_ADC.png}
 	& \includegraphics[height=4cm, valign=t]{./pictures/INL_DAC.png}
 	\\ \hline
 \end{tabular}
@@ -58,13 +58,13 @@ Unsicherheit im Abtastzeitpunkt (Aperturunsicherheit) gegeben. Ist der Aperturfe
 \begin{longtable}[c]{ l  l l l }
 \begin{minipage}{4cm}
 
-  \includegraphics[scale=0.45]{pictures/aperturfehlercos}
+  \includegraphics[scale=0.38]{pictures/aperturfehlercos}
 
 \end{minipage}
 &
 \begin{minipage}{3cm}
 
-  \includegraphics[scale=0.5]{pictures/aperturfehler}
+  \includegraphics[scale=0.42]{pictures/aperturfehler}
 \end{minipage}
 &
 \begin{minipage}{5cm}
@@ -107,12 +107,8 @@ Aliasing entsteht bei Unterabtastung, d.h wenn das Abtasttheorem verletzt wird.
 Es entstehen falsche, nur scheinbar vorhandene Komponenten im zeitdiskreten
 Signal.
 
-\begin{tabular}{llll}
-	\textbf{Abtasttheorem}
-	& $f_{S}>2f_{max}$
-	& $f_{s}$: Abtastfrequenz
-	&$f_{max}$:max. Frequenz des Signals
-\end{tabular}
+	\textbf{Abtasttheorem}  $f_{S}>2f_{max}$ $f_{s}$: Abtastfrequenz $f_{max}$:max. Frequenz des Signals
+
 
 %\subsection{Lineares Modell der Quantisierung\hartl{448}}
 %\subsubsection{Signal-Rausch-Verhältnis\hartl{450}}

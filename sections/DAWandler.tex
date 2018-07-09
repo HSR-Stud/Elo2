@@ -1,64 +1,10 @@
 \section{DA Wandler\hartl{455}}
   Es gibt 3 Verfahren: Parallelverfahren, Wägeverfahren und Zählverfahren.
-
-\subsection{Parallelverfahren}
-
-\renewcommand{\arraystretch}{1}
-\begin{tabular}{|>{\bfseries}p{3cm}|c|p{7.6cm}|}
-	\hline
-	Strom-DAC\hartl{456}  
-	& \includegraphics[width=7cm, valign=t]{pictures/Strom-DAC}
-	& {\begin{align*}
-      K &=2^N-1 \qquad I_{out} = D \cdot I = D \cdot \frac{V_{Ref}}{R}\\
-      I &=\frac{V_{Ref}}{R} \qquad \text{(von einer Quelle)}
-	  \end{align*}}
-	  
-	  \begin{tabular}{lp{5cm}}
-	  	K: & Anzahl Stromquellen \\
-      D: & Eingangswert (Anzahl Schalter die aktiv sind.) \\
-      \multicolumn{2}{l}{Schaltereigenschaften:}\\
-      On: & kein Spannungsabfall  \\
-      Off: & kein Strom
-    \end{tabular} 
-    \begin{description}
-  		\item[Vorteile: ] Schnell (Stromgesteuert)
-  		\item[Nachteile:] 
-	  \end{description} 
-	\\ \hline
-	String DAC (Voltage Scaling) \hartl{459}
-	& \includegraphics[width=5.5cm, valign=t]{pictures/string_DAC}
-	& 
-		\begin{description}
-  		\item[Vorteile: ] garantierte Stetigkeit
-  		\item[Nachteile:] benötigt $2^n$ Widerstände und $2^n$ Schalter, n-to-$2^n$ Decoder(linke Variante),
-        er darf nicht belastet werden und hat ein grosser Schaltungsaufwand.
-	  \end{description} 
-    
-	  {\begin{align*}
-	  	V_{Out_{ideal}}(D) = \frac{D}{2^n}(V_{Refp}-V_{Refn})+V_{Refn}\\
-	  	V_{Out_{real}}(D) = V_{Refn}+\left(V_{Refp}-V_{Refn}\right)\cdot\\
-	  		\cdot\frac{D \cdot R_{Load}}{2^n \cdot R \cdot D-R \cdot D^2 + 2^n (R_{Load} + R_{Switch}) }\\
-	  	DAC_{error}(D)=\frac{V_{Out_{real}}(D)-V_{Out_{ideal}}(D)}{V_{Out_{ideal}}(D)}\\
-	  \end{align*}}
-	  
-	\\ \hline
-	Segmented String DAC \hartl{459}
-	& \includegraphics[width=5cm, height = 4cm, valign=t]{pictures/segmented_string_DAC}
-	& \begin{description}
-  		\item[Vorteile: ] viel weniger Elemente
-  		\item[Nachteile:] benötigt Buffer (offset-frei)
-	  \end{description}
-	\\ \hline
-\end{tabular}
-\renewcommand{\arraystretch}{\arraystretchOriginal}
-
-%\newpage
-
 \subsection{Wägeverfahren\hartl{461}} 
 \begin{longtable}{|p{3cm}|c|p{8.6cm}|}
 	\hline
 	\textbf{Spannungs"-summierung \hartl{461}}
-	& \includegraphics[width=5cm, valign=t]{./pictures/spannungssummierung.png}
+	& \includegraphics[width=3.5cm, valign=t]{./pictures/spannungssummierung.png}
 	& {\begin{align*}
 		V_{Out} &= \frac{B0\cdot 2^0 + B1 \cdot 2^1+ \ldots + B(n-1)\cdot 2^{n-1}}{2n} \\
     & \cdot (V_{Refp}-V_{Refn}) + V_{Refn}
@@ -71,13 +17,13 @@
 	\\ \hline
 	\textbf{Wägeverfahren mit Ausgangstreiber} \newline
   (Summation gewichteter Ströme)
-	& \includegraphics[width=5.5cm, valign=t]{./pictures/praktisch.png}
+	& \includegraphics[width=5cm, valign=t]{./pictures/praktisch.png}
 	& \[ Idac_{max}=\frac{V_{Refp}-V_{Refn}}{R} \cdot \frac{2^n-1}{2^n} \] \newline
     Vout und Idac\_inv sind differentiel zu einander, dadurch fliesst immer der gleiche Strom
     und der Offsetfehler bleibt konstant.
 	\\ \hline
-	\textbf{R-2R-Netzwerk \hartl{462}}
-	& \includegraphics[width=6cm, valign=t]{./pictures/r2rnetzwerk.png}
+	\textbf{R-2R-Netzwerk \hartl{462}} Multiplizierende Wandler wandeln die Referenzspannung in Ströme um.
+	& \includegraphics[width=5.5cm, valign=t]{./pictures/r2rnetzwerk.png}
 	& {
 	\begin{align*}
 		V_{out,max} &= V_{Refn} \\
@@ -122,9 +68,7 @@
     \\ \hline
 \end{longtable}
 
-%\newpage
-
-\subsection{Zählverfahren(PWM)\hartl{466}}
+\subsection{Zählverfahren (PWM)\hartl{466}}
 \begin{longtable}{|>{\bfseries}p{4cm}|l|p{8cm}|}
 	\hline 
 	Grundprinzip \hartl{466}
@@ -151,7 +95,60 @@
 	\\ \hline
 \end{longtable}
 
-\newpage
+\subsection{Parallelverfahren}
+\renewcommand{\arraystretch}{1}
+\begin{longtable}{|>{\bfseries}p{3cm}|c|p{7.6cm}|}
+	\hline
+	Strom-DAC\hartl{456}  
+	& \includegraphics[width=7cm, valign=t]{pictures/Strom-DAC}
+	& {\begin{align*}
+      K &=2^N-1 \qquad I_{out} = D \cdot I = D \cdot \frac{V_{Ref}}{R}\\
+      I &=\frac{V_{Ref}}{R} \qquad \text{(von einer Quelle)}
+	  \end{align*}}
+	  
+	  \begin{tabular}{lp{5cm}}
+	  	K: & Anzahl Stromquellen \\
+      D: & Eingangswert (Anzahl Schalter die aktiv sind.) \\
+      \multicolumn{2}{l}{Schaltereigenschaften:}\\
+      On: & kein Spannungsabfall  \\
+      Off: & kein Strom
+    \end{tabular} 
+    \begin{description}
+  		\item[Vorteile: ] Schnell (Stromgesteuert)
+  		\item[Nachteile:] 
+	  \end{description} 
+	\\ \hline
+	String DAC (Voltage Scaling) \hartl{459}
+	& \includegraphics[width=5.5cm, valign=t]{pictures/string_DAC}
+	& 
+		\begin{description}
+  		\item[Vorteile: ] garantierte Stetigkeit
+  		\item[Nachteile:] benötigt $2^n$ Widerstände und $2^n$ Schalter, n-to-$2^n$ Decoder(linke Variante),
+        er darf nicht belastet werden und hat ein grosser Schaltungsaufwand.
+	  \end{description} 
+    
+	  {\begin{align*}
+	  	V_{Out_{ideal}}(D) = \frac{D}{2^n}(V_{Refp}-V_{Refn})+V_{Refn}\\
+	  	V_{Out_{real}}(D) = V_{Refn}+\left(V_{Refp}-V_{Refn}\right)\cdot\\
+	  		\cdot\frac{D \cdot R_{Load}}{2^n \cdot R \cdot D-R \cdot D^2 + 2^n (R_{Load} + R_{Switch}) }\\
+	  	DAC_{error}(D)=\frac{V_{Out_{real}}(D)-V_{Out_{ideal}}(D)}{V_{Out_{ideal}}(D)}\\
+	  \end{align*}}
+	  
+	\\ \hline
+	Segmented String DAC \hartl{459}
+	& \includegraphics[width=5cm, height = 3cm, valign=t]{pictures/segmented_string_DAC}
+	& \begin{description}
+  		\item[Vorteile: ] viel weniger Elemente
+  		\item[Nachteile:] benötigt Buffer (offset-frei)
+	  \end{description}
+	\\ \hline
+\end{longtable}
+\renewcommand{\arraystretch}{\arraystretchOriginal}
+
+
+%\newpage
+
+
 
 \subsection{Weitere DAC}
 \begin{longtable}{|>{\bfseries}p{4cm}|c|p{8cm}|}
@@ -207,11 +204,11 @@
         \item D (digitale Wert) wird im PROM gespeichert
         \item V(A), V(B) können variabel sein
       \end{itemize} \\
-  \hline
-    Multiplizierende Wandler
-    & 
-    & Wandler bei denen mit Widerständen aus der Referenzspannung Ströme abgeleitet werden.
-    z.B R2R-Netzwerk \\
+%  \hline
+%    Multiplizierende Wandler
+%    & 
+%    & Wandler bei denen mit Widerständen aus der Referenzspannung Ströme abgeleitet werden.
+%    z.B R2R-Netzwerk \\
   \hline
     DAC mit Exponentieller Funktion
     &\includegraphics[width=6cm, valign=t]{pictures/DAC_exp.png}
