@@ -34,33 +34,33 @@ Der Operationsverstärker ist in allgemeiner Näherung ein Tiefpass-Filter n-ter
 	\large{$A_{ol}(s)=\frac{A_{ol_0}}{(1+\frac{s}{\omega_{p_{ol_1}}})(1+\frac{s}{\omega_{p_{ol_2}}})\dots}$}
 	& $\begin{aligned}
         A_{cl}(s) &= \frac{A_{cl_0}}{(1+\frac{s}{\omega_{p_{cl_1}}})(1+\frac{s}{\omega_{p_{cl_2}}})\dots} = \frac{T_{in}(s)\cdot A_{ol}(s)}{1+\beta(s)\cdot A_{ol}(s)}\\
-		\beta(s) &= \frac{V_{opn}}{V_{out}}\;\text{oder}\;\frac{V_{opp}}{V_{out}}\\
-		T_{in}(s) &= \frac{V_{opn}}{V_{in}}\;\text{oder}\;\frac{V_{opp}}{V_{in}}\\
+		\beta(s) &= \frac{V_{opn}}{V_{out}}\;\text{oder}\;\frac{V_{opp}}{V_{out}}\quad
+		T_{in}(s) = \frac{V_{opn}}{V_{in}}\;\text{oder}\;\frac{V_{opp}}{V_{in}}\\
         V_{out} &= A_{cl}(s)\cdot V_{in} = \frac{T_{in}(s)\cdot A_{ol}(s)}{1 + \underbrace{A_{ol}(s)\cdot \beta(s)}_{T_s(s):Loop-Gain}} \cdot V_{in}
 	   \end{aligned}$\\
 	\hline
 \end{tabular}
 \\ \\
-\begin{minipage}{0.6\textwidth}
+\begin{minipage}{0.49\textwidth}
 Durch das Schliessen des Loops wird die Bandbreite vergrössert, das gain-bandwidth-product(GBP) bleibt jedoch konstant. Die Verstärkung wird jedoch um $T_{s0}(s)$ (Linearer Loop Gain) reduziert. Der Phasengang wird durch das Verschieben des ersten Poles auch verändert, wie folgende Grafik zeigt.
-\end{minipage}
-\begin{minipage}{0.39\textwidth}
 \includegraphics[width=0.7\textwidth, valign=t]{./pictures/AolAcl.png}
-\end{minipage}
 
-\vspace{-7mm}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
 \subsection{Stabilität des Systems}
-\begin{tabular}{m{0.45\linewidth}m{0.45\linewidth}}
-    Um die Stabilität des OpAmps zu betrachten, wird der Loop geöffnet. Damit das System stabil ist, darf das       
-    Fehlersignal sich selbst nicht verstärken. Damit dies der Fall ist muss die Phase $>-180^\circ$ sein bei einem Loop Gain von $1$, da das Vergleichsglied die Phase noch um $180^\circ$ dreht. 
+
+    Um die Stabilität des OpAmps zu betrachten, wird der Loop geöffnet. Damit sich das Fehlersignal nicht selbst verstärkt muss die Phase $>-180^\circ$ sein bei einem Loop Gain von $1$, da das Vergleichsglied die Phase noch um $180^\circ$ dreht. 
     
     Ein Mass für die Stabilität ist die 
     Phasenmarge (Phase Margin) und die Verstärkungsmarge (Gain Margin). Optimal ist ein Phase Margin von $60^{\circ}$.
     
     Die UTF ist dann stabil, wenn sie nie $\infty$ wird d.h der Nenner darf nie 0 werden.
-    & \begin{center}
-        \includegraphics[width=5cm, valign=t]{pictures/margins.png}
+     \begin{center}
+        \includegraphics[width=4cm, valign=t]{pictures/margins.png}
     \end{center}
-\end{tabular}
+
+\end{minipage}
+
+
 
 %  ---------------------------------------------------------------------------------------------------- 

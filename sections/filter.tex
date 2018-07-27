@@ -1,5 +1,4 @@
 \section{Filter\hartl{509}}
-\subsection{Tiefpass-Filter\hartl{514}}
 
 \begin{longtable}{|>{\bfseries}p{3cm}|c|p{10cm}|}
     \hline
@@ -55,18 +54,74 @@
         Güte werden Spulen oder Verstärker benötigt. Für Systeme 2.Ordnung ist eine Polgüte von 0.7 optimal.
       }
       \\ \hline
-      \textbf{Kaskadierter Spannungsteiler}
+      
+      \end{longtable}
+      
+\begin{minipage}{0.49\textwidth}
+\includegraphics[width = 0.99\textwidth]{pictures/filter.png}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+$
+G1i = V_{OUT1}(V_{IN})\quad G1f = V_{OUT1}(V_{OUT3})
+$\\
+$
+G2 = V_{OUT2}(V_{OUT1}) \quad G3 = V_{OUT3}(V_{OUT2})
+$\\[1em]
+\begin{minipage}[t]{0.49\textwidth}
+$
+G1i = \dfrac{-R_1}{R_0\cdot(C_1\cdot R_1\cdot s+1)}
+$\\
+$
+G2 = \dfrac{-1}{C_2\cdot R_2\cdot s}
+$	
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+$
+G1f = \dfrac{-R_1\cdot V_{OUT3}}{R_5\cdot(C_1\cdot R_1\cdot s+1)}
+$\\
+$
+G3 = \dfrac{-R_4}{R_3}
+$
+\end{minipage}
+
+\begin{minipage}[t]{0.39\textwidth}
+Gesamtgain bestimmen mit Mason:
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\textwidth}
+$
+G_{13} = \dfrac{G1i\cdot G_2\cdot G_3}{1-G_{1f}\cdot G_2\cdot G_3}
+$
+\end{minipage}\\
+\[
+G = \dfrac{\frac{-R_1}{R_0\cdot(C_1\cdot R_1\cdot s+1)}\cdot \frac{-1}{C_2\cdot R_2\cdot s}\cdot \frac{-R_4}{R_3}}{1-\left(\frac{-R_1}{R_5\cdot(C_1\cdot R_1\cdot s+1)}\cdot 	\frac{-1}{C_2\cdot R_2\cdot s}\cdot \frac{-R_4}{R_3}\right)}
+\]
+\[
+G = \frac{R_1\cdot R_4\cdot R_5}{R_0\cdot \left(C_1C_2R_1R_2R_3R_5 s^2 + C_2R_2R_3R_5 s + R_1R_4\right)}
+\]
+\end{minipage}
+
+Vorgehen: 
+\begin{enumerate}
+\itemsep0em
+\item Einzelne Übertragungsfunktionen aufstellen
+\item Gesammtgain mittels Mason bestimmen
+\item Kürzen
+\item Wenn gefragt Gain bei DC und $\omega \rightarrow \infty$ bestimmen
+\end{enumerate}
+\pagebreak
+\begin{longtable}{|>{\bfseries}p{3cm}|c|p{10cm}|}
+\hline   \textbf{Kaskadierter Spannungsteiler}
       & %TODO Bild einfügen
       &
       \[
 				H(s) = \frac{Y(s)}{X(s)} = \frac{Z_2 Z_4}{Z_1Z_2+Z_1Z_3+Z_1Z_4+Z_2Z_3+Z_2Z_4}      
       \]\\ \hline
-% ----------------------------------------------------------------------------------------------------      
+%----------------------------------------------------------------------------------------------------      
     {Sallen Key\newline
      (Einfachmit-kopplung)\newline
      \hartl{517}
     }
-    & \includegraphics[width=4cm, valign=t]{./pictures/sallenkey.png}
+    & \includegraphics[width=6cm, angle = 270,valign=t]{./pictures/sallenkey.png}
     & {\textbf{ Standard Sallen Key}\newline
        Stromgleichungen:\newline
        $0 = (U_2-U_{in})\cdot \frac{1}{R_1}+(U_2-U_3)\cdot \frac{1}{R_2}+(U_2-U_{out})\cdot s C_1$ \newline
