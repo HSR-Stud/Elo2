@@ -227,11 +227,7 @@ V_{a}=-V_{e} \cdot \frac{t_{ein}}{t_{aus}}=-V_{e} \cdot \frac{d}{1-d} \notag\\\t
 \hline
 \end{longtable}
 
-
-
-
-
-\begin{minipage}{0.49\textwidth}
+\begin{multicols}{2}
 \subsection{Regelung der Ausgangsspannung: Voltage Mode}
 \begin{itemize}
   \item Mit PWM-Signal
@@ -239,19 +235,27 @@ V_{a}=-V_{e} \cdot \frac{t_{ein}}{t_{aus}}=-V_{e} \cdot \frac{d}{1-d} \notag\\\t
   grösser
 \end{itemize}
 
-\includegraphics[width=\textwidth]{pictures/ausgangsspannungsregelung}
-
-\end{minipage}
-\begin{minipage}{0.49\textwidth}
+\includegraphics[width=\linewidth]{pictures/ausgangsspannungsregelung}
+\vfill\null
+\columnbreak
 \subsection{Regelung mit Current mode}
 \begin{itemize}
-  \item Strom und Spannung werden gemessen
-  \item Innerer Loop muss schneller sein als äusserer Loop
+	\item Strom und Spannung werden gemessen
+	\item Innerer Loop muss schneller sein als äusserer Loop
 \end{itemize}
 
-\includegraphics[width=\textwidth]{pictures/currentmode}
-
-\end{minipage}
+\includegraphics[width=\linewidth]{pictures/currentmode}
+\end{multicols}
+%\begin{minipage}{0.49\textwidth}
+%\subsection{Regelung mit Current mode}
+%\begin{itemize}
+%  \item Strom und Spannung werden gemessen
+%  \item Innerer Loop muss schneller sein als äusserer Loop
+%\end{itemize}
+%
+%\includegraphics[width=\textwidth]{pictures/currentmode}
+%
+%\end{minipage}
 
 
 \subsection{Effizienzsteigerung}

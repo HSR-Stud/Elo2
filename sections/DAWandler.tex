@@ -100,7 +100,7 @@
 \begin{longtable}{|>{\bfseries}p{3cm}|c|p{7.6cm}|}
 	\hline
 	Strom-DAC\hartl{456}  
-	& \includegraphics[width=7cm, valign=t]{pictures/Strom-DAC}
+	& \raisebox{-.2\totalheight}{\includegraphics[width=7cm, valign=t]{pictures/Strom-DAC}}
 	& {\begin{align*}
       K &=2^N-1 \qquad I_{out} = D \cdot I = D \cdot \frac{V_{Ref}}{R}\\
       I &=\frac{V_{Ref}}{R} \qquad \text{(von einer Quelle)}
@@ -119,24 +119,24 @@
 	  \end{description} 
 	\\ \hline
 	String DAC (Voltage Scaling) \hartl{459}
-	& \includegraphics[width=5.5cm, valign=t]{pictures/string_DAC}
+	& \raisebox{-.1\totalheight}{\includegraphics[width=5.5cm, valign=t]{pictures/string_DAC}}
 	& 
 		\begin{description}
   		\item[Vorteile: ] garantierte Stetigkeit
   		\item[Nachteile:] benötigt $2^n$ Widerstände und $2^n$ Schalter, n-to-$2^n$ Decoder(linke Variante),
-        er darf nicht belastet werden und hat ein grosser Schaltungsaufwand.
+        er darf nicht belastet werden und hat grossen Schaltungsaufwand.
 	  \end{description} 
     
 	  {\begin{align*}
 	  	V_{Out_{ideal}}(D) = \frac{D}{2^n}(V_{Refp}-V_{Refn})+V_{Refn}\\
 	  	V_{Out_{real}}(D) = V_{Refn}+\left(V_{Refp}-V_{Refn}\right)\cdot\\
 	  		\cdot\frac{D \cdot R_{Load}}{2^n \cdot R \cdot D-R \cdot D^2 + 2^n (R_{Load} + R_{Switch}) }\\
-	  	DAC_{error}(D)=\frac{V_{Out_{real}}(D)-V_{Out_{ideal}}(D)}{V_{Out_{ideal}}(D)}\\
+	  	DAC_{error}(D)=\frac{V_{Out_{real}}(D)-V_{Out_{ideal}}(D)}{V_{Out_{ideal}}(D)}
 	  \end{align*}}
 	  
 	\\ \hline
 	Segmented String DAC \hartl{459}
-	& \includegraphics[width=5cm, height = 3cm, valign=t]{pictures/segmented_string_DAC}
+	& \raisebox{-.1\totalheight}{\includegraphics[width=5.6cm, height = 4cm, valign=t]{pictures/segmented_string_DAC}}
 	& \begin{description}
   		\item[Vorteile: ] viel weniger Elemente
   		\item[Nachteile:] benötigt Buffer (offset-frei)
@@ -154,24 +154,23 @@
 \begin{longtable}{|>{\bfseries}p{4cm}|c|p{8cm}|}
 	\hline
 	Kaskadierte DAC
-	& \includegraphics[width=6cm, valign=t]{./pictures/kaskadiertDAC.png}
+	& \includegraphics[width=5cm, valign=t]{./pictures/kaskadiertDAC.png}
 	& \begin{itemize}
-  		\item MS-DAC hat 2 Ausgangsspannungen (Über und unter dem gewünschten
+  		\item MS-DAC hat 2 Ausgangsspannungen (Über und unter gewünschtem
   			$V_{Out}$)
-  		\item LS-DAC hat kleine Eingangspannungsdifferenz $\to$ höhere Auflösung der
-  			Spannung
+  		\item LS-DAC hat kleine Eingangsspannungsdifferenz $\to$ höhere Auflösung der Spannung
 	  \end{itemize}
 	\\ \hline
 	Zyklisch, algorithmischer DAC \hartl{466}
 	& \includegraphics[width=6cm, valign=t]{./pictures/zyklischDAC.png}
 	& \textbf{Ablauf der Wandlung}
 	  \begin{enumerate}
-  		\item Die Spannung im S/H löschen (Schalter S1), S3 offen)
+  		\item Spg. im S/H löschen (Schalter S1), S3 offen
   		\item S1 auf den Verstärker-Ausgang schalten
   		\item Laufvariale k wird auf 0 gesetzt
   		\item S2 setzen: VREF oder GND ( abh. $D_{K}$).
-  		\item Der Addierer und Verstärker generieren Ausgangssignal
-  		\item Im S/H wird die Feedback-Spannung gespeichert (S1)
+  		\item Addierer und Verstärker generieren Ausgangssignal
+  		\item Im S/H wird Feedback-Spannung gespeichert (S1)
   		\item X wird um 1 erhöht
   		\item Gehe zu Schritt 4, wenn $X\leq n$
 	  \end{enumerate}
