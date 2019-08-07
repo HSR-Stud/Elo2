@@ -4,3 +4,6 @@
 [submodule "idiotenseite"]
 	path = idiotenseite
 	url = https://github.com/HSR-Stud/idiotenseite.git
+[submodule "Travis"]
+	path = Travis
+	url = https://github.com/HSR-Stud/Travis.git

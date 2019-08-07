@@ -34,6 +34,22 @@
     
     \\ \hline
     % ----------------------------------------------------------------------------------------------------
+    Induktivität
+    & \includegraphics[width=4cm, valign=t]{pictures/induktivitaet.png}
+    & {\begin{align*}
+    		L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{2\pi r} \qquad \text{Ringspule} \\
+    		L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{l} \qquad \text{Zylinderspule} \\
+    		L &=\frac{N\cdot\Phi}{I} \qquad \qquad u_{i} =-N\cdot\frac{d\Phi}{dt}\\
+    		\intertext{\textbf{Ladevorgang:}}
+    		i_{\mathrm{L}} (t) &= I_0 \cdot \left( 1 - e^{-\frac{t}{\tau}}\right) = \frac{U_0}{R} \cdot \left( 1 -e^{-t\cdot \frac{R}{L}}\right) \\
+    		u_{\mathrm{L}} (t) &= \hat u \cdot e^{-\frac{t}{\tau}} = \hat u \cdot e^{-t \cdot\frac{R}{L}}\\
+    		\intertext{\textbf{Entladevorgang:}}
+    		i_{\mathrm{L}} (t) &= I_0 \cdot e^{- \frac{t}{\tau}} = \frac{U_0}{R} \cdot e^{- t \cdot\frac{R}{L}}\\
+    		u_{\mathrm{L}} (t) &= - \hat u \cdot e^{- \frac{t}{\tau}} = - \hat u \cdot e^{- t \cdot\frac{R}{L}}
+    	\end{align*}
+    }
+    \\ \hline
+    % ----------------------------------------------------------------------------------------------------
     Kondensator
     & \includegraphics[width=4cm, valign=t]{pictures/kapazitaetswert.png}
     & {$C=\varepsilon_{r}\cdot \varepsilon_{0}\cdot \frac{W\cdot L}{d}=\varepsilon_{r}\cdot \varepsilon_{0}\cdot \frac{A}{d}$ \qquad $\varepsilon_{0}= 8.85 pF/m$\newline
@@ -77,22 +93,6 @@
           $22\mu F/16V$ \\
         \hline
       \end{tabular}
-      }
-    \\ \hline
-    % ----------------------------------------------------------------------------------------------------
-    Induktivität
-    & \includegraphics[width=4cm, valign=t]{pictures/induktivitaet.png}
-    & {\begin{align*}
-           L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{2\pi r} \qquad \text{Ringspule} \\
-           L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{l} \qquad \text{Zylinderspule} \\
-           L &=\frac{N\cdot\Phi}{I} \qquad \qquad u_{i} =-N\cdot\frac{d\Phi}{dt}\\
-           \intertext{\textbf{Ladevorgang:}}
-           i_{\mathrm{L}} (t) &= I_0 \cdot \left( 1 - e^{-\frac{t}{\tau}}\right) = \frac{U_0}{R} \cdot \left( 1 -e^{-t\cdot \frac{R}{L}}\right) \\
-            u_{\mathrm{L}} (t) &= \hat u \cdot e^{-\frac{t}{\tau}} = \hat u \cdot e^{-t \cdot\frac{R}{L}}\\
-            \intertext{\textbf{Entladevorgang:}}
-            i_{\mathrm{L}} (t) &= I_0 \cdot e^{- \frac{t}{\tau}} = \frac{U_0}{R} \cdot e^{- t \cdot\frac{R}{L}}\\
-            u_{\mathrm{L}} (t) &= - \hat u \cdot e^{- \frac{t}{\tau}} = - \hat u \cdot e^{- t \cdot\frac{R}{L}}
-       \end{align*}
       }
     \\ \hline
     \multicolumn{2}{|c}{\input{tikz/ersatz_schalt_kondensator}}

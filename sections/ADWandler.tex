@@ -35,11 +35,10 @@
     m = Bit pro Stufe \newline
     $p(2^m-1)$ Komperatoren \newline
     $n = p \cdot m$ \newline
-    \newline
     \begin{tabular}{lp{6cm}}
       Bild 1: & Pipeline ADC ohne Fehlerkorrektur \\
       Bild 2: & Pipeline ADC mit Fehlerkorrektur \\
-      Bild 3: & Verzögerung der Ausgangsdaten gegeüber den Sampels (Latenz)
+      Bild 3: & Verzögerung der Ausgangsdaten gegenüber den Samples (Latenz)
     \end{tabular} \\
   \hline
 \end{longtable}
@@ -114,7 +113,7 @@
 
 
 \subsection{Zählverfahren \hartl{490}} 
-Ist für kontinuierliche Auswertungen des Eingangssignal
+Ist für kontinuierliche Auswertungen des Eingangssignals
 \subsubsection{Single Slope}
 
 \begin{tabular}{ccp{4cm}}
@@ -134,7 +133,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
    	$V_{int}(T_{int}) = V_{AGND} - \frac{1}{R_{int} \cdot C_i} \cdot T_{int} \cdot (V_{in} - V_{AGND}) \quad \textrm{(Für $V_{in}=$ const.)}$
   \\
  
-  \includegraphics[width=4cm, valign=t]{pictures/dualSlope12} &
+  \includegraphics[width=3.5cm, valign=t]{pictures/dualSlope12} &
   \begin{tabular}{p{6cm}p{6cm}}
       \textbf{Integration:} &
       \textbf{Abintegration:} \\
@@ -152,7 +151,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignal
       $ n = \log _2 (\text{max Taktzyklen von Abintegration}) $ \\
   \end{tabular}
   
-  $\frac{-V_{In}}{V_{Ref}}	= \frac{n}{N} $  Sinusschwingungen mit einer Periodendauer gleich der Integrationszeit, werden herausgefiltert!  
+  $\frac{-V_{In}}{V_{Ref}}	= \frac{n}{N} $  Sinusschwingungen mit einer Periodendauer gleich der Integrationszeit werden herausgefiltert!  
 	\end{longtable}
 	%\pagebreak  
   \begin{longtable}{cp{12cm}}
