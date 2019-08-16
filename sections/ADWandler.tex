@@ -1,7 +1,7 @@
 \section{AD Wandler \hartl{475}}
 
 \subsection{Vergleich ADC}
-\includegraphics[width=8cm, valign=t]{pictures/vergleich_ADC.png}
+\includegraphics[width=8cm, valign=t]{images/vergleich_ADC.png}
 
 \newpage
 \subsection{Parallelverfahren und Kaskadenumsetzer}
@@ -9,7 +9,7 @@
 \begin{longtable}{|>{\bfseries}p{4cm}|p{6cm}|p{8cm}|}
   \hline
     Parallelumsetzer (Flash-ADC) &
-    \includegraphics[width=5cm, valign=t]{pictures/parallelADC} &
+    \includegraphics[width=5cm, valign=t]{images/parallelADC} &
     \textbf{Vorteile}:\newline
     sehr schnell, keine DAC Rückkoppelung\newline
     \textbf{Nachteile}\newline
@@ -19,9 +19,9 @@
    	\\
   \hline
     Kaskadenumsetzer (Pipeline ADC) &
-    \includegraphics[width=5cm, valign=t]{pictures/kaskaden} \newline
-    \includegraphics[width=5cm, valign=t]{pictures/kaskaden_fehlerkorrektur.png} \newline 
-    \includegraphics[width=5cm, valign=t]{pictures/latenz}&
+    \includegraphics[width=5cm, valign=t]{images/kaskaden} \newline
+    \includegraphics[width=5cm, valign=t]{images/kaskaden_fehlerkorrektur.png} \newline 
+    \includegraphics[width=5cm, valign=t]{images/latenz}&
     
     Eine 10-bit-Auflösung beim Parallelverfahren benötigt 1024 Komperatoren. $\Rightarrow$Komplexitätsreduktion \newline
     Mit erstem $N_{1}$-bit ADC wird der Grobbereich festgelegt (höherwertige
@@ -48,7 +48,7 @@
 \begin{longtable}{|>{\bfseries}p{4cm}|p{6cm}|p{8cm}|}
   \hline
     Prinip SAR &
-    \includegraphics[width=6cm, valign=t]{pictures/waegeverfahren} &
+    \includegraphics[width=6cm, valign=t]{images/waegeverfahren} &
     \begin{itemize}
       \item Abtastung der Eingangsspannung $V_{in}$mit einer
           S\&H-Schaltung( Vergleichsspannung liegt so während der gesamten
@@ -57,7 +57,7 @@
     \end{itemize} \\
     
     &
-    \includegraphics[width=6cm, valign=t]{pictures/prinzip_SAR.png} &
+    \includegraphics[width=6cm, valign=t]{images/prinzip_SAR.png} &
     \textbf{Ablauf der Wandlung:}
     \begin{enumerate}
       \item Im Sample-Hold wird ein analoger Wert gespeichert
@@ -73,7 +73,7 @@
     \end{enumerate} \\
   \hline
     Wägeverfahren SAR mit SC-Prinzip &
-    \includegraphics[width=6cm, valign=t]{pictures/waegeverfahrenSC} &
+    \includegraphics[width=6cm, valign=t]{images/waegeverfahrenSC} &
     \textbf{Ablauf der Wandlung:}
     \begin{enumerate}
       \item alle C mit $V_{in}$ laden
@@ -105,8 +105,8 @@
       \item X wird um 1 reduziert
       \item Gehe zu Schritt 4, wenn $X\geq0$
     \end{enumerate} &
-    \includegraphics[width=4cm, valign=t]{pictures/iterativeADC}\newline
-    \includegraphics[width=4cm, valign=t]{pictures/iterativeADC_ablauf}\\
+    \includegraphics[width=4cm, valign=t]{images/iterativeADC}\newline
+    \includegraphics[width=4cm, valign=t]{images/iterativeADC_ablauf}\\
   \hline
 \end{longtable}
 
@@ -117,8 +117,8 @@ Ist für kontinuierliche Auswertungen des Eingangssignals
 \subsubsection{Single Slope}
 
 \begin{tabular}{ccp{4cm}}
-  \includegraphics[width=5cm, valign=t]{pictures/singleSlope1} &
-  \includegraphics[width=5cm, valign=t]{pictures/singleSlope2} &
+  \includegraphics[width=5cm, valign=t]{images/singleSlope1} &
+  \includegraphics[width=5cm, valign=t]{images/singleSlope2} &
   {\begin{align*}
     V_{in}&=\frac{V_{Ref} \cdot R \cdot C}{T_{int}}\\
     T_{int} &= \frac{V_{ref} \cdot R\cdot C}{V_{in}}
@@ -127,13 +127,13 @@ Ist für kontinuierliche Auswertungen des Eingangssignals
 
 \subsubsection{Dual Slope \hartl{492}}
 \begin{longtable}{cp{12cm}}
-  \includegraphics[width=5cm, valign=t]{pictures/dualSlope11} &
+  \includegraphics[width=5cm, valign=t]{images/dualSlope11} &
  	$T_{int} = const$ \newline
   	$V_{int}(t) = -\frac{1}{R_{int}\cdot C_i}\int_{0}^{t} (V_{in}(\tau) - V_{AGND})d\tau + V_{AGND}$\newline
    	$V_{int}(T_{int}) = V_{AGND} - \frac{1}{R_{int} \cdot C_i} \cdot T_{int} \cdot (V_{in} - V_{AGND}) \quad \textrm{(Für $V_{in}=$ const.)}$
   \\
  
-  \includegraphics[width=3.5cm, valign=t]{pictures/dualSlope12} &
+  \includegraphics[width=3.5cm, valign=t]{images/dualSlope12} &
   \begin{tabular}{p{6cm}p{6cm}}
       \textbf{Integration:} &
       \textbf{Abintegration:} \\
@@ -142,7 +142,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignals
       $ V_{int}(t) = V_{int_{max}} - \dfrac{V_{Ref}-V_{AGND}}{R_i \cdot C_i}\cdot t $
   \end{tabular} \\
   
-  \includegraphics[width=5cm, valign=t]{pictures/dualSlope2} &
+  \includegraphics[width=5cm, valign=t]{images/dualSlope2} &
   \begin{tabular}{p{4cm}p{7cm}}
       \textbf{Abintegrationszeit:} &
       \textbf{Auflösung in Bits:} \\
@@ -173,7 +173,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignals
 
 \begin{longtable}{p{4cm}p{6cm}p{8cm}}
   \textbf{Offsetkompensation:} &
-  \includegraphics[width=6cm, valign=t]{pictures/offsetkompensation} &
+  \includegraphics[width=6cm, valign=t]{images/offsetkompensation} &
   \textbf{Möglichkeiten zur Korrektur:}
   \begin{itemize}
     \item 2.Referenzspannung $V_{Refp}$ einfügen
@@ -184,8 +184,8 @@ Ist für kontinuierliche Auswertungen des Eingangssignals
 
 \subsubsection{Sigma-Delta Wandler \hartl{500}}
   \begin{longtable}{p{6cm}p{12cm}}
-    \includegraphics[width=5cm, valign=t]{pictures/deltaSigma1} \newline 
-    \includegraphics[width=5cm]{pictures/deltaSigma3} &
+    \includegraphics[width=5cm, valign=t]{images/deltaSigma1} \newline 
+    \includegraphics[width=5cm]{images/deltaSigma3} &
     \[Y(s)=\frac{X(s)-Y(s)}{s}+Q(s)\Rightarrow Y(s)=X(s)\frac{1}{1+s}+Q(s)\frac{s}{1+s}\] \newline
     \begin{tabular}{p{5cm}p{7cm}}
       \textbf{Signal UTF:} &
@@ -204,10 +204,10 @@ Ist für kontinuierliche Auswertungen des Eingangssignals
   \end{longtable}
 
   %\begin{longtable}{cp{12cm}}
-    %\includegraphics[width=6cm, valign=t]{pictures/deltaSigma1} &
+    %\includegraphics[width=6cm, valign=t]{images/deltaSigma1} &
     %\[Y=\frac{X-Y}{s}+Q\Rightarrow Y=X\frac{1}{1+s}+Q\frac{s}{1+s}\] \\
   %
-    %\includegraphics[width=6cm]{pictures/deltaSigma3} &
+    %\includegraphics[width=6cm]{images/deltaSigma3} &
     %\begin{tabular}{p{3cm}p{9cm}}
       %\textbf{Signal UTF:} &
       %\textbf{Noise UTF:} \\
@@ -228,11 +228,11 @@ Ist für kontinuierliche Auswertungen des Eingangssignals
 %\subsubsection{Spannungs- Frequenz- Umsetzer \hartl{495}}
 %\begin{multicols}{2}
 	%\begin{center}
-  		%\includegraphics[width=7cm]{pictures/sfu_kurven}
+  		%\includegraphics[width=7cm]{images/sfu_kurven}
   	%\end{center}
   %
   %
-  %\includegraphics[width=6cm]{pictures/sfu_schaltung}
+  %\includegraphics[width=6cm]{images/sfu_schaltung}
   %
    %\begin{align*}
       %V_{int}(t)=V_{in}+\frac{1}{RC}\int(V_{in}-V_{x})dt
@@ -242,8 +242,8 @@ Ist für kontinuierliche Auswertungen des Eingangssignals
 
 
 %\subsubsection{Ladungs-Ausgleichs-Integrator \hartl{497}}
-	%\includegraphics[width=6cm, valign=t]{pictures/lsg1} \\
-	%\includegraphics[width=6cm, valign=t]{pictures/lsg2}
+	%\includegraphics[width=6cm, valign=t]{images/lsg1} \\
+	%\includegraphics[width=6cm, valign=t]{images/lsg2}
 	%\begin{itemize}
 	   %\item Gleichgewichtsbedingung\\
 	    %\begin{equation*}
@@ -256,7 +256,7 @@ Ist für kontinuierliche Auswertungen des Eingangssignals
 
 \begin{multicols}{3}
   \subsubsection{Sigma-Delta Wandler 2. Ordnung}
-    \includegraphics[width=5.5cm, height =3.8cm]{pictures/deltaSigma2}
+    \includegraphics[width=5.5cm, height =3.8cm]{images/deltaSigma2}
   
   \columnbreak
   
