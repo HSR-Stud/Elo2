@@ -6,8 +6,8 @@
 	& \textbf{ADC} & \textbf{DAC} 
 	\\ \hline
 	\textbf{Kennlinien idealer Wandler}
-	& \parbox[c][6cm]{0.31\textwidth}{\includegraphics[height=5cm]{./pictures/idealerADC.jpg}}
-	& \parbox[c]{0.31\textwidth}{\includegraphics[width=0.3\textwidth]{./pictures/idealerDAC.png}}
+	& \parbox[c][6cm]{0.31\textwidth}{\includegraphics[height=5cm]{./images/idealerADC.jpg}}
+	& \parbox[c]{0.31\textwidth}{\includegraphics[width=0.3\textwidth]{./images/idealerDAC.png}}
 	\\ \hline
 	\textbf{Quantisierungsintervall}
 	& $q = \frac{A_{max}}{2^N} = \frac{V_{Refp}-V_{Refn}}{2^N}$
@@ -22,23 +22,23 @@
 	& $V_{out} = D_{in}\cdot q + V_{Refn}= D_{in}\cdot(\frac{A_{Ref}}{2^N}) + V_{Refn}$
 	\\ \hline
 	\textbf{Offset-Fehler \hartl{434}}
-	& \includegraphics[height=3cm, trim=0cm 0cm 6.2cm 6.5cm, clip=true, valign=t]{./pictures/EoffADC.png}
-	& \includegraphics[height=3cm, trim=0cm 0cm 6cm 6.5cm, clip=true, valign=t]{./pictures/EoffDAC.png}
+	& \includegraphics[height=3cm, trim=0cm 0cm 6.2cm 6.5cm, clip=true, valign=t]{./images/EoffADC.png}
+	& \includegraphics[height=3cm, trim=0cm 0cm 6cm 6.5cm, clip=true, valign=t]{./images/EoffDAC.png}
 	\\ \hline
 	\textbf{Verstärkungsfehler \hartl{436}}
-	& \includegraphics[height=3cm, valign=t]{./pictures/verstaerkungsfehlerADC.png} 
-    & \includegraphics[height=3cm, valign=t]{./pictures/verstaerkungsfehlerDAC.png}
+	& \includegraphics[height=3cm, valign=t]{./images/verstaerkungsfehlerADC.png} 
+    & \includegraphics[height=3cm, valign=t]{./images/verstaerkungsfehlerDAC.png}
 	\\ \hline
 	\textbf{Differentielle Nichtlinearität DNL \hartl{437}} \newline \newline
   $DNL_n$ = (Spannungsinkrement bei einem Eingangsschritt von $n-1$ nach $n$) -
   (ideales Spannungsinkrement q) in LSB
-	& \includegraphics[height=3cm, valign=t]{./pictures/DNL_ges.png}
-	& \includegraphics[height=3cm, valign=t]{./pictures/DNL_DAC.png}
+	& \includegraphics[height=3cm, valign=t]{./images/DNL_ges.png}
+	& \includegraphics[height=3cm, valign=t]{./images/DNL_DAC.png}
 	\\ \hline
 	\textbf{Integrale Nichtlinearität INL \hartl{439}} \newline \newline
   Die INL bezeichnet die max. Abweichung der Ausgangskurve von der Idealen Gerade.
-	& \includegraphics[height=3.5cm, valign=t]{./pictures/INL_ADC.png}
-	& \includegraphics[height=4cm, valign=t]{./pictures/INL_DAC.png}
+	& \includegraphics[height=3.5cm, valign=t]{./images/INL_ADC.png}
+	& \includegraphics[height=4cm, valign=t]{./images/INL_DAC.png}
 	\\ \hline
 \end{tabular}
 \subsection{Eigenschaften und Fehler bei dynamischen Signalen\hartl{442}}
@@ -51,20 +51,21 @@
 \end{tabular}
 
 \subsubsection{Aperturfehler\hartl{442}} 
-Bei einer periodischen Abtastung eines Signals ist immer ein gewisse zeitliche
-Unsicherheit im Abtastzeitpunkt (Aperturunsicherheit) gegeben. Ist der Aperturfehler grösser als der maximal auftretende Quantisierungsfehler ($\frac{1}{2}LSB$) so verschlechtert sich die Auflösung des Umsetzers. 
+Bei periodischer Abtastung eines Signals ist immer ein gewisse zeitliche
+Unsicherheit im Abtastzeitpunkt (Aperturunsicherheit) gegeben. Ist der Aperturfehler grösser als der maximal auftretende Quantisierungsfehler ($\frac{1}{2}LSB$) so verschlechtert sich die Auflösung.
+\newpage
 
 \subsubsection{Jitterfehler}
 \begin{longtable}[c]{ l  l l l }
 \begin{minipage}{4cm}
 
-  \includegraphics[scale=0.38]{pictures/aperturfehlercos}
+  \includegraphics[scale=0.38]{images/aperturfehlercos}
 
 \end{minipage}
 &
 \begin{minipage}{3cm}
 
-  \includegraphics[scale=0.42]{pictures/aperturfehler}
+  \includegraphics[scale=0.42]{images/aperturfehler}
 \end{minipage}
 &
 \begin{minipage}{5cm}

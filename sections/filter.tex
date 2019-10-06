@@ -3,7 +3,7 @@
 \begin{longtable}{|>{\bfseries}p{3cm}|c|p{10cm}|}
     \hline
     1. Ordnung
-    & \includegraphics[width=4cm, valign=t]{pictures/tiefpass1ordnung}
+    & \includegraphics[width=4cm, valign=t]{images/tiefpass1ordnung}
     & {\textbf{UTF: } $G(s): \frac{1}{1+s C\cdot R} = \frac{1}{1+ j\cdot \frac{\omega}{\omega_{3dB}}}$\newline
         $f_{3dB}=\frac{1}{2\pi R\cdot C}$\newline
         Bei $\omega=\omega_{3dB}=\frac{1}{\tau}$ sind Real- und Imaginärteil gleich gross:
@@ -15,7 +15,7 @@
     {2. Ordnung\newline
      (kaskadierte RC-Tiefpässe)
     }
-    & \includegraphics[width=6cm,angle=90, valign=t]{pictures/tiefpass2ordnung}
+    & \includegraphics[width=6cm,angle=90, valign=t]{images/tiefpass2ordnung}
     & {$G(s) = \left(\frac{1}{1+sRC}\right)^2 = \left(\frac{1}{1+sT}\right)^2$ \newline
        $T = \frac{\sqrt{\sqrt{2}-1}}{2\pi \cdot f_g}$ \newline
        $G_{p}(s)= \frac{U_{out}}{U_{in}} = 
@@ -58,7 +58,7 @@
       \end{longtable}
       
 \begin{minipage}{0.49\textwidth}
-\includegraphics[width = 0.99\textwidth]{pictures/filter.png}
+\includegraphics[width = 0.99\textwidth]{images/filter.png}
 \end{minipage}
 \begin{minipage}{0.49\textwidth}
 $
@@ -96,7 +96,7 @@ $
 G = \dfrac{\frac{-R_1}{R_0\cdot(C_1\cdot R_1\cdot s+1)}\cdot \frac{-1}{C_2\cdot R_2\cdot s}\cdot \frac{-R_4}{R_3}}{1-\left(\frac{-R_1}{R_5\cdot(C_1\cdot R_1\cdot s+1)}\cdot 	\frac{-1}{C_2\cdot R_2\cdot s}\cdot \frac{-R_4}{R_3}\right)}
 \]
 \[
-G = \frac{R_1\cdot R_4\cdot R_5}{R_0\cdot \left(C_1C_2R_1R_2R_3R_5 s^2 + C_2R_2R_3R_5 s + R_1R_4\right)}
+G = \frac{-R_1\cdot R_4\cdot R_5}{R_0\cdot \left(C_1C_2R_1R_2R_3R_5 s^2 + C_2R_2R_3R_5 s + R_1R_4\right)}
 \]
 \end{minipage}
 
@@ -104,9 +104,9 @@ Vorgehen:
 \begin{enumerate}
 \itemsep0em
 \item Einzelne Übertragungsfunktionen aufstellen
-\item Gesammtgain mittels Mason bestimmen
+\item Gesamtgain mittels Mason bestimmen
 \item Kürzen
-\item Wenn gefragt Gain bei DC und $\omega \rightarrow \infty$ bestimmen
+\item Wenn gefragt: Gain bei DC und $\omega \rightarrow \infty$ bestimmen
 \end{enumerate}
 \pagebreak
 \begin{longtable}{|>{\bfseries}p{3cm}|c|p{10cm}|}
@@ -121,7 +121,7 @@ Vorgehen:
      (Einfachmit-kopplung)\newline
      \hartl{517}
     }
-    & \includegraphics[width=6cm, angle = 270,valign=t]{./pictures/sallenkey.png}
+    & \includegraphics[width=6cm, angle = 270,valign=t]{./images/sallenkey.png}
     & {\textbf{ Standard Sallen Key}\newline
        Stromgleichungen:\newline
        $0 = (U_2-U_{in})\cdot \frac{1}{R_1}+(U_2-U_3)\cdot \frac{1}{R_2}+(U_2-U_{out})\cdot s C_1$ \newline
@@ -137,7 +137,7 @@ Vorgehen:
       Die Güte kann mit $G_0$ beeinflusst werden. SK-Filter sind für grosse Güten nicht geeignet.
       }
     \\
-    & \includegraphics[width=4cm, valign=t]{./pictures/sallenkey2.png}
+    & \includegraphics[width=4cm, valign=t]{./images/sallenkey2.png}
     & {\textbf{ für hohe Frequenzen}\newline
         \vspace{-1.5\topsep}
         \begin{itemize}[leftmargin=*]
@@ -158,7 +158,7 @@ Vorgehen:
       {Multiple Feedback\newline
        \hartl{522}
       }
-      & \includegraphics[width=4cm, valign=t]{./pictures/mulipleFeedback.png}
+      & \includegraphics[width=4cm, valign=t]{./images/mulipleFeedback.png}
       & {Stromgleichungen: (Opamp sorgt für $U_3=0$)\newline
          $0	=(U_2-U_{in})\cdot \frac{1}{R_1}+(U_2-U_{out})\cdot \frac{1}{R_2}+(U_2-U_3)\cdot \frac{1}{R_3}+U_2\cdot s C_1$\newline
          $0	=(U_3-U_2)\cdot \frac{1}{R_3}+(U_3-U_{out})\cdot s C_2$\newline\newline
@@ -170,7 +170,7 @@ Vorgehen:
 % ---------------------------------------------------------------------------------------------------- 
       {Zustandsvariab-len-Filter
       }
-      & \includegraphics[width=8cm, valign=b,angle=270]{./pictures/zustandsvariable.png}
+      & \includegraphics[width=8cm, valign=b,angle=270]{./images/zustandsvariable.png}
       & {Spannungsgleichungen:\newline
          \begin{align*}
              V{out}		&=-\frac{1}{s C_{i2}\cdot R_{i2}}\cdot V_{opo2}\\

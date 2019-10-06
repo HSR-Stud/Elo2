@@ -3,7 +3,7 @@
 \begin{longtable}{|>{\bfseries}p{3cm}|c|p{10cm}|}
     \hline
     Widerstand
-    & \includegraphics[width=4cm, valign=t]{pictures/widerstand.png}
+    & \includegraphics[width=4cm, valign=t]{images/widerstand.png}
     & {$R=\rho \cdot \frac{l}{w\cdot d}$ \qquad $\rho$: Spezifischer Widerstand
       }
     \\ \hdashline
@@ -34,8 +34,24 @@
     
     \\ \hline
     % ----------------------------------------------------------------------------------------------------
+    Induktivität
+    & \includegraphics[width=4cm, valign=t]{images/induktivitaet.png}
+    & {\begin{align*}
+    		L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{2\pi r} \qquad \text{Ringspule} \\
+    		L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{l} \qquad \text{Zylinderspule} \\
+    		L &=\frac{N\cdot\Phi}{I} \qquad \qquad u_{i} =-N\cdot\frac{d\Phi}{dt}\\
+    		\intertext{\textbf{Ladevorgang:}}
+    		i_{\mathrm{L}} (t) &= I_0 \cdot \left( 1 - e^{-\frac{t}{\tau}}\right) = \frac{U_0}{R} \cdot \left( 1 -e^{-t\cdot \frac{R}{L}}\right) \\
+    		u_{\mathrm{L}} (t) &= \hat u \cdot e^{-\frac{t}{\tau}} = \hat u \cdot e^{-t \cdot\frac{R}{L}}\\
+    		\intertext{\textbf{Entladevorgang:}}
+    		i_{\mathrm{L}} (t) &= I_0 \cdot e^{- \frac{t}{\tau}} = \frac{U_0}{R} \cdot e^{- t \cdot\frac{R}{L}}\\
+    		u_{\mathrm{L}} (t) &= - \hat u \cdot e^{- \frac{t}{\tau}} = - \hat u \cdot e^{- t \cdot\frac{R}{L}}
+    	\end{align*}
+    }
+    \\ \hline
+    % ----------------------------------------------------------------------------------------------------
     Kondensator
-    & \includegraphics[width=4cm, valign=t]{pictures/kapazitaetswert.png}
+    & \includegraphics[width=4cm, valign=t]{images/kapazitaetswert.png}
     & {$C=\varepsilon_{r}\cdot \varepsilon_{0}\cdot \frac{W\cdot L}{d}=\varepsilon_{r}\cdot \varepsilon_{0}\cdot \frac{A}{d}$ \qquad $\varepsilon_{0}= 8.85 pF/m$\newline
        \newline
        \begin{align*}
@@ -44,8 +60,12 @@
            i_{\mathrm{C}} (t) &= \frac{U_0}{R} \cdot e^{- \frac{t}{\tau}} = I_0 \cdot e^{- \frac{t}{R \cdot C}}\\
            \intertext{\textbf{Entladevorgang:}}
            u_{\mathrm{C}} (t) &= U_0 \cdot e^{- \frac{t}{\tau}} = U_0 \cdot e^{-\frac{t}{R \cdot C}}\\
-           i_{\mathrm{C}} (t) &= -\frac{U_0}{R} \cdot e^{- \frac{t}{\tau}} = - I_0 \cdot e^{-\frac{t}{R \cdot C}}
-       \end{align*} \newline
+           i_{\mathrm{C}} (t) &= -\frac{U_0}{R} \cdot e^{- \frac{t}{\tau}} = - I_0 \cdot e^{-\frac{t}{R \cdot C}}\\
+           \intertext{\textbf{Resonanzfrequenz:}}
+           f &=\frac{1}{2\pi \sqrt{LC}}\\
+           \intertext{\textbf{Frequenzgang:}}
+           |Z| &= \sqrt{(|X_C|-|X_L|)^2 +|R_{ESR}|^2}
+       \end{align*}
       \textbf{Dielektrizitätsklassen:}\newline
       \begin{tabular}{|p{2cm}|l|p{2cm}|p{2cm}|}
         \hline
@@ -73,22 +93,6 @@
           $22\mu F/16V$ \\
         \hline
       \end{tabular}
-      }
-    \\ \hline
-    % ----------------------------------------------------------------------------------------------------
-    Induktivität
-    & \includegraphics[width=4cm, valign=t]{pictures/induktivitaet.png}
-    & {\begin{align*}
-           L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{2\pi r} \qquad \text{Ringspule} \\
-           L &=N^2\cdot\frac{\mu_{0}\mu_{r}A}{l} \qquad \text{Zylinderspule} \\
-           L &=\frac{N\cdot\Phi}{I} \qquad \qquad u_{i} =-N\cdot\frac{d\Phi}{dt}\\
-           \intertext{\textbf{Ladevorgang:}}
-           i_{\mathrm{L}} (t) &= I_0 \cdot \left( 1 - e^{-\frac{t}{\tau}}\right) = \frac{U_0}{R} \cdot \left( 1 -e^{-t\cdot \frac{R}{L}}\right) \\
-            u_{\mathrm{L}} (t) &= \hat u \cdot e^{-\frac{t}{\tau}} = \hat u \cdot e^{-t \cdot\frac{R}{L}}\\
-            \intertext{\textbf{Entladevorgang:}}
-            i_{\mathrm{L}} (t) &= I_0 \cdot e^{- \frac{t}{\tau}} = \frac{U_0}{R} \cdot e^{- t \cdot\frac{R}{L}}\\
-            u_{\mathrm{L}} (t) &= - \hat u \cdot e^{- \frac{t}{\tau}} = - \hat u \cdot e^{- t \cdot\frac{R}{L}}
-       \end{align*}
       }
     \\ \hline
     \multicolumn{2}{|c}{\input{tikz/ersatz_schalt_kondensator}}

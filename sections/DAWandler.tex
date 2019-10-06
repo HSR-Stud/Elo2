@@ -4,9 +4,9 @@
 \begin{longtable}{|p{3cm}|c|p{8.6cm}|}
 	\hline
 	\textbf{Spannungs"-summierung \hartl{461}}
-	& \includegraphics[width=3.5cm, valign=t]{./pictures/spannungssummierung.png}
+	& \includegraphics[width=3.5cm, valign=t]{./images/spannungssummierung.png}
 	& {\begin{align*}
-		V_{Out} &= \frac{B0\cdot 2^0 + B1 \cdot 2^1+ \ldots + B(n-1)\cdot 2^{n-1}}{2n} \\
+		V_{Out} &= \frac{B0\cdot 2^0 + B1 \cdot 2^1+ \ldots + B(n-1)\cdot 2^{n-1}}{2^n} \\
     & \cdot (V_{Refp}-V_{Refn}) + V_{Refn}
 	  \end{align*}}
     
@@ -17,13 +17,13 @@
 	\\ \hline
 	\textbf{Wägeverfahren mit Ausgangstreiber} \newline
   (Summation gewichteter Ströme)
-	& \includegraphics[width=5cm, valign=t]{./pictures/praktisch.png}
+	& \includegraphics[width=5cm, valign=t]{./images/praktisch.png}
 	& \[ Idac_{max}=\frac{V_{Refp}-V_{Refn}}{R} \cdot \frac{2^n-1}{2^n} \] \newline
-    Vout und Idac\_inv sind differentiel zu einander, dadurch fliesst immer der gleiche Strom
+    Vout und Idac\_inv sind differentiell zueinander, dadurch fliesst immer der gleiche Strom
     und der Offsetfehler bleibt konstant.
 	\\ \hline
 	\textbf{R-2R-Netzwerk \hartl{462}} Multiplizierende Wandler wandeln die Referenzspannung in Ströme um.
-	& \includegraphics[width=5.5cm, valign=t]{./pictures/r2rnetzwerk.png}
+	& \includegraphics[width=5.5cm, valign=t]{./images/r2rnetzwerk.png}
 	& {
 	\begin{align*}
 		V_{out,max} &= V_{Refn} \\
@@ -39,7 +39,7 @@
   
 	\\ \hline
 	\textbf{R-2R-Netzwerk}
-	& \includegraphics[width=5cm, valign=t]{pictures/r2r.png}
+	& \includegraphics[width=5cm, valign=t]{images/r2r.png}
 	& {
 	\begin{align*}
 		V_{out}&= \frac{V_{ref}}{2^n} + \frac{R_L}{R_L + R} \cdot D
@@ -47,7 +47,7 @@
   
 	\\ \hline
 	\textbf{Kapazitiver DAC (Charge Scaling)}
-	& \includegraphics[width=6cm, valign=t]{./pictures/kapazitiverDAC.png}
+	& \includegraphics[width=6cm, valign=t]{./images/kapazitiverDAC.png}
 	& { \textbf{ Vorteil:} Man kann bis zur angelegten Referenzspannung durchschalten \newline
         \begin{align*}
 		C1	&= B3 \cdot 8C+B2 \cdot 4C+ B1 \cdot 2C+B0 \cdot C \\
@@ -57,7 +57,7 @@
 	  \end{align*}}
 	\\ \hline
     \textbf{Kapazitiver DAC mit Ausgangstreiber}
-    & \includegraphics[width=6cm, valign=t]{./pictures/kapazitiverDACmitAmp.png}
+    & \includegraphics[width=6cm, valign=t]{./images/kapazitiverDACmitAmp.png}
     & {Wenn z.B. B3 auf $V_{Ref1}$ geschaltet wird:\newline
       \begin{align*}
           Q_{C3} &= C_3 \cdot \Delta U = C_3 \cdot (V_{Ref1}-V_{Ref2})\\
@@ -72,7 +72,7 @@
 \begin{longtable}{|>{\bfseries}p{4cm}|l|p{8cm}|}
 	\hline 
 	Grundprinzip \hartl{466}
-	& \includegraphics[width=6cm, valign=t]{./pictures/pwm_DAC.png}
+	& \includegraphics[width=6cm, valign=t]{./images/pwm_DAC.png}
 	& $ V_{Out}=\frac{D}{2^n} \cdot (V_{Refp}-V_{Refn})+V_{Refn} $ \newline
 	\begin{tabular}{lp{5cm}}
     \textbf{Vorteile:} 
@@ -100,15 +100,15 @@
 \begin{longtable}{|>{\bfseries}p{3cm}|c|p{7.6cm}|}
 	\hline
 	Strom-DAC\hartl{456}  
-	& \includegraphics[width=7cm, valign=t]{pictures/Strom-DAC}
+	& \raisebox{-.2\totalheight}{\includegraphics[width=7cm, valign=t]{images/Strom-DAC}}
 	& {\begin{align*}
       K &=2^N-1 \qquad I_{out} = D \cdot I = D \cdot \frac{V_{Ref}}{R}\\
       I &=\frac{V_{Ref}}{R} \qquad \text{(von einer Quelle)}
 	  \end{align*}}
 	  
-	  \begin{tabular}{lp{5cm}}
-	  	K: & Anzahl Stromquellen \\
-      D: & Eingangswert (Anzahl Schalter die aktiv sind.) \\
+	  \begin{tabular}{lp{5.8cm}}
+	  	K: & Anz. Stromquellen \\
+      D: & Eingangswert (Anz. aktive Schalter) \\
       \multicolumn{2}{l}{Schaltereigenschaften:}\\
       On: & kein Spannungsabfall  \\
       Off: & kein Strom
@@ -119,24 +119,24 @@
 	  \end{description} 
 	\\ \hline
 	String DAC (Voltage Scaling) \hartl{459}
-	& \includegraphics[width=5.5cm, valign=t]{pictures/string_DAC}
+	& \raisebox{-.1\totalheight}{\includegraphics[width=5.5cm, valign=t]{images/string_DAC}}
 	& 
 		\begin{description}
   		\item[Vorteile: ] garantierte Stetigkeit
   		\item[Nachteile:] benötigt $2^n$ Widerstände und $2^n$ Schalter, n-to-$2^n$ Decoder(linke Variante),
-        er darf nicht belastet werden und hat ein grosser Schaltungsaufwand.
+        er darf nicht belastet werden und hat grossen Schaltungsaufwand.
 	  \end{description} 
     
 	  {\begin{align*}
 	  	V_{Out_{ideal}}(D) = \frac{D}{2^n}(V_{Refp}-V_{Refn})+V_{Refn}\\
 	  	V_{Out_{real}}(D) = V_{Refn}+\left(V_{Refp}-V_{Refn}\right)\cdot\\
 	  		\cdot\frac{D \cdot R_{Load}}{2^n \cdot R \cdot D-R \cdot D^2 + 2^n (R_{Load} + R_{Switch}) }\\
-	  	DAC_{error}(D)=\frac{V_{Out_{real}}(D)-V_{Out_{ideal}}(D)}{V_{Out_{ideal}}(D)}\\
+	  	DAC_{error}(D)=\frac{V_{Out_{real}}(D)-V_{Out_{ideal}}(D)}{V_{Out_{ideal}}(D)}
 	  \end{align*}}
 	  
 	\\ \hline
 	Segmented String DAC \hartl{459}
-	& \includegraphics[width=5cm, height = 3cm, valign=t]{pictures/segmented_string_DAC}
+	& \raisebox{-.1\totalheight}{\includegraphics[width=5.6cm, height = 4cm, valign=t]{images/segmented_string_DAC}}
 	& \begin{description}
   		\item[Vorteile: ] viel weniger Elemente
   		\item[Nachteile:] benötigt Buffer (offset-frei)
@@ -154,36 +154,35 @@
 \begin{longtable}{|>{\bfseries}p{4cm}|c|p{8cm}|}
 	\hline
 	Kaskadierte DAC
-	& \includegraphics[width=6cm, valign=t]{./pictures/kaskadiertDAC.png}
+	& \includegraphics[width=5cm, valign=t]{./images/kaskadiertDAC.png}
 	& \begin{itemize}
-  		\item MS-DAC hat 2 Ausgangsspannungen (Über und unter dem gewünschten
+  		\item MS-DAC hat 2 Ausgangsspannungen (Über und unter gewünschtem
   			$V_{Out}$)
-  		\item LS-DAC hat kleine Eingangspannungsdifferenz $\to$ höhere Auflösung der
-  			Spannung
+  		\item LS-DAC hat kleine Eingangsspannungsdifferenz $\to$ höhere Auflösung der Spannung
 	  \end{itemize}
 	\\ \hline
 	Zyklisch, algorithmischer DAC \hartl{466}
-	& \includegraphics[width=6cm, valign=t]{./pictures/zyklischDAC.png}
+	& \includegraphics[width=6cm, valign=t]{./images/zyklischDAC.png}
 	& \textbf{Ablauf der Wandlung}
 	  \begin{enumerate}
-  		\item Die Spannung im S/H löschen (Schalter S1), S3 offen)
+  		\item Spg. im S/H löschen (Schalter S1), S3 offen
   		\item S1 auf den Verstärker-Ausgang schalten
   		\item Laufvariale k wird auf 0 gesetzt
   		\item S2 setzen: VREF oder GND ( abh. $D_{K}$).
-  		\item Der Addierer und Verstärker generieren Ausgangssignal
-  		\item Im S/H wird die Feedback-Spannung gespeichert (S1)
+  		\item Addierer und Verstärker generieren Ausgangssignal
+  		\item Im S/H wird Feedback-Spannung gespeichert (S1)
   		\item X wird um 1 erhöht
   		\item Gehe zu Schritt 4, wenn $X\leq n$
 	  \end{enumerate}
 	\\ \hline
 	Pipelined DAC 
-	& \includegraphics[width=6cm, valign=t]{pictures/piplinedDAC}
+	& \includegraphics[width=6cm, valign=t]{images/pipelinedDAC}
 	& $V_{Out} = (D_0 \cdot 2^{-n} + D_1 \cdot 2^{1-n} + ... + D_{n-1} \cdot 2^{-1})\cdot V_{Ref}$\newline\newline
       Die Latenz beträgt n Zyklen, die Update-Frequenz ist aber n-mal grösser, da die Blöcke n-fach vorliegen.\newline
       LSB ($\mathrm{D_0}$): $\mathrm{V_{Ref}}$ wird n-mal halbiert
 	\\ \hline
 	Strom-DAC
-	& \includegraphics[width=6cm, valign=t]{pictures/stromDAC}
+	& \includegraphics[width=6cm, valign=t]{images/stromDAC}
 	& \begin{itemize}
   		\item Stromspiegel
   		\item MP0 ist gleich breit wie Stromquellen-MOS $\to \mathrm{I(MP0)=I_{Ref}} \qquad$ MP0: Einheitstransistor
@@ -198,7 +197,7 @@
 \begin{longtable}{|>{\bfseries}p{4cm}|c|p{8cm}|}
   \hline
     Digitales Potentiometer \hartl{460}
-    & \includegraphics[width=5cm, valign=t]{pictures/digitales_potentiometer}
+    & \includegraphics[width=5cm, valign=t]{images/digitales_potentiometer}
     & \begin{itemize}
         \item automatisierter Elektronik-Test möglich
         \item D (digitale Wert) wird im PROM gespeichert
@@ -211,14 +210,14 @@
 %    z.B R2R-Netzwerk \\
   \hline
     DAC mit Exponentieller Funktion
-    &\includegraphics[width=6cm, valign=t]{pictures/DAC_exp.png}
+    &\includegraphics[width=6cm, valign=t]{images/DAC_exp.png}
     & \\
   \hline
 \end{longtable}
 
 \subsection{Ausgangsverstärker}
 \begin{minipage}{7cm}
-	\includegraphics[width=6.5cm]{pictures/Ausgangsverstaerker.png}
+	\includegraphics[width=6.5cm]{images/Ausgangsverstaerker.png}
 \end{minipage}
 \begin{minipage}{12cm}
   $C_{Filter}$ dämpft Glitches beim Umschalten des Digitalwertes.
