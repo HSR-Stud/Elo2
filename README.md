@@ -1,6 +1,6 @@
 # Elo2 - Elektronik 2
 
-[![Build Status](https://travis-ci.org/n04hk/Elo2.svg?branch=short)](https://travis-ci.org/n04hk/Elo2)
+[![Build Status](https://travis-ci.org/HSR-Stud/Elo2.svg?branch=short)](https://travis-ci.org/HSR-Stud/Elo2)
 
 ## License
 CC by-nc-sa
