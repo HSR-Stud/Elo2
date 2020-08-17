@@ -100,14 +100,25 @@ G = \frac{-R_1\cdot R_4\cdot R_5}{R_0\cdot \left(C_1C_2R_1R_2R_3R_5 s^2 + C_2R_2
 \]
 \end{minipage}
 
+\begin{minipage}[t]{0.475\textwidth}
 Vorgehen: 
 \begin{enumerate}
 \itemsep0em
 \item Einzelne Übertragungsfunktionen aufstellen
 \item Gesamtgain mittels Mason bestimmen
 \item Kürzen
-\item Wenn gefragt: Gain bei DC und $\omega \rightarrow \infty$ bestimmen
+\item Wenn gefragt: Gain bei DC und $\omega \rightarrow \infty$ bestimmen\newline
+Oder Güte sowie max Gain A bestimmen
 \end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+$
+\newline
+\displaystyle
+T_{tp}(s) = \dfrac{A\cdot\omega_0^2}{s^2+\dfrac{\omega_0}{Q}\cdot s+\omega_0^2}\newline
+T_{bp}(s) = \dfrac{A\cdot\dfrac{\omega_0^2}{Q}\cdot s}{s^2+\dfrac{\omega_0}{Q}\cdot s+\omega_0^2}
+$
+\end{minipage}
 \pagebreak
 \begin{longtable}{|>{\bfseries}p{3cm}|c|p{10cm}|}
 \hline   \textbf{Kaskadierter Spannungsteiler}
